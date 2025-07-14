@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>山本 倫久 | AI × 福祉クリエイター ポートフォリオ</title>
+    <!-- CSSリセット -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <!-- メインのスタイルシート -->
+    <link rel="stylesheet" href="css/style.css">
     <!-- Font Awesome アイコンライブラリ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
+
+    <!-- ===== ヘッダー ===== -->
     <header>
         <nav class="container">
             <a href="#" class="logo">
-                <!-- imgフォルダの中の、chroma_logo.png（または.jpgなど）を指定します -->
                 <img src="img/chroma_logo.png" alt="Chroma Channel ロゴ">
             </a>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
+        <!-- ===== ヒーローセクション ===== -->
         <section class="hero">
             <div class="hero-content">
                 <h1>AIで「好き」を仕事に。<br>福祉の現場に、創造の翼を。</h1>
@@ -34,13 +38,13 @@
             </div>
         </section>
 
+        <!-- ===== About Me セクション ===== -->
         <section id="about" class="section about">
             <div class="container">
                 <h2 class="section-title fade-in">About Me</h2>
                 <div class="about-content">
                     <div class="about-image fade-in">
-                        <!-- ここにあなたのプロフィール写真を設定してください -->
-                        <img src="https://via.placeholder.com/300" alt="山本 倫久 プロフィール写真" class="profile-placeholder">
+                        <img src="img/profile.png" alt="山本 倫久 プロフィール写真" class="profile-placeholder">
                     </div>
                     <div class="about-text fade-in">
                         <p>はじめまして。<span class="highlight">AIコンテンツクリエイター</span>の<span class="highlight">山本 倫久</span>と申します。</p>
@@ -52,6 +56,7 @@
             </div>
         </section>
 
+        <!-- ===== Skills & Services セクション ===== -->
         <section id="skills" class="section skills">
             <div class="container">
                 <h2 class="section-title fade-in">Skills & Services</h2>
@@ -90,6 +95,7 @@
             </div>
         </section>
 
+        <!-- ===== Portfolio セクション ===== -->
         <section id="portfolio" class="section portfolio">
             <div class="container">
                 <h2 class="section-title fade-in">Portfolio</h2>
@@ -97,72 +103,72 @@
                 
                 <div class="portfolio-categories fade-in">
                     <button class="category-btn active" data-category="all">すべて</button>
+                    <button class="category-btn" data-category="welfare">福祉×IT</button>
                     <button class="category-btn" data-category="illustration">AIイラスト</button>
                     <button class="category-btn" data-category="video">動画・音楽</button>
                     <button class="category-btn" data-category="education">教育・アプリ</button>
-                    <button class="category-btn" data-category="welfare">福祉×IT</button>
-                </div>
-
-                <!-- Fuwamoco PROJECT -->
-                <div class="portfolio-item fade-in" data-category="welfare education">
-                    <div class="portfolio-card">
-                        <div class="portfolio-image">
-                            <!-- ここにFuwamocoサイトのメインビジュアルを設定 -->
-                            <img src="img/fuwamoco_main.png" alt="Fuwamoco PROJECT">
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>NPO法人「Fuwamoco PROJECT」公式サイト</h3>
-                            <p>うさぎの保護活動を行う架空のNPO法人の公式サイトを、企画・デザイン・実装まで一貫して制作。JavaScript製の3マッチパズルも搭載。</p>
-                            <div class="portfolio-links">
-                                <!-- ここが、Fuwamocoサイトへのリンクです -->
-                                <a href="fuwamoco/index.html" target="_blank" rel="noopener noreferrer" class="video-link">
-                                    <i class="fas fa-desktop"></i> Webサイトを見る
-                                </a>
-                            </div>
-                            <div class="portfolio-tags">
-                                <span class="tag">Webサイト制作</span>
-                                <span class="tag">企画・デザイン</span>
-                                <span class="tag">ゲーム開発</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="portfolio-grid">
-                    <div class="portfolio-item fade-in" data-category="illustration">
-                        <div class="portfolio-card clickable-card">
+                    <!-- Fuwamoco PROJECT -->
+                    <div class="portfolio-item fade-in" data-category="welfare education">
+                        <div class="portfolio-card">
                             <div class="portfolio-image">
-                                <!-- ここに代表的なAIイラストを配置 -->
-                                <img src="img/image_main.webp" alt="イメージビジュアル" >
+                                <img src="img/fuwamoco_main.png" alt="Fuwamoco PROJECT">
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>NPO法人「Fuwamoco PROJECT」公式サイト</h3>
+                                <p>うさぎの保護活動を行う架空のNPO法人の公式サイトを、企画・デザイン・実装まで一貫して制作。JavaScript製の3マッチパズルも搭載。</p>
+                                <div class="portfolio-links">
+                                    <a href="fuwamoco/index.html" target="_blank" rel="noopener noreferrer" class="video-link">
+                                        <i class="fas fa-desktop"></i> Webサイトを見る
+                                    </a>
+                                </div>
+                                <div class="portfolio-tags">
+                                    <span class="tag">Webサイト制作</span><span class="tag">企画・デザイン</span><span class="tag">ゲーム開発</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AIキャラクターデザイン集 -->
+                    <div class="portfolio-item fade-in" data-category="illustration">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="img/image_main.webp" alt="キャラクターデザイン集">
                             </div>
                             <div class="portfolio-content">
                                 <h3>AIキャラクターデザイン集</h3>
                                 <p>Stable Diffusionを使用し、様々なテーマのオリジナルキャラクターを制作しました。</p>
+                                <div class="portfolio-links">
+                                    <button class="gallery-toggle-btn">
+                                        <i class="fas fa-images"></i> ギャラリーを見る
+                                    </button>
+                                </div>
                                 <div class="portfolio-tags">
                                     <span class="tag">AIイラスト</span><span class="tag">キャラクター</span>
                                 </div>
                             </div>
                             <div class="thumbnail-gallery-wrapper">
                                 <div class="thumbnail-gallery">
-                                    <!-- 実際の画像パスに差し替えてください -->
-                                    <img src="https://via.placeholder.com/150/8E2DE2/FFFFFF?text=作品1" class="thumbnail-img" data-large-src="https://via.placeholder.com/800x600/8E2DE2/FFFFFF?text=作品1" data-title="未来都市の案内人" data-description="サイバーパンクな世界観をイメージした施設の案内キャラクターです。" data-checkpoint="Anime V3" data-positive="1girl, cheerful expression, colorful uniform, friendly smile, anime style, high quality, detailed, masterpiece" data-negative="blurry, low quality, distorted, watermark, text" data-settings="Steps: 25, CFG: 7, Size: 512x768, Sampler: DPM++ 2M Karras">
-                                    <img src="https://via.placeholder.com/150/4A00E0/FFFFFF?text=作品2" class="thumbnail-img" data-large-src="https://via.placeholder.com/800x600/4A00E0/FFFFFF?text=作品2" data-title="森の妖精" data-description="自然との共生をテーマにしたイラスト。優しい色使いを心がけました。" data-checkpoint="Pastel Mix" data-positive="elf, girl, glowing particles, in forest, beautiful detailed eyes, watercolor style" data-negative="deformed, ugly, bad anatomy" data-settings="Steps: 30, CFG: 7.5, Size: 768x512">
+                                    <img src="img/001.webp" class="thumbnail-img" data-large-src="img/001.webp" data-title="未来への案内人" data-description="AIが持つ未来的な可能性と、人に寄り添う温かさを表現した、ポートフォリオのメインビジュアルです。" data-checkpoint="yayoiMix_v25" data-positive="masterpiece, best quality, 1girl with silver hair, coming out of a digital tablet screen, 3d effect, floating purple and blue digital particles, glowing light, dark background, dynamic pose, looking at viewer" data-negative="(worst quality, low quality:1.4), (multiple girls, collage:1.4), text, signature, watermark, bad anatomy, ugly, static pose" data-settings="Steps: 40, Sampler: DPM++ 2M, CFG scale: 7, Size: 800x400, Hires fix: Latent (2x), Denoising: 0.7, ADetailer">
+                                    <img src="img/002.webp" class="thumbnail-img" data-large-src="img/002.webp" data-title="音の世界へ" data-description="AIによる音楽生成の楽しさと、音楽に深く没入するエモーショナルな瞬間を表現しました。" data-checkpoint="liveAnimeMix_flat" data-positive="masterpiece, best quality, anime style, (profile shot of a 1girl:1.3), (close-up:1.1), beautiful detailed face, eyes closed, serene expression, wearing futuristic glowing headphones, long hair flowing with purple and blue neon light" data-negative="(worst quality, low quality:1.4), (multiple views, collage:1.4), front view, text, signature, watermark, open mouth" data-settings="Steps: 40, Sampler: DPM++ 2M, CFG scale: 7, Size: 1200x600, Hires fix: Latent (2x), Denoising: 0.7, ADetailer">
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- 施設紹介動画 -->
                     <div class="portfolio-item fade-in" data-category="video">
                         <div class="portfolio-card">
                             <div class="portfolio-image">
-                                <img src="img/Facility_introduction_main.webp" alt="施設紹介ビジュアル">
+                                <img src="img/Facility_introduction_main.webp" alt="施設紹介動画">
                             </div>
                             <div class="portfolio-content">
                                 <h3>施設紹介ゆっくり解説動画</h3>
                                 <p>就労支援B型事業所の魅力を、キャラクターの対話形式で分かりやすく解説。企画・台本(GPTs)・音声・編集まで一貫して制作。</p>
                                 <div class="portfolio-links">
                                     <a href="https://no-lang.com/video/b0ac821e-17fc-49ce-8577-acadfa9c2ce0" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fas fa-play-circle"></i> 就労支援B型事業所とは</a>
-                                    <a href="https://no-lang.com/video/a585759a-d79e-49c2-b720-099e48e0dee7" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fas fa-play-circle"></i> 事業所の魅力</a>
                                 </div>
                                 <div class="portfolio-tags">
                                     <span class="tag">動画制作</span><span class="tag">企画</span><span class="tag">YMM4</span>
@@ -171,17 +177,19 @@
                         </div>
                     </div>
                 
+                    <!-- AI生成オリジナル楽曲 -->
                     <div class="portfolio-item fade-in" data-category="video">
                         <div class="portfolio-card">
                             <div class="portfolio-image">
-                                <img src="img/music_main.webp" alt="オリジナル楽曲ビジュアル">
+                                <img src="img/music_main.webp" alt="オリジナル楽曲">
                             </div>
                             <div class="portfolio-content">
                                 <h3>AI生成オリジナル楽曲</h3>
                                 <p>Suno AIを活用して作詞・作曲した事業所のテーマソング。Vrewを使い、AI生成画像を組み合わせたリリックビデオも制作。</p>
                                 <div class="portfolio-links">
-                                    <!-- ここにYouTubeなどのリンクを設定 -->
-                                    <a href="#" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fas fa-music"></i> 楽曲を聴く (YouTube)</a>
+                                    <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" class="video-link">
+                                        <i class="fas fa-music"></i> 楽曲を聴く (Chromaの自由部屋)
+                                    </a>
                                 </div>
                                 <div class="portfolio-tags">
                                     <span class="tag">音楽制作</span><span class="tag">Suno AI</span><span class="tag">Vrew</span>
@@ -190,17 +198,17 @@
                         </div>
                     </div>
 
+                    <!-- AI体験アプリ -->
                     <div class="portfolio-item fade-in" data-category="education">
                         <div class="portfolio-card">
                             <div class="portfolio-image">
-                                <img src="img/game_main.webp" alt="AI体験アプリビジュアル">
+                                <img src="img/game_main.webp" alt="AI体験アプリ">
                             </div>
                             <div class="portfolio-content">
                                 <h3>AIと友達になろう！体験アプリ</h3>
                                 <p>PC操作に不慣れな方でも、クリック操作だけでAIの面白さを体験できるWebアプリケーション。HTML/CSS/JSで開発。</p>
                                 <div class="portfolio-links">
-                                    <a href="https://chromachannel.online/" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fas fa-gamepad"></i> アプリを体験する</a>
-                                    <a href="https://github.com/motty1975/my-AI-lesson" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fab fa-github"></i> コードを見る (GitHub)</a>
+                                    <a href="apps/ai-friend/index.html" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fas fa-gamepad"></i> アプリを体験する</a>
                                 </div>
                                 <div class="portfolio-tags">
                                     <span class="tag">教育</span><span class="tag">Webアプリ</span><span class="tag">JavaScript</span>
@@ -208,56 +216,46 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="portfolio-item fade-in" data-category="welfare">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                               <img src="https://via.placeholder.com/400x200/a29bfe/FFFFFF?text=適応型作業管理システム" alt="作業管理システム">
-                            </div>
-                            <div class="portfolio-content">
-                                <h3>適応型作業管理システム</h3>
-                                <p>利用者のスキルレベルや体調に応じて、タスクの難易度や量をAIが提案するシステムの概念設計とプロトタイプ開発。</p>
-                                 <div class="portfolio-links">
-                                    <!-- ここに企画書PDFなどのリンクを設定 -->
-                                    <a href="#" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fas fa-file-alt"></i> 企画書を見る (PDF)</a>
-                                </div>
-                                <div class="portfolio-tags">
-                                    <span class="tag">システム設計</span><span class="tag">UI/UX</span><span class="tag">福祉DX</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- ===== Contact セクション ===== -->
         <section id="contact" class="section contact">
             <div class="container">
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-info fade-in">
                     <p>AIと福祉を繋ぐ、新しい挑戦にご興味をお持ちいただけましたら、</p>
-                    <p>ぜひお気軽にご連絡ください。</p>
+                    <p>ぜひ、以下のメールアドレスまでお気軽にご連絡ください。</p>
                 </div>
-                <div class="social-links fade-in">
-                    <!-- ここにあなたの連絡先メールアドレスなどを設定 -->
-                    <a href="mailto:your.email@example.com" class="social-link" title="メールで連絡"><i class="fas fa-envelope"></i></a>
-                    <a href="#" class="social-link" title="X (旧Twitter)"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                <div class="contact-email-wrapper fade-in">
+                    <a href="mailto:shuro.mirai.0224@gmail.com" class="contact-email">
+                        <i class="fas fa-envelope"></i> shuro.mirai.0224@gmail.com
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- ===== フッター ===== -->
     <footer>
         <div class="container">
+            <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> PC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> 自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
             <p>© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- ===== モーダルウィンドウ ===== -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">×</span>
             <button id="modal-prev" class="modal-nav"><i class="fas fa-chevron-left"></i></button>
+            
             <div class="modal-body">
                 <div class="modal-image-container">
                     <img id="modal-image" src="" alt="拡大画像">
@@ -280,10 +278,12 @@
                     </div>
                 </div>
             </div>
+            
             <button id="modal-next" class="modal-nav"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 
+    <!-- ===== JavaScriptの読み込み ===== -->
     <script src="JavaScript/script.js"></script>
 </body>
 </html>
