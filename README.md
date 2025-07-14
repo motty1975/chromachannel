@@ -60,13 +60,13 @@
 / (ルートディレクトリ)
 ├── index.html # ポートフォリオサイト（トップページ）<br>
 ├── css/ # ポートフォリオサイト用CSS<br>
-│ └── style.css<br>
+│    └── style.css<br>
 ├── img/ # ポートフォリオサイト用画像<br>
-│ ├── logo.png<br>
-│ ├── image_main.webp<br>
-│ └── ... (その他)<br>
+│    ├── logo.png<br>
+│    ├── image_main.webp<br>
+│    └── ... (その他)<br>
 ├── js/ # ポートフォリオサイト用JavaScript<br>
-│ └── script.js<br>
+│    └── script.js<br>
 └── fuwamoco/ # Fuwamocoプロジェクト専用エリア<br>
 ├── index.html # Fuwamoco トップページ<br>
 ├── company.html<br>
