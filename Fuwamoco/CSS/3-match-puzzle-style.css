@@ -1,0 +1,798 @@
+/* Z共通CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+  scroll-padding-top: 90px; /* ナビバーの高さに合わせて調整 */
+}
+body {
+    font-family: "Kosugi Maru", sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+}
+h3 {
+    color: #da778e;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+}
+/* スクロール禁止用 */
+body.no-scroll {
+    overflow: hidden;
+}
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+ul {
+    list-style: none;
+}
+/* ヘッダーとナビゲーション */
+header {
+    background-color: #ffffff;
+    width: 100%;
+    position: fixed; /* 固定位置に変更 */
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.4s ease; /* スクロール時のアニメーション */
+}
+/* スクロール時にヘッダーを隠す */
+header.hidden {
+    transform: translateY(-100%);
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.logo {
+    width: 70px;
+    height: auto;
+    transition: all 0.3s ease; /* ロゴのhoverアニメーション用 */
+}
+.logo:hover {
+    opacity: 0.8;
+}
+/* PC用のグローバルナビゲーション */
+.gnavi {
+    display: block; /* PCではデフォルトで表示 */
+}
+.gnavi__wrap {
+    margin: 0 auto;
+}
+.gnavi__lists {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.gnavi__list {
+    height: 60px;
+    position: relative;
+    transition: all .3s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+}
+.gnavi__list:hover {
+    background-color: #f0f0f0; /* ホバー時の背景色を追加 */
+}
+.gnavi__list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 100%;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    transition: all .3s;
+    margin: 0 auto;
+}
+.gnavi__list:hover a {
+    color: #007bff; /* ホバー時の文字色を追加 */
+}
+.gnavi__list:hover .dropdown__lists {
+    transform: scaleY(1);
+}
+.dropdown__lists {
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: all .3s;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ドロップダウンに影を追加 */
+}
+.dropdown__list {
+    background-color: #fff;
+    height: 60px;
+    transition: all .3s;
+    position: relative;
+}
+.dropdown__list:not(:first-child)::before{
+    content: "";
+    width: 80%; /* 区切り線の幅を調整 */
+    height: 1px;
+    background-color: #eee; /* 区切り線の色 */
+    position: absolute;
+    top: 0;
+    left: 10%; /* 中央に配置 */
+}
+.dropdown__list:hover {
+    background-color: #f8f8f8; /* ドロップダウンリストのホバー色 */
+}
+.dropdown__list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333 !important;
+    text-decoration: none;
+    position: relative;
+}
+.dropdown__list a::before {
+    content: '';
+    display: none;
+}
+/* ヘッダー内のハンバーガーメニューアイコン (モバイル用) */
+.hamburger-menu {
+    display: none; /* PCではデフォルトで非表示 */
+    cursor: pointer;
+    width: 30px; /* ボタンのサイズ */
+    height: 25px; /* ボタンのサイズ */
+    position: relative;
+    z-index: 1001;
+    margin-left: 15px;
+    display: flex; /* アイコンを中央に配置するために追加 */
+    align-items: center; /* アイコンを中央に配置するために追加 */
+    justify-content: center; /* アイコンを中央に配置するために追加 */
+}
+.hamburger-menu .hamburger-btn { /* ボタン自体のスタイルを調整 */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.hamburger-menu .fas.fa-bars { /* モバイルハンバーガーアイコンにサイズと色を適用 */
+    font-size: 24px; /* アイコンのサイズ */
+    color: #333; /* アイコンの色 */
+    display: block; /* 余分なスペースをなくす */
+}
+/* スクロール時に表示されるフローティングハンバーガーメニュー (PC用) */
+.floating-hamburger {
+    position: fixed; /* 位置を固定 */
+    bottom: 140px;    /* 下からの位置 */
+    right: 80px;     /* 右からの位置 */
+    width: 100px;     /* ボタン全体の幅 */
+    height: 100px;    /* ボタン全体の高さ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1010;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.floating-hamburger.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+/* フローティングハンバーガー内のアイコンを画像に変更 */
+.floating-hamburger img {
+    width: 100px; /* 画像のサイズ */
+    height: 100px; /* 画像のサイズ */
+    display: block;
+}
+/* ヘッダーナビゲーション (モバイル/ハンバーガーメニュー用) */
+.header-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 275px;
+    background-color: rgba(255, 255, 255, 0.98);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 1002;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    line-height: 1.5;
+}
+.header-nav.active {
+    right: 0;
+}
+.header-nav ul {
+    padding: 0;
+}
+.header-nav li {
+    border-bottom: 1px solid #eee;
+}
+.header-nav li:last-child {
+    border-bottom: none;
+}
+.header-nav a {
+    display: block;
+    padding: 15px 10px;
+    color: #333;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.header-nav a:hover {
+    background-color: #f0f0f0;
+}
+/* アコーディオンメニュー（モバイルナビ内） */
+.accordion-menu {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.accordion-menu .arrow {
+    transition: transform 0.3s ease;
+    font-size: 12px;
+    margin-left: 5px;
+}
+.accordion-menu.active .arrow {
+    transform: rotate(180deg);
+}
+.accordion-content {
+    display: none;
+    padding-left: 15px;
+    background-color: #f8f8f8;
+    line-height: 1.5;
+}
+.accordion-content li {
+    border-bottom: none;
+}
+.accordion-content li a {
+    padding: 10px 10px;
+    font-size: 14px;
+}
+/* メインコンテンツ */
+main {
+    flex: 1;
+}
+/* ヒーローセクション */
+.main-container {
+    position: relative; /* h1 の position: absolute の基準 */
+    width: 100%; /* 親要素の幅に合わせる */
+    height: 600px; /* PCでの画像の表示領域の高さ。必要に応じて調整してください */
+    overflow: hidden; /* この要素からはみ出す画像を隠す */
+}
+.main-container img {
+    width: 100%; /* 親要素 (.main-container) の幅いっぱいに広がる */
+    height: 100%; /* 親要素 (.main-container) の高さいっぱいに広がる */
+    object-fit: cover; /* 画像のアスペクト比を保ちつつ、親要素を完全に覆うように拡大・縮小。
+                          はみ出た部分は overflow: hidden; で隠れる。 */
+    object-position: center; /* 画像の中心が、表示領域の中心に来るように配置 */
+}
+.main-container h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 中央配置 */
+    max-width: 1200px;
+    font-size: 2.5rem; /* PCでの基準フォントサイズ。適宜調整してください */
+    letter-spacing: 0.08em;
+    margin: 0 auto;
+    padding: 16px; /* PCでのパディング。適宜調整してください */
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-shadow: 1px 1px 2px rgba(255, 0, 0, 0.7);
+    line-height: 1.3;
+}
+#main-title .main-comment p {
+    font-family: "Zen Old Mincho", serif;
+    max-width: 1200px;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    line-height: 2;
+    padding: 20px 10%;
+    margin: 40px auto 0;
+}
+#main-title .main-comment span {
+    background:linear-gradient(transparent 0%, #f8d3eb 100%);
+}
+/* コンテンツエリア */
+.title {
+    position: relative; /* 必要に応じて */
+    max-width: 1200px; /* コンテンツの幅 */
+    min-height: 80px; /* アイコンの高さやh2の行の高さに合わせて調整 */
+    background-image: url('../img/icon.png');
+    background-repeat: no-repeat; /* アイコンが繰り返されないように */
+    background-size: 45px; /* アイコンのサイズ */
+    background-position: 10px 10px; /* 左から20px、垂直方向中央に配置 */
+    display: flex; /* h2をフレックスアイテムとして扱いたい場合 */
+    align-items: center; /* h2を垂直方向に中央揃え */
+}
+.title h2 {
+    font-size: 28px;
+    color: #d63384;
+    letter-spacing: 0.08em;
+    border-bottom: 2px solid #8bc34a;
+    padding-left: 40px; /* アイコンの幅(45px) + スペース */
+    padding-right: 20px; /* 右側の余白 */
+    padding-top: 10px; /* 上のパディング */
+    padding-bottom: 5px; /* 下のボーダーとの間隔も考慮 */
+    margin-bottom: 40px;
+}
+.wrapper {
+    margin: 80px 0 20px;
+}
+/* Main Container for the entire game UI diagram */
+/* ゲーム情報セクション（基本ルールなど） */
+.game-info {
+    background-color: #fff9c4; /* クリーム色 */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.game-info h2 {
+    color: #d32f2f; /* 赤系のタイトル色 */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffccbc; /* 下線 */
+    padding-bottom: 5px;
+}
+
+.game-info p {
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* ゲームコンテナ */
+.game-container {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 中央揃え */
+    padding: 20px;
+    background-color: #ffffff; /* ゲームエリアの背景を白に */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* スコア表示のために必要 */
+}
+
+/* スコア、残り時間、最高スコア/コンボを格納する行 */
+.game-stats-row {
+    display: flex; /* フレックスボックスを適用 */
+    justify-content: space-between; /* 要素間に均等なスペース */
+    align-items: flex-start; /* 上揃え */
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    margin-bottom: 10px; /* 下にスペース */
+    flex-wrap: wrap; /* 小さい画面で折り返す */
+}
+
+/* スコア表示と残り時間、最高スコア/コンボ */
+.score-container,
+.timer,
+.high-score-display {
+    background-color: #90caf9; /* 青系の背景 */
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* margin-bottom: 20px; /* 親でflexboxにしたので個別のmargin-bottomは不要に */ 
+    flex-grow: 1; /* 利用可能なスペースを均等に占める */
+    margin: 0 5px; /* 各要素間のマージン */
+    min-width: 150px; /* 最小幅を設定して小さくなりすぎないように */
+}
+
+/* 残り時間は、ゲーム開始時にスコア表示の下に出てくる想定なので、最初は非表示 */
+.timer {
+    display: none; /* JavaScriptで表示を切り替える */
+    background-color: #b39ddb; /* 紫系の色 */
+}
+
+.high-score-display {
+    /* high-score-displayは最高スコアと最高コンボをまとめているので、個別調整 */
+    padding: 5px; /* 上下のパディングを少し小さく */
+    background-color: #90caf9; /* 青系の背景を維持 */
+}
+
+.high-score-display div {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.high-score-value {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/* コンボ表示 */
+.combo-count {
+    background-color: #ffca28; /* 黄色 */
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: none; /* JavaScriptでコンボ発生時に表示 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* ゲームボード */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 70px); /* マスのサイズを調整 */
+    grid-template-rows: repeat(6, 70px); /* マスのサイズを調整 */
+    gap: 5px; /* マス間の隙間 */
+    background-color: #ffccbc; /* ボードの背景色 */
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content; /* 内容に合わせた幅に */
+    margin: 0 auto; /* 中央寄せ */
+    position: relative; /* 絶対配置の要素の基準に */
+}
+
+.game-cell { /* 各マス目のスタイル */
+    width: 70px; /* マスの幅 */
+    height: 70px; /* マスの高さ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe0b2; /* マス目自体の背景色 */
+    border: 1px solid #ffab91; /* マス目の枠線 */
+    border-radius: 5px; /* マス目の角を丸く */
+    font-size: 3em; /* 絵文字のサイズ */
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease;
+}
+
+.game-cell.selected { /* 選択されたマス目 */
+    border: 3px solid #64b5f6; /* 青色の枠線 */
+    transform: scale(1.05);
+}
+
+.game-cell:hover {
+    background-color: #ffab91; /* ホバー時の背景色 */
+}
+
+/* コントロールボタン群 */
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px; /* BGMコントロールとの間隔 */
+}
+
+.controls button {
+    padding: 12px 25px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#start-btn {
+    background-color: #ff8a80; /* 赤系 */
+}
+
+#stop-btn {
+    background-color: #ffab91; /* オレンジ系 */
+}
+
+#reset-btn {
+    background-color: #ce93d8; /* 紫系 */
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* BGMコントロール */
+.bgm-controls {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff9c4; /* クリーム色 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.bgm-controls label {
+    font-size: 1.1em;
+    margin-right: 10px;
+    color: #555;
+}
+
+.bgm-controls input[type="file"] {
+    display: none; /* デフォルトのファイル選択ボタンを非表示 */
+}
+
+.bgm-controls #bgm-file + label { /* inputの直後のlabelをスタイリング */
+    background-color: #f0f4c3; /* ファイル選択ボタンの背景色 */
+    color: #616161; /* 文字色 */
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #e6ee9c;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    font-size: 1em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.bgm-controls #bgm-file + label:hover {
+    background-color: #e0e6b1;
+}
+
+.bgm-controls button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#select-bgm-btn {
+    background-color: #bbe6fc; /* 緑系 */
+}
+#play-bgm-btn {
+    background-color: #a5d6a7; /* 緑系 */
+}
+
+#pause-bgm-btn {
+    background-color: #ffab91; /* オレンジ系 */
+}
+
+#stop-bgm-btn {
+    background-color: #ef9a9a; /* 赤系 */
+}
+
+.bgm-controls button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ゲームオーバー画面 */
+.game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none; /* 初期状態では非表示 */
+}
+
+.game-over-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.game-over-content h2 {
+    color: #d32f2f;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.game-over-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+#play-again-btn {
+    background-color: #66bb6a; /* 緑系 */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#play-again-btn:hover {
+    background-color: #5cb85c;
+}
+
+
+/* フッター */
+.footer-wrapper {
+    background-color: #dafac8;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    margin-top: 120px;
+}
+.footer-content {
+    text-align: center;
+}
+.footer-logo img {
+    height: 100px;
+    width: auto;
+}
+/* ソーシャルメディアリンク */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color: #dafac8;
+    color: #333;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.social-links a:hover {
+    background-color: #87CEEB;
+    color: white;
+    transform: translateY(-3px);
+}
+.copyright {
+    text-align: center;
+    padding: 16px 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    margin: 0;
+}
+/* タブレット表示の設定（1024px以下） */
+@media (max-width: 1024px) {
+    .header-container {
+        margin: 15px 0;
+    }
+    .logo {
+        width: 50px;
+    }
+    .gnavi {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex; /* flexboxでアイコン配置を中央に */
+        margin-left: auto;
+    }
+    .floating-hamburger {
+        display: none; /* モバイルでは非表示 */
+    }
+    main {
+        margin-top: 80px;
+    }
+    #main-title .maining {
+        background-image: url(../img/index-hero.png);
+        background-size: cover;
+        background-position: 7% 50%;
+        height: 70vh; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+    #main-title .main-title {
+        max-width: 1200px;
+        color: white;
+        text-align: center;
+        padding: 0 4%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        text-shadow: 1px 1px 2px rgba(255, 0, 0, 0.7);
+        margin: 200px auto 0;
+        line-height: 1.5;
+    }
+    #main-title .main-title h1 {
+        max-width: 1200px;
+        font-size: 2.6rem;
+        margin: 0 auto;
+    }
+    #main-title .main-comment p {
+        max-width: 1200px;
+        font-size: 1.2rem;
+        padding: 20px 4%;
+        margin: 0 auto;
+    }
+}
+/* モバイル表示の設定（767px以下） */
+@media (max-width: 767px) {
+    .header-container {
+        margin: 10px 0;
+    }
+    .logo {
+        width: 45px;
+    }
+    .header-nav {
+        width: 80%;
+    }
+    main {
+        margin-top: 70px;
+    }
+    .main-container {
+        height: 300px; /* モバイルでの画像の表示領域の高さ。PCより短くすることが多い */
+        /* overflow: hidden; はPC側で設定済みなので不要 */
+    }
+    .main-container img {
+        /* width: 100%; と height: 100%; はPC側で設定済みなので変更なければ不要 */
+        /* object-fit: cover; もPC側で設定済みなので変更なければ不要 */
+
+        /* ★★ ここでモバイルで表示したい画像の部分を調整します ★★ */
+        /* 例1: 画像の上部を表示したい場合 */
+
+        /* 例2: 画像の下部を表示したい場合 */
+        /* object-position: bottom; */
+
+        /* 例3: 画像の左上を表示したい場合 */
+        /* object-position: left top; */
+
+        /* 例4: 画像の特定の位置（例: x軸50%, y軸20%）を表示したい場合 */
+        /* object-position: 50% 20%; */
+        object-position: 55% 50%;
+    }
+
+    /* モバイルでの h1 のスタイル調整 */
+    .main-container h1 {
+        font-size: 1.2rem; /* モバイルでの文字サイズを小さく。適宜調整してください */
+        padding: 12px; /* モバイルでのパディング調整。適宜調整してください */
+        /* top, left, transform は親要素の高さが変わっても中央を維持するので、変更不要 */
+    }
+    #main-title .main-comment p {
+        font-size: 1rem;
+        padding: 20px 4%;
+        text-align: center;
+    }
+}
