@@ -57,24 +57,23 @@
 ## 📂 プロジェクト構成
 
 このリポジトリは、以下の構成になっています。
+
 / (ルートディレクトリ)
-├── index.html # ポートフォリオサイト（トップページ）<br>
-├── css/ # ポートフォリオサイト用CSS<br>
-│    └── style.css<br>
-├── img/ # ポートフォリオサイト用画像<br>
-│    ├── logo.png<br>
-│    ├── image_main.webp<br>
-│    └── ... (その他)<br>
-├── js/ # ポートフォリオサイト用JavaScript<br>
-│    └── script.js<br>
-└── fuwamoco/ # Fuwamocoプロジェクト専用エリア<br>
-├── index.html # Fuwamoco トップページ<br>
-├── company.html<br>
-├── cafe.html<br>
-├── (その他HTMLファイル...)<br>
-├── css/<br>
-├── img/<br>
-└── JavaScript/<br>
+├── index.html # ポートフォリオサイト（トップページ）
+├── css/ # ポートフォリオサイト用CSS
+│ └── style.css
+├── img/ # ポートフォリオサイト用画像
+│ ├── logo.png
+│ └── (その他)
+├── js/ # ポートフォリオサイト用JavaScript
+│ └── script.js
+└── fuwamoco/ # Fuwamocoプロジェクト専用エリア
+├── index.html # Fuwamoco トップページ
+├── company.html
+├── (その他HTMLファイル...)
+├── css/
+├── img/
+└── JavaScript/
 
 ---
 
