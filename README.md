@@ -58,22 +58,22 @@
 
 このリポジトリは、以下の構成になっています。
 
-/ (ルートディレクトリ)
-├── index.html # ポートフォリオサイト（トップページ）
-├── css/ # ポートフォリオサイト用CSS
-│ └── style.css
-├── img/ # ポートフォリオサイト用画像
-│ ├── logo.png
-│ └── (その他)
-├── js/ # ポートフォリオサイト用JavaScript
-│ └── script.js
-└── fuwamoco/ # Fuwamocoプロジェクト専用エリア
-├── index.html # Fuwamoco トップページ
-├── company.html
-├── (その他HTMLファイル...)
-├── css/
-├── img/
-└── JavaScript/
+/ (ルートディレクトリ)<br>
+├── index.html # ポートフォリオサイト（トップページ）<br>
+├── css/ # ポートフォリオサイト用CSS<br>
+│ └── style.css<br>
+├── img/ # ポートフォリオサイト用画像<br>
+│ ├── logo.png<br>
+│ └── (その他)<br>
+├── js/ # ポートフォリオサイト用JavaScript<br>
+│ └── script.js<br>
+└── fuwamoco/ # Fuwamocoプロジェクト専用エリア<br>
+├── index.html # Fuwamoco トップページ<br>
+├── company.html<br>
+├── (その他HTMLファイル...)<br>
+├── css/<br>
+├── img/<br>
+└── JavaScript/<br>
 
 ---
 
@@ -81,12 +81,12 @@
 
 ご興味をお持ちいただけましたら、以下の方法でお気軽にご連絡ください。
 
+*   **X (旧Twitter):**
+    *   **[@Chroma0224](https://x.com/Chroma0224)**
 *   **YouTube:**
-    *   [ChromaのPC学習部屋]([ここにPC学習部屋のURLを記入])
-    *   [Chromaの自由部屋]([ここに自由部屋のURLを記入])
-*   **ポートフォリオサイト:**
-    *   [お問い合わせフォーム](https://chromachannel.online/#contact)
+    *   **[ChromaのPC学習部屋](https://www.youtube.com/@chroma0224)**
+    *   **[Chromaの自由部屋](https://www.youtube.com/@chroma1975)**
+*   **メール:**
+    *   **[shuro.mirai.0224@gmail.com](mailto:shuro.mirai.0224@gmail.com)**
 
 ---
-
-© 2025 Norihisa Yamamoto (motty1975). All rights reserved.
