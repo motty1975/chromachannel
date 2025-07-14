@@ -120,9 +120,8 @@
                                 <h3>NPO法人「Fuwamoco PROJECT」公式サイト</h3>
                                 <p>うさぎの保護活動を行う架空のNPO法人の公式サイトを、企画・デザイン・実装まで一貫して制作。JavaScript製の3マッチパズルも搭載。</p>
                                 <div class="portfolio-links">
-                                    <a href="fuwamoco/index.html" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <button onclick="window.open('fuwamoco/index.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-desktop"></i> Webサイトを見る</button>
                                         <i class="fas fa-desktop"></i> Webサイトを見る
-                                    </a>
                                 </div>
                                 <div class="portfolio-tags">
                                     <span class="tag">Webサイト制作</span><span class="tag">企画・デザイン</span><span class="tag">ゲーム開発</span>
@@ -157,25 +156,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- 施設紹介動画 -->
-                    <div class="portfolio-item fade-in" data-category="video">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image">
-                                <img src="img/Facility_introduction_main.webp" alt="施設紹介動画">
-                            </div>
-                            <div class="portfolio-content">
-                                <h3>施設紹介ゆっくり解説動画</h3>
-                                <p>就労支援B型事業所の魅力を、キャラクターの対話形式で分かりやすく解説。企画・台本(GPTs)・音声・編集まで一貫して制作。</p>
-                                <div class="portfolio-links">
-                                    <a href="https://no-lang.com/video/b0ac821e-17fc-49ce-8577-acadfa9c2ce0" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fas fa-play-circle"></i> 就労支援B型事業所とは</a>
-                                </div>
-                                <div class="portfolio-tags">
-                                    <span class="tag">動画制作</span><span class="tag">企画</span><span class="tag">YMM4</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 
                     <!-- AI生成オリジナル楽曲 -->
                     <div class="portfolio-item fade-in" data-category="video">
@@ -187,9 +167,7 @@
                                 <h3>AI生成オリジナル楽曲</h3>
                                 <p>Suno AIを活用して作詞・作曲した事業所のテーマソング。Vrewを使い、AI生成画像を組み合わせたリリックビデオも制作。</p>
                                 <div class="portfolio-links">
-                                    <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" class="video-link">
-                                        <i class="fas fa-music"></i> 楽曲を聴く (Chromaの自由部屋)
-                                    </a>
+                                    <button onclick="window.open('https://www.youtube.com/@chroma1975', '_blank')" class="portfolio-action-btn"><i class="fas fa-music"></i> 楽曲を聴く</button>
                                 </div>
                                 <div class="portfolio-tags">
                                     <span class="tag">音楽制作</span><span class="tag">Suno AI</span><span class="tag">Vrew</span>
@@ -198,7 +176,77 @@
                         </div>
                     </div>
 
-                    <!-- AI体験アプリ -->
+                    <!-- ===== ここからが、追加する5つの新しいポートフォリオカード ===== -->
+
+                    <!--YouTubeショート動画シナリオ -->
+                    <div class="portfolio-item fade-in" data-category="video education">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="img/short_scenario_main.webp" alt="YouTubeショート動画シナリオ">
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>YouTubeショート動画シナリオ制作</h3>
+                                <p>教育・解説系のYouTubeショート動画向けに、視聴者の興味を引きつけ、最後まで見てもらえる構成のシナリオをGPTsを活用して制作。</p>
+                                <div class="portfolio-links">
+                                    <button onclick="window.open('https://www.youtube.com/@chroma1975', '_blank')" class="portfolio-action-btn"><i class="fas fa-music"></i> 楽曲を聴く</button>
+                                </div>
+                                <div class="portfolio-tags">
+                                    <span class="tag">シナリオ制作</span>
+                                    <span class="tag">GPTs</span>
+                                    <span class="tag">YouTube</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 学習動画 -->
+                    <div class="portfolio-item fade-in" data-category="education video">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <!-- ここに、PC学習部屋のチャンネルアートや、代表的な動画のサムネイルを配置 -->
+                                <img src="img/learning_video_main.webp" alt="学習動画チャンネル">
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>YouTubeチャンネル「ChromaのPC学習部屋」</h3>
+                                <p>AIやPCの難しいスキルを、初心者でも楽しく、そして挫折せずに学べることを目指した動画コンテンツを配信しています。</p>
+                                <div class="portfolio-links">
+                                        <button onclick="window.open('https://www.youtube.com/@chroma1975', '_blank')" class="portfolio-action-btn"><i class="fab fa-youtube"></i> チャンネルを見る</button>
+                                        <i class="fab fa-youtube"></i> チャンネルを見る
+                                </div>
+                                <div class="portfolio-tags">
+                                    <span class="tag">教育コンテンツ</span>
+                                    <span class="tag">動画制作</span>
+                                    <span class="tag">YouTube</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 学習アプリ -->
+                    <div class="portfolio-item fade-in" data-category="education video">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <!-- ここに、学習アプリのコンセプト画像や、UIデザイン案を配置 -->
+                                <img src="img/learning_app_main.webp" alt="学習アプリ企画">
+                            </div>
+                                <div class="portfolio-content">
+                                    <h3>インタラクティブ学習アプリ（企画・設計）</h3>
+                                    <p>特定のスキル（例: プロンプト基礎）を、クイズや実践形式で学べるWebアプリケーションの概念設計とUI/UXデザインを行いました。</p>
+                                    <div class="portfolio-links">
+                                        <!-- ここに、企画書(PDF)や、Figmaのデザインデータなどへのリンクを設定 -->
+                                                    <button onclick="window.open('https://www.youtube.com/@chroma1975', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-powerpoint"></i> アプリを体験する</button>
+                                            <i class="fas fa-file-powerpoint"></i> 企画概要を見る
+                                    </div>
+                                    <div class="portfolio-tags">
+                                        <span class="tag">アプリ設計</span>
+                                        <span class="tag">教育</span>
+                                        <span class="tag">UI/UX</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <!-- 体験アプリ-->
                     <div class="portfolio-item fade-in" data-category="education">
                         <div class="portfolio-card">
                             <div class="portfolio-image">
@@ -208,16 +256,64 @@
                                 <h3>AIと友達になろう！体験アプリ</h3>
                                 <p>PC操作に不慣れな方でも、クリック操作だけでAIの面白さを体験できるWebアプリケーション。HTML/CSS/JSで開発。</p>
                                 <div class="portfolio-links">
-                                    <a href="apps/ai-friend/index.html" target="_blank" rel="noopener noreferrer" class="video-link"><i class="fas fa-gamepad"></i> アプリを体験する</a>
+                                    <button onclick="window.open('https://www.youtube.com/@chroma1975', '_blank')" class="portfolio-action-btn"><i class="fas fa-gamepad"></i> アプリを体験する</button>
                                 </div>
                                 <div class="portfolio-tags">
-                                    <span class="tag">教育</span><span class="tag">Webアプリ</span><span class="tag">JavaScript</span>
+                                    <span class="tag">Webアプリ</span>
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">教育</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- タスク管理アプリ（※既存の適応型システム） -->
+                    <div class="portfolio-item fade-in" data-category="welfare">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                            <img src="img/task_app_main.webp" alt="タスク管理アプリ">
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>適応型タスク管理システム</h3>
+                                <p>利用者のスキルレベルや体調に応じて、タスクの難易度や量をAIが提案するシステムの概念設計とプロトタイプ開発。</p>
+                                <div class="portfolio-links">
+                                    <button onclick="window.open('https://www.youtube.com/@chroma1975', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 企画書を見る (PDF)</button>
+                                </div>
+                                <div class="portfolio-tags">
+                                    <span class="tag">システム設計</span>
+                                    <span class="tag">UI/UX</span>
+                                    <span class="tag">福祉DX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- プロンプト集 -->
+                    <div class="portfolio-item fade-in" data-category="illustration education">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <!-- ここに、プロンプトを象徴するような、魔法の書や設計図風の画像を配置 -->
+                                <img src="img/prompt_engineering_main.webp" alt="プロンプトエンジニアリング">
+                            </div>
+                            <div class="portfolio-content">
+                                <h3>AIイラスト生成プロンプト集</h3>
+                                <p>高品質なイラストを安定して生成するために、私が実際に使用・改良を重ねているプロンプトのコレクションです。思考の過程もご覧いただけます。</p>
+                                <div class="portfolio-links">
+                                    <!-- ここに、GitHub GistやNotionなどへのリンクを設定 -->
+                                    <button onclick="window.open('[ここにプロンプト集のURL]', '_blank')" class="portfolio-action-btn">
+                                        <i class="fas fa-book"></i> プロンプト集を見る
+                                    </button>
+                                </div>
+                                <div class="portfolio-tags">
+                                    <span class="tag">プロンプトエンジニアリング</span>
+                                    <span class="tag">ノウハウ</span>
+                                    <span class="tag">Stable Diffusion</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>     
         </section>
 
         <!-- ===== Contact セクション ===== -->
@@ -241,8 +337,8 @@
     <footer>
         <div class="container">
             <div class="footer-social-links">
-                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> PC学習部屋</a>
-                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> 自由部屋</a>
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
