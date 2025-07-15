@@ -46,8 +46,102 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .hero-content { max-width: 800px; z-index: 1; position: relative; }
 .hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); animation: slideInUp 1s ease-out; }
 .hero-subtitle { font-size: clamp(1.1rem, 3vw, 1.4rem); margin-bottom: 40px; opacity: 0.9; animation: slideInUp 1s ease-out 0.3s both; }
+/* === ヒーローセクション内の、テスト用スピーカーボタンのスタイル === */
+.hero-speech-button-wrapper {
+    margin-bottom: 40px; /*下の「作品を見る」ボタンとの間隔*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ヒーローセクション内のボタンは、白を基調としたデザインに */
+.hero .speech-play-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 60px;  /* 少し大きめに */
+    height: 60px;
+    font-size: 24px;
+}
+
+.hero .speech-play-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ヒーローセクション内で再生中のスタイル */
+.hero .speech-play-btn.playing {
+    background: white;
+    color: var(--primary-color-start);
+    border-color: white;
+}
+
+/* 「（音声読み上げテスト）」という文字のスタイル */
+.hero-speech-button-wrapper span {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
 .cta-button { display: inline-block; padding: 15px 40px; background: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; border: 2px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease; backdrop-filter: blur(10px); animation: slideInUp 1s ease-out 0.6s both; }
 .cta-button:hover { background: rgba(255, 255, 255, 0.3); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+
+/* === About Me セクション (新レイアウト) === */
+.about { 
+    background: var(--bg-white); 
+}
+
+.about-card {
+    display: grid;
+    /* 左右の列の比率を 1対1.5 に設定 */
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 50px; /* 左右の間隔 */
+    align-items: start; /* 上端を揃える */
+    background: var(--bg-white);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.about-card-left {
+    text-align: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 300px; /* 写真の最大幅 */
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.profile-audio-player .audio-caption {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.profile-audio-player audio {
+    width: 100%;
+}
+
+.about-card-right {
+    font-size: 1.1rem;
+}
+
+/* === レスポンシブ対応 (スマホ表示) === */
+@media (max-width: 900px) {
+    .about-card {
+        grid-template-columns: 1fr; /* 1列（縦並び）にする */
+        gap: 30px;
+        padding: 30px;
+    }
+    .profile-image {
+        max-width: 200px; /* スマホでは写真を少し小さく */
+    }
+}
+
 @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
 /* === 共通セクションスタイル === */
@@ -86,11 +180,9 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .portfolio-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
 .portfolio-content h3 { margin-bottom: 10px; font-size: 1.2rem; }
 .portfolio-content p { color: var(--text-light); margin-bottom: 15px; flex-grow: 1; }
-.portfolio-links { display: flex; flex-direction: column; gap: 10px; }
-.portfolio-links {
-    margin-top: 15px;
-}
 
+
+/* === ポートフォリオカード内の、統一ボタンスタイル === */
 .portfolio-action-btn,
 .gallery-toggle-btn {
     background: transparent;
@@ -105,8 +197,8 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
-    font-family: inherit; /* 親要素のフォントを継承 */
-    white-space: nowrap; /* テキストが折り返さないように */
+    font-family: inherit;
+    margin-top: 15px; /* ボタンと上の要素との間隔 */
 }
 
 .portfolio-action-btn:hover,
@@ -115,16 +207,13 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     color: white;
     border-color: transparent;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .portfolio-action-btn i,
 .gallery-toggle-btn i {
     font-size: 1em; /* アイコンサイズを文字に合わせる */
 }
-.video-link { color: var(--primary-color-start); text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
-.video-link:hover { color: var(--primary-color-end); }
-.video-link i { margin-right: 8px; }
+
 .portfolio-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 15px; }
 .tag { background: linear-gradient(45deg, #e0e0e0, #f5f5f5); color: #555; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 500; }
 
@@ -197,10 +286,47 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .contact .section-title { color: white; background: none; -webkit-text-fill-color: white; }
 .contact-info { margin-bottom: 40px; }
 .contact-info p { font-size: 1.1rem; margin-bottom: 10px; opacity: 0.9; }
-.contact-email-wrapper { margin-top: 40px; }
+
 .contact-email { display: inline-block; padding: 15px 30px; background: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; border-radius: 50px; font-size: 1.2rem; font-weight: 500; border: 2px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease; backdrop-filter: blur(10px); }
 .contact-email:hover { background: rgba(255, 255, 255, 0.3); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
 .contact-email i { margin-right: 10px; }
+/* === Contact セクションの追加スタイル === */
+/* === Contact セクションのスタイル (最終修正版) === */
+.contact .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info {
+    text-align: center; /* テキストも中央揃えに */
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-supplement {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+.contact-audio-player {
+    margin: 30px 0;
+    /* ▼▼▼ ここが、最も重要な修正です ▼▼▼ */
+    width: 100%;          /* 親要素の幅いっぱいに広がる許可を与える */
+    max-width: 350px;     /* ただし、最大幅は350pxまでとする */
+    /* ▲▲▲ ここまで ▲▲▲ */
+}
+
+.contact-audio-player audio {
+    width: 100%; /* 親要素（.contact-audio-player）の幅に合わせる */
+}
+
+.contact-email-wrapper {
+    margin-top: 10px; /* 音声プレイヤーとの間隔を調整 */
+}
 
 /* === フッター === */
 footer { background: #2c3e50; color: white; text-align: center; padding: 40px 20px; }
