@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>適応型タスク管理ツール</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>適応型タスク管理ツール</h1>
+            <p>自分のペースに合わせてタスクを管理しよう！</p>
+        </header>
+
+        <main>
+            <section class="task-input-section">
+                <h2>新しいタスクを追加</h2>
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="タスクの内容を入力" required>
+                    <select id="difficulty-select">
+                        <option value="easy">かんたん</option>
+                        <option value="normal" selected>ふつう</option>
+                        <option value="hard">むずかしい</option>
+                    </select>
+                    <button type="submit">追加</button>
+                </form>
+            </section>
+
+            <section class="task-display-section">
+                <h2>タスクリスト</h2>
+                <div class="filter-controls">
+                    <label><input type="radio" name="filter" value="all" checked> すべて</label>
+                    <label><input type="radio" name="filter" value="active"> 未完了</label>
+                    <label><input type="radio" name="filter" value="completed"> 完了</label>
+                </div>
+                <div class="progress-container">
+                    <span>進捗：</span>
+                    <progress id="progress-bar" value="0" max="100"></progress>
+                    <span id="progress-text">0%</span>
+                </div>
+                <ul id="task-list">
+                    <!-- タスクはここにJavaScriptで追加されます -->
+                </ul>
+                <div id="feedback-message" class="feedback-message"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="JV/script.js"></script>
+</body>
+</html>

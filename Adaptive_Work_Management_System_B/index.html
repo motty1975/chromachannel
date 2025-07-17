@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>適応型作業管理システム</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- アイコンライブラリ (Lucide) を読み込み -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ヘッダー -->
+        <header>
+            <div class="header-top">
+                <h1 class="main-title">
+                    <i data-lucide="brain"></i>
+                    適応型作業管理システム
+                </h1>
+                <div class="view-switcher">
+                    <button id="btn-view-tasks" class="view-btn active">タスク管理</button>
+                    <button id="btn-view-analytics" class="view-btn">
+                        <i data-lucide="bar-chart-3"></i>
+                        分析
+                    </button>
+                    <!-- ▼▼▼ ここに設定ボタンを追加 ▼▼▼ -->
+                    <button id="settings-btn" class="view-btn" title="設定">
+                        <i data-lucide="settings"></i>
+                    </button>
+                    <!-- ▲▲▲ ここまで ▲▲▲ -->
+                </div>
+            </div>
+            
+            <!-- 最適化状態表示 -->
+            <div id="optimization-banner" class="optimization-banner">
+                <i data-lucide="zap"></i>
+                <span id="optimization-suggestion"></span>
+            </div>
+        </header>
+
+        <main>
+            <!-- タスク管理ビュー -->
+            <div id="tasks-view">
+                <!-- タスク追加フォーム -->
+                <div class="card add-task-card">
+                    <h2 class="card-title">
+                        <i data-lucide="plus"></i>
+                        新しいタスクを追加
+                    </h2>
+                    <form id="add-task-form" class="add-task-form">
+                        <input type="text" id="new-task-title" placeholder="タスク名" required>
+                        <input type="text" id="new-task-desc" placeholder="詳細説明">
+                        <button type="submit" class="btn btn-primary">AIで最適化して追加</button>
+                    </form>
+                </div>
+
+                <!-- タスクリストエリア -->
+                <div class="task-columns">
+                    <div class="task-column">
+                        <h3>待機中のタスク</h3>
+                        <div id="pending-tasks-list" class="task-list"></div>
+                    </div>
+                    <div class="task-column">
+                        <h3>進行中のタスク</h3>
+                        <div id="inprogress-tasks-list" class="task-list"></div>
+                    </div>
+                    <div class="task-column">
+                        <h3>完了したタスク</h3>
+                        <div id="completed-tasks-list" class="task-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分析ビュー (初期状態では非表示) -->
+            <div id="analytics-view" class="hidden">
+                <div class="analytics-grid">
+                    <div class="card">
+                        <h3 class="card-title"><i data-lucide="user"></i>ユーザープロファイル</h3>
+                        <div class="profile-list">
+                            <div><span>スキルレベル:</span> <strong id="profile-skill"></strong></div>
+                            <div><span>完了率:</span> <strong id="profile-completion"></strong></div>
+                            <div><span>平均作業時間:</span> <strong id="profile-avg-time"></strong></div>
+                            <div><span>最適な作業時間:</span> <strong id="profile-best-hours"></strong></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">タスク統計</h3>
+                        <div class="profile-list">
+                            <div><span>総タスク数:</span> <strong id="stats-total"></strong></div>
+                            <div><span>完了済み:</span> <strong id="stats-completed"></strong></div>
+                            <div><span>進行中:</span> <strong id="stats-inprogress"></strong></div>
+                            <div><span>待機中:</span> <strong id="stats-pending"></strong></div>
+                        </div>
+                    </div>
+                    <div class="card analytics-full-width">
+                        <h3 class="card-title">AI最適化の提案</h3>
+                        <div class="ai-suggestions">
+                            <div class="suggestion-box info">
+                                <h4>作業パターン分析</h4>
+                                <p id="suggestion-pattern"></p>
+                            </div>
+                            <div class="suggestion-box success">
+                                <h4>推奨改善点</h4>
+                                <p id="suggestion-improvement"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ▼▼▼ ここから設定モーダルを追加 ▼▼▼ -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>ユーザープロファイル設定</h2>
+                <button id="close-modal-btn" class="close-btn">×</button>
+            </div>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="skill-level-select">スキルレベル</label>
+                    <select id="skill-level-select">
+                        <option value="beginner">初心者 (Beginner)</option>
+                        <option value="intermediate">中級者 (Intermediate)</option>
+                        <option value="advanced">上級者 (Advanced)</option>
+                    </select>
+                    <small>あなたの作業習熟度を設定します。</small>
+                </div>
+                <div class="form-group">
+                    <label for="avg-time-input">平均作業時間（分）</label>
+                    <input type="number" id="avg-time-input" min="5" value="45">
+                    <small>1つのタスクにかかるおおよその時間。</small>
+                </div>
+                <div class="form-group">
+                    <label for="best-hours-input">最適な作業時間帯</label>
+                    <input type="text" id="best-hours-input" placeholder="例: 9, 10, 14, 15">
+                    <small>集中しやすい時間帯をカンマ区切りで入力 (0-23時)。</small>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ▲▲▲ ここまで ▲▲▲ -->
+
+    <script src="JV/script.js"></script>
+    <script>
+        // Lucideアイコンをページに適用
+        lucide.createIcons();
+    </script>
+</body>
+</html>
