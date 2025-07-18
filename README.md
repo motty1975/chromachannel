@@ -87,6 +87,6 @@
     *   **[ChromaのPC学習部屋](https://www.youtube.com/@chroma0224)**
     *   **[Chromaの自由部屋](https://www.youtube.com/@chroma1975)**
 *   **メール:**
-    *   **[shuro.mirai.0224@gmail.com](mailto:from.aito.the.infinity@gmail.com)**
+    *   **[from.aito.the.infinity@gmail.com](mailto:from.aito.the.infinity@gmail.com)**
 
 ---
