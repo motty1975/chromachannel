@@ -281,6 +281,113 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 #modal-prev { left: 20px; }
 #modal-next { right: 20px; }
 
+.blog {
+    background: var(--bg-light);
+}
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+.blog-card {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    background: var(--bg-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--shadow-dark);
+}
+.blog-image {
+    height: 200px;
+    background: #e0e0e0;
+}
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blog-content {
+    padding: 25px;
+}
+.blog-date {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+.blog-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+.blog-excerpt {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* === ブログ記事ページ (`blog-post-1.html`) === */
+.blog-article {
+    padding: 120px 0 60px; /* ヘッダーの高さ分、上を空ける */
+    background: var(--bg-white);
+}
+.article-container {
+    max-width: 800px; /* 読みやすいように、文章の幅を狭める */
+    margin: 0 auto;
+}
+.blog-article h1 {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.article-date {
+    color: var(--text-light);
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+.blog-article h2 {
+    font-size: 1.8rem;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color-start);
+}
+.blog-article p {
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+.blog-article strong {
+    color: var(--primary-color-start);
+    font-weight: 600;
+}
+.article-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+.back-to-list-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, var(--primary-color-start), var(--primary-color-end));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.back-to-list-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
 /* === コンタクト === */
 .contact { background: linear-gradient(135deg, var(--primary-color-start) 0%, var(--primary-color-end) 100%); color: white; text-align: center; }
 .contact .section-title { color: white; background: none; -webkit-text-fill-color: white; }
