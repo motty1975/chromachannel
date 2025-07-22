@@ -387,6 +387,44 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     opacity: 0.8;
     transform: translateY(-2px);
 }
+/* テーブルデザイン */
+.article-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 0.95em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.article-container th, 
+.article-container td {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    text-align: left;
+}
+.article-container th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+.article-container tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+.article-container code {
+    background-color: #f0f0f0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+/* リストのスタイル調整 */
+.article-container ul,
+.article-container ol {
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
+.article-container li {
+    margin-bottom: 0.8em;
+}
 
 /* === コンタクト === */
 .contact { background: linear-gradient(135deg, var(--primary-color-start) 0%, var(--primary-color-end) 100%); color: white; text-align: center; }
