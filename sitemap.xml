@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- トップページ -->
   <url>
-    <loc>https://chromachannel.online/index.html</loc>
-    <lastmod>2025-07-20</lastmod>
+    <loc>https://chromachannel.online/</loc>
+    <lastmod>2025-07-22</lastmod> <!-- 最新のコンテンツ更新日を反映 -->
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <!-- ▼▼▼ このブロックを追記 ▼▼▼ -->
+  <!-- ブログ記事1 -->
   <url>
-    <loc>https://chromachannel.online/blog-post-1.html</loc>
+    <loc>https://chromachannel.online/A-magic-wand-called-AI.html</loc>
     <lastmod>2025-07-20</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq> <!-- yearlyからmonthlyへ変更 -->
     <priority>0.8</priority>
   </url>
-  <!-- ▲▲▲ ここまで ▲▲▲ -->
+
+  <!-- ブログ記事2（追加） -->
+  <url>
+    <loc>https://chromachannel.online/How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html</loc>
+    <lastmod>2025-07-22</lastmod> <!-- 記事の公開日 -->
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>
