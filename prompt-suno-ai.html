@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== ▼▼▼ このページのSEO対策 ▼▼▼ ===== -->
+
+    <title>Suno AIの歌詞＆スタイル生成用 カスタム指示書 | 山本 倫久 ポートフォリオ</title>
+    <meta name="description" content="Suno AIで高品質な楽曲を生成するための、Gemini用カスタム指示書を公開。テーマを伝えるだけで、プロ品質の歌詞と音楽スタイルを簡単に作成できます。">
+
+    <!-- ★★★★★ このページの正式なURLに書き換えてください ★★★★★ -->
+    <link rel="canonical" href="https://chromachannel.online/prompt-suno-ai.html" />
+
+    <!-- ★★★★★ OGP画像のURLは必ず絶対パスで指定してください ★★★★★ -->
+    <meta property="og:title" content="Suno AIの歌詞＆スタイル生成用 カスタム指示書">
+    <meta property="og:description" content="Geminiに貼り付けて使う、高品質な楽曲（歌詞＆スタイル）を生成するためのテンプレートです。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chromachannel.online/prompt-suno-ai.html">
+    <meta property="og:image" content="https://chromachannel.online/img/ogp-prompt-suno.png">
+    <meta property="og:site_name" content="山本 倫久 ポートフォリオ">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Suno AIの高品質な楽曲（歌詞＆スタイル）を生成するためのカスタム指示書",
+      "description": "対話型AI（Geminiなど）に読み込ませることで、簡単な日本語のテーマからSuno AI用の「歌詞」と「音楽スタイル」を生成させることができるカスタム指示書です。",
+      "author": {
+        "@type": "Person",
+        "name": "山本 倫久",
+        "url": "https://chromachannel.online/"
+      }
+    }
+    </script>
+    
+    <!-- ===== ▲▲▲ ここまで ▲▲▲ ===== -->
+    
+    <!-- サイト共通のCSSやライブラリ -->
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- このページ専用のスタイル（前回と同じものを流用） -->
+    <style>
+        .article-main { padding: 50px 20px; background-color: #f4f7f9; }
+        .article-container { max-width: 860px; margin: 0 auto; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08); }
+        .article-container h1 { font-size: 2.2em !important; font-weight: 700 !important; margin-bottom: 20px !important; line-height: 1.4 !important; color: #1a202c !important; border: none !important; padding: 0 !important; }
+        .article-container p, .article-container .intro-p { font-size: 1.1em !important; color: #4a5568 !important; line-height: 1.8 !important; }
+        .code-block-wrapper { position: relative; margin-top: 20px; }
+        .code-block-wrapper pre { background-color: #2d3748 !important; color: #e2e8f0 !important; padding: 25px !important; border-radius: 8px !important; white-space: pre-wrap !important; word-wrap: break-word !important; font-size: 0.95em !important; line-height: 1.7 !important; border: 1px solid #4a5568 !important; }
+        .code-block-wrapper pre code { font-family: 'Menlo', 'Courier New', Courier, monospace !important; color: inherit !important; background-color: transparent !important; }
+        .code-block-wrapper button#copy-btn { display: inline-block !important; visibility: visible !important; position: absolute !important; top: 12px !important; right: 12px !important; background-color: #4a5568 !important; color: white !important; border: none !important; padding: 8px 12px !important; border-radius: 6px !important; cursor: pointer !important; font-size: 14px !important; transition: background-color 0.2s !important; z-index: 10 !important; }
+        .code-block-wrapper button#copy-btn:hover { background-color: #2d3748 !important; }
+        .code-block-wrapper button#copy-btn.copied { background-color: #38a169 !important; }
+        .article-container .back-link { display: inline-block; margin-top: 40px; text-decoration: none; color: #3182ce; font-weight: bold; font-size: 1.1em; }
+        .example-output { border: 2px dashed #cbd5e0; margin-top: 20px; padding: 20px; border-radius: 8px; }
+        .example-output h3 { font-size: 1.2em; font-weight: bold; color: #2d3748; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="img/chroma_logo.png" alt="Chroma Channel ロゴ">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="article-main">
+        <article class="article-container">
+            <h1>Suno AIの歌詞＆スタイル生成用 カスタム指示書</h1>
+            <p class="intro-p">
+                このページは、対話型AI（Geminiなど）に「プロの作詞家兼音楽プロデューサー」として振る舞ってもらい、Suno AIで使う**「歌詞」**と**「曲のスタイル」**を生成させるための指示書（テンプレート）です。
+            </p>
+
+            <div class="code-block-wrapper">
+                <button id="copy-btn"><i class="far fa-copy"></i> コピー</button>
+                <pre><code id="prompt-code"># 指示書
+
+あなたは、作詞家兼音楽プロデューサーです。
+これから私が日本語で伝える大まかなテーマや感情に基づいて、Suno AIで楽曲を生成するための「歌詞」と「曲のスタイル」を提案してください。
+
+# 提案ルール
+- **歌詞 (Lyrics):**
+    - 構成は「[Verse 1]」「[Chorus]」「[Verse 2]」「[Chorus]」「[Bridge]」「[Chorus]」を基本とします。
+    - テーマに沿った情景や感情が浮かぶような、詩的な表現を心がけてください。
+    - 歌詞は日本語で作成してください。
+- **曲のスタイル (Style of Music):**
+    - 歌詞の雰囲気に最も合う音楽ジャンルやスタイルを英語で提案してください。
+    - 複数の要素を組み合わせることも可能です。（例: "Emotional J-POP Ballad", "Upbeat City Pop with a hint of funk"）
+    - 曲のテンポ（BPM）や使用する楽器のイメージも補足してください。</code></pre>
+            </div>
+            
+            <div class="example-output">
+                <h3><i class="fas fa-lightbulb"></i> このように使います</h3>
+                <p>上記の指示書をAIに貼り付けた後、続けて以下のようなテーマを送信します。</p>
+                <pre><code>**テーマ：** 「都会の雑踏の中、昔の恋人をふと思い出して切なくなる気持ち」</code></pre>
+            </div>
+
+            <a href="index.html#portfolio" class="back-link">← ポートフォリオに戻る</a>
+        </article>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            <p>© 2025 chromachannel. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- サイト共通のJavaScript -->
+    <script src="JavaScript/script.js"></script>
+    <!-- コピーボタン用のJavaScript -->
+    <script>
+        document.getElementById('copy-btn').addEventListener('click', function() {
+            const code = document.getElementById('prompt-code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                this.innerHTML = '<i class="fas fa-check"></i> コピー完了!';
+                this.classList.add('copied');
+                setTimeout(() => {
+                    this.innerHTML = '<i class="far fa-copy"></i> コピー';
+                    this.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('コピーに失敗しました', err);
+                alert('コピーに失敗しました。');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== SEO対策（変更なし） ===== -->
+    <title>Stable Diffusion 高品質プロンプト生成用 カスタム指示書 | 山本 倫久 ポートフォリオ</title>
+    <meta name="description" content="Stable Diffusionで高品質な画像を生成するための、Gemini用カスタム指示書（プロンプト）を公開。これをコピーして、あなただけのAIイラスト用プロンプトを簡単に作成できます。">
+    <link rel="canonical" href="https://chromachannel.online/prompt-stable-diffusion.html" />
+    <meta property="og:title" content="Stable Diffusion 高品質プロンプト生成用 カスタム指示書">
+    <meta property="og:description" content="Geminiに貼り付けて使う、高品質なAIイラスト用プロンプトを生成するためのテンプレートです。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chromachannel.online/prompt-stable-diffusion.html">
+    <meta property="og:image" content="https://chromachannel.online/img/ogp-prompt.png">
+    <meta property="og:site_name" content="山本 倫久 ポートフォリオ">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Stable Diffusionの高品質プロンプトを生成するためのカスタム指示書（テンプレート）",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" }
+    }
+    </script>
+    
+    <!-- サイト共通のCSSやライブラリ -->
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- ===== ▼▼▼ 【最終確定版】このページ専用のデザイン改善CSS ▼▼▼ ===== -->
+    <style>
+        .article-main { padding: 50px 20px; background-color: #f4f7f9; }
+        .article-container { max-width: 860px; margin: 0 auto; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08); }
+        .article-container h1 { font-size: 2.2em !important; font-weight: 700 !important; margin-bottom: 20px !important; line-height: 1.4 !important; color: #1a202c !important; border: none !important; padding: 0 !important; }
+        .article-container p { font-size: 1.1em !important; color: #4a5568 !important; line-height: 1.8 !important; }
+        .code-block-wrapper { position: relative; margin-top: 20px; }
+        .code-block-wrapper pre { background-color: #2d3748 !important; color: #e2e8f0 !important; padding: 25px !important; border-radius: 8px !important; white-space: pre-wrap !important; word-wrap: break-word !important; font-size: 0.95em !important; line-height: 1.7 !important; border: 1px solid #4a5568 !important; }
+        .code-block-wrapper pre code { font-family: 'Menlo', 'Courier New', Courier, monospace !important; color: inherit !important; background-color: transparent !important; }
+        
+        /* ===== ▼▼▼ コピーボタンのスタイルを最優先で適用 ▼▼▼ ===== */
+        .code-block-wrapper button#copy-btn {
+            display: inline-block !important; /* 強制的に表示 */
+            visibility: visible !important; /* 強制的に見えるように */
+            position: absolute !important;
+            top: 12px !important;
+            right: 12px !important;
+            background-color: #4a5568 !important;
+            color: white !important;
+            border: none !important;
+            padding: 8px 12px !important;
+            border-radius: 6px !important;
+            cursor: pointer !important;
+            font-size: 14px !important;
+            transition: background-color 0.2s !important;
+            z-index: 10 !important;
+        }
+        .code-block-wrapper button#copy-btn:hover {
+            background-color: #2d3748 !important;
+        }
+        .code-block-wrapper button#copy-btn.copied {
+            background-color: #38a169 !important;
+        }
+        /* ===== ▲▲▲ ここまで ▲▲▲ ===== */
+
+        .article-container .back-link { display: inline-block; margin-top: 40px; text-decoration: none; color: #3182ce; font-weight: bold; font-size: 1.1em; }
+    </style>
+    <!-- ===== ▲▲▲ ここまで ▲▲▲ ===== -->
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="img/chroma_logo.png" alt="Chroma Channel ロゴ">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="article-main">
+        <article class="article-container">
+            <h1>Stable Diffusion 高品質プロンプト生成用 カスタム指示書</h1>
+            <p>
+                このページは、Stable Diffusionで使うプロンプトそのものではなく、対話型AI（Geminiなど）に「プロのプロンプトエンジニア」として振る舞ってもらうための**指示書（テンプレート）**です。<br>
+                以下のテキストをコピーしてAIに貼り付けることで、簡単な日本語から高品質なプロンプトを生成させることができます。
+            </p>
+
+            <div class="code-block-wrapper">
+                <button id="copy-btn"><i class="far fa-copy"></i> コピー</button>
+                <pre><code id="prompt-code"># 指示書
+
+あなたは、AI画像生成のプロンプトを専門とする「プロンプトエンジニア」です。
+これから私が日本語で伝える簡単なイメージを、高品質なStable Diffusion用のプロンプトに変換してください。
+
+# 変換ルール
+- プロンプトはすべて英語の単語またはフレーズで構成し、カンマ（,）で区切ってください。
+- **ポジティブプロンプト**と**ネガティブプロンプト**の2つのセクションに分けてください。
+- ポジティブプロンプトには、以下の要素を必ず含めてください。
+    1.  **品質向上のおまじない:** (best quality, masterpiece, ultra-detailed, 8k, absurdres) などを最初に必ず入れる。
+    2.  **主題:** 私が指定したメインの被写体やキャラクター。
+    3.  **構図とポーズ:** (full body, cowboy shot, from above, dynamic pose)など。
+    4.  **背景:** (in a fantasy forest, cyberpunk city street, at sunset)など。
+    5.  **画風とスタイル:** (anime style, watercolor painting, photorealistic, by Makoto Shinkai)など。
+    6.  **照明と雰囲気:** (dramatic lighting, cinematic, soft light, moody)など。
+- ネガティブプロンプトには、一般的に品質を低下させる要素を網羅的に含めてください。
+    - 例: (worst quality, low qualityなど)</code></pre>
+            </div>
+
+            <a href="index.html#portfolio" class="back-link">← ポートフォリオに戻る</a>
+        </article>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            <p>© 2025 chromachannel. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- サイト共通のJavaScript -->
+    <script src="JavaScript/script.js"></script>
+    <!-- コピーボタン用のJavaScript -->
+    <script>
+        document.getElementById('copy-btn').addEventListener('click', function() {
+            const code = document.getElementById('prompt-code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                this.innerHTML = '<i class="fas fa-check"></i> コピー完了!';
+                this.classList.add('copied');
+                setTimeout(() => {
+                    this.innerHTML = '<i class="far fa-copy"></i> コピー';
+                    this.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('コピーに失敗しました', err);
+                alert('コピーに失敗しました。');
+            });
+        });
+    </script>
+
+</body>
+</html>
