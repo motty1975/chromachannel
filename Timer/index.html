@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===== ▼▼▼ SEO強化 METAタグ START ▼▼▼ ===== -->
+
+  <!-- ① ページのタイトル（ツールの多機能性を具体的に記述） -->
+  <title>多機能オンライン時計 | 現在時刻・カレンダー・タイマー</title>
+
+  <!-- ② サイトの概要（検索結果に表示される説明文） -->
+  <meta name="description" content="現在時刻、日付、予定を書き込めるカレンダー、そしてカウントアップ・カウントダウン両対応の多機能タイマーを一つにまとめたWebツール。インストール不要で、勉強や仕事の時間管理にすぐに使えます。">
+  
+  <!-- ③ このページの正規URLを検索エンジンに伝える -->
+  <!-- ★★★★★ あなたのサイトの正式なURLに書き換えてください ★★★★★ -->
+  <link rel="canonical" href="https://chromachannel.online/multi-tool/index.html" />
+
+  <!-- ④ ファビコンの設定（任意ですが推奨） -->
+  <!-- ★★★★★ ファビコン画像のパスを正しく指定してください ★★★★★ -->
+  <link rel="icon" href="../img/favicon.png" type="image/png">
+  
+  <!-- ⑤ SNSでシェアされた時の表示を設定 (OGPタグ) -->
+  <!-- ★★★★★ OGP画像のURLは必ず絶対パスで指定してください ★★★★★ -->
+  <meta property="og:title" content="多機能オンライン時計 | 現在時刻・カレンダー・タイマー">
+  <meta property="og:description" content="現在時刻、カレンダー、タイマーを一つにまとめた便利なWebツール。勉強や仕事の時間管理に。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chromachannel.online/multi-tool/index.html">
+  <meta property="og:image" content="https://chromachannel.online/img/ogp-multi-tool.png">
+  <meta property="og:site_name" content="山本 倫久 ポートフォリオ">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ⑥ 構造化データ（このページが「Webアプリケーション」であることを伝える） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "多機能オンライン時計",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Web-based",
+    "description": "現在時刻と日付の表示、予定の保存が可能なカレンダー機能、カウントアップ（ストップウォッチ）およびカウントダウン機能を備えた、ブラウザで動作する多機能な時間管理ツールです。",
+    "featureList": [
+      "リアルタイム時刻表示",
+      "月間カレンダー",
+      "カレンダーへの予定保存機能（ローカルストレージ使用）",
+      "カウントアップタイマー（ストップウォッチ）",
+      "カウントダウンタイマー",
+      "タイマー終了時のカスタム通知音設定"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "山本 倫久",
+      "url": "https://chromachannel.online/"
+    }
+  }
+  </script>
+
+  <!-- ===== ▲▲▲ SEO強化 METAタグ END ▲▲▲ ===== -->
+  <title>時間・カレンダー・タイマー</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <h2>（o_ _)ｏ））現在、開発中です（o_ _)ｏ））</h2>
+  <div class="container">
+    <div class="section datetime">
+      <div>現在の時間と日付</div>
+      <div class="time" id="current-time">00:00:00</div>
+      <div class="date" id="current-date">2025年4月18日（金）</div>
+    </div>
+
+    <div class="section calendar">
+      <div class="calendar-header">
+        <div class="calendar-nav">
+          <button id="prev-month">&lt;</button>
+        </div>
+        <div class="month-year" id="month-year">2025年4月</div>
+        <div class="calendar-nav">
+          <button id="next-month">&gt;</button>
+        </div>
+      </div>
+      <div class="calendar-grid" id="calendar-grid">
+        </div>
+    </div>
+
+    <div class="section">
+      <h3>タイマー</h3>
+
+      <div class="timer-mode">
+        <label>
+          <input type="radio" name="timer-mode" value="up" checked> カウントアップ
+        </label>
+        <label>
+          <input type="radio" name="timer-mode" value="down"> カウントダウン
+        </label>
+      </div>
+
+      <div class="timer-display" id="timer-display">00:00:00</div>
+
+      <div class="timer-controls">
+        <button id="start-timer">スタート</button>
+        <button id="pause-timer" disabled>一時停止</button>
+        <button id="reset-timer">リセット</button>
+      </div>
+
+      <div class="timer-setup">
+        <input type="number" id="hours" min="0" max="99" value="0">
+        <span>時間</span>
+        <input type="number" id="minutes" min="0" max="59" value="0">
+        <span>分</span>
+        <input type="number" id="seconds" min="0" max="59" value="0">
+        <span>秒</span>
+        <button id="set-timer">設定</button>
+      </div>
+
+      <div class="sound-setup">
+        <label for="timer-sound">タイマー終了時の通知音：</label>
+        <input type="file" id="timer-sound" accept="audio/*">
+        <div class="sound-controls">
+          <button id="test-sound" disabled>音をテスト</button>
+          <button id="stop-sound" disabled>音を停止</button>
+          <button id="remove-sound" disabled>音を削除</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="event-modal">
+    <div class="modal-content">
+      <h3 class="modal-title" id="modal-date">2025年4月18日 予定追加</h3>
+
+      <div class="form-group">
+        <label for="event-title">タイトル：</label>
+        <input type="text" id="event-title" maxlength="20">
+      </div>
+
+      <div class="form-group">
+        <label for="event-details">詳細：</label>
+        <textarea id="event-details" rows="3"></textarea>
+      </div>
+
+      <div class="form-buttons">
+        <button class="cancel-btn" id="cancel-event">キャンセル</button>
+        <button class="save-btn" id="save-event">保存</button>
+      </div>
+    </div>
+  </div>
+  <script src="JavaScript/script.js"></script>
+</body>
+</html>
