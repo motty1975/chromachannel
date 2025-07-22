@@ -31,7 +31,7 @@
     <lastmod>2025-07-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
-  </ul>
+  </url>
 
   <!-- 5. 3マッチパズル (エンタメコンテンツ) -->
   <url>
@@ -50,7 +50,6 @@
   </url>
   
   <!-- 7. 私たちについて (補足情報) -->
-  <!-- このページはまだSEO対策を行っていませんが、サイトの構成要素として含めます -->
   <url>
     <loc>https://chromachannel.online/fuwamoco/company-info.html</loc>
     <lastmod>2025-07-22</lastmod>
