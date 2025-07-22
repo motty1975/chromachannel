@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * スムーススクロール機能を初期化する
      */
     const initSmoothScroll = () => {
+        // (この中のコードは変更なし)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('href') === '#') {
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * スクロールに応じたフェードインアニメーション機能を初期化する
      */
     const initScrollAnimation = () => {
+        // (この中のコードは変更なし)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -40,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * ヘッダーの背景変更機能を初期化する
      */
     const initHeaderScroll = () => {
+        // (この中のコードは変更なし)
         const header = document.querySelector('header');
         if (!header) return;
         window.addEventListener('scroll', () => {
@@ -49,22 +52,37 @@ document.addEventListener('DOMContentLoaded', () => {
     
     /**
      * ポートフォリオのカテゴリフィルター機能を初期化する
+     * ★★★ ここを修正・整理しました ★★★
      */
     const initPortfolioFilter = () => {
-        const categoryBtns = document.querySelectorAll('.category-btn');
+        // 全てのフィルターボタンとポートフォリオアイテムを取得
+        const categoryButtons = document.querySelectorAll('.category-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
-        if (categoryBtns.length === 0) return;
-        
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const targetCategory = btn.dataset.category;
 
+        // ボタンやアイテムが存在しない場合は、処理を中断
+        if (categoryButtons.length === 0 || portfolioItems.length === 0) {
+            return;
+        }
+
+        // 各ボタンにクリックイベントを設定
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+
+                // 1. ボタンのアクティブ状態を切り替え
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // 2. ポートフォリオアイテムの表示/非表示を切り替え
                 portfolioItems.forEach(item => {
-                    const itemCategories = item.dataset.category ? item.dataset.category.split(' ') : [];
-                    const itemIsVisible = targetCategory === 'all' || itemCategories.includes(targetCategory);
-                    item.classList.toggle('hidden', !itemIsVisible);
+                    // アイテムが持つカテゴリを配列で取得（スペース区切り対応）
+                    const itemCategories = item.dataset.category.split(' '); 
+
+                    // カテゴリが一致するかどうかを判定
+                    const shouldShow = (category === 'all' || itemCategories.includes(category));
+                    
+                    // hideクラスを付けたり外したりする
+                    item.classList.toggle('hide', !shouldShow);
                 });
             });
         });
@@ -74,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * サムネイルギャラリーの開閉機能を初期化する
      */
     const initThumbnailToggle = () => {
+        // (この中のコードは変更なし)
         document.querySelectorAll('.gallery-toggle-btn').forEach(button => {
             const portfolioItem = button.closest('.portfolio-item');
             if (!portfolioItem) return;
@@ -95,11 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
      * モーダルウィンドウ機能を初期化する
      */
     const initModal = () => {
+        // (この中のコードは変更なし)
         const modal = document.getElementById('modal');
         if (!modal) return;
         
-        // (モーダル機能のコードは変更なしなので、ここにそのまま配置)
-        // ...
+        // ...モーダル関連のコード...
     };
 
 
