@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- ===== ▼▼▼ このページ専用のSEO設定 ▼▼▼ ===== -->
+    <title>ブログ (Blog) | Chromachannelサイト</title>
+    <meta name="description" content="AIと福祉をテーマにしたクリエイター、山本倫久の公式ブログ。日々の制作活動で得た知見やノウハウ、AI技術に関する考察、そして活動に込める想いなどを綴っています。">
+    <!-- ===== ▲▲▲ SEO設定 END ▲▲▲ ===== -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- ===== ヘッダー（サイト共通） ===== -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="prompt.html">Prompt</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="blog.html" class="nav-active">Blog</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== 下層ページ用のヘッダー ===== -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>日々の活動や想いを綴ります</p>
+            </div>
+        </section>
+
+        <!-- ===== ブログ記事一覧セクション ===== -->
+        <section class="section">
+            <div class="container">
+                <p class="portfolio-intro fade-in">AIや福祉、日々の制作活動について、私の想いやノウハウを発信しています。</p>
+                
+                <!-- portfolio-gridのスタイルを記事一覧に流用 -->
+                <div class="portfolio-grid">
+
+                    <!-- 記事カード 1 -->
+                    <a href="Blog/A-magic-wand-called-AI.html" class="portfolio-item fade-in" style="text-decoration: none; color: inherit;">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <!-- ★★★ この画像は Img/blog/blog_image_1.webp として用意してください ★★★ -->
+                                <img src="Img/Blog/blog_image_1.jpg" alt="AIという魔法の杖を握る手のイラスト">
+                            </div>
+                            <div class="portfolio-content">
+                                <p style="color: var(--text-light); font-size: 0.9em;">2025.07.20</p>
+                                <h3>福祉の現場で見つけた、AIという名の「魔法の杖」</h3>
+                                <p>私自身が、就労支援B型事業所という福祉の現場で出会った、AIという名の「魔法の杖」の物語。ほんの少しの好奇心が、日常を輝かせ始めた私の実体験です。</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 記事カード 2 -->
+                    <a href="Blog/How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html" class="portfolio-item fade-in" style="text-decoration: none; color: inherit;">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image">
+                                <!-- ★★★ この画像は Img/blog/blog_image_2.webp として用意してください ★★★ -->
+                                <img src="Img/Blog/blog_image_2.jpg" alt="照明から光の粒が地図に降り注ぐイラスト">
+                            </div>
+                            <div class="portfolio-content">
+                                <p style="color: var(--text-light); font-size: 0.9em;">2025.07.22</p>
+                                <h3>4ステップ・ロードマップ｜未経験・休職中から始める新しい働き方</h3>
+                                <p>何かを始めたい、でも何から始めたらいいか分からないあなたへ。AIを味方につけて、新しい未来への一歩を踏み出してみませんか？</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 今後、新しい記事を追加する場合は、この下にカードをコピーして追加します -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== フッター（サイト共通） ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            <p>© 2025 chromachannel. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- ===== サイト共通のJavaScript ===== -->
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

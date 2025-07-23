@@ -1,92 +1,68 @@
-# Chroma Channel - AI × 福祉クリエイター ポートフォリオサイト
+# Chromachannelサイト | AI × 福祉クリエイター 山本倫久 公式サイト
 
-![ポートフォリオサイトのメインビジュアル](img/image_main.webp)
+AIと福祉を繋ぐクリエイター、山本倫久氏の活動と制作実績、そして彼が提供するナレッジを紹介するための公式サイトです。
 
-**AIで「好き」を仕事に。福祉の現場に、創造の翼を。**
+**▶ サイトをプレビューする (※公開後、ご自身のURLに設定してください)**
+`https://chromachannel.online/`
 
-これは、AIコンテンツクリエイター 山本 倫久（ハンドルネーム: motty1975）の公式ポートフォリオサイトのソースコードリポジトリです。
+![サイトのスクリーンショット](https://chromachannel.online/Img/ogp_image.png)
 
----
+## 概要
 
-## 🚀 Live Demo (公開サイト)
+このサイトは、山本倫久氏の「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届ける」というミッションを体現するものです。彼の持つ多様なスキルセット、具体的な作品群、そして実践的なノウハウ（プロンプト集など）を、訪問者が直感的に理解できるよう、複数の専門ページに分けて構成されています。
 
-以下のURLから、実際にサイトを閲覧・操作できます。
+## 主な機能と特徴
 
-**[https://chromachannel.online/](https://chromachannel.online/)**
+*   **マルチページ構成**: サイトの目的別にページを分割 (`index.html`, `portfolio.html`, `prompt.html` など) し、ユーザーが必要な情報にアクセスしやすい構造になっています。
+*   **レスポンシブデザイン**: PC、タブレット、スマートフォンなど、あらゆるデバイスで最適な表示がされるように設計されています。
+*   **インタラクティブなUI**: スクロールに応じたフェードインアニメーションや、モバイル用のハンバーガーメニューを実装し、快適なユーザー体験を提供します。
+*   **ポートフォリオ機能**: カテゴリ別のフィルター機能や、AIイラストの詳細（プロンプトなど）を確認できるモーダルウィンドウ機能を搭載しています。
+*   **高度なSEO対策**: 各ページに最適化された`meta`タグ、`canonical`タグ、OGPタグを設定。さらに、構造化データ（JSON-LD）も活用し、検索エンジンからの評価を高める工夫がされています。
+*   **コンポーネントの共通化**: ヘッダーやフッターを共通パーツ化し、サイト全体で統一感のあるデザインとナビゲーションを実現しています。
 
----
+## 使用技術
 
-## ✨ このプロジェクトについて
+*   **HTML5**
+*   **CSS3** (Flexbox, Grid Layout, CSS変数)
+*   **JavaScript (ES6+)** (DOM操作, IntersectionObserver API)
+*   **ライブラリ**: Font Awesome, ress.min.css
 
-これは、私、山本 倫久（Norihisa Yamamoto）のポートフォリオと、これまでの制作物を統合したブランドサイトです。
+## ファイル構成
 
-私のミッションは**「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届けること」**です。このサイトは、その理念と、私が持つスキルセットを具現化したものです。
+```
+/ (ルートフォルダ)
+├── index.html              # トップページ
+├── portfolio.html          # 制作実績ページ
+├── prompt.html             # プロンプト集トップページ
+├── learn.html              # 学習コンテンツページ
+├── blog.html               # ブログ一覧ページ
+├── sitemap.xml             # サイトマップ
+├── README.md               # このファイル
+│
+├── CSS/
+│   └── style.css           # サイト共通のスタイルシート
+│
+├── JavaScript/
+│   └── script.js           # サイト共通のスクリプト
+│
+├── Img/
+│   ├── chroma_logo.webp
+│   ├── favicon.png
+│   ├── portfolio/          # ポートフォリオ用画像
+│   └── blog/               # ブログ用画像
+│
+├── Portfolio/              # ポートフォリオ作品のプロジェクト
+│   └── Fuwamoco/
+│
+├── Blog/                   # ブログ記事HTML
+│   └── A-magic-wand-called-AI.html
+│
+└── Prompt/                 # プロンプト詳細HTML
+    └── prompt-novel-writing.html
+```
 
-### 🎨 主なコンテンツ
+## 制作者
 
-*   **ポートフォリオサイト:** 私のスキル、実績、そして想いを伝えるための総合案内所です。
-*   **Fuwamoco PROJECT:** うさぎの保護活動を行う架空のNPO法人の公式サイト。企画からデザイン、実装、そしてJavaScript製の3マッチパズルまで、すべてをゼロから制作しました。
-*   **AIと友達になろう！:** PC操作に不慣れな方でも、AIの面白さを直感的に体験できる、インタラクティブなWebアプリケーションです。
-
----
-
-## 🛠️ 使用技術 (Tech Stack)
-
-このサイトは、以下の技術を駆使して構築されています。
-
-*   **フロントエンド:**
-    *   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-    *   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-    *   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-*   **コンテンツ制作 (AI):**
-    *   **画像生成:** Stable Diffusion (Automatic1111)
-    *   **テキスト/シナリオ生成:** ChatGPT (GPT-4), Gemini
-    *   **音楽生成:** Suno AI
-*   **動画制作:**
-    *   ゆっくりMovieMaker4 (YMM4)
-    *   VOICEVOX
-    *   Vrew
-*   **デプロイメント:**
-    *   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify">
-*   **バージョン管理:**
-    *   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-    *   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-
----
-
-## 📂 プロジェクト構成
-
-このリポジトリは、以下の構成になっています。
-
-/ (ルートディレクトリ)<br>
-├── index.html # ポートフォリオサイト（トップページ）<br>
-├── css/ # ポートフォリオサイト用CSS<br>
-│ └── style.css<br>
-├── img/ # ポートフォリオサイト用画像<br>
-│ ├── logo.png<br>
-│ └── (その他)<br>
-├── js/ # ポートフォリオサイト用JavaScript<br>
-│ └── script.js<br>
-└── fuwamoco/ # Fuwamocoプロジェクト専用エリア<br>
-├── index.html # Fuwamoco トップページ<br>
-├── company.html<br>
-├── (その他HTMLファイル...)<br>
-├── css/<br>
-├── img/<br>
-└── JavaScript/<br>
-
----
-
-## 📬 連絡先
-
-ご興味をお持ちいただけましたら、以下の方法でお気軽にご連絡ください。
-
-*   **X (旧Twitter):**
-    *   **[@Chroma0224](https://x.com/Chroma0224)**
-*   **YouTube:**
-    *   **[ChromaのPC学習部屋](https://www.youtube.com/@chroma0224)**
-    *   **[Chromaの自由部屋](https://www.youtube.com/@chroma1975)**
-*   **メール:**
-    *   **[from.aito.the.infinity@gmail.com](mailto:from.aito.the.infinity@gmail.com)**
-
----
+*   **氏名**: 山本 倫久 (Michihisa Yamamoto)
+*   **役職**: AI × 福祉クリエイター
+*   **連絡先**: from.aito.the.infinity@gmail.com

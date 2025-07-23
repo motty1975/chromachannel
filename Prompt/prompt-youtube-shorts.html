@@ -4,74 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ===== ▼▼▼ このページのSEO対策 ▼▼▼ ===== -->
-
-    <title>バズるYouTubeショート動画シナリオ生成用プロンプト | 山本 倫久 ポートフォリオ</title>
+    <!-- ===== ▼▼▼ SEO設定 ▼▼▼ ===== -->
+    <title>バズるYouTubeショート動画シナリオ生成用プロンプト | Chromachannelサイト</title>
     <meta name="description" content="AIをプロのシナリオライターに変える、Gemini用カスタム指示書を公開。対話形式で、バズる可能性のあるYouTubeショート動画の高品質な台本を共同制作できます。">
-
-    <!-- ★★★★★ このページの正式なURLに書き換えてください ★★★★★ -->
-    <link rel="canonical" href="https://chromachannel.online/prompt-youtube-shorts.html" />
-
-    <!-- ★★★★★ OGP画像のURLは必ず絶対パスで指定してください ★★★★★ -->
+    <link rel="canonical" href="https://chromachannel.online/Prompt/prompt-youtube-shorts.html" />
     <meta property="og:title" content="バズるYouTubeショート動画シナリオ生成用プロンプト">
     <meta property="og:description" content="AIをプロのシナリオライターに変える、対話形式のカスタム指示書。高品質なショート動画台本をAIと共同制作できます。">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://chromachannel.online/prompt-youtube-shorts.html">
+    <meta property="og:url" content="https://chromachannel.online/Prompt/prompt-youtube-shorts.html">
     <meta property="og:image" content="https://chromachannel.online/img/ogp-prompt-youtube.png">
-    <meta property="og:site_name" content="山本 倫久 ポートフォリオ">
+    <meta property="og:site_name" content="Chromachannelサイト">
     <meta name="twitter:card" content="summary_large_image">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "AIとの対話で高品質なYouTubeショート動画シナリオを生成するためのカスタム指示書",
-      "description": "対話型AI（Geminiなど）に、プロのYouTubeショート動画シナリオライターとしての役割を与え、段階的な対話プロセスを通じて動画台本を共同制作するためのカスタムプロンプトです。",
-      "author": {
-        "@type": "Person",
-        "name": "山本 倫久",
-        "url": "https://chromachannel.online/"
-      }
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" }
     }
     </script>
     
-    <!-- ===== ▲▲▲ ここまで ▲▲▲ ===== -->
-    
-    <!-- サイト共通のCSSやライブラリ -->
-    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- ===== ▼▼▼ パスを修正 ▼▼▼ ===== -->
+    <link rel="icon" href="../Img/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
-    <!-- このページ専用のスタイル（前回と同じものを流用） -->
+    <!-- このページ専用のスタイル -->
     <style>
-        .article-main { padding: 50px 20px; background-color: #f4f7f9; }
+        body { background-color: #f4f7f9; }
+        .article-main { padding: 120px 20px 60px; }
         .article-container { max-width: 860px; margin: 0 auto; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08); }
-        .article-container h1 { font-size: 2.2em !important; font-weight: 700 !important; margin-bottom: 20px !important; line-height: 1.4 !important; color: #1a202c !important; border: none !important; padding: 0 !important; }
-        .article-container p, .article-container .intro-p { font-size: 1.1em !important; color: #4a5568 !important; line-height: 1.8 !important; }
+        .article-container h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 20px; line-height: 1.4; color: #1a202c; border: none; padding: 0; }
+        .article-container p, .article-container .intro-p { font-size: 1.1em; color: #4a5568; line-height: 1.8; }
         .code-block-wrapper { position: relative; margin-top: 20px; }
-        .code-block-wrapper pre { background-color: #2d3748 !important; color: #e2e8f0 !important; padding: 25px !important; border-radius: 8px !important; white-space: pre-wrap !important; word-wrap: break-word !important; font-size: 0.95em !important; line-height: 1.7 !important; border: 1px solid #4a5568 !important; }
-        .code-block-wrapper pre code { font-family: 'Menlo', 'Courier New', Courier, monospace !important; color: inherit !important; background-color: transparent !important; }
-        .code-block-wrapper button#copy-btn { display: inline-block !important; visibility: visible !important; position: absolute !important; top: 12px !important; right: 12px !important; background-color: #4a5568 !important; color: white !important; border: none !important; padding: 8px 12px !important; border-radius: 6px !important; cursor: pointer !important; font-size: 14px !important; transition: background-color 0.2s !important; z-index: 10 !important; }
-        .code-block-wrapper button#copy-btn:hover { background-color: #2d3748 !important; }
-        .code-block-wrapper button#copy-btn.copied { background-color: #38a169 !important; }
-        .article-container .back-link { display: inline-block; margin-top: 40px; text-decoration: none; color: #3182ce; font-weight: bold; font-size: 1.1em; }
+        .code-block-wrapper pre { background-color: #2d3748; color: #e2e8f0; padding: 25px; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; font-size: 0.95em; line-height: 1.7; border: 1px solid #4a5568; }
+        .code-block-wrapper pre code { font-family: 'Menlo', 'Courier New', Courier, monospace; }
+        .code-block-wrapper button#copy-btn { position: absolute; top: 12px; right: 12px; background-color: #4a5568; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: background-color 0.2s; z-index: 10; }
+        .code-block-wrapper button#copy-btn:hover { background-color: #2d3748; }
+        .code-block-wrapper button#copy-btn.copied { background-color: #38a169; }
+        .article-container .back-link { display: inline-block; margin-top: 40px; text-decoration: none; color: var(--primary-color-start); font-weight: bold; font-size: 1.1em; }
     </style>
 </head>
 <body>
 
-    <!-- ヘッダー -->
+    <!-- ===== ▼▼▼ サイト共通ヘッダーに差し替え ▼▼▼ ===== -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">
-                <img src="img/chroma_logo.png" alt="Chroma Channel ロゴ">
+            <a href="../index.html" class="logo">
+                <img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#portfolio">Portfolio</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../prompt.html" class="nav-active">Prompt</a></li>
+                <li><a href="../learn.html">Learn</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
         </nav>
     </header>
 
@@ -131,11 +126,12 @@
 理解したら、「準備ができました。動画で扱いたいジャンルを教えてください。」と返信してください。</code></pre>
             </div>
 
-            <a href="index.html#portfolio" class="back-link">← ポートフォリオに戻る</a>
+            <!-- ▼▼▼ 戻るリンクを修正 ▼▼▼ -->
+            <a href="prompt.html" class="back-link">← プロンプト集に戻る</a>
         </article>
     </main>
 
-    <!-- フッター -->
+    <!-- ===== サイト共通フッター（パスを修正） ===== -->
     <footer>
         <div class="container">
             <div class="footer-social-links">
@@ -148,8 +144,8 @@
         </div>
     </footer>
     
-    <!-- サイト共通のJavaScript -->
-    <script src="JavaScript/script.js"></script>
+    <!-- ▼▼▼ スクリプトのパスを修正 ▼▼▼ -->
+    <script src="../JavaScript/script.js"></script>
     <!-- コピーボタン用のJavaScript -->
     <script>
         document.getElementById('copy-btn').addEventListener('click', function() {
