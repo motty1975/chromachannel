@@ -20,17 +20,17 @@
     <!-- ===== ヘッダー（サイト共通） ===== -->
     <header>
         <nav class="container">
-            <a href="../index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
             </a>
             <ul class="nav-links">
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="../Prompt/prompt.html" class="nav-active">Prompt</a></li>
-                <li><a href="../learn.html">Learn</a></li>
-                <li><a href="../blog.html">Blog</a></li>
-                <li><a href="../portfolio.html">Portfolio</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="prompt.html" class="nav-active">Prompt</a></li>
+                <li><a href="learn.html">Learn</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <button class="mobile-nav-toggle" aria-label="メニューを開く">
                 <i class="fas fa-bars"></i>
@@ -59,27 +59,43 @@
                     <!-- カード: Stable Diffusion -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/blueprint-illustration.webp" alt="設計図のイメージ"></div>
+                            <div class="portfolio-image"><img src="Prompt/Img/stable-diffusion_main.webp" alt="stable diffusionのイメージ"></div>
                             <div class="portfolio-content">
                                 <h3>AIイラスト生成 (Stable Diffusion)</h3>
                                 <p>簡単な日本語から高品質なイラスト用プロンプトを生成させるための、AIへの指示書です。</p>
                                 <div class="portfolio-links">
-                                    <button onclick="window.open('prompt-stable-diffusion.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                    <button onclick="window.open('Prompt/prompt-stable-diffusion.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
                                 </div>
                                 <div class="portfolio-tags"><span class="tag">Stable Diffusion</span><span class="tag">画像生成</span></div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- ▼▼▼ 2. ImageFX（新規追加） ▼▼▼ -->
+                    <div class="portfolio-item fade-in">
+                        <div class="portfolio-card">
+                             <div class="portfolio-image"><img src="Prompt/Img/imagefx_main.webp" alt="ImageFXのイメージ"></div>
+                            <div class="portfolio-content">
+                                <h3>AIイラスト生成 (ImageFX)</h3>
+                                <p>日本語の簡単なイメージから、情景が浮かぶような美しい英文プロンプトを生成する指示書です。</p>
+                                <div class="portfolio-links">
+                                     <button onclick="window.open('Prompt/prompt-imagefx.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                </div>
+                                <div class="portfolio-tags"><span class="tag">ImageFX</span><span class="tag">自然言語</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ▲▲▲ 追加ここまで ▲▲▲ -->
+
                     <!-- カード: Suno AI -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
-                             <div class="portfolio-image"><img src="Img/image_main.webp" alt="音楽のイメージ"></div>
+                             <div class="portfolio-image"><img src="Prompt/Img/music_main.webp" alt="音楽のイメージ"></div>
                             <div class="portfolio-content">
                                 <h3>AI楽曲制作 (Suno AI)</h3>
                                 <p>テーマを伝えるだけで、作詞と曲のスタイルをAIに提案させるための指示書です。</p>
                                 <div class="portfolio-links">
-                                    <button onclick="window.open('prompt-suno-ai.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                    <button onclick="window.open('Prompt/prompt-suno-ai.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
                                 </div>
                                 <div class="portfolio-tags"><span class="tag">Suno AI</span><span class="tag">音楽制作</span><span class="tag">作詞</span></div>
                             </div>
@@ -89,12 +105,12 @@
                     <!-- カード: YouTubeシナリオ -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
-                             <div class="portfolio-image"><img src="Img/scenario_main.webp" alt="シナリオのイメージ"></div>
+                             <div class="portfolio-image"><img src="Prompt/Img/scenario_main.webp" alt="シナリオのイメージ"></div>
                             <div class="portfolio-content">
                                 <h3>YouTubeショート動画シナリオ</h3>
                                 <p>バズる可能性のある動画台本を、AIと対話しながら段階的に作成するための指示書です。</p>
                                 <div class="portfolio-links">
-                                    <button onclick="window.open('prompt-youtube-shorts.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                    <button onclick="window.open('Prompt/prompt-youtube-shorts.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
                                 </div>
                                 <div class="portfolio-tags"><span class="tag">GPTs</span><span class="tag">YouTube</span><span class="tag">台本作成</span></div>
                             </div>
@@ -104,27 +120,43 @@
                     <!-- カード: 小説執筆 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
-                             <div class="portfolio-image"><img src="Img/kindle_main.webp" alt="小説のイメージ"></div>
+                             <div class="portfolio-image"><img src="Prompt/Img/kindle_main.webp" alt="小説のイメージ"></div>
                             <div class="portfolio-content">
                                 <h3>小説執筆 (プロット・本文)</h3>
                                 <p>プロットから本文まで、AIと対話しながら物語を共同制作するための指示書です。</p>
                                 <div class="portfolio-links">
-                                    <button onclick="window.open('prompt-novel-writing.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                    <button onclick="window.open('Prompt/prompt/prompt-novel-writing.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
                                 </div>
                                 <div class="portfolio-tags"><span class="tag">GPTs</span><span class="tag">小説</span><span class="tag">Kindle</span></div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="portfolio-item fade-in">
+                        <div class="portfolio-card">
+                             <div class="portfolio-image"><img src="Prompt/Img/picture_book_main.webp" alt="絵本のイメージ"></div>
+                            <div class="portfolio-content">
+                                <h3>子供向け知育絵本</h3>
+                                <p>物語のプロット、本文、そして各シーンのイラスト用プロンプトまでAIと共同制作する指示書です。</p>
+                                <div class="portfolio-links">
+                                     <button onclick="window.open('Prompt/prompt-picture-book-writing.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                </div>
+                                <div class="portfolio-tags"><span class="tag">GPTs</span><span class="tag">絵本</span><span class="tag">教育</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ▲▲▲ 追加はここまで ▲▲▲ -->
+
+
                     <!-- カード: ロードマップ Lv.1 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
-                             <div class="portfolio-image"><img src="Img/blog_image_2.webp" alt="ロードマップのイメージ"></div>
+                             <div class="portfolio-image"><img src="Prompt/Img/roadmap_lv1.webp" alt="ロードマップのイメージ"></div>
                             <div class="portfolio-content">
                                 <h3>ロードマップ作成 Lv.1 (初心者向け)</h3>
                                 <p>AIの質問に答えるだけで、簡単なロードマップが作成できる、最も手軽な指示書です。</p>
                                 <div class="portfolio-links">
-                                     <button onclick="window.open('prompt-roadmap-lv1.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                     <button onclick="window.open('Prompt/prompt-roadmap-lv1.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
                                 </div>
                                 <div class="portfolio-tags"><span class="tag">GPTs</span><span class="tag">計画</span><span class="tag">初心者</span></div>
                             </div>
@@ -134,12 +166,12 @@
                     <!-- カード: ロードマップ Lv.2 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
-                             <div class="portfolio-image"><img src="Img/learning_main.webp" alt="ロードマップのイメージ"></div>
+                             <div class="portfolio-image"><img src="Prompt/Img/roadmap_lv2.webp" alt="ロードマップのイメージ"></div>
                             <div class="portfolio-content">
                                 <h3>ロードマップ作成 Lv.2 (バランス型)</h3>
                                 <p>手軽さと精度のバランスが良い、戦略コンサルタント風のAIと対話する指示書です。</p>
                                 <div class="portfolio-links">
-                                     <button onclick="window.open('prompt-roadmap-lv2.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                     <button onclick="window.open('Prompt/prompt-roadmap-lv2.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
                                 </div>
                                 <div class="portfolio-tags"><span class="tag">GPTs</span><span class="tag">計画</span><span class="tag">中級者</span></div>
                             </div>
@@ -149,12 +181,12 @@
                     <!-- カード: ロードマップ Lv.3 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
-                             <div class="portfolio-image"><img src="Img/system_main.webp" alt="ロードマップのイメージ"></div>
+                             <div class="portfolio-image"><img src="Prompt/Img/roadmap_lv3.webp" alt="ロードマップのイメージ"></div>
                             <div class="portfolio-content">
                                 <h3>ロードマップ作成 Lv.3 (上級者向け)</h3>
                                 <p>出力形式まで厳密に指定し、本格的な計画書を作成できる、最も高機能な指示書です。</p>
                                 <div class="portfolio-links">
-                                     <button onclick="window.open('prompt-roadmap-lv3.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
+                                     <button onclick="window.open('Prompt/prompt-roadmap-lv3.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 指示書を見る</button>
                                 </div>
                                 <div class="portfolio-tags"><span class="tag">GPTs</span><span class="tag">計画</span><span class="tag">上級者</span></div>
                             </div>

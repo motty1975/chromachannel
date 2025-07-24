@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== ▼▼▼ 【SEO強化版】このページ専用のSEO設定 ▼▼▼ ===== -->
+    <title>AIと作る子供向け知育絵本プロンプト | Chromachannelサイト</title>
+    <meta name="description" content="AIを絵本作家アシスタントに変える、Gemini用カスタム指示書。テーマを伝えるだけで、子供向け知育絵本のプロット、本文、そしてImageFX用イラストプロンプトまでを自動生成します。">
+    <link rel="canonical" href="https://chromachannel.online/Prompt/prompt-picture-book-writing.html" />
+    <meta property="og:title" content="AIと作る子供向け知育絵本プロンプト | イラスト自動生成付き">
+    <meta property="og:description" content="AIが物語のプロットと本文だけでなく、各シーンのイラスト用プロンプトまで提案。あなただけのオリジナル知育絵本をAIと共同制作できます。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chromachannel.online/Prompt/prompt-picture-book-writing.html">
+    <meta property="og:image" content="https://chromachannel.online/Img/ogp-prompt-picturebook.png"> <!-- ★要画像差し替え -->
+    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "AIとの対話で子供向け知育絵本のプロットとイラストプロンプトを共同制作するためのカスタム指示書",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" }
+    }
+    </script>
+
+    <!-- 共通CSSの読み込み -->
+    <link rel="icon" href="../Img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- このページ専用のスタイル -->
+    <style>
+        body { background-color: #f4f7f9; }
+        .article-main { padding: 120px 20px 60px; } /* ヘッダーの高さ分padding-topを調整 */
+        .article-container { max-width: 860px; margin: 0 auto; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08); }
+        .article-container h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 20px; line-height: 1.4; color: #1a202c; border: none; padding: 0; }
+        .article-container h2 { font-size: 1.8em; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        .article-container h3 { font-size: 1.3em; font-weight: 600; margin-top: 30px; margin-bottom: 15px; border-left: 4px solid var(--primary-color-start); padding-left: 12px; }
+        .article-container p, .article-container .intro-p { font-size: 1.1em; color: #4a5568; line-height: 1.8; }
+        .code-block-wrapper { position: relative; margin-top: 20px; }
+        .code-block-wrapper pre { background-color: #2d3748; color: #e2e8f0; padding: 25px; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; font-size: 0.95em; line-height: 1.7; border: 1px solid #4a5568; }
+        .code-block-wrapper pre code { font-family: 'Menlo', 'Courier New', Courier, monospace; }
+        .code-block-wrapper button#copy-btn { position: absolute; top: 12px; right: 12px; background-color: #4a5568; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: background-color 0.2s; z-index: 10; }
+        .code-block-wrapper button#copy-btn:hover { background-color: #2d3748; }
+        .code-block-wrapper button#copy-btn.copied { background-color: #38a169; }
+        .article-container .back-link { display: inline-block; margin-top: 40px; text-decoration: none; color: var(--primary-color-start); font-weight: bold; font-size: 1.1em; }
+        .evaluation-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .evaluation-table th, .evaluation-table td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
+        .evaluation-table th { background-color: #f7fafc; font-weight: 600; }
+        .evaluation-table td:first-child { font-weight: 500; }
+        .evaluation-table .star { color: #f6ad55; }
+        .recommend-box { background-color: #ebf8ff; border: 1px solid #90cdf4; border-radius: 8px; padding: 20px; margin-top: 15px; }
+        .recommend-box ul { list-style-type: '✅'; padding-left: 20px; }
+    </style>
+</head>
+<body class="article-page">
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo"><img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../prompt.html" class="nav-active">Prompt</a></li>
+                <li><a href="../learn.html">Learn</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
+        </nav>
+    </header>
+
+    <main class="article-main">
+        <article class="article-container">
+            <header class="article-header">
+                <h1>AIと作る子供向け知育絵本プロンプト</h1>
+                <p class="intro-p">
+                    この指示書を対話型AIに読み込ませることで、AIをあなたの専属「絵本作家アシスタント」に変身させることができます。<br>
+                    AIとの対話を通じて、物語のプロットから本文、さらには各シーンのイラスト用プロンプトまでを一緒に作り上げましょう。
+                </p>
+            </header>
+
+            <div class="code-block-wrapper">
+                <button id="copy-btn"><i class="far fa-copy"></i> コピー</button>
+                <pre><code id="prompt-code"># 指示書
+あなたは、ユーザーと対話しながら、子供向けの知育絵本のプロットと物語を構築する、優秀な絵本作家アシスタントです。
+
+## あなたの役割と目標
+あなたの目標は、ユーザーの要望に基づき、心温まる絵本のプロット、各章の本文、そして各シーンのイラスト用プロンプトを、以下の厳格な対話プロセスに従って共同で作成することです。
+
+## イラスト生成プロンプトのルール
+- 必ず、**優しく、暖かく、シンプルな絵本風のスタイル**で生成してください。
+- キーワードは **"Cute children's book illustration style, simple, warm colors, watercolor texture"** をベースにしてください。
+- 英語で、カンマ区切りで生成してください。
+
+## 厳守すべき対話プロセス
+あなたは、以下の【手順】を一つずつ、厳密に守って実行しなければなりません。絶対に、ユーザーから「ok」という返信を受け取るまで、次の手順に進んではいけません。各手順の終わりには、必ず「この内容でよろしいですか？（OKでしたら次に進みます）」と問いかけ、ユーザーの同意を得てください。
+
+【手順1】テーマのヒアリング
+まず、「どのようなテーマの知育絵本を作りますか？（例：数字、動物、友達との協力など）」とユーザーに問いかけ、回答を待ってください。
+
+【手順2】タイトル、章構成、イラストプロンプトの提案
+ユーザーがテーマを入力したら、そのテーマに沿った「タイトル」と「サブタイトル」を1つ提案します。
+続けて、物語の全体像を示すための全5章からなる章立てを提案します。この時、**各章の内容を表現するImageFX用のイラスト生成プロンプト**を必ず付け加えてください。
+
+【出力例】
+- **第一章：森の探検の始まり**
+  - **イラストプロンプト:** `Cute children's book illustration style, a curious little fox wearing a small backpack, standing at the edge of a sunny, friendly forest, simple, warm colors, watercolor texture.`
+
+提案が終わったら、必ず「この内容でよろしいですか？（OKでしたら次に進みます）」と問いかけ、ユーザーの返信を待ってください。
+
+【手順3】本文の出力
+ユーザーが「ok」と返信したら、「第一章の本文を出力します。」と伝え、作成したプロットに基づき、「第一章」の本文を200字程度の、子供に分かりやすい言葉で執筆します。
+本文の執筆が完了したら、一旦プロセスを終え、ユーザーからの指示を待つ状態に入ってください。
+
+ユーザーが「ok」と返信したら、次の章の執筆に進んでください。
+これを第五章まで繰り返します。
+
+---
+以上の指示を理解しましたか？
+理解したら、「準備ができました。どのようなテーマの知育絵本を作りますか？」と返信してください。</code></pre>
+            </div>
+                <a href="../prompt.html" class="back-link">← プロンプト集に戻る</a>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+             <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            <p>© 2025 chromachannel. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="../JavaScript/script.js"></script>
+    <script>
+        document.getElementById('copy-btn').addEventListener('click', function() {
+            const code = document.getElementById('prompt-code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                this.innerHTML = '<i class="fas fa-check"></i> コピー完了!'; this.classList.add('copied');
+                setTimeout(() => { this.innerHTML = '<i class="far fa-copy"></i> コピー'; this.classList.remove('copied'); }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

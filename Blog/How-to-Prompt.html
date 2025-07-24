@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== ▼▼▼ 【SEO強化版】この記事専用のSEO設定 ▼▼▼ ===== -->
+    <title>【AI初心者向け】コピペで簡単！「自分だけの絵本」の作り方 | Chromachannelサイト</title>
+    <meta name="description" content="AIプロンプトの使い方がわからない？この記事では、サイトのプロンプトをコピペして、AIと対話しながらオリジナルの知育絵本を完成させる4つのステップを丁寧に解説します。">
+    <link rel="canonical" href="https://chromachannel.online/Blog/How-to-Prompt.html" />
+    <meta property="og:title" content="【AI初心者向け】コピペで簡単！「自分だけの絵本」の作り方">
+    <meta property="og:description" content="AIプロンプトの使い方を4ステップで解説！サイトのテンプレートを使って、AIと一緒に世界に一つだけのオリジナル絵本を作ってみませんか？">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chromachannel.online/Blog/How-to-Prompt.html">
+    <meta property="og:image" content="https://chromachannel.online/Img/blog/ogp-how-to-prompt.png"> <!-- ★要画像設定 -->
+    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://chromachannel.online/Blog/How-to-Prompt.html" },
+      "headline": "【AI初心者向け】コピペで簡単！「自分だけの絵本」の作り方",
+      "image": "https://chromachannel.online/Img/blog/ogp-how-to-prompt.png",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
+      "publisher": { "@type": "Organization", "name": "Chromachannel", "logo": { "@type": "ImageObject", "url": "https://chromachannel.online/Img/chroma_logo.webp" } },
+      "datePublished": "2025-07-24",
+      "dateModified": "2025-07-24"
+    }
+    </script>
+    
+    <!-- 共通CSS -->
+    <link rel="icon" href="../Img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- この記事ページ専用のスタイル -->
+    <style>
+        body.article-page {
+            padding-top: 70px; /* 固定ヘッダー分の余白を確保 */
+        }
+        .article-main {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .article-header h1 {
+            font-size: 2.5rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .article-meta {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 20px;
+            text-align: right; /* 右寄せ */
+        }
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color-start);
+            padding-bottom: 10px;
+        }
+        .article-content p, .article-content li {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            margin-bottom: 20px;
+        }
+        .article-content ul, .article-content ol { padding-left: 2em; }
+        .article-content table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95em; }
+        .article-content th, .article-content td { border: 1px solid #e2e8f0; padding: 12px 15px; text-align: left; }
+        .article-content th { background-color: #f7fafc; }
+        .article-content code { background-color: #f0f2f5; padding: 3px 6px; border-radius: 4px; }
+        .article-footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        /* portfolio-action-btnのスタイルはstyle.cssで定義済みなので流用 */
+        .portfolio-action-btn { margin-bottom: 10px; }
+    </style>
+</head>
+
+<body class="article-page">
+    <header>
+        <!-- (サイト共通ヘッダーは変更なし) -->
+    </header>
+
+    <main class="article-main">
+        <article class="article-container">
+            <header class="article-header">
+                <h1>【AI初心者向け】コピペで簡単！「自分だけの絵本」の作り方</h1>
+                <p class="article-meta">公開日: 2025.07.24</p>
+            </header>
+
+            <div class="article-content">
+                <p>AIに興味はあるけど、何から始めればいいか分からない…。そんな風に感じていませんか？</p>
+                <p>今回は、AIを使う上で欠かせない**「プロンプト（AIへの指示文）」**を実際に使いながら、世界に一つだけのオリジナル絵本をAIと一緒に作る方法を、ステップバイステップでご紹介します！</p>
+                
+                <h2>ステップ1：「プロンプト」って何？</h2>
+                <p>「プロンプト」と聞くと、なんだか難しそうに聞こえるかもしれませんね。でも、心配いりません！<br>プロンプトとは、一言でいえば**「AIとお話しするための言葉」**のことです。</p>
+                <p>スマホのAIアシスタントに「明日の天気は？」と話しかけるのも、立派なプロンプト。AIにイラストを描いてもらう時は、「こんな絵を描いて！」とお願いする言葉がプロンプトになります。つまり、**AIに対する「お願い」や「質問」、「指示」のすべて**がプロンプトなんですね。</p>
+
+                <h2>ステップ2：魔法の呪文（プロンプト）をコピーしよう！</h2>
+                <p>それでは、早速実践してみましょう！<br>このサイトには、AIを賢いアシスタントに変身させる、便利なプロンプトがたくさん用意されています。今回は、**「子供向け知育絵本プロンプト」**を使ってみます。</p>
+                <ol>
+                    <li>まず、<a href="../prompt.html" target="_blank">プロンプト集のページ</a>を開きます。</li>
+                    <li>「子供向け知育絵本」というカードを見つけて、「指示書を見る」をクリックしてください。</li>
+                    <li>ページが開くと、コードが表示されている黒いボックスの右上に「<i class="far fa-copy"></i> コピー」というボタンがあります。これをクリックしましょう。</li>
+                    <li>ボタンが緑色に変わり、「コピー完了！」と表示されれば成功です！</li>
+                </ol>
+
+                <h2>ステップ3：AIと対話して、物語を作ろう！</h2>
+                <p>次に、コピーしたプロンプトをAIに貼り付けます。GeminiやChatGPTなど、お好きな対話型AIを開いてください。</p>
+                <ol>
+                    <li>AIの入力欄に、先ほどコピーしたプロンプトをペースト（貼り付け）して送信します。</li>
+                    <li>AIが「準備ができました。どのようなテーマの知育絵本を作りますか？」と返事をくれたら、準備完了の合図です！</li>
+                    <li>今回はテーマを**「友達」**と入力してみましょう。</li>
+                </ol>
+                <p>どうでしょうか？AIが、あなたの絵本のために素晴らしいタイトルと全5章のストーリー構成（章立て）を提案してくれたはずです。</p>
+
+                <h2>ステップ4：挿絵を作って、絵本を完成させよう！</h2>
+                <p>AIが提案してくれた章立てをよく見ると、各章の最後に英語の文章が添えられていますね。これが、**挿絵を生成するためのImageFX用プロンプト**です。</p>
+                <ol>
+                    <li>この英語のプロンプトをコピーして、<a href="https://imagefx.google.com/" target="_blank">ImageFX</a>の入力欄に貼り付けてみましょう。あっという間に、物語にぴったりの可愛いイラストが生まれます。</li>
+                    <li>AIとの対話に戻り、「OK」と入力して、物語の本文を最後まで作ってもらいましょう。</li>
+                    <li>最後に、出来上がった本文とイラストを、Canvaなどのデザインツールで組み合わせれば…。</li>
+                </ol>
+                <p><strong>世界に一つだけの、あなたのオリジナル絵本の完成です！</strong><br>ぜひ、この方法でAIとの創作を楽しんでみてください。</p>
+
+                <hr style="margin: 40px 0;">
+                <p>次回は、プロンプトを少しだけ改造（カスタマイズ）して、もっと自分好みの作品を作る方法についてお話ししたいと思います。</p>
+            </div>
+            
+            <footer class="article-footer">
+                <a href="../blog.html" class="back-to-blog-btn">ブログ一覧に戻る</a>
+            </footer>
+        </article>
+    </main>
+            
+
+
+    <!-- ===== サイト共通フッター（変更なし） ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            <p>© 2025 chromachannel. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="../JavaScript/script.js"></script>
+</body>
+</html>

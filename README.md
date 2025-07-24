@@ -1,6 +1,6 @@
 # Chromachannelサイト | AI × 福祉クリエイター 山本倫久 公式サイト
 
-AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、そして彼が提供するナレッジを紹介するための公式サイトです。
+AIと福祉を繋ぐクリエイター、山本倫久氏の活動と制作実績、そして彼が提供するナレッジを紹介するための公式サイトです。
 
 **▶ サイトをプレビューする**
 `https://chromachannel.online/`
@@ -9,7 +9,7 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 
 ## 📖 概要
 
-このサイトは、山本倫久の「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届ける」というミッションを体現するものです。彼の持つ多様なスキルセット、具体的な作品群、そして実践的なノウハウ（プロンプト集など）を、訪問者が直感的に理解できるよう、複数の専門ページに分けて構成されています。
+このサイトは、山本倫久氏の「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届ける」というミッションを体現するものです。彼の持つ多様なスキルセット、具体的な作品群、そして実践的なノウハウ（プロンプト集など）を、訪問者が直感的に理解できるよう、複数の専門ページに分けて構成されています。
 
 ## ✨ 主な機能と特徴
 
@@ -22,51 +22,51 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 
 ## 💻 使用技術
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Font Awesome](https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)
-
-*   **詳細**: Flexbox, Grid Layout, CSS変数, DOM操作, IntersectionObserver API
-*   **ライブラリ**: `ress.min.css`
+*   `HTML5`
+*   `CSS3` (Flexbox, Grid Layout, CSS変数)
+*   `JavaScript (ES6+)` (DOM操作, IntersectionObserver API)
+*   **ライブラリ**: `Font Awesome`, `ress.min.css`
 
 ## 📁 ファイル構成
 
 ```
 / (ルートフォルダ)
-├── index.html              # トップページ
-├── portfolio.html          # 制作実績ページ
-├── prompt.html             # プロンプト集トップページ
-├── learn.html              # 学習コンテンツページ
-├── blog.html               # ブログ一覧ページ
-├── sitemap.xml             # サイトマップ
-├── README.md               # このファイル
+├── index.html
+├── portfolio.html
+├── prompt.html
+├── learn.html
+├── blog.html
+├── sitemap.xml
+├── README.md
 │
 ├── CSS/
-│   └── style.css           # サイト共通のスタイルシート
+│   └── style.css
 │
 ├── JavaScript/
-│   └── script.js           # サイト共通のスクリプト
+│   └── script.js
 │
 ├── Img/
 │   ├── chroma_logo.webp
-│   ├── favicon.png
-│   ├── ogp_image.png       # READMEに表示する画像
-│   ├── portfolio/          
-│   └── blog/               
+│   └── ...
 │
-├── Portfolio/              
-│   └── Fuwamoco/
+├── Blog/
+│   ├── A-magic-wand-called-AI.html
+│   └── ...
 │
-├── Blog/                   
-│   └── A-magic-wand-called-AI.html
+├── Novels/
+│   └── ...
 │
-└── Prompt/                 
-    └── prompt-novel-writing.html
+├── Portfolio/
+│   ├── Fuwamoco/
+│   └── ...
+│
+└── Prompt/
+    ├── prompt-imagefx.html
+    └── ...
 ```
 
 ## 👤 制作者
 
-*   **氏名**: 山本 倫久 (Norihisa Yamamoto)
+*   **氏名**: 山本 倫久 (Michihisa Yamamoto)
 *   **役職**: AI × 福祉クリエイター
 *   **連絡先**: from.aito.the.infinity@gmail.com

@@ -8,76 +8,133 @@
 <!-- サイトのメインページ -->
 <url>
   <loc>https://chromachannel.online/index.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://chromachannel.online/portfolio.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
   <loc>https://chromachannel.online/prompt.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/blog.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>https://chromachannel.online/learn.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://chromachannel.online/blog.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://chromachannel.online/portfolio.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
-  <priority>0.90</priority>
 </url>
 
 <!-- ブログ記事ページ -->
 <url>
   <loc>https://chromachannel.online/Blog/A-magic-wand-called-AI.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://chromachannel.online/Blog/How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Blog/How-to-Prompt.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<!-- ポートフォリオ作品ページ -->
+<url>
+  <loc>https://chromachannel.online/Portfolio/Adaptive_Work_Management_System_A/index.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Portfolio/Adaptive_Work_Management_System_B/index.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Portfolio/Ai-Slide-App/index.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Portfolio/chirashi/index.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Portfolio/Fuwamoco/index.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Portfolio/Game/index.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Portfolio/Real-time-preview.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Portfolio/Timer/index.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
 </url>
 
 <!-- プロンプト詳細ページ -->
 <url>
+  <loc>https://chromachannel.online/Prompt/prompt-imagefx.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
   <loc>https://chromachannel.online/Prompt/prompt-novel-writing.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Prompt/prompt-picture-book-writing.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://chromachannel.online/Prompt/prompt-roadmap-lv1.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://chromachannel.online/Prompt/prompt-roadmap-lv2.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://chromachannel.online/Prompt/prompt-roadmap-lv3.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://chromachannel.online/Prompt/prompt-stable-diffusion.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://chromachannel.online/Prompt/prompt-suno-ai.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://chromachannel.online/Prompt/prompt-stable-diffusion.html</loc>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
   <loc>https://chromachannel.online/Prompt/prompt-youtube-shorts.html</loc>
-  <lastmod>2025-07-23T00:00:00+00:00</lastmod>
+  <lastmod>2025-07-24T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 
