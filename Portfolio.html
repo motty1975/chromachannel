@@ -2,10 +2,41 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ===== ▼▼▼ 【SEO強化版】このページ専用のSEO設定 ▼▼▼ ===== -->
     <title>制作実績 (Portfolio) | Chromachannelサイト</title>
-    <meta name="description" content="AI × 福祉クリエイター 山本倫久の制作実績一覧。AIイラスト、動画制作、Webサイト・アプリ開発、福祉IT関連のプロジェクトなど、多彩な作品を紹介しています。">
+    <meta name="description" content="福祉 × AIクリエイター 山本倫久の制作実績一覧。AIイラスト、動画制作、Webサイト・アプリ開発、福祉IT関連のプロジェクトなど、多彩な作品を紹介しています。">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="制作実績 (Portfolio) | Chromachannelサイト">
+    <meta property="og:description" content="福祉 × AIクリエイター 山本倫久の制作実績一覧。AIイラスト、動画制作、Webサイト・アプリ開発など、多彩な作品を紹介。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chromachannel.online/portfolio.html">
+    <meta property="og:image" content="https://chromachannel.online/Img/ogp_portfolio.webp"> <!-- ★要画像準備 -->
+    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "制作実績 (Portfolio)",
+      "description": "福祉 × AIクリエイター 山本倫久の制作実績一覧。AIイラスト、動画制作、Webサイト・アプリ開発、福祉IT関連のプロジェクトなど、多彩な作品を紹介しています。",
+      "url": "https://chromachannel.online/portfolio.html",
+      "author": {
+        "@type": "Person",
+        "name": "山本 倫久",
+        "url": "https://chromachannel.online/"
+      }
+    }
+    </script>
+    
+    <link rel="canonical" href="https://chromachannel.online/portfolio.html" />
+    <!-- ===== ▲▲▲ SEO設定 END ▲▲▲ ===== -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Img/favicon.png" type="image/png">
+    <link rel="icon" href="Img/favicon.webp" type="image/webp">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -49,12 +80,12 @@
                     <!-- 1. Fuwamoco PROJECT -->
                     <div class="portfolio-item fade-in" data-category="welfare education">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/fuwamoco_main.png" alt="Fuwamoco PROJECT"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/fuwamoco_main.webp" alt="Fuwamoco PROJECT"></div>
                             <div class="portfolio-content">
                                 <h3>NPO法人「Fuwamoco PROJECT」公式サイト</h3>
                                 <p>うさぎの保護活動を行う架空NPO法人の公式サイトを、企画・デザイン・実装まで一貫して制作。JavaScript製の3マッチパズルも搭載。</p>
                                 <div class="portfolio-links"><button onclick="window.open('Portfolio/Fuwamoco/index.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-desktop"></i> Webサイトを見る</button></div>
-                                <div class="portfolio-tags"><span class="tag">Webサイト制作</span><span class="tag">企画・デザイン</span><span class="tag">ゲーム開発</span></div>
+                                <div class="portfolio-tags"><span class="tag">Webサイト制作</span><span class="tag">ゲーム開発</span></div>
                             </div>
                         </div>
                     </div>
@@ -66,46 +97,33 @@
                             <div class="portfolio-content">
                                 <h3>AIキャラクターデザイン集</h3>
                                 <p>Stable Diffusionを使用し、様々なテーマのオリジナルキャラクターを制作しました。</p>
-                                <div class="portfolio-links">
-                                    <button class="gallery-toggle-btn"><i class="fas fa-images"></i> ギャラリーを見る</button>
-                                </div>
-                                <div class="portfolio-tags">
-                                    <span class="tag">AIイラスト</span><span class="tag">キャラクター</span>
-                                </div>
+                                <div class="portfolio-links"><button class="gallery-toggle-btn"><i class="fas fa-images"></i> ギャラリーを見る</button></div>
+                                <div class="portfolio-tags"><span class="tag">AIイラスト</span><span class="tag">キャラクター</span></div>
                             </div>
-                            
-                            <!-- ▼▼▼ サムネイルは、必ずこのラッパーの中に記述します ▼▼▼ -->
                             <div class="thumbnail-gallery-wrapper">
                                 <div class="thumbnail-gallery">
-                                    
-                                    <!-- 1枚目の作品 -->
                                     <img src="Img/portfolio/gallery/001_thumb.webp" class="thumbnail-img" 
-                                        data-large-src="Img/portfolio/gallery/001.webp" 
-                                        data-title="静寂の読書" 
-                                        data-description="図書館の片隅で、窓から差し込む柔らかな光を浴びながら読書にふけるキャラクター。知的な雰囲気と、穏やかな時間の流れを表現しました。" 
-                                        data-checkpoint="CetusMix_v4" 
-                                        data-positive="masterpiece, best quality, 1girl, sitting in a library, reading a book, glasses, long brown hair, warm sunlight streaming through a window, dust particles floating in the air, detailed background, cinematic lighting, peaceful atmosphere, ((looking at book))" 
-                                        data-negative="(worst quality, low quality:1.4), deformed, ugly, blurry, text, watermark, signature, jpeg artifacts, extra fingers, mutated hands, error, (looking at viewer)" 
-                                        data-settings="Steps: 30, Sampler: DPM++ 2M SDE Heun, CFG scale: 7, Size: 1280x720, Hires fix: R-ESRGAN 4x+ Anime6B, Denoising strength: 0.5">
-
-                                    <!-- 2枚目以降の作品は、この下に追加していきます -->
-
+                                         data-large-src="Img/portfolio/gallery/001.webp" 
+                                         data-title="静寂の読書" 
+                                         data-description="図書館の片隅で、窓から差し込む柔らかな光を浴びながら読書にふけるキャラクター。知的な雰囲気と、穏やかな時間の流れを表現しました。" 
+                                         data-checkpoint="CetusMix_v4" 
+                                         data-positive="masterpiece, best quality, 1girl, sitting in a library, reading a book, glasses, long brown hair, warm sunlight streaming through a window, dust particles floating in the air, detailed background, cinematic lighting, peaceful atmosphere, ((looking at book))" 
+                                         data-negative="(worst quality, low quality:1.4), deformed, ugly, blurry, text, watermark, signature, jpeg artifacts, extra fingers, mutated hands, error, (looking at viewer)" 
+                                         data-settings="Steps: 30, Sampler: DPM++ 2M SDE Heun, CFG scale: 7, Size: 1280x720, Hires fix: R-ESRGAN 4x+ Anime6B, Denoising strength: 0.5">
                                 </div>
                             </div>
-                            <!-- ▲▲▲ ここまでがギャラリーの範囲です ▲▲▲ -->
-                            
                         </div>
                     </div>
                     
                     <!-- 3. AIチラシ -->
                     <div class="portfolio-item fade-in" data-category="welfare illustration">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/chirashi_main.png" alt="AIチラシ"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/chirashi_main.webp" alt="AIチラシ"></div>
                             <div class="portfolio-content">
                                 <h3>AIチラシ</h3>
                                 <p>AIを活用した新しい作業のカタチを提案する、新しいチラシです。企画からデザイン、イラスト制作まで一貫して手掛けました。</p>
                                 <div class="portfolio-links"><button onclick="window.open('Portfolio/chirashi/index.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-desktop"></i> チラシを見る</button></div>
-                                <div class="portfolio-tags"><span class="tag">チラシデザイン</span><span class="tag">AIイラスト</span><span class="tag">福祉</span></div>
+                                <div class="portfolio-tags"><span class="tag">チラシデザイン</span><span class="tag">福祉</span></div>
                             </div>
                         </div>
                     </div>
@@ -113,12 +131,12 @@
                     <!-- 4. LINEスタンプ -->
                     <div class="portfolio-item fade-in" data-category="illustration">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/line_stamp_main.webp" alt="LINEスタンプ"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/line_stamp_main.webp" alt="LINEスタンプ"></div>
                             <div class="portfolio-content">
                                 <h3>オリジナルLINEスタンプ制作</h3>
                                 <p>Stable Diffusionを活用し、企画からイラスト制作、申請、リリースまで一貫して行いました。現在、LINE STOREにて販売中です。</p>
                                 <div class="portfolio-links"><button onclick="window.open('https://line.me/S/shop/sticker/author/4754792', '_blank')" class="portfolio-action-btn"><i class="fab fa-line"></i> LINE STOREで見る</button></div>
-                                <div class="portfolio-tags"><span class="tag">LINEスタンプ</span><span class="tag">AIイラスト</span><span class="tag">キャラクター</span></div>
+                                <div class="portfolio-tags"><span class="tag">LINEスタンプ</span><span class="tag">AIイラスト</span></div>
                             </div>
                         </div>
                     </div>
@@ -126,7 +144,7 @@
                     <!-- 5. YouTubeショート動画シナリオ -->
                     <div class="portfolio-item fade-in" data-category="video education">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/scenario_main.png" alt="ショート動画シナリオ"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/scenario_main.webp" alt="ショート動画シナリオ"></div>
                             <div class="portfolio-content">
                                 <h3>YouTubeショート動画シナリオ制作</h3>
                                 <p>教育・解説系のYouTubeショート動画向けに、視聴者の興味を引きつけ、最後まで見てもらえる構成のシナリオをGPTsを活用して制作。</p>
@@ -139,12 +157,12 @@
                     <!-- 6. 学習動画チャンネル -->
                     <div class="portfolio-item fade-in" data-category="education video">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/pc_main.png" alt="PC学習部屋"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/pc_main.webp" alt="PC学習部屋"></div>
                             <div class="portfolio-content">
                                 <h3>YouTubeチャンネル「ChromaのPC学習部屋」</h3>
                                 <p>AIやPCの難しいスキルを、初心者でも楽しく、そして挫折せずに学べることを目指した動画コンテンツを配信しています。</p>
                                 <div class="portfolio-links"><button onclick="window.open('https://www.youtube.com/@chroma0224', '_blank')" class="portfolio-action-btn"><i class="fab fa-youtube"></i> チャンネルを見る</button></div>
-                                <div class="portfolio-tags"><span class="tag">教育コンテンツ</span><span class="tag">動画制作</span><span class="tag">YouTube</span></div>
+                                <div class="portfolio-tags"><span class="tag">教育コンテンツ</span><span class="tag">動画制作</span></div>
                             </div>
                         </div>
                     </div>
@@ -152,7 +170,7 @@
                     <!-- 7. 自由部屋チャンネル -->
                     <div class="portfolio-item fade-in" data-category="video">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/jiyu_main.png" alt="自由部屋"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/jiyu_main.webp" alt="自由部屋"></div>
                             <div class="portfolio-content">
                                 <h3>YouTubeチャンネル「Chromaの自由部屋」</h3>
                                 <p>AIで生成した音楽作品の発表や、日々の制作活動、そして私の「好き」を自由に発信する、パーソナルな活動の拠点です。</p>
@@ -165,16 +183,16 @@
                     <!-- 8. インタラクティブ学習アプリ -->
                     <div class="portfolio-item fade-in" data-category="education">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/learning_main.webp" alt="学習アプリ"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/learning_main.webp" alt="学習アプリ"></div>
                             <div class="portfolio-content">
                                 <h3>インタラクティブ学習アプリ（企画・設計）</h3>
                                 <p>特定のスキルを、クイズや実践形式で学べるWebアプリケーションの概念設計とUI/UXデザインを行いました。</p>
                                 <div class="portfolio-links">
                                     <button onclick="window.open('Portfolio/Ai-Slide-App/index.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-desktop"></i> Webサイトを見る</button>
-                                    <button onclick="window.open('Portfolio/Real-time-preview.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> リアルタイムプレビューを使う</button>    
+                                    <button onclick="window.open('Portfolio/Real-time-preview.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> リアルタイムプレビュー</button>    
                                     <button onclick="window.open('Portfolio/Timer/index.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-clock"></i> タイマーを見る</button>
                                 </div>
-                                <div class="portfolio-tags"><span class="tag">アプリ設計</span><span class="tag">教育</span><span class="tag">UI/UX</span></div>
+                                <div class="portfolio-tags"><span class="tag">アプリ設計</span><span class="tag">UI/UX</span></div>
                             </div>
                         </div>
                     </div>
@@ -182,12 +200,12 @@
                     <!-- 9. 体験アプリ -->
                     <div class="portfolio-item fade-in" data-category="education">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/game_main.webp" alt="AI体験アプリ"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/game_main.webp" alt="AI体験アプリ"></div>
                             <div class="portfolio-content">
                                 <h3>AIと友達になろう！体験アプリ</h3>
                                 <p>PC操作に不慣れな方でも、クリック操作だけでAIの面白さを体験できるWebアプリケーション。HTML/CSS/JSで開発。</p>
                                 <div class="portfolio-links"><button onclick="window.open('Portfolio/Game/index.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-gamepad"></i> ゲームで遊ぶ</button></div>
-                                <div class="portfolio-tags"><span class="tag">Webアプリ</span><span class="tag">JavaScript</span><span class="tag">教育</span></div>
+                                <div class="portfolio-tags"><span class="tag">Webアプリ</span><span class="tag">JavaScript</span></div>
                             </div>
                         </div>
                     </div>
@@ -195,16 +213,15 @@
                     <!-- 10. Kindle向け短編小説 -->
                     <div class="portfolio-item fade-in" data-category="welfare">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/kindle_main.webp" alt="Kindle小説"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/kindle_main.webp" alt="Kindle小説"></div>
                             <div class="portfolio-content">
                                 <h3>(仮)Kindle向け短編小説</h3>
                                 <p>AI(GPTs)を活用し、プロット作成から執筆までを行ったオリジナル短編小説。</p>
                                 <div class="portfolio-links">
                                     <button onclick="window.open('Novels/ディスカバリー9999.txt', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> ディスカバリー9999</button>
                                     <button onclick="window.open('Novels/異世界の王.txt', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 異世界の王</button>
-                                    <button onclick="window.open('Novels/運命の糸に導かれて.txt', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> 運命の糸に導かれて</button>
                                 </div>
-                                <div class="portfolio-tags"><span class="tag">小説執筆</span><span class="tag">Kindle出版</span><span class="tag">GPTs</span></div>
+                                <div class="portfolio-tags"><span class="tag">小説執筆</span><span class="tag">GPTs</span></div>
                             </div>
                         </div>
                     </div>
@@ -212,7 +229,7 @@
                     <!-- 11. 適応型タスク管理システム -->
                     <div class="portfolio-item fade-in" data-category="welfare">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/system_main.webp" alt="タスク管理システム"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/system_main.webp" alt="タスク管理システム"></div>
                             <div class="portfolio-content">
                                 <h3>適応型タスク管理システム</h3>
                                 <p>利用者のスキルレベルや体調に応じて、タスクの難易度や量をAIが提案するシステムの概念設計とプロトタイプ開発。</p>
@@ -220,7 +237,7 @@
                                     <button onclick="window.open('Portfolio/Adaptive_Work_Management_System_A/index.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-tasks"></i> タスク管理Aを見る</button>
                                     <button onclick="window.open('Portfolio/Adaptive_Work_Management_System_B/index.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-tasks"></i> タスク管理Bを見る</button>
                                 </div>
-                                <div class="portfolio-tags"><span class="tag">システム設計</span><span class="tag">UI/UX</span><span class="tag">福祉DX</span></div>
+                                <div class="portfolio-tags"><span class="tag">システム設計</span><span class="tag">福祉DX</span></div>
                             </div>
                         </div>
                     </div>
@@ -246,44 +263,16 @@
             <span class="close-btn">×</span>
             <button id="modal-prev" class="modal-nav"><i class="fas fa-chevron-left"></i></button>
             <div class="modal-body">
-                <div class="modal-image-container"><img id="modal-image" src="Img/portfolio/gallery/001.webp" alt="拡大画像"></div>
+                <div class="modal-image-container"><img id="modal-image" src="" alt="拡大画像"></div>
                 <div class="modal-info-container">
-                    <!-- 画像のタイトルを表示するための「見出し」の器 -->
-                    <h3 id="modal-title">静寂の読書</h3>
-
-                    <!-- 画像の説明文を表示するための「段落」の器 -->
-                    <p id="modal-description">図書館の片隅で、窓から差し込む柔らかな光を浴びながら読書にふけるキャラクター。知的な雰囲気と、穏やかな時間の流れを表現しました。</p>
-
-                    <!-- 見た目を区切るための横線 -->
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-description"></p>
                     <hr class="modal-divider">
-
-                    <!-- ▼▼▼ 生成情報全体をまとめる箱 ▼▼▼ -->
                     <div class="generation-info">
-
-                        <!-- Checkpoint情報を表示する一行 -->
-                        <p>
-                            <strong>Checkpoint:</strong> 
-                            <span id="modal-checkpoint">CetusMix_v4</span>
-                        </p>
-
-                        <!-- Positive Promptを表示するための箱 -->
-                        <div class="prompt-box">
-                            <strong>masterpiece, best quality, 1girl, sitting in a library, reading a book, glasses, long brown hair, warm sunlight streaming through a window, dust particles floating in the air, detailed background, cinematic lighting, peaceful atmosphere, ((looking at book))</strong>
-                            <code id="modal-positive"></code>
-                        </div>
-
-                        <!-- Negative Promptを表示するための箱 -->
-                        <div class="prompt-box">
-                            <strong>(worst quality, low quality:1.4), deformed, ugly, blurry, text, watermark, signature, jpeg artifacts, extra fingers, mutated hands, error, (looking at viewer)</strong>
-                            <code id="modal-negative"></code>
-                        </div>
-
-                        <!-- Settings情報を表示する一行 -->
-                        <p>
-                            <strong>data-settings="Steps: 30, Sampler: DPM++ 2M SDE Heun, CFG scale: 7, Size: 1280x720, Hires fix: R-ESRGAN 4x+ Anime6B, Denoising strength: 0.5"</strong> 
-                            <span id="modal-settings"></span>
-                        </p>
-
+                        <p><strong>Checkpoint:</strong> <span id="modal-checkpoint"></span></p>
+                        <div class="prompt-box"><strong>Positive Prompt:</strong><code id="modal-positive"></code></div>
+                        <div class="prompt-box"><strong>Negative Prompt:</strong><code id="modal-negative"></code></div>
+                        <p><strong>Settings:</strong> <span id="modal-settings"></span></p>
                     </div>
                 </div>
             </div>
