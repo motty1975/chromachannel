@@ -22,10 +22,13 @@ AIと福祉を繋ぐクリエイター、山本倫久氏の活動と制作実績
 
 ## 💻 使用技術
 
-*   `HTML5`
-*   `CSS3` (Flexbox, Grid Layout, CSS変数)
-*   `JavaScript (ES6+)` (DOM操作, IntersectionObserver API)
-*   **ライブラリ**: `Font Awesome`, `ress.min.css`
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Font Awesome](https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)
+
+*   **詳細**: Flexbox, Grid Layout, CSS変数, DOM操作, IntersectionObserver API
+*   **ライブラリ**: `ress.min.css`
 
 ## 📁 ファイル構成
 
@@ -66,7 +69,4 @@ AIと福祉を繋ぐクリエイター、山本倫久氏の活動と制作実績
 
 *   **氏名**: 山本 倫久 (Michihisa Yamamoto)
 *   **役職**: AI × 福祉クリエイター
-*   **連絡先**: from.aito.the.infinity@gmail.com````
-
-この修正により、`README.md` がより見やすく、プロジェクトの概要が一目で把握しやすくなります。
-ご確認をお願いいたします。
+*   **連絡先**: from.aito.the.infinity@gmail.com
