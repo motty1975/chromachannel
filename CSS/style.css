@@ -621,3 +621,139 @@ footer p {
 .modal.show {
     display: flex; /* JavaScriptによってこのクラスが付くと表示される */
 }
+/* === ▼▼▼ 【確定版】ポートフォリオページ レイアウト修正CSS ▼▼▼ === */
+
+/* --- グリッド全体の高さを揃える設定 --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    align-items: stretch; /* カードの高さを揃える */
+}
+
+/* --- カード自体の設定 --- */
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 親の高さに合わせる */
+    background: var(--bg-white);
+    border-radius: 15px;
+    overflow: hidden; /* ★重要：ラッパーがはみ出ないように */
+    box-shadow: 0 10px 30px var(--shadow-light);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--shadow-dark);
+}
+
+/* --- カード内の主要コンテンツエリア --- */
+.portfolio-card > .portfolio-content {
+    flex-grow: 1; /* このエリアが伸びるように */
+    display: flex;
+    flex-direction: column;
+}
+.portfolio-content > p {
+    flex-grow: 1; /* 説明文が伸びてボタンを下に押しやる */
+}
+.portfolio-links, .portfolio-tags {
+    margin-top: auto; /* ボタンとタグを一番下に配置 */
+}
+
+/* --- ギャラリーラッパーのスタイル --- */
+.thumbnail-gallery-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+    padding: 0 25px; /* 開いた時のpaddingを予約 */
+    margin-top: 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+.thumbnail-gallery-wrapper.open {
+    max-height: 500px; /* 十分な高さを確保 */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+/* === ▼▼▼ 【確定版】モーダルウィンドウ デザイン改善CSS ▼▼▼ === */
+
+/* --- モーダル全体のレイアウト --- */
+.modal-body {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+/* --- 画像エリア --- */
+.modal-image-container {
+    flex: 1 1 55%; /* 横幅の比率を55%に */
+    display: flex; /* ★重要：中の画像を中央揃えにするため */
+    align-items: center; /* ★重要：垂直方向に中央揃え */
+    justify-content: center; /* ★重要：水平方向に中央揃え */
+    padding: 10px;
+}
+#modal-image {
+    max-width: 100%;
+    max-height: calc(90vh - 80px); /* 上下の余白を考慮した最大高さ */
+    object-fit: contain; /* アスペクト比を保って表示 */
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* --- 情報エリア --- */
+.modal-info-container {
+    flex: 1 1 45%; /* 横幅の比率を45%に */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 内容が多い場合はスクロール可能に */
+    padding: 20px;
+    background-color: rgba(245, 247, 250, 0.95); /* ★重要：背景色を追加 */
+    backdrop-filter: blur(5px); /* ★重要：すりガラス効果を追加 */
+    border-radius: 8px;
+}
+#modal-title {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+#modal-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.modal-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+}
+.generation-info p {
+    margin-bottom: 8px;
+}
+
+/* --- プロンプト表示エリア --- */
+.prompt-box {
+    margin-bottom: 12px;
+}
+.prompt-box strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+.prompt-box code {
+    display: block;
+    background: #e2e8f0; /* ★重要：背景色を明るく */
+    color: #4a5568; /* ★重要：文字色を濃く */
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+    word-wrap: break-word;
+    border: 1px solid #cbd5e0;
+}

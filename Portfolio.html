@@ -62,19 +62,38 @@
                     <!-- 2. AIキャラクターデザイン集 -->
                     <div class="portfolio-item fade-in" data-category="illustration">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/image_main.webp" alt="AIキャラクター"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/image_main.webp" alt="AIキャラクター"></div>
                             <div class="portfolio-content">
                                 <h3>AIキャラクターデザイン集</h3>
                                 <p>Stable Diffusionを使用し、様々なテーマのオリジナルキャラクターを制作しました。</p>
-                                <div class="portfolio-links"><button class="gallery-toggle-btn"><i class="fas fa-images"></i> ギャラリーを見る</button></div>
-                                <div class="portfolio-tags"><span class="tag">AIイラスト</span><span class="tag">キャラクター</span></div>
-                            </div>
-                            <div class="thumbnail-gallery-wrapper">
-                                <div class="thumbnail-gallery">
-                                    <img src="Img/portfolio/gallery/001.webp" class="thumbnail-img" data-large-src="Img/portfolio/gallery/001.webp" data-title="未来への案内人" data-description="AIが持つ未来的な可能性と、人に寄り添う温かさを表現した、ポートフォリオのメインビジュアルです。" data-checkpoint="yayoiMix_v25" data-positive="masterpiece..." data-negative="(worst quality...)" data-settings="Steps: 40...">
-                                    <img src="Img/portfolio/gallery/002.webp" class="thumbnail-img" data-large-src="Img/portfolio/gallery/002.webp" data-title="音の世界へ" data-description="AIによる音楽生成の楽しさと、音楽に深く没入するエモーショナルな瞬間を表現しました。" data-checkpoint="liveAnimeMix_flat" data-positive="masterpiece..." data-negative="(worst quality...)" data-settings="Steps: 40...">
+                                <div class="portfolio-links">
+                                    <button class="gallery-toggle-btn"><i class="fas fa-images"></i> ギャラリーを見る</button>
+                                </div>
+                                <div class="portfolio-tags">
+                                    <span class="tag">AIイラスト</span><span class="tag">キャラクター</span>
                                 </div>
                             </div>
+                            
+                            <!-- ▼▼▼ サムネイルは、必ずこのラッパーの中に記述します ▼▼▼ -->
+                            <div class="thumbnail-gallery-wrapper">
+                                <div class="thumbnail-gallery">
+                                    
+                                    <!-- 1枚目の作品 -->
+                                    <img src="Img/portfolio/gallery/001_thumb.webp" class="thumbnail-img" 
+                                        data-large-src="Img/portfolio/gallery/001.webp" 
+                                        data-title="静寂の読書" 
+                                        data-description="図書館の片隅で、窓から差し込む柔らかな光を浴びながら読書にふけるキャラクター。知的な雰囲気と、穏やかな時間の流れを表現しました。" 
+                                        data-checkpoint="CetusMix_v4" 
+                                        data-positive="masterpiece, best quality, 1girl, sitting in a library, reading a book, glasses, long brown hair, warm sunlight streaming through a window, dust particles floating in the air, detailed background, cinematic lighting, peaceful atmosphere, ((looking at book))" 
+                                        data-negative="(worst quality, low quality:1.4), deformed, ugly, blurry, text, watermark, signature, jpeg artifacts, extra fingers, mutated hands, error, (looking at viewer)" 
+                                        data-settings="Steps: 30, Sampler: DPM++ 2M SDE Heun, CFG scale: 7, Size: 1280x720, Hires fix: R-ESRGAN 4x+ Anime6B, Denoising strength: 0.5">
+
+                                    <!-- 2枚目以降の作品は、この下に追加していきます -->
+
+                                </div>
+                            </div>
+                            <!-- ▲▲▲ ここまでがギャラリーの範囲です ▲▲▲ -->
+                            
                         </div>
                     </div>
                     
@@ -205,24 +224,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- 12. AIイラスト生成プロンプト集 -->
-                    <div class="portfolio-item fade-in" data-category="illustration education">
-                        <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/Blueprint-illustration.webp" alt="設計図"></div>
-                            <div class="portfolio-content">
-                                <h3>AIイラスト生成プロンプト集</h3>
-                                <p>高品質なイラストを安定して生成するために、私が実際に使用・改良を重ねているプロンプトのコレクションです。</p>
-                                <div class="portfolio-links">
-                                    <button onclick="window.open('Prompt/prompt-stable-diffusion.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> Stable Diffusionのプロンプト</button>
-                                    <button onclick="window.open('Prompt/prompt-suno-ai.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> Suno AIのプロンプト</button>
-                                    <button onclick="window.open('Prompt/prompt-youtube-shorts.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-file-alt"></i> YouTubeシナリオプロンプト</button>
-                                </div>
-                                <div class="portfolio-tags"><span class="tag">プロンプト</span><span class="tag">ノウハウ</span><span class="tag">Stable Diffusion</span></div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -245,16 +246,44 @@
             <span class="close-btn">×</span>
             <button id="modal-prev" class="modal-nav"><i class="fas fa-chevron-left"></i></button>
             <div class="modal-body">
-                <div class="modal-image-container"><img id="modal-image" src="" alt="拡大画像"></div>
+                <div class="modal-image-container"><img id="modal-image" src="Img/portfolio/gallery/001.webp" alt="拡大画像"></div>
                 <div class="modal-info-container">
-                    <h3 id="modal-title"></h3>
-                    <p id="modal-description"></p>
+                    <!-- 画像のタイトルを表示するための「見出し」の器 -->
+                    <h3 id="modal-title">静寂の読書</h3>
+
+                    <!-- 画像の説明文を表示するための「段落」の器 -->
+                    <p id="modal-description">図書館の片隅で、窓から差し込む柔らかな光を浴びながら読書にふけるキャラクター。知的な雰囲気と、穏やかな時間の流れを表現しました。</p>
+
+                    <!-- 見た目を区切るための横線 -->
                     <hr class="modal-divider">
+
+                    <!-- ▼▼▼ 生成情報全体をまとめる箱 ▼▼▼ -->
                     <div class="generation-info">
-                        <p><strong>Checkpoint:</strong> <span id="modal-checkpoint"></span></p>
-                        <div class="prompt-box"><strong>Positive Prompt:</strong><code id="modal-positive"></code></div>
-                        <div class="prompt-box"><strong>Negative Prompt:</strong><code id="modal-negative"></code></div>
-                        <p><strong>Settings:</strong> <span id="modal-settings"></span></p>
+
+                        <!-- Checkpoint情報を表示する一行 -->
+                        <p>
+                            <strong>Checkpoint:</strong> 
+                            <span id="modal-checkpoint">CetusMix_v4</span>
+                        </p>
+
+                        <!-- Positive Promptを表示するための箱 -->
+                        <div class="prompt-box">
+                            <strong>masterpiece, best quality, 1girl, sitting in a library, reading a book, glasses, long brown hair, warm sunlight streaming through a window, dust particles floating in the air, detailed background, cinematic lighting, peaceful atmosphere, ((looking at book))</strong>
+                            <code id="modal-positive"></code>
+                        </div>
+
+                        <!-- Negative Promptを表示するための箱 -->
+                        <div class="prompt-box">
+                            <strong>(worst quality, low quality:1.4), deformed, ugly, blurry, text, watermark, signature, jpeg artifacts, extra fingers, mutated hands, error, (looking at viewer)</strong>
+                            <code id="modal-negative"></code>
+                        </div>
+
+                        <!-- Settings情報を表示する一行 -->
+                        <p>
+                            <strong>data-settings="Steps: 30, Sampler: DPM++ 2M SDE Heun, CFG scale: 7, Size: 1280x720, Hires fix: R-ESRGAN 4x+ Anime6B, Denoising strength: 0.5"</strong> 
+                            <span id="modal-settings"></span>
+                        </p>
+
                     </div>
                 </div>
             </div>
