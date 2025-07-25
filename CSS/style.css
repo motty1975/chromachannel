@@ -21,29 +21,29 @@ body {
 
 /* === ヘッダー === */
 header {
-    background: rgba(255, 255, 255, 0.95); /* 透明度を少し上げる */
-    backdrop-filter: blur(15px); /* ブラー効果を強化 */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 9999; /* z-indexを大幅に上げる */
+    z-index: 9999;
     box-shadow: 0 2px 20px var(--shadow-light);
     transition: background 0.3s ease;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* 境界線を追加 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 nav { 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    position: relative; /* 相対位置指定を追加 */
-    z-index: 10000; /* navにもz-indexを設定 */
+    position: relative;
+    z-index: 10000;
 }
 .logo { 
     text-decoration: none; 
     position: relative;
-    z-index: 10001; /* ロゴを最前面に */
+    z-index: 10001;
 }
 .logo img { height: 40px; width: auto; display: block; }
 .nav-links { 
@@ -51,7 +51,7 @@ nav {
     list-style: none; 
     gap: 30px; 
     position: relative;
-    z-index: 10001; /* ナビリンクも最前面に */
+    z-index: 10001;
 }
 .nav-links a { 
     text-decoration: none; 
@@ -83,30 +83,30 @@ nav {
 
 /* === 記事ページ専用のスタイル（HTMLに埋め込まれているものを統合） === */
 body.article-page {
-    padding-top: 80px; /* 固定ヘッダー分の余白を確保 */
+    padding-top: 80px;
 }
 .article-main {
-    padding: 40px 20px 60px; /* 上のpaddingを調整 */
-    background-color: #fff;
+    padding: 40px 20px 60px;
+    background-color: var(--bg-white);
     position: relative;
-    z-index: 1; /* 記事コンテンツのz-indexを低く設定 */
+    z-index: 1;
 }
 .article-container {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    z-index: 1; /* コンテナも低いz-index */
+    z-index: 1;
 }
 .article-header {
     position: relative;
-    z-index: 1; /* ヘッダーセクションも低いz-index */
+    z-index: 1;
 }
 .article-header h1 {
     font-size: 2.5rem;
     line-height: 1.5;
     margin-bottom: 20px;
     position: relative;
-    z-index: 1; /* h1も低いz-index */
+    z-index: 1;
 }
 .article-meta {
     color: var(--text-light);
@@ -140,21 +140,9 @@ body.article-page {
 .article-footer {
     margin-top: 60px;
     padding-top: 30px;
-    border-top: 1px solid #e2e8f0;
+    /* border-top: 1px solid #e2e8f0; ←←← このせんをけしました！ */
     text-align: center;
-    position: relative;
-    z-index: 1;
-}
-.back-to-blog-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: linear-gradient(45deg, var(--primary-color-start), var(--primary-color-end));
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    position: relative;
-    z-index: 1;
+    background-color: var(--bg-white);
 }
 
 /* === メインヒーロー (トップページ用) === */
@@ -169,11 +157,11 @@ body.article-page {
     position: relative; 
     overflow: hidden; 
     background: linear-gradient(135deg, var(--primary-color-start) 0%, var(--primary-color-end) 100%);
-    z-index: 1; /* ヒーローセクションも低いz-index */
+    z-index: 1;
 }
 .hero-content { 
     max-width: 800px; 
-    z-index: 2; /* ヒーローコンテンツは少し高めに */
+    z-index: 2;
     position: relative; 
 }
 .hero h1 { 
@@ -404,11 +392,11 @@ footer p {
 
 /* === ▼▼▼ ハンバーガーメニュー ▼▼▼ === */
 .mobile-nav-toggle {
-    display: none; /* PCでは非表示 */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 10002; /* ハンバーガーボタンも最前面に */
+    z-index: 10002;
     position: relative;
 }
 .mobile-nav-toggle .fa-bars,
@@ -417,7 +405,7 @@ footer p {
     color: var(--text-color);
 }
 .mobile-nav-toggle .fa-times {
-    display: none; /* 閉じるボタンは初期状態で非表示 */
+    display: none;
 }
 
 /* === レスポンシブ === */
@@ -429,7 +417,6 @@ footer p {
     }
     .profile-image { max-width: 200px; }
     
-    /* ハンバーガーメニューの表示 */
     .mobile-nav-toggle {
         display: block;
     }
@@ -440,10 +427,9 @@ footer p {
         display: block;
     }
 
-    /* PC用ナビゲーションを非表示にし、モバイル用メニューを設定 */
     .nav-links {
         position: fixed;
-        top: 69px; /* ヘッダーの高さ分下げる */
+        top: 69px;
         left: 0;
         width: 100%;
         height: calc(100vh - 69px);
@@ -455,7 +441,7 @@ footer p {
         gap: 40px;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
-        z-index: 9998; /* ヘッダーより少し低く、でも他のコンテンツより高く */
+        z-index: 9998;
     }
     .nav-links.active {
         transform: translateX(0);
@@ -466,18 +452,14 @@ footer p {
 }
 
 /* === ▼▼▼ ポートフォリオページ改善のための追加CSS ▼▼▼ === */
-
-/* --- ページ導入文 --- */
 .portfolio-intro {
     text-align: center;
     font-size: 1.1rem;
     color: var(--text-light);
     max-width: 600px;
     margin: 0 auto 50px;
-    padding-top: 0; /* ページヘッダーがあるので上のpaddingは不要 */
+    padding-top: 0;
 }
-
-/* --- フィルターボタン --- */
 .portfolio-categories {
     display: flex;
     justify-content: center;
@@ -490,10 +472,10 @@ footer p {
     border: 2px solid var(--primary-color-start);
     background: transparent;
     color: var(--primary-color-start);
-    border-radius: 50px; /* 丸みを強くする */
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 600; /* 少し太く */
+    font-weight: 600;
 }
 .category-btn:hover {
     background: linear-gradient(45deg, var(--primary-color-start), var(--primary-color-end));
@@ -506,20 +488,14 @@ footer p {
     color: white;
     border-color: transparent;
 }
-
-/* --- ポートフォリオグリッドとカード --- */
 .portfolio-grid {
     display: grid;
-    /* 画面幅に応じて、350px以上のカードを自動で配置 */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
-
-/* ★★★ これが「詰めて表示」のキーとなるスタイルです ★★★ */
 .portfolio-item.hide {
-    display: none; /* 要素をレイアウトから完全に取り除く */
+    display: none;
 }
-
 .portfolio-card {
     background: var(--bg-white);
     border-radius: 15px;
@@ -547,8 +523,6 @@ footer p {
 .portfolio-card:hover .portfolio-image img {
     transform: scale(1.05);
 }
-
-/* --- カード内部のコンテンツ --- */
 .portfolio-content {
     padding: 25px;
     flex-grow: 1;
@@ -561,14 +535,12 @@ footer p {
 }
 .portfolio-content p {
     color: var(--text-light);
-    flex-grow: 1; /* この要素が伸びてボタンを一番下に押しやる */
+    flex-grow: 1;
     margin-bottom: 15px;
 }
-
-/* --- カード内部のボタンとタグ --- */
 .portfolio-action-btn,
 .gallery-toggle-btn {
-    margin-top: auto; /* ボタンを一番下に配置 */
+    margin-top: auto;
     background: transparent;
     border: 2px solid var(--primary-color-start);
     color: var(--primary-color-start);
@@ -605,10 +577,9 @@ footer p {
 
 /* === モーダルの表示崩れ対策 === */
 .modal {
-    /* 常に非表示を基本とし、JavaScriptで .show クラスが付いた時だけ表示する */
     display: none;
-    position: fixed; /* 画面に固定 */
-    z-index: 8000; /* ヘッダーより低く設定 */
+    position: fixed;
+    z-index: 8000;
     left: 0;
     top: 0;
     width: 100%;
@@ -617,28 +588,24 @@ footer p {
     align-items: center;
     justify-content: center;
 }
-
 .modal.show {
-    display: flex; /* JavaScriptによってこのクラスが付くと表示される */
+    display: flex;
 }
-/* === ▼▼▼ 【確定版】ポートフォリオページ レイアウト修正CSS ▼▼▼ === */
 
-/* --- グリッド全体の高さを揃える設定 --- */
+/* === ▼▼▼ 【確定版】ポートフォリオページ レイアウト修正CSS ▼▼▼ === */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    align-items: stretch; /* カードの高さを揃える */
+    align-items: stretch;
 }
-
-/* --- カード自体の設定 --- */
 .portfolio-card {
     display: flex;
     flex-direction: column;
-    height: 100%; /* 親の高さに合わせる */
+    height: 100%;
     background: var(--bg-white);
     border-radius: 15px;
-    overflow: hidden; /* ★重要：ラッパーがはみ出ないように */
+    overflow: hidden;
     box-shadow: 0 10px 30px var(--shadow-light);
     transition: all 0.3s ease;
     text-align: center;
@@ -647,39 +614,34 @@ footer p {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px var(--shadow-dark);
 }
-
-/* --- カード内の主要コンテンツエリア --- */
 .portfolio-card > .portfolio-content {
-    flex-grow: 1; /* このエリアが伸びるように */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 .portfolio-content > p {
-    flex-grow: 1; /* 説明文が伸びてボタンを下に押しやる */
+    flex-grow: 1;
 }
 .portfolio-links, .portfolio-tags {
-    margin-top: auto; /* ボタンとタグを一番下に配置 */
+    margin-top: auto;
 }
-
-/* --- ギャラリーラッパーのスタイル --- */
 .thumbnail-gallery-wrapper {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, margin-top 0.5s ease-in-out;
-    padding: 0 25px; /* 開いた時のpaddingを予約 */
+    padding: 0 25px;
     margin-top: 0;
     background-color: #f9f9f9;
     border-top: 1px solid #eee;
 }
 .thumbnail-gallery-wrapper.open {
-    max-height: 500px; /* 十分な高さを確保 */
+    max-height: 500px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
 }
-/* === ▼▼▼ 【確定版】モーダルウィンドウ デザイン改善CSS ▼▼▼ === */
 
-/* --- モーダル全体のレイアウト --- */
+/* === ▼▼▼ 【確定版】モーダルウィンドウ デザイン改善CSS ▼▼▼ === */
 .modal-body {
     display: flex;
     gap: 25px;
@@ -687,32 +649,28 @@ footer p {
     height: 100%;
     padding: 30px;
 }
-
-/* --- 画像エリア --- */
 .modal-image-container {
-    flex: 1 1 55%; /* 横幅の比率を55%に */
-    display: flex; /* ★重要：中の画像を中央揃えにするため */
-    align-items: center; /* ★重要：垂直方向に中央揃え */
-    justify-content: center; /* ★重要：水平方向に中央揃え */
+    flex: 1 1 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
 }
 #modal-image {
     max-width: 100%;
-    max-height: calc(90vh - 80px); /* 上下の余白を考慮した最大高さ */
-    object-fit: contain; /* アスペクト比を保って表示 */
+    max-height: calc(90vh - 80px);
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-
-/* --- 情報エリア --- */
 .modal-info-container {
-    flex: 1 1 45%; /* 横幅の比率を45%に */
+    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* 内容が多い場合はスクロール可能に */
+    overflow-y: auto;
     padding: 20px;
-    background-color: rgba(245, 247, 250, 0.95); /* ★重要：背景色を追加 */
-    backdrop-filter: blur(5px); /* ★重要：すりガラス効果を追加 */
+    background-color: rgba(245, 247, 250, 0.95);
+    backdrop-filter: blur(5px);
     border-radius: 8px;
 }
 #modal-title {
@@ -735,8 +693,6 @@ footer p {
 .generation-info p {
     margin-bottom: 8px;
 }
-
-/* --- プロンプト表示エリア --- */
 .prompt-box {
     margin-bottom: 12px;
 }
@@ -748,12 +704,43 @@ footer p {
 }
 .prompt-box code {
     display: block;
-    background: #e2e8f0; /* ★重要：背景色を明るく */
-    color: #4a5568; /* ★重要：文字色を濃く */
+    background: #e2e8f0;
+    color: #4a5568;
     padding: 10px 12px;
     border-radius: 4px;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     font-size: 0.9em;
     word-wrap: break-word;
     border: 1px solid #cbd5e0;
+}
+
+/* ===== ブログ記事ページフッターのボタン ===== */
+.back-to-blog-links {
+    text-align: center;
+}
+
+.back-to-blog-action-btn {
+    margin-top: auto;
+    background-color: var(--bg-white);
+    border: 2px solid var(--primary-color-start);
+    color: var(--primary-color-start);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.back-to-blog-action-btn:hover {
+    background: linear-gradient(45deg, var(--primary-color-start), var(--primary-color-end));
+    color: white;
+    border-color: transparent;
+}
+
+.back-to-blog-action-btn i {
+    margin-right: 8px;
 }

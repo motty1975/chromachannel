@@ -12,7 +12,7 @@
     <meta property="og:description" content="AIプロンプトの使い方を4ステップで解説！サイトのテンプレートを使って、AIと一緒に世界に一つだけのオリジナル絵本を作ってみませんか？">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://chromachannel.online/Blog/How-to-Prompt.html">
-    <meta property="og:image" content="https://chromachannel.online/Img/blog/ogp-how-to-prompt.png"> <!-- ★要画像設定 -->
+    <meta property="og:image" content="https://chromachannel.online/Img/Blog/How-to-Prompt.webp">
     <meta property="og:site_name" content="Chromachannelサイト">
     <meta name="twitter:card" content="summary_large_image">
     <script type="application/ld+json">
@@ -21,7 +21,7 @@
       "@type": "BlogPosting",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://chromachannel.online/Blog/How-to-Prompt.html" },
       "headline": "【AI初心者向け】コピペで簡単！「自分だけの絵本」の作り方",
-      "image": "https://chromachannel.online/Img/blog/ogp-how-to-prompt.png",
+      "image": "https://chromachannel.online/Img/Blog/How-to-Prompt.webp",
       "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
       "publisher": { "@type": "Organization", "name": "Chromachannel", "logo": { "@type": "ImageObject", "url": "https://chromachannel.online/Img/chroma_logo.webp" } },
       "datePublished": "2025-07-24",
@@ -30,72 +30,52 @@
     </script>
     
     <!-- 共通CSS -->
-    <link rel="icon" href="../Img/favicon.png" type="image/png">
+    <link rel="icon" href="../Img/favicon.webp" type="image/webp">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
-    <!-- この記事ページ専用のスタイル -->
+    <!-- ▼▼▼ 記事専用スタイルはstyle.cssに移動したので削除しました！ ▼▼▼ -->
     <style>
-        body.article-page {
-            padding-top: 70px; /* 固定ヘッダー分の余白を確保 */
-        }
-        .article-main {
-            padding: 60px 20px;
-            background-color: #fff;
-        }
-        .article-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .article-header h1 {
-            font-size: 2.5rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .article-meta {
-            color: var(--text-light);
-            margin-bottom: 40px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 20px;
-            text-align: right; /* 右寄せ */
-        }
-        .article-content h2 {
-            font-size: 1.8rem;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color-start);
-            padding-bottom: 10px;
-        }
-        .article-content p, .article-content li {
-            font-size: 1.1rem;
-            line-height: 2.2;
-            margin-bottom: 20px;
-        }
-        .article-content ul, .article-content ol { padding-left: 2em; }
-        .article-content table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.95em; }
-        .article-content th, .article-content td { border: 1px solid #e2e8f0; padding: 12px 15px; text-align: left; }
-        .article-content th { background-color: #f7fafc; }
-        .article-content code { background-color: #f0f2f5; padding: 3px 6px; border-radius: 4px; }
-        .article-footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
-            text-align: center;
-        }
-        /* portfolio-action-btnのスタイルはstyle.cssで定義済みなので流用 */
-        .portfolio-action-btn { margin-bottom: 10px; }
+        body.article-page { padding-top: 70px; }
+        .article-main { padding: 60px 20px; background-color: #fff; }
+        .article-container { max-width: 800px; margin: 0 auto; }
+        .article-eyecatch { margin-bottom: 30px; border-radius: 8px; overflow: hidden; }
+        .article-eyecatch img { width: 100%; height: auto; display: block; }
+        .article-header h1 { font-size: 2.5rem; line-height: 1.5; margin-bottom: 20px; }
+        .article-meta { color: var(--text-light); margin-bottom: 40px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px; text-align: right; }
+        .article-content h2 { font-size: 1.8rem; margin-top: 50px; margin-bottom: 20px; border-bottom: 2px solid var(--primary-color-start); padding-bottom: 10px; }
+        .article-content p { font-size: 1.1rem; line-height: 2.2; margin-bottom: 30px; }
+        .article-footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #e2e8f0; text-align: center; }
     </style>
 </head>
 
 <body class="article-page">
+    <!-- ===== サイト共通ヘッダー ===== -->
     <header>
-        <!-- (サイト共通ヘッダーは変更なし) -->
+        <nav class="container">
+            <a href="../index.html" class="logo"><img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../prompt.html">Prompt</a></li>
+                <li><a href="../learn.html">Learn</a></li>
+                <li><a href="../blog.html" class="nav-active">Blog</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../novels.html">Novels</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
+        </nav>
     </header>
 
     <main class="article-main">
         <article class="article-container">
             <header class="article-header">
+                <!-- ▼▼▼ アイキャッチ画像を追加 ▼▼▼ -->
+                <div class="article-eyecatch">
+                    <img src="../Img/Blog/How-to-Prompt.webp" alt="絵本を作っているイメージ">
+                </div>
                 <h1>【AI初心者向け】コピペで簡単！「自分だけの絵本」の作り方</h1>
                 <p class="article-meta">公開日: 2025.07.24</p>
             </header>
@@ -129,7 +109,7 @@
                 <h2>ステップ4：挿絵を作って、絵本を完成させよう！</h2>
                 <p>AIが提案してくれた章立てをよく見ると、各章の最後に英語の文章が添えられていますね。これが、挿絵を生成するためのImageFX用プロンプトです。</p>
                 <ol>
-                    <li>この英語のプロンプトをコピーして、<a href="https://imagefx.google.com/" target="_blank">ImageFX</a>の入力欄に貼り付けてみましょう。あっという間に、物語にぴったりの可愛いイラストが生まれます。</li>
+                    <li>この英語のプロンプトをコピーして、<a href="https://labs.google/fx/ja/tools/image-fx" target="_blank">ImageFX</a>の入力欄に貼り付けてみましょう。あっという間に、物語にぴったりの可愛いイラストが生まれます。</li>
                     <li>AIとの対話に戻り、「OK」と入力して、物語の本文を最後まで作ってもらいましょう。</li>
                     <li>最後に、出来上がった本文とイラストを、Canvaなどのデザインツールで組み合わせれば…。</li>
                 </ol>
@@ -139,13 +119,16 @@
                 <p>次回は、プロンプトを少しだけ改造（カスタマイズ）して、もっと自分好みの作品を作る方法についてお話ししたいと思います。</p>
             </div>
             
+            <!-- ▼▼▼ フッターのボタンを書きかえました！ ▼▼▼ -->
             <footer class="article-footer">
-                <a href="../blog.html" class="back-to-blog-btn">ブログ一覧に戻る</a>
+                <div class="back-to-blog-links">
+                    <button onclick="location.href='../blog.html'" class="back-to-blog-action-btn">
+                        <i class="fas fa-arrow-left"></i> ブログ一覧に戻る
+                    </button>
+                </div>
             </footer>
         </article>
     </main>
-            
-
 
     <!-- ===== サイト共通フッター（変更なし） ===== -->
     <footer>
