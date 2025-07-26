@@ -37,13 +37,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/only_read.css"> <!-- ★「読む」ページ専用CSSを適用！ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <!-- ===== ヘッダー（サイト共通） ===== -->
-    <header>
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
         <nav class="container">
             <a href="index.html" class="logo"><img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
             <ul class="nav-links">
@@ -109,7 +112,7 @@
         </section>
     </main>
 
-    <!-- ===== フッター（サイト共通） ===== -->
+    <!-- ===== サイト共通フッター ===== -->
     <footer>
         <div class="container">
             <div class="footer-social-links">
@@ -118,6 +121,11 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
+            
+            <div class="footer-links">
+                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
+            </div>
+            
             <p>© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>

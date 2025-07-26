@@ -5,20 +5,20 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 **▶ サイトをプレビューする**
 `https://chromachannel.online/`
 
-![サイトのスクリーンショット](./Img/ogp_image.png)
+![サイトのスクリーンショット](./Img/ogp_image.webp)
 
 ## 📖 概要
 
-このサイトは、私、山本倫久の「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届ける」というミッションを体現するものです。私の持つ多様なスキルセット、具体的な作品群、そして実践的なノウハウ（プロンプト集など）を、訪問者が直感的に理解できるよう、複数の専門ページに分けて構成しました。
+このサイトは、私、山本倫久の「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届ける」というミッションを体現するものです。私の持つ多様なスキルセット、具体的な作品群（ポートフォリオ）、そして実践的なノウハウ（プロンプト集など）を、訪問者が直感的に理解できるよう、構造的に設計されています。
 
 ## ✨ 主な機能と特徴
 
 *   **マルチページ構成**: サイトの目的別にページを分割 (`index.html`, `portfolio.html`, `prompt.html` など) し、ユーザーが必要な情報にアクセスしやすい構造にしました。
+*   **モジュール化されたCSS設計**: サイト全体のデザインを管理する`style.css`、トップページ専用の`topview.css`、「読む」ページ用の`only_read.css`、アプリ用の`only_app.css`にファイルを分割。これにより、高いメンテナンス性と拡張性を実現しました。
 *   **レスポンシブデザイン**: PC、タブレット、スマートフォンなど、あらゆるデバイスで最適な表示がされるように設計しています。
 *   **インタラクティブなUI**: スクロールに応じたフェードインアニメーションや、モバイル用のハンバーガーメニューを実装し、快適なユーザー体験を提供します。
-*   **ポートフォリオ機能**: カテゴリ別のフィルター機能や、AIイラストの詳細（プロンプトなど）を確認できるモーダルウィンドウ機能を搭載しています。
-*   **高度なSEO対策**: 各ページに最適化された`meta`タグ、`canonical`タグ、OGPタグを設定。さらに、構造化データ（JSON-LD）も活用し、検索エンジンからの評価を高める工夫がしています。
-*   **コンポーネントの共通化**: ヘッダーやフッターを共通パーツ化し、サイト全体で統一感のあるデザインとナビゲーションを実現しています。
+*   **高機能ポートフォリオ**: カテゴリ別のフィルター機能や、AIイラストの詳細（プロンプトなど）を確認できるモーダルウィンドウ機能を搭載しています。
+*   **高度なSEO対策**: 各ページに最適化された`meta`タグ、`canonical`タグ、OGPタグを設定。さらに、構造化データ（JSON-LD）や`sitemap.xml`も活用し、検索エンジンからの評価を高める工夫をしています。
 
 ## 💻 使用技術
 
@@ -27,45 +27,51 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Font Awesome](https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)
 
-*   **ライブラリ**: `ress.min.css`
+*   **ライブラリ**: `ress.min.css`, `Tailwind CSS` (一部ページ)
 
 ## 📁 ファイル構成
-
-```
 / (ルートフォルダ)
 ├── index.html
 ├── portfolio.html
 ├── prompt.html
 ├── learn.html
 ├── blog.html
+├── novels.html
+├── privacy.html
 ├── sitemap.xml
 ├── README.md
 │
 ├── CSS/
-│   └── style.css
+│ ├── style.css # 共通スタイル
+│ ├── topview.css # トップページ専用
+│ └── only_read.css # 記事・一覧ページ用
 │
 ├── JavaScript/
-│   └── script.js
+│ └── script.js # サイト共通スクリプト
 │
 ├── Img/
-│   ├── chroma_logo.webp
-│   └── ...
+│ ├── chroma_logo.webp
+│ └── ...
 │
 ├── Blog/
-│   ├── A-magic-wand-called-AI.html
-│   └── ...
-│
 ├── Novels/
-│   └── ...
 │
-├── Portfolio/
-│   ├── Fuwamoco/
-│   └── ...
+└── Portfolio/
+├── chirashi/
+│ ├── index.html
+│ ├── css/
+│ │ └── only_app.css
+│ └── JavaScript/
+│ └── app_script.js
 │
-└── Prompt/
-    ├── prompt-imagefx.html
-    └── ...
-```
+├── Demo/
+│ ├── lesson_demo.html
+│ ├── css/
+│ │ └── only_app.css
+│ └── JavaScript/
+│ └── lesson_script.js
+│
+└── ... (他のポートフォリオ作品)
 
 ## 👤 制作者
 

@@ -22,6 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- 構造化データ (JSON-LD) -->
+    <!-- ★★★ Personスキーマ（個人の情報） ★★★ -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -37,22 +38,35 @@
                 "https://github.com/motty1975/chromachannel",
                 "https://x.com/Chroma0224"
             ],
-            "knowsAbout": [
-                "AIイラスト制作 (Stable Diffusion)", "動画制作", "音楽制作 (Suno AI)", "教材コンテンツ設計", "Webアプリケーション開発 (HTML/CSS/JavaScript)", "福祉ITコンサルティング", "プロンプトエンジニアリング"
-            ]
+            "knowsAbout": ["AIイラスト制作", "動画制作", "音楽制作", "教材コンテンツ設計", "Webアプリケーション開発", "福祉ITコンサルティング", "プロンプトエンジニアリング"]
         }
+    </script>
+    <!-- ★★★ WebSiteスキーマ（サイト全体の情報）を追加 ★★★ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Chromachannelサイト",
+        "url": "https://chromachannel.online/",
+        "author": {
+          "@type": "Person",
+          "name": "山本 倫久"
+        },
+        "description": "福祉とAIを繋ぐクリエイター、山本倫久の公式サイト。AIを活用した制作実績や、実践的なナレッジ（プロンプト集など）を紹介しています。"
+    }
     </script>
     <!-- ===== ▲▲▲ SEO設定 END ▲▲▲ ===== -->
 
     <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/topview.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-    <!-- ===== ヘッダー ===== -->
-    <header>
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
         <nav class="container">
             <a href="index.html" class="logo">
                 <img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
@@ -173,7 +187,6 @@
         </section>
     </main>
 
-    <!-- ===== フッター ===== -->
     <footer>
         <div class="container">
             <div class="footer-social-links">
@@ -182,11 +195,13 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
+            <div class="footer-links">
+                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
+            </div>
             <p>© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
     
-    <!-- JavaScriptの読み込み -->
     <script src="JavaScript/script.js"></script>
 </body>
 </html>

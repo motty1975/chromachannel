@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>AI適応型作業管理システム | プロファイル分析で生産性を最適化</title>
-    <meta name="description" content="AIがあなたのスキルレベルや作業パターンを分析し、タスクを自動で最適化する高機能な作業管理システムです。かんばん方式でタスクを見やすく管理し、分析機能であなたの生産性向上を強力にサポートします。">
+
+    <!-- ===== ▼▼▼ このページ専用のSEO設定 ▼▼▼ ===== -->
+    <title>AI適応型作業管理システム | Chromachannelサイト</title>
+    <meta name="description" content="AIがあなたのスキルや作業パターンを分析し、タスクを自動で最適化する高機能な作業管理システムです。かんばん方式でタスクを見やすく管理し、あなたの生産性向上を強力にサポートします。">
     <link rel="canonical" href="https://chromachannel.online/Portfolio/Adaptive_System/adaptive_system.html" />
-    <link rel="icon" href="../../Img/favicon.webp" type="image/webp">
-    <meta property="og:title" content="AI適応型作業管理システム | プロファイル分析で生産性を最適化">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="AI適応型作業管理システム | Chromachannelサイト">
     <meta property="og:description" content="AIがあなたの作業パターンを分析しタスクを自動最適化。かんばん方式で生産性を向上させる、次世代の作業管理システム。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chromachannel.online/Portfolio/Adaptive_System/adaptive_system.html">
-    <meta property="og:image" content="https://chromachannel.online/Img/portfolio/ogp_adaptive_system.webp">
+    <meta property="og:image" content="https://chromachannel.online/Img/ogp_adaptive_system.webp">
     <meta property="og:site_name" content="Chromachannelサイト">
     <meta name="twitter:card" content="summary_large_image">
+
+    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -22,7 +26,7 @@
       "name": "AI適応型作業管理システム",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "Web-based",
-      "description": "ユーザーのスキルレベル、平均作業時間、集中できる時間帯などのプロファイルを基に、AIがタスクの難易度や順序を最適化して提案する、Webベースの作業管理システムです。待機中・進行中・完了の3カラムでタスクを管理し、分析ページでは自身の生産性に関する詳細な統計とAIからの改善提案を確認できます。",
+      "description": "ユーザーのスキルレベルや平均作業時間などを基に、AIがタスクの難易度や順序を最適化して提案するWebベースの作業管理システムです。",
       "author": {
         "@type": "Person",
         "name": "山本 倫久",
@@ -30,13 +34,20 @@
       }
     }
     </script>
+    <!-- ===== ▲▲▲ SEO設定 END ▲▲▲ ===== -->
     
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="../../Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <link rel="stylesheet" href="css/only_app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="app-body">
 
+    <!-- ===== サイト共通ヘッダー ===== -->
     <header class="site-header">
         <nav class="container">
             <a href="../../index.html" class="logo"><img src="../../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
@@ -50,79 +61,137 @@
                 <li><a href="../../novels.html">Novels</a></li>
                 <li><a href="../../index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-nav-toggle" aria-label="メニューを開く">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
         </nav>
     </header>
 
-    <div class="container">
-        <!-- (アプリ本体のheaderとmainは変更なし) -->
-        <header>
-            <div class="header-top">
-                <h1 class="main-title">
-                    <i data-lucide="brain"></i>
-                    適応型作業管理システム
-                </h1>
-                <div class="view-switcher">
-                    <button id="btn-view-tasks" class="view-btn active">タスク管理</button>
-                    <button id="btn-view-analytics" class="view-btn">
-                        <i data-lucide="bar-chart-3"></i>
-                        分析
-                    </button>
-                    <button id="settings-btn" class="view-btn" title="設定">
-                        <i data-lucide="settings"></i>
-                    </button>
-                </div>
-            </div>
-            <div id="optimization-banner" class="optimization-banner">
-                <i data-lucide="zap"></i>
-                <span id="optimization-suggestion"></span>
-            </div>
-        </header>
-        <main>
-            <div id="tasks-view">
-                <div class="card add-task-card">
-                    <h2 class="card-title"><i data-lucide="plus"></i> 新しいタスクを追加</h2>
-                    <form id="add-task-form" class="add-task-form">
-                        <input type="text" id="new-task-title" placeholder="タスク名" required>
-                        <input type="text" id="new-task-desc" placeholder="詳細説明">
-                        <button type="submit" class="btn btn-primary">AIで最適化して追加</button>
-                    </form>
-                </div>
-                <div class="task-columns">
-                    <div class="task-column">
-                        <h3>待機中のタスク</h3>
-                        <div id="pending-tasks-list" class="task-list"></div>
-                    </div>
-                    <div class="task-column">
-                        <h3>進行中のタスク</h3>
-                        <div id="inprogress-tasks-list" class="task-list"></div>
-                    </div>
-                    <div class="task-column">
-                        <h3>完了したタスク</h3>
-                        <div id="completed-tasks-list" class="task-list"></div>
+    <main class="app-main">
+        <div class="container app-container">
+            <header>
+                <div class="header-top">
+                    <h1 class="main-title">
+                        <i data-lucide="brain"></i>
+                        適応型作業管理システム
+                    </h1>
+                    <div class="view-switcher">
+                        <button id="btn-view-tasks" class="view-btn active">タスク管理</button>
+                        <button id="btn-view-analytics" class="view-btn">
+                            <i data-lucide="bar-chart-3"></i>
+                            分析
+                        </button>
+                        <button id="settings-btn" class="view-btn" title="設定">
+                            <i data-lucide="settings"></i>
+                        </button>
                     </div>
                 </div>
-            </div>
-            <div id="analytics-view" class="hidden">
-                <!-- (分析ビューの中身は省略) -->
-            </div>
-        </main>
-    </div>
+                <div id="optimization-banner" class="optimization-banner">
+                    <i data-lucide="zap"></i>
+                    <span id="optimization-suggestion"></span>
+                </div>
+            </header>
+
+            <main>
+                <div id="tasks-view">
+                    <div class="card add-task-card">
+                        <h2 class="card-title">
+                            <i data-lucide="plus"></i>
+                            新しいタスクを追加
+                        </h2>
+                        <form id="add-task-form" class="add-task-form">
+                            <input type="text" id="new-task-title" placeholder="タスク名" required>
+                            <input type="text" id="new-task-desc" placeholder="詳細説明">
+                            <button type="submit" class="btn btn-primary">AIで最適化して追加</button>
+                        </form>
+                    </div>
+                    <div class="task-columns">
+                        <div class="task-column">
+                            <h3>待機中のタスク</h3>
+                            <div id="pending-tasks-list" class="task-list"></div>
+                        </div>
+                        <div class="task-column">
+                            <h3>進行中のタスク</h3>
+                            <div id="inprogress-tasks-list" class="task-list"></div>
+                        </div>
+                        <div class="task-column">
+                            <h3>完了したタスク</h3>
+                            <div id="completed-tasks-list" class="task-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="analytics-view" class="hidden">
+                    <div class="analytics-grid">
+                        <div class="card">
+                            <h3 class="card-title"><i data-lucide="user"></i>ユーザープロファイル</h3>
+                            <div class="profile-list">
+                                <div><span>スキルレベル:</span> <strong id="profile-skill"></strong></div>
+                                <div><span>完了率:</span> <strong id="profile-completion"></strong></div>
+                                <div><span>平均作業時間:</span> <strong id="profile-avg-time"></strong></div>
+                                <div><span>最適な作業時間:</span> <strong id="profile-best-hours"></strong></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3 class="card-title">タスク統計</h3>
+                            <div class="profile-list">
+                                <div><span>総タスク数:</span> <strong id="stats-total"></strong></div>
+                                <div><span>完了済み:</span> <strong id="stats-completed"></strong></div>
+                                <div><span>進行中:</span> <strong id="stats-inprogress"></strong></div>
+                                <div><span>待機中:</span> <strong id="stats-pending"></strong></div>
+                            </div>
+                        </div>
+                        <div class="card analytics-full-width">
+                            <h3 class="card-title">AI最適化の提案</h3>
+                            <div class="ai-suggestions">
+                                <div class="suggestion-box info">
+                                    <h4>作業パターン分析</h4>
+                                    <p id="suggestion-pattern"></p>
+                                </div>
+                                <div class="suggestion-box success">
+                                    <h4>推奨改善点</h4>
+                                    <p id="suggestion-improvement"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </main>
 
     <div id="settings-modal" class="modal hidden">
-        <!-- (設定モーダルの中身は省略) -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>ユーザープロファイル設定</h2>
+                <button id="close-modal-btn" class="close-btn">×</button>
+            </div>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="skill-level-select">スキルレベル</label>
+                    <select id="skill-level-select">
+                        <option value="beginner">初心者 (Beginner)</option>
+                        <option value="intermediate">中級者 (Intermediate)</option>
+                        <option value="advanced">上級者 (Advanced)</option>
+                    </select>
+                    <small>あなたの作業習熟度を設定します。</small>
+                </div>
+                <div class="form-group">
+                    <label for="avg-time-input">平均作業時間（分）</label>
+                    <input type="number" id="avg-time-input" min="5" value="45">
+                    <small>1つのタスクにかかるおおよその時間。</small>
+                </div>
+                <div class="form-group">
+                    <label for="best-hours-input">最適な作業時間帯</label>
+                    <input type="text" id="best-hours-input" placeholder="例: 9, 10, 14, 15">
+                    <small>集中しやすい時間帯をカンマ区切りで入力 (0-23時)。</small>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">保存する</button>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <footer class="app-footer">
-        <button onclick="location.href='../../portfolio.html'" class="back-to-portfolio-btn">
-            <i class="fas fa-arrow-left"></i> ポートフォリオに戻る
-        </button>
-    </footer>
-
-    <!-- ===== ▼▼▼ サイト共通フッターを追加 ▼▼▼ ===== -->
+    <!-- ===== サイト共通フッター ===== -->
     <footer>
         <div class="container">
             <div class="footer-social-links">
@@ -131,12 +200,15 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
+            <div class="footer-links">
+                <a href="../../privacy.html">プライバシーポリシー & 免責事項</a>
+            </div>
             <p>© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
-    <!-- ===== ▲▲▲ ここまで追加 ▲▲▲ ===== -->
-
-    <script src="JavaScript/script.js"></script>
+    
+    <script src="../../JavaScript/script.js"></script> 
+    <script src="JavaScript/app_script.js"></script> 
     <script>
         lucide.createIcons();
     </script>

@@ -37,14 +37,21 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Img/favicon.webp" type="image/webp">
+
+    <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/only_read.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <header>
+
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
         <nav class="container">
-            <a href="index.html" class="logo"><img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
+            <a href="index.html" class="logo">
+                <img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#skills">Skills</a></li>
@@ -55,7 +62,10 @@
                 <li><a href="novels.html">Novels</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
         </nav>
     </header>
 
@@ -66,8 +76,9 @@
                 <p>これまでに制作した作品の一部をご紹介します。AIイラストのカードはクリックで詳細なギャラリーを開きます。</p>
             </div>
         </section>
+        
 
-        <section id="portfolio" class="section">
+        <section class="section">
             <div class="container">
                 <div class="portfolio-categories fade-in">
                     <button class="category-btn active" data-category="all">すべて</button>
@@ -78,8 +89,6 @@
                 </div>
                 <div class="portfolio-grid">
 
-                    <!-- (1-10のカードは変更なし) -->
-                    <!-- 1. Fuwamoco PROJECT (省略) -->
                     <div class="portfolio-item fade-in" data-category="welfare education">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/fuwamoco_main.webp" alt="Fuwamoco PROJECT"></div>
@@ -91,7 +100,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 2. AIキャラクターデザイン集 (省略) -->
                     <div class="portfolio-item fade-in" data-category="illustration">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/image_main.webp" alt="AIキャラクター"></div>
@@ -115,7 +123,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 3. AIチラシ (省略) -->
                     <div class="portfolio-item fade-in" data-category="welfare illustration">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/chirashi_main.webp" alt="AIチラシ"></div>
@@ -127,7 +134,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 4. LINEスタンプ (省略) -->
                     <div class="portfolio-item fade-in" data-category="illustration">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/line_stamp_main.webp" alt="LINEスタンプ"></div>
@@ -139,7 +145,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 5. YouTubeショート動画シナリオ (省略) -->
                     <div class="portfolio-item fade-in" data-category="video education">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/scenario_main.webp" alt="ショート動画シナリオ"></div>
@@ -151,7 +156,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 6. 学習動画チャンネル (省略) -->
                     <div class="portfolio-item fade-in" data-category="education video">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/pc_main.webp" alt="PC学習部屋"></div>
@@ -163,7 +167,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 7. 自由部屋チャンネル (省略) -->
                     <div class="portfolio-item fade-in" data-category="video">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/jiyu_main.webp" alt="自由部屋"></div>
@@ -175,7 +178,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 8. インタラクティブ学習アプリ (省略) -->
                     <div class="portfolio-item fade-in" data-category="education">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/learning_main.webp" alt="学習アプリ"></div>
@@ -191,7 +193,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 9. 体験アプリ (省略) -->
                     <div class="portfolio-item fade-in" data-category="education">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/game_main.webp" alt="AI体験アプリ"></div>
@@ -203,7 +204,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 10. Kindle向け短編小説 (省略) -->
                     <div class="portfolio-item fade-in" data-category="welfare">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/portfolio/kindle_main.webp" alt="Kindle小説"></div>
@@ -218,12 +218,9 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- ▼▼▼ 11. 適応型タスク管理システム（修正）▼▼▼ -->
                     <div class="portfolio-item fade-in" data-category="welfare">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/portfolio/system_main.webp" alt="タスク管理システム"></div>
+                            <div class="portfolio-image"><img src="Img/Portfolio/adaptive_system.webp" alt="タスク管理システム"></div>
                             <div class="portfolio-content">
                                 <h3>適応型タスク管理システム</h3>
                                 <p>利用者のスキルレベルや体調に応じて、タスクの難易度や量をAIが提案するシステムの概念設計とプロトタイプ開発。</p>
@@ -234,12 +231,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ▲▲▲ ここまで ▲▲▲ -->
-
-                    <!-- ▼▼▼ 12. タスクツール（新規追加）▼▼▼ -->
                     <div class="portfolio-item fade-in" data-category="welfare education">
                         <div class="portfolio-card">
-                            <div class="portfolio-image"><img src="Img/portfolio/task_tool_main.webp" alt="タスクツール"></div>
+                            <div class="portfolio-image"><img src="Img/portfolio/task_tool.webp" alt="タスクツール"></div>
                             <div class="portfolio-content">
                                 <h3>利用者向けタスクツール</h3>
                                 <p>利用者が自身のタスクを直感的に管理・記録できるWebアプリケーション。シンプルなUIで、PC操作に不慣れな方でも簡単に使えます。</p>
@@ -250,13 +244,26 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ▲▲▲ ここまで ▲▲▲ -->
+                    <div class="portfolio-item fade-in" data-category="education welfare">
+                        <div class="portfolio-card">
+                            <div class="portfolio-image"><img src="Img/portfolio/lesson_demo_main.webp" alt="インタラクティブ学習デモのイメージ"></div>
+                            <div class="portfolio-content">
+                                <h3>インタラクティブ学習デモ</h3>
+                                <p>スライドとクイズで楽しく学べる、インタラクティブな学習教材のデモです。AIの基礎を体験しながら学ぶことができます。</p>
+                                <div class="portfolio-links">
+                                    <button onclick="window.open('Portfolio/Demo/lesson_demo.html', '_blank')" class="portfolio-action-btn"><i class="fas fa-graduation-cap"></i> デモを体験する</button>
+                                </div>
+                                <div class="portfolio-tags"><span class="tag">教育コンテンツ</span><span class="tag">Webアプリ</span></div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- ===== サイト共通フッター ===== -->
     <footer>
         <div class="container">
             <div class="footer-social-links">
@@ -265,32 +272,13 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
+            <div class="footer-links">
+                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
+            </div>
             <p>© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">×</span>
-            <button id="modal-prev" class="modal-nav"><i class="fas fa-chevron-left"></i></button>
-            <div class="modal-body">
-                <div class="modal-image-container"><img id="modal-image" src="" alt="拡大画像"></div>
-                <div class="modal-info-container">
-                    <h3 id="modal-title"></h3>
-                    <p id="modal-description"></p>
-                    <hr class="modal-divider">
-                    <div class="generation-info">
-                        <p><strong>Checkpoint:</strong> <span id="modal-checkpoint"></span></p>
-                        <div class="prompt-box"><strong>Positive Prompt:</strong><code id="modal-positive"></code></div>
-                        <div class="prompt-box"><strong>Negative Prompt:</strong><code id="modal-negative"></code></div>
-                        <p><strong>Settings:</strong> <span id="modal-settings"></span></p>
-                    </div>
-                </div>
-            </div>
-            <button id="modal-next" class="modal-nav"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-
+    
     <script src="JavaScript/script.js"></script>
 </body>
 </html>

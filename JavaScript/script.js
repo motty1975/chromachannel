@@ -1,6 +1,8 @@
 // DOMが完全に読み込まれてから、全ての処理を開始する
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- サイト共通の機能 ---
+
     // モバイル用ハンバーガーメニューを初期化
     const initMobileMenu = () => {
         const toggleButton = document.querySelector('.mobile-nav-toggle');
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const initScrollAnimation = () => {
         const fadeInElements = document.querySelectorAll('.fade-in');
         if (fadeInElements.length === 0) return;
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -25,8 +28,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, { threshold: 0.1 });
+
         fadeInElements.forEach(el => observer.observe(el));
     };
+
+    // ヘッダーのスクロール効果を初期化
+    const initHeaderScrollEffect = () => {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    };
+
+    // --- 「読む」ページ共通の機能 ---
 
     // ポートフォリオのカテゴリフィルターを初期化
     const initPortfolioFilter = () => {
@@ -40,9 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 categoryButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 portfolioItems.forEach(item => {
-                    const itemCategories = item.dataset.category.split(' ');
+                    const itemCategories = item.dataset.category ? item.dataset.category.split(' ') : [];
                     const shouldShow = (category === 'all' || itemCategories.includes(category));
-                    item.classList.toggle('hide', !shouldShow);
+                    if(shouldShow) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
                 });
             });
         });
@@ -51,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // サムネイルギャラリーの開閉機能を初期化
     const initThumbnailToggle = () => {
         document.querySelectorAll('.gallery-toggle-btn').forEach(button => {
-            const portfolioItem = button.closest('.portfolio-item');
+            const portfolioItem = button.closest('.portfolio-card');
             if (!portfolioItem) return;
             const thumbnailWrapper = portfolioItem.querySelector('.thumbnail-gallery-wrapper');
             if (thumbnailWrapper) {
@@ -66,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-    // ▼▼▼ 【確定版】モーダルウィンドウ機能を初期化 ▼▼▼
-    const initModal = () => {
+    // ポートフォリオ用モーダルウィンドウ機能を初期化
+    const initPortfolioModal = () => {
         const modal = document.getElementById('modal');
         if (!modal) return;
         
@@ -85,57 +109,102 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentGallery = [];
         let currentIndex = -1;
 
-        // モーダルを開く処理
         const openModal = (imgElement) => {
             if (!imgElement) return;
             const galleryWrapper = imgElement.closest('.thumbnail-gallery');
+            if (!galleryWrapper) return;
             currentGallery = Array.from(galleryWrapper.querySelectorAll('.thumbnail-img'));
             currentIndex = currentGallery.indexOf(imgElement);
             updateModalContent(imgElement);
             modal.classList.add('show');
         };
 
-        // モーダルを閉じる処理
         const closeModal = () => modal.classList.remove('show');
         
-        // モーダルの内容を更新する処理
         const updateModalContent = (imgElement) => {
-            modalImage.src = imgElement.dataset.largeSrc;
-            modalTitle.textContent = imgElement.dataset.title;
-            modalDescription.textContent = imgElement.dataset.description;
-            modalCheckpoint.textContent = imgElement.dataset.checkpoint;
-            modalPositive.textContent = imgElement.dataset.positive;
-            modalNegative.textContent = imgElement.dataset.negative;
-            modalSettings.textContent = imgElement.dataset.settings;
+            modalImage.src = imgElement.dataset.largeSrc || '';
+            modalTitle.textContent = imgElement.dataset.title || '';
+            modalDescription.textContent = imgElement.dataset.description || '';
+            modalCheckpoint.textContent = imgElement.dataset.checkpoint || '';
+            modalPositive.textContent = imgElement.dataset.positive || '';
+            modalNegative.textContent = imgElement.dataset.negative || '';
+            modalSettings.textContent = imgElement.dataset.settings || '';
         };
         
-        // 前/次の画像へ移動する処理
         const navigateGallery = (direction) => {
+            if(currentGallery.length === 0) return;
             currentIndex += direction;
             if (currentIndex < 0) currentIndex = currentGallery.length - 1;
             if (currentIndex >= currentGallery.length) currentIndex = 0;
             updateModalContent(currentGallery[currentIndex]);
         };
         
-        // ★★★ イベントリスナーのモダンな設定方法 ★★★
         document.body.addEventListener('click', (e) => {
-            // もしクリックされたのがサムネイル画像なら、モーダルを開く
             if (e.target.matches('.thumbnail-img')) {
                 openModal(e.target);
             }
         });
         
-        // イベントリスナーの設定
         closeBtn.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
         prevBtn.addEventListener('click', () => navigateGallery(-1));
         nextBtn.addEventListener('click', () => navigateGallery(1));
+
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('show')) return;
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowLeft') navigateGallery(-1);
+            if (e.key === 'ArrowRight') navigateGallery(1);
+        });
+    };
+
+    // 学習ページ用Coming Soonモーダルを初期化
+    const initLearnModal = () => {
+        const modal = document.getElementById('learn-modal');
+        if (!modal) return;
+
+        const openButtons = document.querySelectorAll('.open-learn-modal-btn');
+        const closeBtn = modal.querySelector('.learn-modal-close-btn');
+        const modalTitle = document.getElementById('learn-modal-title');
+        const modalChapters = document.getElementById('learn-modal-chapters');
+
+        const openModal = (button) => {
+            const title = button.dataset.title;
+            const chapters = button.dataset.chapters.split('|');
+
+            modalTitle.textContent = title;
+            modalChapters.innerHTML = '';
+            chapters.forEach(chapter => {
+                const li = document.createElement('li');
+                li.textContent = chapter;
+                modalChapters.appendChild(li);
+            });
+
+            modal.classList.add('show');
+        };
+
+        const closeModal = () => {
+            modal.classList.remove('show');
+        };
+
+        openButtons.forEach(button => {
+            button.addEventListener('click', () => openModal(button));
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
     };
 
     // --- 全ての機能を初期化して実行 ---
     initMobileMenu();
     initScrollAnimation();
+    initHeaderScrollEffect();
     initPortfolioFilter();
     initThumbnailToggle();
-    initModal();
+    initPortfolioModal();
+    initLearnModal();
 });

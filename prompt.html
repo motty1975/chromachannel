@@ -12,7 +12,7 @@
     <meta property="og:description" content="AIの可能性を最大限に引き出す、実践的なプロンプト（指示文）集。Stable DiffusionからGPTsまで、様々な用途で使えるプロンプトを公開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chromachannel.online/prompt.html">
-    <meta property="og:image" content="https://chromachannel.online/Img/ogp_prompt_top.webp">
+    <meta property="og:image" content="https://chromachannel.online/Img/ogp_prompt.webp">
     <meta property="og:site_name" content="Chromachannelサイト">
     <meta name="twitter:card" content="summary_large_image">
     
@@ -37,14 +37,17 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/only_read.css"> <!-- ★「読む」ページ専用CSSに変更 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-    <!-- ===== ヘッダー（サイト共通） ===== -->
-    <header>
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
         <nav class="container">
             <a href="index.html" class="logo">
                 <img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
@@ -67,7 +70,6 @@
     </header>
 
     <main>
-        <!-- ===== 下層ページ用のヘッダー ===== -->
         <section class="page-header">
             <div class="container">
                 <h1>Prompt Collection</h1>
@@ -75,14 +77,12 @@
             </div>
         </section>
 
-        <!-- ===== プロンプト一覧セクション ===== -->
         <section class="section">
             <div class="container">
                 <p class="portfolio-intro fade-in">高品質なコンテンツを安定して生成するために、私が実際に使用・改良を重ねているプロンプトのコレクションです。思考の過程もご覧いただけます。</p>
                 
                 <div class="portfolio-grid">
 
-                    <!-- カード: Stable Diffusion -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                             <div class="portfolio-image"><img src="Img/prompt/stable-diffusion_main.webp" alt="stable diffusionのイメージ"></div>
@@ -97,7 +97,6 @@
                         </div>
                     </div>
 
-                    <!-- カード: ImageFX -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                              <div class="portfolio-image"><img src="Img/prompt/imagefx_main.webp" alt="ImageFXのイメージ"></div>
@@ -112,7 +111,6 @@
                         </div>
                     </div>
 
-                    <!-- カード: Suno AI -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                              <div class="portfolio-image"><img src="Img/prompt/music_main.webp" alt="音楽のイメージ"></div>
@@ -127,7 +125,6 @@
                         </div>
                     </div>
 
-                    <!-- カード: YouTubeシナリオ -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                              <div class="portfolio-image"><img src="Img/prompt/scenario_main.webp" alt="シナリオのイメージ"></div>
@@ -142,7 +139,6 @@
                         </div>
                     </div>
 
-                    <!-- カード: 小説執筆 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                              <div class="portfolio-image"><img src="Img/prompt/kindle_main.webp" alt="小説のイメージ"></div>
@@ -157,7 +153,6 @@
                         </div>
                     </div>
 
-                    <!-- カード: 子供向け知育絵本 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                              <div class="portfolio-image"><img src="Img/prompt/picture_book_main.webp" alt="絵本のイメージ"></div>
@@ -172,7 +167,6 @@
                         </div>
                     </div>
                     
-                    <!-- カード: ロードマップ Lv.1 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                              <div class="portfolio-image"><img src="Img/prompt/roadmap_lv1.webp" alt="ロードマップのイメージ"></div>
@@ -187,7 +181,6 @@
                         </div>
                     </div>
 
-                    <!-- カード: ロードマップ Lv.2 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                              <div class="portfolio-image"><img src="Img/prompt/roadmap_lv2.webp" alt="ロードマップのイメージ"></div>
@@ -202,7 +195,6 @@
                         </div>
                     </div>
 
-                    <!-- カード: ロードマップ Lv.3 -->
                     <div class="portfolio-item fade-in">
                         <div class="portfolio-card">
                              <div class="portfolio-image"><img src="Img/prompt/roadmap_lv3.webp" alt="ロードマップのイメージ"></div>
@@ -222,7 +214,7 @@
         </section>
     </main>
 
-    <!-- ===== フッター（サイト共通） ===== -->
+    <!-- ===== サイト共通フッター ===== -->
     <footer>
         <div class="container">
             <div class="footer-social-links">
@@ -231,11 +223,13 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
+            <div class="footer-links">
+                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
+            </div>
             <p>© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
     
     <script src="JavaScript/script.js"></script>
-    
 </body>
 </html>

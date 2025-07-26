@@ -5,70 +5,46 @@
 
     <!-- ===== ▼▼▼ このページ専用のSEO設定 ▼▼▼ ===== -->
     <title>AI学習コンテンツ (Learn) | Chromachannelサイト</title>
-    <meta name="description" content="AIの世界へようこそ！AIイラストの作り方から、便利なツールの使い方まで、初心者の方が「デキる」ようになるための学習コンテンツを準備中です。">
+    <meta name="description" content="AIの世界へようこそ！ゼロから始めるAI入門講座で、ChatGPT、画像生成、動画制作、LINEスタンプ作りまで、AIで「つくる楽しさ」を体感しましょう。">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="AI学習コンテンツ (Learn) | Chromachannelサイト">
+    <meta property="og:description" content="AIで「つくる楽しさ」を体感する！初心者向けのAI入門講座。ChatGPTから画像生成、動画制作まで、あなたの「できる」を増やします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chromachannel.online/learn.html">
+    <meta property="og:image" content="https://chromachannel.online/Img/ogp_learn.webp">
+    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "AI学習コンテンツ (Learn)",
+      "description": "AIイラストの作り方から、便利なツールの使い方まで、初心者の方が「デキる」ようになるための学習コンテンツを提供します。",
+      "url": "https://chromachannel.online/learn.html"
+    }
+    </script>
+
+    <link rel="canonical" href="https://chromachannel.online/learn.html" />
     <!-- ===== ▲▲▲ SEO設定 END ▲▲▲ ===== -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Img/favicon.png" type="image/png">
+    <link rel="icon" href="Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/only_read.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- ▼▼▼ このページ専用のスタイル ▼▼▼ -->
-    <style>
-        .coming-soon-container {
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .coming-soon-icon {
-            font-size: 5rem;
-            color: var(--primary-color-start);
-            margin-bottom: 30px;
-        }
-        .coming-soon-container h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .coming-soon-container p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-        .future-content {
-            margin-top: 50px;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-        }
-        .future-content h3 {
-            font-size: 1.5rem;
-            border-bottom: 2px solid var(--primary-color-start);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .future-content ul {
-            list-style-type: '🚀';
-            padding-left: 25px;
-        }
-        .future-content li {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-    </style>
 </head>
 <body>
-    <!-- ===== ヘッダー（サイト共通） ===== -->
-    <header>
+
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
         <nav class="container">
-            <a href="index.html" class="logo">
-                <img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
-            </a>
+            <a href="index.html" class="logo"><img src="Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
             <ul class="nav-links">
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#skills">Skills</a></li>
@@ -76,63 +52,219 @@
                 <li><a href="learn.html" class="nav-active">Learn</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="novels.html">Novels</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-nav-toggle" aria-label="メニューを開く">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
         </nav>
     </header>
 
     <main>
-        <!-- ===== 下層ページ用のヘッダー ===== -->
         <section class="page-header">
             <div class="container">
                 <h1>Learn</h1>
-                <p>AIについて学ぶ</p>
+                <p>AIで「つくる楽しさ」を学ぶ</p>
             </div>
         </section>
 
-        <!-- ===== カミングスーン コンテンツ ===== -->
         <section class="section">
-            <div class="container coming-soon-container">
-                <div class="coming-soon-icon">
-                    <i class="fas fa-cogs"></i>
+            <div class="container">
+                <!-- ステップ1 -->
+                <div class="step-container">
+                    <h2 class="step-title">ステップ1：基礎編 ～AIの全体像と主要ツールをマスターする～</h2>
+                    <div class="course-grid">
+                        <!-- 講座カード 1 -->
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>1.「ゼロから始めるChatGPT & Gemini & cloude入門」講座</h3>
+                                    <p class="course-subtitle">サブタイトル: 最強のAIアシスタント3選を徹底比較！日常と仕事が爆速化する実践テクニック</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="ChatGPT & Gemini & Claude入門" data-chapters="第1章：ようこそ！あなたの日常が劇的に変わるAI新時代へ|第2章：【徹底比較】ChatGPT vs Gemini vs Claude、結局どれを使えばいいの？|第3章：【実践テクニック：日常編】暮らしが豊かになる魔法のAI活用術|第4章：【実践テクニック：仕事編】ライバルに差をつける超・業務効率化術|第5章：【応用編】AIの性能を120%引き出す「プロンプトエンジニアリング」入門|第6章：【最重要】AIと賢く付き合うための必須リテラシー">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 講座カード 2 -->
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>2.「ゼロから始めるAI入門」講座</h3>
+                                    <p class="course-subtitle">サブタイトル: ～「なぜ動く？」から「何ができる？」まで、AIのすべてがわかる～</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="ゼロから始めるAI入門" data-chapters="第1章：AIの世界へようこそ！～AIがもたらす未来とメリット～|第2章：AIの正体を探る～機械学習とディープラーニング～|第3章：AIと話すための準備～Pythonと環境構築～|第4章：いよいよ実践！AIを動かす（ハンズオン）|第5章：AIと未来～光と影を知り、次のステップへ～">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h2>コンテンツ準備中</h2>
-                <p>
-                    AIの世界へようこそ！<br>
-                    ここは、AIイラストの作り方から、便利な最新ツールの使い方まで、初心者の方が「デキる」ようになるための学習ページです。現在、最高のコンテンツをお届けするために準備を進めています。
-                </p>
 
-                <div class="future-content">
-                    <h3>公開予定のコンテンツ</h3>
-                    <ul>
-                        <li>Stable Diffusion入門：ゼロから始めるAIイラスト制作</li>
-                        <li>ChatGPT & Gemini：日常や仕事で使える実践テクニック</li>
-                        <li>Suno AI講座：誰でも作曲家になれるAI音楽の作り方</li>
-                        <li>福祉の現場で役立つIT活用術</li>
-                    </ul>
+                <!-- ステップ2 -->
+                <div class="step-container">
+                    <h2 class="step-title">ステップ2：クリエイティブ応用編 ～AIで「つくる楽しさ」を体感する～</h2>
+                    <div class="course-grid">
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>3.「ゼロから始める画像生成AI入門」講座 ImageFX ＆ Stable Diffusion編</h3>
+                                    <p class="course-subtitle">～言葉で描く魔法の絵画、今日からあなたもデジタルアーティスト～</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="画像生成AI入門" data-chapters="第1章：魔法の絵筆、画像生成AIの世界へようこそ！|第2章：【実践①】まずは触ってみよう！Google「ImageFX」で遊ぶ|第3章：「伝わる言葉」の紡ぎ方～プロンプトエンジニアリング入門～|第4章：【実践②】本格派への道！Stable Diffusionに挑戦|第5章：AIクリエイターとして知っておくべきこと">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>4.「ゼロから始める！AIフル活用・オリジナルLINEスタンプ制作から販売入門」講座</h3>
+                                    <p class="course-subtitle">絵が描けなくても大丈夫！あなたも今日からLINEスタンプクリエイター</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="オリジナルLINEスタンプ制作入門" data-chapters="第1章：あなたもスタンプ長者に！？AIが可能にする新しい創作スタイル|第2章：【企画編】AIと発見！売れるスタンプの隠れた法則|第3章：【ハンズオン①】AIに命を吹き込むプロンプト術|第4章：【ハンズオン②】無料ツールでプロの仕上がり|第5章：【ハンズオン③】いざ！世界にあなたの作品を|第6章：【最重要】安心して稼ぐための権利とルール">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>5.「ゼロから始める音楽生成AI入門」講座 Suno編</h3>
+                                    <p class="course-subtitle">誰でもSuno作曲家に！</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="音楽生成AI入門 Suno編" data-chapters="第1章：ようこそ！AIミュージシャンの世界へ|第2章：【ハンズオン①】さあ、最初の1曲を作ってみよう！|第3章：【ハンズオン②】自分らしい曲を作る魔法のレシピ|第4章：【活用編】あなたの曲を世界に届けよう！|第5章：AIミュージシャンとして知っておくべき一番大切なこと">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>6.「ゼロから始める！VOICEVOXとYMM4を使った動画作成入門」講座</h3>
+                                    <p class="course-subtitle">目パチ・口パクまで完全解説！あなただけのキャラ動画制作術</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="VOICEVOXとYMM4を使った動画作成入門" data-chapters="第1章：ようこそ！キャラクター動画の世界へ|第2章：【準備編】最強の動画制作ツールをPCに迎えよう|第3章：【音声編】VOICEVOXでキャラクターに命を吹き込む|第4章：【連携編】YMM4でキャラクターを召喚する！|第5章：【最重要ハンズオン】目パチ・口パクの魔法|第6章：【演出編】動画をプロっぽく見せる三種の神器|第7章：【完成＆投稿編】世界にあなたの作品を届けよう！|第8章：【最重要】クリエイターとして絶対に守るべき約束">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ステップ3 -->
+                <div class="step-container">
+                    <h2 class="step-title">ステップ3：ビジネス・仕事実践編 ～具体的な業務課題をAIで解決する～</h2>
+                    <div class="course-grid">
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>7.「ゼロから始める！AIフル活用・チラシ作成入門」講座</h3>
+                                    <p class="course-subtitle">デザインセンス不要！AIと共に、人の心をつかむチラシを</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="AIフル活用・チラシ作成入門" data-chapters="第1章：なぜ、あなたのチラシは捨てられてしまうのか？|第2章：【企画編】AIと立てる「勝つための作戦会議」|第3章：【ハンズオン①】AIが紡ぐ、心に刺さるキャッチコピー|第4章：【ハンズオン②】AIが描く、理想のメインビジュアル|第5章：【ハンズオン③】AI素材を「Canva」でプロの作品に|第6章：【最重要】印刷する前に！権利とルールの最終チェック">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>8.「ゼロから始める！AIを使ったホームページ作成入門」講座</h3>
+                                    <p class="course-subtitle">デザインも、文章も、コーディングも不要！AIと共に、あなたのウェブサイトを公開</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="AIを使ったホームページ作成入門" data-chapters="第1章：ホームページ作成の常識が変わる！AIウェブデザイナーの時代|第2章：【企画編】AIと描く「成功するサイト」の設計図|第3章：【ハンズオン①】サイトの魂となる言葉と絵をAIで創る|第4章：【ハンズオン②】AIに組み立てさせる！夢のウェブサイトビルダー|第5章：【公開前チェック編】AIと進めるSEO対策と最終仕上げ|第6章：【最重要】あなたのサイトを守るための権利とルール">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>9.「ゼロから始めるチャットボットAI入門」講座</h3>
+                                    <p class="course-subtitle">プログラミング不要のツールを使い、言葉を理解するAIの仕組みを学びながら、オリジナルのFAQチャットボットを作成</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="チャットボットAI入門" data-chapters="第1章：ようこそチャットボットの世界へ！～AIとの対話～|第2章：AIは言葉をどう理解する？～自然言語処理のキホン～|第3章：実践準備！チャットボト開発ツールを使ってみよう|第4章：ハンズオン！オリジナルFAQチャットボットを作ろう|第5章：チャットボットの未来と向き合い方">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>10.「ゼロから始める！AIフル活用・バズるYouTubeシナリオから投稿入門」講座</h3>
+                                    <p class="course-subtitle">企画・台本・動画制作・投稿まで、すべてAIアシスタントと共に</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="バズるYouTubeシナリオから投稿入門" data-chapters="第1章：あなたのチャンネル、AIが総合プロデュースします！|第2章：AIに丸投げはNG！バズる動画の「絶対法則」|第3章：【ハンズオン①】AIと作るバズる台本|第4章：【ハンズオン②】AIで素材を揃え、形にする|第5章：【ハンズオン③】最後のひと押しをAIで最適化|第6章：AI時代のクリエイターとして一番大切なこと">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-item fade-in">
+                            <div class="course-card">
+                                <div class="course-content">
+                                    <h3>11.「ゼロから始める！AIを仕事でもフル活用」講座</h3>
+                                    <p class="course-subtitle">情報収集・リサーチ・分析から資料作り、あなた専用のAIアプリ開発、未来のツール活用まで</p>
+                                    <div class="course-links">
+                                        <button class="open-learn-modal-btn course-action-btn" data-title="AIを仕事でもフル活用講座" data-chapters="第1章：なぜ、あなたの仕事は終わらないのか？～AIという名の最強の部下～|第2章：【情報収集・リサーチ編】AIは眠らないデジタル司書|第3章：【分析・要約編】AIは無限の思考力を持つデータアナリスト|第4章：【資料作成・文書生成編】AIは24時間働くゴーストライター|第5章：【ビジュアル化・仕上げ編】AIで「伝わる」資料に昇華させる|第6章：【応用・自作ツール編】AIに「あなた専用アプリ」を作らせよう|第7章：【未来を先取り！】これだけは知っておきたいAIおすすめツール|第8章：【最重要】ビジネスでAIを使うための鉄の掟">
+                                            <i class="fas fa-book-open"></i> カリキュラムを見る
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ===== フッター（サイト共通） ===== -->
+    <!-- ===== サイト共通フッター ===== -->
     <footer>
         <div class="container">
             <div class="footer-social-links">
-                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
-                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
-                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
             </div>
             <p>© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- ===== Coming Soon モーダル ===== -->
+    <div id="learn-modal" class="learn-modal">
+        <div class="learn-modal-content">
+            <button class="learn-modal-close-btn">×</button>
+            <h2 id="learn-modal-title"></h2>
+            <p>この講座は現在準備中です。公開までしばらくお待ちください！</p>
+            <h3>講座内容（予定）</h3>
+            <ul id="learn-modal-chapters"></ul>
+        </div>
+    </div>
     
-    <!-- ===== サイト共通のJavaScript ===== -->
     <script src="JavaScript/script.js"></script>
 </body>
 </html>
