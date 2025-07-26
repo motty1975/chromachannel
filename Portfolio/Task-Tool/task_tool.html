@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== SEO METAタグ（変更なし） ===== -->
+    <title>適応型タask管理ツール | あなたのペースで進捗を可視化</title>
+    <meta name="description" content="自分のペースやタスクの難易度に合わせて管理できる、シンプルなToDoリストツールです。進捗バーで達成度を可視化し、モチベーション維持をサポートします。">
+    <link rel="canonical" href="https://chromachannel.online/Portfolio/Task-Tool/task_tool.html" />
+    <link rel="icon" href="../../Img/favicon.webp" type="image/webp">
+    <meta property="og:title" content="適応型タスク管理ツール | あなたのペースで進捗を可視化">
+    <meta property="og:description" content="タスクの難易度設定や進捗の可視化ができる、シンプルなToDoリストツール。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chromachannel.online/Portfolio/Task-Tool/task_tool.html">
+    <meta property="og:image" content="https://chromachannel.online/Img/portfolio/ogp_task_tool.webp">
+    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "適応型タスク管理ツール",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Web-based",
+      "description": "ユーザーがタスクの難易度（かんたん、ふつう、むずかしい）を設定し、進捗状況をパーセンテージとプログレスバーで視覚的に追跡できる、WebベースのToDo管理アプリケーションです。",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
+        <nav class="container">
+            <a href="../../index.html" class="logo"><img src="../../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../prompt.html">Prompt</a></li>
+                <li><a href="../../learn.html">Learn</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../portfolio.html" class="nav-active">Portfolio</a></li>
+                <li><a href="../../novels.html">Novels</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
+        </nav>
+    </header>
+
+    <main class="app-main-container">
+        <h1>適応型タスク管理ツール</h1>
+        <p class="app-subtitle">自分のペースに合わせてタスクを管理しよう！</p>
+
+        <div class="task-app-wrapper">
+            <!-- (アプリの中身は変更なし) -->
+            <section class="task-input-section">
+                <h2>新しいタスクを追加</h2>
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="タスクの内容を入力" required>
+                    <select id="difficulty-select">
+                        <option value="easy">かんたん</option>
+                        <option value="normal" selected>ふつう</option>
+                        <option value="hard">むずかしい</option>
+                    </select>
+                    <button type="submit">追加</button>
+                </form>
+            </section>
+            <section class="task-display-section">
+                <h2>タスクリスト</h2>
+                <div class="filter-controls">
+                    <label><input type="radio" name="filter" value="all" checked> すべて</label>
+                    <label><input type="radio" name="filter" value="active"> 未完了</label>
+                    <label><input type="radio" name="filter" value="completed"> 完了</label>
+                </div>
+                <div class="progress-container">
+                    <span>進捗：</span>
+                    <progress id="progress-bar" value="0" max="100"></progress>
+                    <span id="progress-text">0%</span>
+                </div>
+                <ul id="task-list"></ul>
+                <div id="feedback-message" class="feedback-message"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== アプリ専用フッター ===== -->
+    <footer class="app-footer">
+        <button onclick="location.href='../../portfolio.html'" class="back-to-portfolio-btn">
+            <i class="fas fa-arrow-left"></i> ポートフォリオに戻る
+        </button>
+    </footer>
+
+    <!-- ===== サイト共通フッター ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            <p>© 2025 chromachannel. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>
