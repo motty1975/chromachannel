@@ -203,3 +203,61 @@
 .learn-modal-content h3 { margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
 .learn-modal-content ul { list-style-type: '📖'; padding-left: 20px; }
 .learn-modal-content li { margin-bottom: 10px; padding-left: 10px; line-height: 1.6; }
+
+/* ===== 記事ページ専用スタイル ===== */
+.article-page { 
+    background-color: #f8f9fa; /* ページの背景色 */
+    padding-top: 70px; 
+}
+.article-main { 
+    padding: 60px 20px; 
+}
+.article-container { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+.article-eyecatch { 
+    margin-bottom: 30px; 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+.article-eyecatch img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+.article-header h1 { 
+    font-size: 2.2rem; 
+    line-height: 1.5; 
+    margin-bottom: 20px;
+    font-weight: 700; 
+}
+.article-meta { 
+    color: var(--text-light); 
+    margin-bottom: 40px; 
+    border-bottom: 1px solid #e2e8f0; 
+    padding-bottom: 20px; 
+    text-align: right; 
+}
+.article-content h2 { 
+    font-size: 1.8rem; 
+    margin-top: 50px; 
+    margin-bottom: 20px; 
+    border-bottom: 2px solid var(--primary-color-start); 
+    padding-bottom: 10px; 
+}
+.article-content p { 
+    font-size: 1.1rem; 
+    line-height: 2.2; 
+    margin-bottom: 30px; 
+}
+.article-footer { 
+    margin-top: 60px; 
+    padding-top: 30px; 
+    border-top: 1px solid #e2e8f0; 
+    text-align: center; 
+}

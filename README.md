@@ -31,47 +31,47 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 
 ## 📁 ファイル構成
 / (ルートフォルダ)
-├── index.html
-├── portfolio.html
-├── prompt.html
-├── learn.html
-├── blog.html
-├── novels.html
-├── privacy.html
-├── sitemap.xml
-├── README.md
-│
-├── CSS/
-│ ├── style.css # 共通スタイル
-│ ├── topview.css # トップページ専用
-│ └── only_read.css # 記事・一覧ページ用
-│
-├── JavaScript/
-│ └── script.js # サイト共通スクリプト
-│
-├── Img/
-│ ├── chroma_logo.webp
-│ └── ...
-│
-├── Blog/
-├── Novels/
-│
-└── Portfolio/
-├── chirashi/
-│ ├── index.html
-│ ├── css/
-│ │ └── only_app.css
-│ └── JavaScript/
-│ └── app_script.js
-│
-├── Demo/
-│ ├── lesson_demo.html
-│ ├── css/
-│ │ └── only_app.css
-│ └── JavaScript/
-│ └── lesson_script.js
-│
-└── ... (他のポートフォリオ作品)
+├── index.html<br>
+├── portfolio.html<br>
+├── prompt.html<br>
+├── learn.html<br>
+├── blog.html<br>
+├── novels.html<br>
+├── privacy.html<br>
+├── sitemap.xml<br>
+├── README.md<br>
+│<br>
+├── CSS/<br>
+│ ├── style.css # 共通スタイル<br>
+│ ├── topview.css # トップページ専用<br>
+│ └── only_read.css # 記事・一覧ページ用<br>
+│<br>
+├── JavaScript/<br>
+│ └── script.js # サイト共通スクリプト<br>
+│<br>
+├── Img/<br>
+│ ├── chroma_logo.webp<br>
+│ └── ...<br>
+│<br>
+├── Blog/<br>
+├── Novels/<br>
+│<br>
+└── Portfolio/<br>
+├── chirashi/<br>
+│ ├── index.html<br>
+│ ├── css/<br>
+│ │ └── only_app.css<br>
+│ └── JavaScript/<br>
+│ └── app_script.js<br>
+│<br>
+├── Demo/<br>
+│ ├── lesson_demo.html<br>
+│ ├── css/<br>
+│ │ └── only_app.css<br>
+│ └── JavaScript/<br>
+│ └── lesson_script.js<br>
+│<br>
+└── ... (他のポートフォリオ作品)<br>
 
 ## 👤 制作者
 
