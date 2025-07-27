@@ -5,6 +5,9 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 **▶ サイトをプレビューする**
 `https://chromachannel.online/`
 
+**▶ レッスンデモをプレビューする**
+`https://chromachannel.online/Portfolio/Demo/lesson_demo.html`
+
 ![サイトのスクリーンショット](./Img/ogp_image.webp)
 
 ## 📖 概要

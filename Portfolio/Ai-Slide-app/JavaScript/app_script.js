@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prevBtn');
     const slideCounter = document.getElementById('slideCounter');
     
+    if (!slidesWrapper || !nextBtn || !prevBtn || !slideCounter) return;
+
     let currentIndex = 0;
     const totalSlides = slides.length;
 
