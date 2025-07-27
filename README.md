@@ -60,6 +60,23 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 ├── Novels/<br>
 │<br>
 └── Portfolio/<br>
+├── Fuwamoco/<br>
+│ ├── index.html<br>
+│ ├── rabbit.html<br>
+│ ├── company-info.html<br>
+│ ├── company.html<br>
+│ ├── cafe.html<br>
+│ ├── 3-match-puzzle.html<br>
+│ ├── contact.html<br>
+│ ├── questionnaire.html<br>
+│ ├── privacy-policy.html<br>
+│ │<br>
+│ ├── CSS/<br>
+│ │ ├── style.css (Fuwamoco共通)<br>
+│ │ └── ... (各ページ専用CSS)<br>
+│ └── JavaScript/<br>
+│ ├── script.js (Fuwamoco共通)<br>
+│ └── ... (各ページ専用JS)<br>
 ├── chirashi/<br>
 │ ├── index.html<br>
 │ ├── css/<br>

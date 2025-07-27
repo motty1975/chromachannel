@@ -1,72 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- 1. トップページ (最重要) -->
+  <!-- (既存のchromachannelサイトのURLは変更なし) -->
+  
+  <!-- ★★★ Fuwamoco PROJECTのページを追加 ★★★ -->
   <url>
-    <loc>https://chromachannel.online/index.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- 2. 主要なコンテンツページ -->
-  <url>
-    <loc>https://chromachannel.online/prompt.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/portfolio.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/learn.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/blog.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/novels.html</loc>
+    <loc>https://chromachannel.online/Portfolio/Fuwamoco/index.html</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- 3. ポートフォリオの下層ページ -->
   <url>
-    <loc>https://chromachannel.online/Portfolio/chirashi/index.html</loc>
+    <loc>https://chromachannel.online/Portfolio/Fuwamoco/rabbit.html</loc>
     <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chromachannel.online/Portfolio/Demo/lesson_demo.html</loc>
+    <loc>https://chromachannel.online/Portfolio/Fuwamoco/company-info.html</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/Portfolio/Fuwamoco/company.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/Portfolio/Fuwamoco/cafe.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://chromachannel.online/Portfolio/Adaptive_System/adaptive_system.html</loc>
+    <loc>https://chromachannel.online/Portfolio/Fuwamoco/3-match-puzzle.html</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- 4. その他のページ -->
-  <url>
-    <loc>https://chromachannel.online/privacy.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
