@@ -39,69 +39,16 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- ===== ポートフォリオ：インタラクティブアプリ ===== -->
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Demo/lesson_demo.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Adaptive_System/adaptive_system.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Task-Tool/task_tool.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-   <url>
-    <loc>https://chromachannel.online/Portfolio/Ai-Friend-App/index.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- ===== ポートフォリオ：Fuwamoco PROJECT ===== -->
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Fuwamoco/index.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Fuwamoco/rabbit.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Fuwamoco/company-info.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Fuwamoco/company.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Fuwamoco/cafe.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Portfolio/Fuwamoco/3-match-puzzle.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
+  <!-- ===== ポートフォリオ作品 ===== -->
+  <url><loc>https://chromachannel.online/Portfolio/Fuwamoco/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Ai-Friend-App/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Ai-Baby-App/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Demo/lesson_demo.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Adaptive_System/adaptive_system.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Task-Tool/task_tool.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Real-time-preview/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Timer/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Kakeibo/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
   
   <!-- ===== その他のページ ===== -->
   <url>

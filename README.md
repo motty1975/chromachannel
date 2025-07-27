@@ -11,11 +11,9 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 ![サイトのスクリーンショット](./Img/ogp_image.webp)
 
 ## 📖 概要
-
 このサイトは、私、山本倫久の「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届ける」というミッションを体現するものです。私の持つ多様なスキルセット、具体的な作品群（ポートフォリオ）、そして実践的なノウハウ（プロンプト集など）を、訪問者が直感的に理解できるよう、構造的に設計されています。
 
 ## ✨ 主な機能と特徴
-
 *   **マルチページ構成**: サイトの目的別にページを分割 (`index.html`, `portfolio.html`, `prompt.html` など) し、ユーザーが必要な情報にアクセスしやすい構造にしました。
 *   **モジュール化されたCSS設計**: サイト全体のデザインを管理する`style.css`、トップページ専用の`topview.css`、「読む」ページ用の`only_read.css`、アプリ用の`only_app.css`にファイルを分割。これにより、高いメンテナンス性と拡張性を実現しました。
 *   **レスポンシブデザイン**: PC、タブレット、スマートフォンなど、あらゆるデバイスで最適な表示がされるように設計しています。
@@ -33,65 +31,58 @@ AIと福祉を繋ぐクリエイター、山本倫久の活動と制作実績、
 *   **ライブラリ**: `ress.min.css`, `Tailwind CSS` (一部ページ)
 
 ## 📁 ファイル構成
-/ (ルートフォルダ)
-├── index.html<br>
-├── portfolio.html<br>
-├── prompt.html<br>
-├── learn.html<br>
-├── blog.html<br>
-├── novels.html<br>
-├── privacy.html<br>
-├── sitemap.xml<br>
-├── README.md<br>
-│<br>
-├── CSS/<br>
-│ ├── style.css # 共通スタイル<br>
-│ ├── topview.css # トップページ専用<br>
-│ └── only_read.css # 記事・一覧ページ用<br>
-│<br>
-├── JavaScript/<br>
-│ └── script.js # サイト共通スクリプト<br>
-│<br>
-├── Img/<br>
-│ ├── chroma_logo.webp<br>
-│ └── ...<br>
-│<br>
-├── Blog/<br>
-├── Novels/<br>
-│<br>
-└── Portfolio/<br>
-├── Fuwamoco/<br>
-│ ├── index.html<br>
-│ ├── rabbit.html<br>
-│ ├── company-info.html<br>
-│ ├── company.html<br>
-│ ├── cafe.html<br>
-│ ├── 3-match-puzzle.html<br>
-│ ├── contact.html<br>
-│ ├── questionnaire.html<br>
-│ ├── privacy-policy.html<br>
-│ │<br>
-│ ├── CSS/<br>
-│ │ ├── style.css (Fuwamoco共通)<br>
-│ │ └── ... (各ページ専用CSS)<br>
-│ └── JavaScript/<br>
-│ ├── script.js (Fuwamoco共通)<br>
-│ └── ... (各ページ専用JS)<br>
-├── chirashi/<br>
-│ ├── index.html<br>
-│ ├── css/<br>
-│ │ └── only_app.css<br>
-│ └── JavaScript/<br>
-│ └── app_script.js<br>
-│<br>
-├── Demo/<br>
-│ ├── lesson_demo.html<br>
-│ ├── css/<br>
-│ │ └── only_app.css<br>
-│ └── JavaScript/<br>
-│ └── lesson_script.js<br>
-│<br>
-└── ... (他のポートフォリオ作品)<br>
+
+```/ (ルートフォルダ)
+├── index.html
+├── portfolio.html
+├── prompt.html
+├── learn.html
+├── blog.html
+├── novels.html
+├── privacy.html
+├── sitemap.xml
+├── README.md
+├── _redirects
+│
+├── CSS/
+│   ├── style.css         # サイト全体の共通スタイル
+│   ├── topview.css       # トップページ専用スタイル
+│   └── only_read.css     # ブログ・ポートフォリオ等の一覧ページ用スタイル
+│
+├── JavaScript/
+│   └── script.js         # サイト全体の共通スクリプト
+│
+├── Img/                  # サイト共通の画像
+├── Blog/                 # ブログ記事HTML
+├── Novels/               # 小説テキストファイル
+│
+└── Portfolio/            # ポートフォリオ作品集
+    │
+    ├── Fuwamoco/         # NPO法人 Fuwamoco PROJECT サイト
+    │   ├── index.html
+    │   ├── rabbit.html
+    │   ├── cafe.html
+    │   ├── ... (その他HTML)
+    │   ├── CSS/
+    │   │   └── style.css (Fuwamocoサイト専用)
+    │   └── JavaScript/
+    │       └── script.js (Fuwamocoサイト専用)
+    │
+    ├── Ai-Friend-App/    # AIと友達になろう！
+    ├── Ai-Baby-App/      # AIの赤ちゃん育成アプリ
+    ├── Demo/             # インタラクティブ学習デモ
+    ├── Adaptive_System/  # 適応型タスク管理システム
+    ├── Task-Tool/        # 利用者向けタスクツール
+    ├── Real-time-preview/ # リアルタイムプレビュー
+    ├── Timer/            # 多機能オンライン時計
+    ├── Kakeibo/          # かわいい家計簿
+    │
+    └── chirashi/         # (上記各アプリフォルダ内に、index.html, css/, JavaScript/を格納)
+        ├── index.html
+        ├── css/
+        │   └── only_app.css
+        └── JavaScript/
+            └── app_script.js
 
 ## 👤 制作者
 

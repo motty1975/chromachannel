@@ -3,39 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- ===== ▼▼▼ SEO強化 METAタグ START ▼▼▼ ===== -->
-
-    <!-- ① ページのタイトル（ゲームの内容と魅力を伝える） -->
     <title>AI体験ゲーム：仕分けマスター・ピクト | ドラッグ＆ドロップでAIを育てよう！</title>
-
-    <!-- ② サイトの概要（検索結果に表示される説明文） -->
     <meta name="description" content="ドラッグ＆ドロップの簡単操作で、AIに「くだもの」と「どうぶつ」の仕分けを教える体験型ゲーム。インストール不要ですぐに遊べ、AIの学習（機械学習）の基本を楽しく学べます。">
+    <link rel="canonical" href="https://chromachannel.online/Portfolio/Game/index.html" />
+    <link rel="icon" href="../../Img/favicon.webp" type="image/webp">
 
-    <!-- ③ このページの正規URLを検索エンジンに伝える -->
-    <!-- ★★★★★ あなたのサイトの正式なURLに書き換えてください ★★★★★ -->
-    <link rel="canonical" href="https://chromachannel.online/game-ai-pict/index.html" />
-
-    <!-- ④ ファビコンの設定（任意ですが推奨） -->
-    <!-- ★★★★★ ファビコン画像のパスを正しく指定してください ★★★★★ -->
-    <link rel="icon" href="../img/favicon.webp" type="image/png">
-
-    <!-- ⑤ SNSでシェアされた時の表示を設定 (OGPタグ) -->
-    <!-- ★★★★★ OGP画像のURLは必ず絶対パスで指定してください ★★★★★ -->
+    <!-- OGPタグ -->
     <meta property="og:title" content="AI体験ゲーム：仕分けマスター・ピクト">
     <meta property="og:description" content="ドラッグ＆ドロップの簡単操作で、AIにアイテムの仕分けを教えて育てよう！AIの学習の基本を楽しく学べます。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://chromachannel.online/game-ai-pict/index.html">
-    <meta property="og:image" content="https://chromachannel.online/img/ogp-game-pict.webp">
-    <meta property="og:site_name" content="山本 倫久 ポートフォリオ">
+    <meta property="og:url" content="https://chromachannel.online/Portfolio/Game/index.html">
+    <meta property="og:image" content="https://chromachannel.online/Img/ogp_game_pict.webp">
+    <meta property="og:site_name" content="Chromachannelサイト">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- ⑥ 構造化データ（このページが「教育用ゲームアプリ」であることを伝える） -->
+    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -43,328 +27,85 @@
       "name": "AI体験ゲーム：仕分けマスター・ピクト",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web-based",
-      "description": "ドラッグ＆ドロップ操作を通じて、ユーザーがAIキャラクターにアイテムの分類（教師あり学習）を教えることができる、Webベースの教育的体験ゲームです。学習モードとテストモードを備えています。",
-      "author": {
-        "@type": "Person",
-        "name": "山本 倫久",
-        "url": "https://chromachannel.online/"
-      }
+      "description": "ドラッグ＆ドロップ操作を通じて、ユーザーがAIキャラクターにアイテムの分類（教師あり学習）を教えることができるWebベースの教育的体験ゲームです。",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" }
     }
     </script>
-
     <!-- ===== ▲▲▲ SEO強化 METAタグ END ▲▲▲ ===== -->
     
-    <title>AI体験ゲーム：仕分けマスター・ピクト</title>
-    <style>
-        /* CSSは変更なし */
-    </style>
+    <!-- CSS / ライブラリ -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <link rel="stylesheet" href="css/only_app.css"> <!-- ★正しいCSS名を指定！ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body>
-    <!-- bodyタグの中身は変更なし -->
-    <div id="game-container">
-        <!-- ... -->
-    </div>
-    <script>
-        // JavaScriptは変更なし
-    </script>
-</body>
-</html>
-    <title>AI体験ゲーム：仕分けマスター・ピクト</title>
-    <style>
-        /* CSS: 見た目を整える */
-        body {
-            font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+<body class="app-body">
 
-        #game-container {
-            width: 90%;
-            max-width: 800px;
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            padding: 30px;
-            text-align: center;
-        }
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
+        <nav class="container">
+            <a href="../../index.html" class="logo"><img src="../../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../prompt.html">Prompt</a></li>
+                <li><a href="../../learn.html">Learn</a></li>
+                <li><a href="../../blog.html">Blog</a></li>
+                <li><a href="../../portfolio.html" class="nav-active">Portfolio</a></li>
+                <li><a href="../../novels.html">Novels</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
+        </nav>
+    </header>
 
-        h1 {
-            color: #007bff;
-            margin-top: 0;
-        }
-        
-        #ai-character {
-            font-size: 50px;
-            margin: 10px;
-        }
-
-        #ai-feedback {
-            min-height: 50px;
-            margin: 15px 0;
-            padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-
-        #game-area {
-            margin: 20px 0;
-            padding: 20px;
-            border: 2px dashed #ccc;
-            border-radius: 10px;
-        }
-
-        #item-source {
-            font-size: 80px;
-            cursor: grab;
-            user-select: none; /* テキスト選択を防ぐ */
-        }
-        #item-source:active {
-            cursor: grabbing;
-        }
-
-        #drop-zones {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
-
-        .drop-zone {
-            width: 150px;
-            height: 150px;
-            border: 3px solid #ced4da;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5em;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-        .drop-zone.drag-over {
-            background-color: #cce5ff;
-            border-color: #007bff;
-        }
-        .zone-icon {
-            font-size: 40px;
-        }
-
-        .controls {
-            margin-top: 20px;
-        }
-        
-        button {
-            padding: 12px 25px;
-            font-size: 1em;
-            cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            transition: background-color 0.3s;
-            margin: 0 10px;
-        }
-
-        #switch-mode-btn {
-            background-color: #28a745;
-        }
-        #switch-mode-btn:hover {
-            background-color: #218838;
-        }
-        #switch-mode-btn.testing {
-            background-color: #fd7e14;
-        }
-        #switch-mode-btn.testing:hover {
-            background-color: #e66a01;
-        }
-
-        #reset-btn {
-            background-color: #6c757d;
-        }
-        #reset-btn:hover {
-            background-color: #5a6268;
-        }
-
-        #score-board {
-            margin-top: 10px;
-            font-size: 1.2em;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="game-container">
-        <h1>AI体験ゲーム：仕分けマスター・ピクト</h1>
-        <p>AIの「ピクト」にアイテムの仕分けを教えてあげよう！</p>
-
-        <div id="ai-character">🤖</div>
-        <div id="ai-feedback">ここにアイテムをドラッグして、僕に教えてね！</div>
-
-        <div id="game-area">
-            <p>↓ このアイテムはどっちかな？</p>
-            <div id="item-source" draggable="true"></div>
-            
-            <div id="drop-zones">
-                <div id="fruit-zone" class="drop-zone" data-category="くだもの">
-                    <div class="zone-icon">🍎</div>
-                    <div>くだもの</div>
-                </div>
-                <div id="animal-zone" class="drop-zone" data-category="どうぶつ">
-                    <div class="zone-icon">🐶</div>
-                    <div>どうぶつ</div>
+    <main class="app-main">
+        <div id="game-container">
+            <h1>AI体験ゲーム：仕分けマスター・ピクト</h1>
+            <p>AIの「ピクト」にアイテムの仕分けを教えてあげよう！</p>
+            <div id="ai-character">🤖</div>
+            <div id="ai-feedback">ここにアイテムをドラッグして、僕に教えてね！</div>
+            <div id="game-area">
+                <p>↓ このアイテムはどっちかな？</p>
+                <div id="item-source" draggable="true"></div>
+                <div id="drop-zones">
+                    <div id="fruit-zone" class="drop-zone" data-category="くだもの">
+                        <div class="zone-icon">🍎</div>
+                        <div>くだもの</div>
+                    </div>
+                    <div id="animal-zone" class="drop-zone" data-category="どうぶつ">
+                        <div class="zone-icon">🐶</div>
+                        <div>どうぶつ</div>
+                    </div>
                 </div>
             </div>
+            <div id="score-board">
+                モード: <span id="mode-text">学習モード</span> | スコア: <span id="score">0</span>
+            </div>
+            <div class="controls">
+                <button id="switch-mode-btn">テストモードに切り替え</button>
+                <button id="reset-btn">リセット</button>
+            </div>
         </div>
-        
-        <div id="score-board">
-            モード: <span id="mode-text">学習モード</span> | スコア: <span id="score">0</span>
+    </main>
+
+    <!-- ===== サイト共通フッター ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            <div class="footer-links">
+                <a href="../../privacy.html">プライバシーポリシー & 免責事項</a>
+            </div>
+            <p>© 2025 chromachannel. All rights reserved.</p>
         </div>
-
-        <div class="controls">
-            <button id="switch-mode-btn">テストモードに切り替え</button>
-            <button id="reset-btn">リセット</button>
-        </div>
-    </div>
-
-    <script>
-        // JavaScript: ゲームの動きを作る
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- 変数定義 ---
-            const items = [
-                { id: '🍎', category: 'くだもの' }, { id: '🍌', category: 'くだもの' },
-                { id: '🍇', category: 'くだもの' }, { id: '🐶', category: 'どうぶつ' },
-                { id: '🐱', category: 'どうぶつ' }, { id: '🐘', category: 'どうぶつ' },
-                { id: '🍓', category: 'くだもの' }, { id: '🦁', category: 'どうぶつ' },
-            ];
-            let learnedData = {}; // AIが学習したデータを保存する場所
-            let currentItem = null;
-            let isLearnMode = true;
-            let score = 0;
-
-            // --- DOM要素の取得 ---
-            const itemSourceEl = document.getElementById('item-source');
-            const dropZones = document.querySelectorAll('.drop-zone');
-            const feedbackEl = document.getElementById('ai-feedback');
-            const modeTextEl = document.getElementById('mode-text');
-            const scoreEl = document.getElementById('score');
-            const switchModeBtn = document.getElementById('switch-mode-btn');
-            const resetBtn = document.getElementById('reset-btn');
-
-            // --- 関数定義 ---
-            function showNextItem() {
-                // ランダムに次のアイテムを選ぶ
-                const randomIndex = Math.floor(Math.random() * items.length);
-                currentItem = items[randomIndex];
-                itemSourceEl.textContent = currentItem.id;
-            }
-
-            function updateFeedback(text, isCorrect = null) {
-                feedbackEl.textContent = text;
-                if (isCorrect === true) {
-                    feedbackEl.style.backgroundColor = '#d4edda'; // 正解の色
-                } else if (isCorrect === false) {
-                    feedbackEl.style.backgroundColor = '#f8d7da'; // 不正解の色
-                } else {
-                    feedbackEl.style.backgroundColor = '#e9ecef'; // 通常の色
-                }
-            }
-            
-            function updateScore() {
-                scoreEl.textContent = score;
-            }
-            
-            function resetGame() {
-                learnedData = {};
-                isLearnMode = true;
-                score = 0;
-                updateScore();
-                switchModeBtn.textContent = 'テストモードに切り替え';
-                switchModeBtn.classList.remove('testing');
-                modeTextEl.textContent = '学習モード';
-                updateFeedback('記憶をリセットしたよ！また最初から教えてね！');
-                showNextItem();
-            }
-
-            // --- イベントリスナー ---
-
-            // ドラッグ開始
-            itemSourceEl.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', currentItem.id);
-            });
-
-            // ドロップゾーンの処理
-            dropZones.forEach(zone => {
-                zone.addEventListener('dragover', (e) => {
-                    e.preventDefault(); // ドロップを許可
-                    zone.classList.add('drag-over');
-                });
-                zone.addEventListener('dragleave', () => {
-                    zone.classList.remove('drag-over');
-                });
-                zone.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    zone.classList.remove('drag-over');
-                    const droppedItem = e.dataTransfer.getData('text/plain');
-                    const targetCategory = zone.dataset.category;
-
-                    if (isLearnMode) {
-                        // 【学習モード】の処理
-                        learnedData[droppedItem] = targetCategory; // AIに教える
-                        updateFeedback(`「${droppedItem}」は「${targetCategory}」だね！覚えたよ！`, true);
-                    } else {
-                        // 【テストモード】の処理
-                        if (learnedData[droppedItem]) {
-                            // AIが知っているアイテムの場合
-                            if (learnedData[droppedItem] === targetCategory) {
-                                updateFeedback('知ってる！これは「' + targetCategory + '」だ！正解！', true);
-                                score++;
-                            } else {
-                                updateFeedback('あれ？「' + learnedData[droppedItem] + '」だと思ってた…間違い？', false);
-                                score--;
-                            }
-                        } else {
-                            // AIが知らないアイテムの場合
-                            updateFeedback('うーん…「' + droppedItem + '」は知らないなあ。教えてほしいな。', false);
-                        }
-                        updateScore();
-                    }
-                    
-                    // すぐに次のアイテムを表示
-                    setTimeout(showNextItem, 1500);
-                });
-            });
-
-            // モード切替ボタン
-            switchModeBtn.addEventListener('click', () => {
-                isLearnMode = !isLearnMode;
-                if (isLearnMode) {
-                    modeTextEl.textContent = '学習モード';
-                    switchModeBtn.textContent = 'テストモードに切り替え';
-                    switchModeBtn.classList.remove('testing');
-                    updateFeedback('学習モードに戻ったよ！もっと色々教えて！');
-                } else {
-                    modeTextEl.textContent = 'テストモード';
-                    switchModeBtn.textContent = '学習モードに戻る';
-                    switchModeBtn.classList.add('testing');
-                    updateFeedback('テストモード開始！僕の実力を見ててね！');
-                }
-            });
-
-            // リセットボタン
-            resetBtn.addEventListener('click', resetGame);
-
-            // --- ゲーム開始 ---
-            showNextItem();
-        });
-    </script>
+    </footer>
+    
+    <script src="../../JavaScript/script.js"></script>
+    <script src="JavaScript/app_script.js"></script> <!-- ★正しいJS名を指定！ -->
 </body>
 </html>
