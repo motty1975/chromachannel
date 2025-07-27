@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const feedbackMessage = document.getElementById('feedback-message');
 
     // タスクを管理する配列（ローカルストレージから読み込む）
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    let tasks = JSON.parse(localStorage.getItem('userTasks')) || [];
     let currentFilter = 'all';
 
-    // タスク追加のイベントリスナー
+    // イベントリスナー
     taskForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const taskText = taskInput.value.trim();
@@ -31,25 +31,23 @@ document.addEventListener('DOMContentLoaded', () => {
         saveAndRender();
     });
 
-    // タスクリスト内のクリックイベント（完了・削除）
     taskList.addEventListener('click', (e) => {
-        if (e.target.matches('.complete-btn')) {
+        if (e.target.matches('.complete-btn, .complete-btn *')) {
             const id = Number(e.target.closest('.task-item').dataset.id);
             toggleComplete(id);
         }
-        if (e.target.matches('.delete-btn')) {
+        if (e.target.matches('.delete-btn, .delete-btn *')) {
             const id = Number(e.target.closest('.task-item').dataset.id);
             deleteTask(id);
         }
     });
 
-    // フィルタの変更イベント
     filterControls.addEventListener('change', (e) => {
         currentFilter = e.target.value;
         renderTasks();
     });
 
-    // タスクの完了/未完了を切り替える関数
+    // 関数
     function toggleComplete(id) {
         const task = tasks.find(t => t.id === id);
         if (task) {
@@ -61,42 +59,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // タスクを削除する関数
     function deleteTask(id) {
         tasks = tasks.filter(t => t.id !== id);
         saveAndRender();
     }
 
-    // タスクを保存して再描画する関数
     function saveAndRender() {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
+        localStorage.setItem('userTasks', JSON.stringify(tasks));
         renderTasks();
         updateProgress();
     }
 
-    // タスクリストを描画する関数
     function renderTasks() {
         taskList.innerHTML = '';
         const filteredTasks = tasks.filter(task => {
             if (currentFilter === 'active') return !task.completed;
             if (currentFilter === 'completed') return task.completed;
-            return true; // 'all'
+            return true;
         });
 
         if (filteredTasks.length === 0) {
-            taskList.innerHTML = '<p style="text-align: center; color: #7f8c8d;">タスクはありません。</p>';
+            taskList.innerHTML = '<li class="no-tasks">タスクはありません。</li>';
         } else {
             filteredTasks.forEach(task => {
                 const taskItem = document.createElement('li');
-                taskItem.classList.add('task-item', task.difficulty);
-                if (task.completed) {
-                    taskItem.classList.add('completed');
-                }
+                taskItem.className = `task-item ${task.difficulty} ${task.completed ? 'completed' : ''}`;
                 taskItem.dataset.id = task.id;
 
                 taskItem.innerHTML = `
                     <div class="task-content">
-                        <span class="complete-btn">${task.completed ? '✅' : '⬜️'}</span>
+                        <button class="complete-btn">${task.completed ? '✅' : '⬜️'}</button>
                         <span class="task-text">${task.text}</span>
                     </div>
                     <div class="task-buttons">
@@ -108,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // 進捗バーを更新する関数
     function updateProgress() {
         const completedTasks = tasks.filter(task => task.completed).length;
         const totalTasks = tasks.length;
@@ -118,30 +109,20 @@ document.addEventListener('DOMContentLoaded', () => {
         progressText.textContent = `${Math.round(progress)}%`;
     }
 
-    // フィードバックメッセージを表示する関数
     function showFeedback(difficulty) {
         let message = '';
         switch(difficulty) {
-            case 'easy':
-                message = 'よくできました！簡単なタスクも大事な一歩です！';
-                break;
-            case 'normal':
-                message = '素晴らしい！順調に進んでいますね！';
-                break;
-            case 'hard':
-                message = 'すごい！難しいタスクをやり遂げましたね！';
-                break;
+            case 'easy': message = 'よくできました！簡単なタスクも大事な一歩です！'; break;
+            case 'normal': message = '素晴らしい！順調に進んでいますね！'; break;
+            case 'hard': message = 'すごい！難しいタスクをやり遂げましたね！'; break;
         }
         
         feedbackMessage.textContent = message;
         feedbackMessage.className = `feedback-message show ${difficulty}`;
-
-        // 3秒後にメッセージを非表示にする
         setTimeout(() => {
             feedbackMessage.classList.remove('show');
         }, 3000);
     }
-
 
     // 初期描画
     saveAndRender();

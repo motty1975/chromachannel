@@ -215,3 +215,21 @@ footer .container > p {
     order: 2; /* pタグを一番下に */
     margin-top: 15px;
 }
+
+/* ===== フッターのクレジット表記スタイル ===== */
+.footer-credit {
+    margin-top: 15px;
+    order: 2; /* 著作権表示の上に表示 */
+}
+
+.footer-credit p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* 既存のフッターpタグのスタイルを調整 */
+footer .container > .copyright { /* より詳細なセレクタに変更 */
+    order: 3; /* 一番下に */
+    margin-top: 15px;
+}

@@ -4,34 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ===== SEO METAタグ（変更なし） ===== -->
-    <title>適応型タask管理ツール | あなたのペースで進捗を可視化</title>
+    <!-- ===== ▼▼▼ SEO強化 METAタグ START ▼▼▼ ===== -->
+    <title>利用者向けタスク管理ツール | Chromachannelサイト</title>
     <meta name="description" content="自分のペースやタスクの難易度に合わせて管理できる、シンプルなToDoリストツールです。進捗バーで達成度を可視化し、モチベーション維持をサポートします。">
     <link rel="canonical" href="https://chromachannel.online/Portfolio/Task-Tool/task_tool.html" />
     <link rel="icon" href="../../Img/favicon.webp" type="image/webp">
-    <meta property="og:title" content="適応型タスク管理ツール | あなたのペースで進捗を可視化">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="利用者向けタスク管理ツール | あなたのペースで進捗を可視化">
     <meta property="og:description" content="タスクの難易度設定や進捗の可視化ができる、シンプルなToDoリストツール。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chromachannel.online/Portfolio/Task-Tool/task_tool.html">
-    <meta property="og:image" content="https://chromachannel.online/Img/portfolio/ogp_task_tool.webp">
+    <meta property="og:image" content="https://chromachannel.online/Img/ogp_task_tool.webp">
     <meta property="og:site_name" content="Chromachannelサイト">
     <meta name="twitter:card" content="summary_large_image">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "適応型タスク管理ツール",
-      "applicationCategory": "ProductivityApplication",
-      "operatingSystem": "Web-based",
-      "description": "ユーザーがタスクの難易度（かんたん、ふつう、むずかしい）を設定し、進捗状況をパーセンテージとプログレスバーで視覚的に追跡できる、WebベースのToDo管理アプリケーションです。",
-      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" }
-    }
-    </script>
+    <!-- ===== ▲▲▲ SEO強化 METAタグ END ▲▲▲ ===== -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <link rel="stylesheet" href="css/only_app.css">
 </head>
-<body>
+<body class="app-body">
     <!-- ===== サイト共通ヘッダー ===== -->
     <header class="site-header">
         <nav class="container">
@@ -50,12 +44,12 @@
         </nav>
     </header>
 
-    <main class="app-main-container">
-        <h1>適応型タスク管理ツール</h1>
-        <p class="app-subtitle">自分のペースに合わせてタスクを管理しよう！</p>
-
-        <div class="task-app-wrapper">
-            <!-- (アプリの中身は変更なし) -->
+    <main class="app-main">
+        <div class="container task-app-container">
+            <header>
+                <h1>タスク管理ツール</h1>
+                <p>自分のペースに合わせてタスクを管理しよう！</p>
+            </header>
             <section class="task-input-section">
                 <h2>新しいタスクを追加</h2>
                 <form id="task-form">
@@ -85,15 +79,8 @@
             </section>
         </div>
     </main>
-
-    <!-- ===== アプリ専用フッター ===== -->
-    <footer class="app-footer">
-        <button onclick="location.href='../../portfolio.html'" class="back-to-portfolio-btn">
-            <i class="fas fa-arrow-left"></i> ポートフォリオに戻る
-        </button>
-    </footer>
-
-    <!-- ===== サイト共通フッター ===== -->
+    
+<!-- ===== サイト共通フッター ===== -->
     <footer>
         <div class="container">
             <div class="footer-social-links">
@@ -102,10 +89,21 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
-            <p>© 2025 chromachannel. All rights reserved.</p>
+            
+            <div class="footer-links">
+                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
+            </div>
+
+            <!-- ★★★ ここにクレジット表記を追加しました！ ★★★ -->
+            <div class="footer-credit">
+                <p>一部の音声には「VOICEVOX:中国うさぎ」を使用しています。</p>
+            </div>
+            
+            <p class="copyright">© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
     
-    <script src="JavaScript/script.js"></script>
+    <script src="../../JavaScript/script.js"></script>
+    <script src="JavaScript/app_script.js"></script>
 </body>
 </html>

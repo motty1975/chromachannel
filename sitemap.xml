@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- (既存のchromachannelサイトのURLは変更なし) -->
-  
-  <!-- ★★★ Fuwamoco PROJECTのページを追加 ★★★ -->
+  <!-- ===== Chromachannelサイト 本体 ===== -->
+  <url>
+    <loc>https://chromachannel.online/index.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/prompt.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/portfolio.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/learn.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/blog.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/novels.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ===== ポートフォリオ：インタラクティブアプリ ===== -->
+  <url>
+    <loc>https://chromachannel.online/Portfolio/Demo/lesson_demo.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/Portfolio/Adaptive_System/adaptive_system.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://chromachannel.online/Portfolio/Task-Tool/task_tool.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+   <url>
+    <loc>https://chromachannel.online/Portfolio/Ai-Friend-App/index.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ===== ポートフォリオ：Fuwamoco PROJECT ===== -->
   <url>
     <loc>https://chromachannel.online/Portfolio/Fuwamoco/index.html</loc>
     <lastmod>2025-07-27</lastmod>
@@ -39,6 +101,14 @@
     <lastmod>2025-07-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <!-- ===== その他のページ ===== -->
+  <url>
+    <loc>https://chromachannel.online/privacy.html</loc>
+    <lastmod>2025-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
