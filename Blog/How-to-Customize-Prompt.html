@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== ▼▼▼ 【SEO強化版】この記事専用のSEO設定 ▼▼▼ ===== -->
+    <title>【中級編】プロンプトを改造して、もっと個性的な絵本を作る方法 | Chromachannelサイト</title>
+    <meta name="description" content="AIプロンプトのコピペの次はカスタマイズ！この記事では、既存のプロンプトを「改造」し、キャラクターや絵のタッチ、物語を自由自在に変える4つの実践テクニックを解説します。">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="【中級編】プロンプトを改造して、もっと個性的な絵本を作る方法">
+    <meta property="og:description" content="既存のプロンプトを「改造」し、キャラクターや絵のタッチ、物語を自由自在に変える4つの実践テクニックを解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chromachannel.online/Blog/How-to-Customize-Prompt.html">
+    <meta property="og:image" content="https://chromachannel.online/Img/Blog/How-to-Customize-Prompt.webp">
+    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://chromachannel.online/Blog/How-to-Customize-Prompt.html" },
+      "headline": "【中級編】プロンプトを改造して、もっと個性的な絵本を作る方法",
+      "image": "https://chromachannel.online/Img/Blog/How-to-Customize-Prompt.webp",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
+      "publisher": { "@type": "Organization", "name": "Chromachannel", "logo": { "@type": "ImageObject", "url": "https://chromachannel.online/Img/chroma_logo.webp" } },
+      "datePublished": "2025-07-27",
+      "dateModified": "2025-07-27"
+    }
+    </script>
+    
+    <link rel="canonical" href="https://chromachannel.online/Blog/How-to-Customize-Prompt.html" />
+    <!-- ===== ▲▲▲ SEO設定 END ▲▲▲ ===== -->
+     
+    <link rel="icon" href="../Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/only_read.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="article-page">
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
+        <nav class="container">
+            <a href="../index.html" class="logo"><img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../prompt.html">Prompt</a></li>
+                <li><a href="../learn.html">Learn</a></li>
+                <li><a href="../blog.html" class="nav-active">Blog</a></li>
+                <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../novels.html">Novels</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
+        </nav>
+    </header>
+
+    <main class="article-main">
+        <article class="article-container">
+            <header class="article-header">
+                <div class="article-eyecatch">
+                    <img src="../Img/Blog/How-to-Customize-Prompt.webp" alt="魔法の呪文のようなプロンプトを改造しているイメージ">
+                </div>
+                <h1>【中級編】プロンプトを改造して、もっと個性的な絵本を作る方法</h1>
+                <p class="article-meta">公開日: 2025.07.27</p>
+            </header>
+            
+            <div class="article-content">
+                <p>前回の記事<a href="How-to-Prompt.html">『【AI初心者向け】コピペで簡単！「自分だけの絵本」の作り方』</a>は、お楽しみいただけましたでしょうか？AIのすごさと、創作の楽しさを少しでも感じていただけたなら嬉しいです。</p>
+                <p>さて、コピペでAIを体験した次のステップは、いよいよ「自分だけの魔法の呪文」を作ること。つまり、プロンプトの「改造（カスタマイズ）」です！</p>
+                <p>この記事を読み終える頃には、あなたはAIをさらに意のままに操り、もっと個性的で、あなたらしい物語とイラストを生み出せるようになっているはずです。</p>
+                
+                <h2>ステップ1：プロンプトの「設計図」を理解する</h2>
+                <p>何事も、まずは構造の理解から。当サイトで公開している<a href="../Prompt/prompt-picture-book-writing.html" target="_blank">「子供向け知育絵本プロンプト」</a>は、実はいくつかのパーツで構成されています。料理のレシピに「材料」と「手順」があるのと同じです。</p>
+                <ul>
+                    <li><strong>役割設定（あなたは〇〇です）：</strong>AIに「優秀な絵本作家」という役割を与える部分。</li>
+                    <li><strong>タスク定義（これから〇〇をします）：</strong>「私と対話しながら絵本を作る」という目的を伝える部分。</li>
+                    <li><strong>制約条件（〇〇は守ってください）：</strong>物語の構成や、イラスト用プロンプトの形式など、守ってほしいルールを指示する部分。</li>
+                    <li><strong>最初の質問：</strong>ユーザーとの対話を開始するためのきっかけ。</li>
+                </ul>
+                <p>この「設計図」さえ理解してしまえば、どこをどう変えれば結果がどう変わるのか、予測がつくようになります。</p>
+
+                <h2>ステップ2：実践！4つの改造テクニック</h2>
+                <p>それでは、実際にプロンプトを改造してみましょう！メモ帳などに元のプロンプトをコピーして、色々試してみてくださいね。</p>
+                
+                <h3>テクニック①：主人公を自由に変えてみよう！</h3>
+                <p>元のプロンプトには、「主人公はうさぎの男の子」といった指定はありません。そのため、AIは毎回違うキャラクターを提案してきます。これを、あなたの好きなキャラクターに固定してみましょう。</p>
+                <p>プロンプトの【制約条件】の部分に、以下の一文を追加するだけです。</p>
+                <pre style="background-color: #f5f5f5; border: 1px solid #ddd; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word;"><code>・主人公は「シャイだけど心優しい、宇宙人の女の子」にしてください。</code></pre>
+                <p>こうすることで、AIは必ずこの設定に沿った物語を考えてくれるようになります。</p>
+
+                <h3>テクニック②：絵のタッチを魔法のように変えてみよう！</h3>
+                <p>AIが生成する挿絵用のImageFXプロンプトに、魔法の言葉を追加するだけで、絵のタッチをガラリと変えることができます。元のプロンプトの【出力形式】にある、ImageFXプロンプトの例の部分に、あらかじめ好きな画風を指定しておきましょう。</p>
+                <pre style="background-color: #f5f5f5; border: 1px solid #ddd; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word;"><code>例：(ImageFX Prompt) A little rabbit boy saying thank you to his friends, watercolor style, soft lighting</code></pre>
+                <p>末尾に, watercolor styleと加えるだけで、水彩画のような優しいタッチになります。他にも、以下のような言葉が効果的です。</p>
+                <ul>
+                    <li><strong>Studio Ghibli style:</strong> ジブリ作品のような、温かみのあるアニメ風に。</li>
+                    <li><strong>Pixar style:</strong> ピクサー映画のような、美しい3Dアニメ風に。</li>
+                    <li><strong>flat design illustration:</strong> シンプルでお洒落なフラットデザイン風に。</li>
+                </ul>
+
+                <h3>テクニック③：物語の「章立て」を操ってみよう！</h3>
+                <p>元のプロンプトでは、物語は「全5章」で構成されるように指示されています。この数字を変えるだけで、物語の長さを自由にコントロールできます。</p>
+                <p>例えば、もっと短いお話にしたい場合は、【制約条件】の指示をこう変えてみましょう。</p>
+                <pre style="background-color: #f5f5f5; border: 1px solid #ddd; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word;"><code>・物語は必ず「全3章」で構成してください。</code></pre>
+                <p>逆に、もっと壮大な物語にしたい場合は「全10章」にしてみるのも面白いかもしれませんね。</p>
+
+                <h3>テクニック④：AIに「無茶振り」してアイデアを引き出す！</h3>
+                <p>AIとの対話の面白いところは、少し「無茶振り」なくらいがちょうど良いアイデアを引き出せるところです。AIが章立てを提案してくれた後、本文を生成してもらう前に、こんな一言を追加してみましょう。</p>
+                <p>「OKです。ただし、最終章には読者がアッと驚くような意外な展開を加えてください。」</p>
+                <p>こうすることで、AIはただの予定調和な物語ではなく、あなたの期待を超えるストーリーを提案しようと、さらにクリエイティブになってくれます。</p>
+
+                <h2>まとめ：プロンプト改造は「AIとの対話」</h2>
+                <p>いかがでしたか？プロンプトの改造は、決して難しいプログラミングではありません。AIという賢いパートナーに、「もっとこうしてほしいな」とお願いする、一種の「対話」なのです。</p>
+                <p>今回ご紹介したテクニックを組み合わせれば、可能性は無限大に広がります。失敗を恐れずに、色々な改造を試して、あなただけの最高の絵本を創り上げてください！</p>
+            </div>
+            
+            <footer class="article-footer">
+                <div class="back-to-blog-links">
+                    <button onclick="location.href='../blog.html'" class="portfolio-action-btn">
+                        <i class="fas fa-arrow-left"></i> ブログ一覧に戻る
+                    </button>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+<!-- ===== サイト共通フッター ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-social-links">
+                <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
+                <a href="https://www.youtube.com/@chroma1975" target="_blank" rel="noopener noreferrer" title="Chromaの自由部屋"><i class="fab fa-youtube"></i> Chromaの自由部屋</a>
+                <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="../privacy.html">プライバシーポリシー & 免責事項</a>
+            </div>
+
+            <div class="footer-credit">
+                <p>一部の音声には「VOICEVOX:中国うさぎ」を使用しています。</p>
+            </div>
+            
+            <p class="copyright">© 2025 chromachannel. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="../JavaScript/script.js"></script>
+</body>
+</html>
