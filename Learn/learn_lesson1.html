@@ -23,21 +23,24 @@
     <meta property="og:site_name" content="ゼロから始めるChatGPT & Gemini & cloude入門 | Chromachannel"> <!-- ★サイト名も更新しました -->
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- ImageFX用プロンプト案 for ogp_learn1.webp:
-    A friendly, approachable robot character pointing at a smartphone screen displaying weather and social media icons. The style is a clean, modern flat illustration with a soft, educational color palette. The background is simple and uncluttered.
-    -->
-
     <!-- 5. このページの正規URLを検索エンジンに伝える -->
     <link rel="canonical" href="https://chromachannel.online/learn/learn_lesson1.html"> <!-- ★注意：ここも実際のURLに書き換えてください -->
 
     <!-- ▲▲▲ SEO対策ここまで ▲▲▲ -->
-    <title>ゼロから始めるChatGPT & Gemini & cloude入門 講座テキスト</title>
+    <link rel="icon" href="../Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="CSS/only_app.css">
+    <link rel="stylesheet" href="CSS/only_app.css"> <!-- ルート相対パスに修正 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-    <div class="container">
+    <!-- ▼▼▼ ヘッダー読み込み用の空の要素 ▼▼▼ -->
+    <header id="header-placeholder" class="site-header"></header>
+
+    <main>
+        <div class="container">
         <h1>「ゼロから始めるChatGPT & Gemini & cloude入門」講座</h1>
 
         <!-- ======================= 第1章 ======================= -->
@@ -913,8 +916,13 @@ A列に商品名、B列に売上が入力されている表があります。
         <p>AIは、いつでもあなたの隣で、その最初の言葉を待っています。<br>あなたの問いかけが、あなたの未来を、そして世界の未来を、ほんの少し、変えるかもしれません。</p>
         <p>この本が、あなたとAIとの素晴らしい出会いの、小さなきっかけとなったなら、これ以上の喜びはありません。<br>最後まで、お付き合いいただき、本当にありがとうございました。</p>
 
-    </div>
+        </div>
+    </main> <!-- ★★★ ここに </main> を追加しました！ ★★★ -->
+    <!-- ▼▼▼ フッター読み込み用の空の要素 ▼▼▼ -->
+    <footer id="footer-placeholder"></footer>
 
+    <!-- ▼▼▼ スクリプトの読み込みもルート相対パスに修正 ▼▼▼ -->
     <script src="JavaScript/app_script.js"></script>
+    <script src="/JavaScript/include.js"></script>
 </body>
 </html>
