@@ -4,82 +4,70 @@
   <!-- ===== Chromachannelサイト 本体 ===== -->
   <url>
     <loc>https://chromachannel.online/index.html</loc>
-    <lastmod>2025-07-27</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://chromachannel.online/prompt.html</loc>
-    <lastmod>2025-07-27</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chromachannel.online/portfolio.html</loc>
-    <lastmod>2025-07-27</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chromachannel.online/learn.html</loc>
-    <lastmod>2025-07-27</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://chromachannel.online/blog.html</loc>
-    <lastmod>2025-07-27</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chromachannel.online/novels.html</loc>
-    <lastmod>2025-07-27</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- ===== ブログ記事 ===== -->
-  <url>
-    <loc>https://chromachannel.online/Blog/A-magic-wand-called-AI.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Blog/How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Blog/How-to-Prompt.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://chromachannel.online/Blog/How-to-Customize-Prompt.html</loc>
-    <lastmod>2025-07-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://chromachannel.online/Blog/A-magic-wand-called-AI.html</loc><lastmod>2025-07-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://chromachannel.online/Blog/How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html</loc><lastmod>2025-07-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://chromachannel.online/Blog/How-to-Prompt.html</loc><lastmod>2025-07-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://chromachannel.online/Blog/How-to-Customize-Prompt.html</loc><lastmod>2025-07-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   
+  <!-- ===== 学習コンテンツ ===== -->
+  <url>
+    <loc>https://chromachannel.online/learn_lesson1.html</loc>
+    <lastmod>2025-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ===== ポートフォリオ作品 ===== -->
-  <url><loc>https://chromachannel.online/Portfolio/Fuwamoco/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chromachannel.online/Portfolio/Game/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chromachannel.online/Portfolio/Ai-Baby-App/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chromachannel.online/Portfolio/Demo/lesson_demo.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chromachannel.online/Portfolio/Adaptive_System/adaptive_system.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chromachannel.online/Portfolio/Task-Tool/task_tool.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chromachannel.online/Portfolio/Real-time-preview.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chromachannel.online/Portfolio/Timer/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chromachannel.online/Portfolio/Kakeibo/index.html</loc><lastmod>2025-07-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Fuwamoco/index.html</loc><lastmod>2025-07-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Game/index.html</loc><lastmod>2025-07-28</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Ai-Baby-App/index.html</loc><lastmod>2025-07-28</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Demo/lesson_demo.html</loc><lastmod>2025-07-28</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Adaptive_System/adaptive_system.html</loc><lastmod>2025-07-28</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Task-Tool/task_tool.html</loc><lastmod>2025-07-28</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Real-time-preview.html</loc><lastmod>2025-07-28</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Timer/index.html</loc><lastmod>2025-07-28</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromachannel.online/Portfolio/Kakeibo/index.html</loc><lastmod>2025-07-28</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
   
   <!-- ===== その他のページ ===== -->
   <url>
     <loc>https://chromachannel.online/privacy.html</loc>
-    <lastmod>2025-07-27</lastmod>
+    <lastmod>2025-07-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

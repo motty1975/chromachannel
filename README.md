@@ -29,6 +29,7 @@ https://chromachannel.online/Portfolio/Demo/lesson_demo.html
 ├── portfolio.html<br>
 ├── prompt.html<br>
 ├── learn.html<br>
+    └── ChatGPT入門講座テキスト<br>
 ├── blog.html<br>
 ├── novels.html<br>
 ├── privacy.html<br>
