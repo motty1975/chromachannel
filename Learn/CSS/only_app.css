@@ -1,25 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-/* 全体のスタイル */
-body {
-    font-family: 'Noto Sans JP', sans-serif;
+
+/* --- 講座テキスト専用スタイル --- */
+
+/* 講座テキストの本文エリア全体を囲むコンテナ */
+.lesson-content {
+    font-family: 'Noto Sans JP', sans-serif; /* このページ専用のフォントを適用 */
     line-height: 1.8;
     color: #333;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 20px;
-}
-
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
     background-color: #fff;
     padding: 30px 40px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin: 40px 0; /* ページ上下の余白 */
 }
 
 /* 見出しのスタイル */
-h1, h2, h3 {
+.lesson-content h1, 
+.lesson-content h2, 
+.lesson-content h3 {
     font-weight: 700;
     color: #1a237e; /* 濃い藍色 */
     border-bottom: 2px solid #c5cae9; /* 薄い藍色 */
@@ -27,55 +25,55 @@ h1, h2, h3 {
     margin-top: 40px;
     margin-bottom: 20px;
 }
-h1 {
+.lesson-content h1 {
     font-size: 2em;
     text-align: center;
     border-bottom: 3px solid #3f51b5; /* 中間の藍色 */
 }
-h2 {
+.lesson-content h2 {
     font-size: 1.8em;
     margin-top: 60px;
 }
-h3 {
+.lesson-content h3 {
     font-size: 1.5em;
     border-bottom-style: dotted;
 }
-blockquote h4 {
+.lesson-content blockquote h4 {
     font-size: 1.1em;
-    color: #303f9f; /* メインの見出しより少し薄い藍色 */
+    color: #303f9f;
     border-bottom: 1px dotted #7986cb;
     padding-bottom: 5px;
-    margin-top: 1.5em; /* 前の提案との間隔を確保 */
+    margin-top: 1.5em;
 }
 /* 段落 */
-p {
+.lesson-content p {
     margin-bottom: 1.2em;
 }
 
-/* ★★★ 変更点：ulセレクタをol, ulに拡張し、上下のmarginを追加 ★★★ */
 /* 箇条書き */
-ol, ul {
+.lesson-content ol, 
+.lesson-content ul {
     padding-left: 20px;
     list-style-type: disc;
-    margin-top: 1.5em; /* リストの上の余白 */
-    margin-bottom: 1.5em; /* リストの下の余白 */
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
-/* ★★★ olのリストマーカーが数字になるように指定を追加 ★★★ */
-ol {
+.lesson-content ol {
     list-style-type: decimal;
 }
 
-li {
+.lesson-content li {
     margin-bottom: 0.8em;
 }
 
 /* 強調 */
-strong, b {
+.lesson-content strong, 
+.lesson-content b {
     color: #d81b60; /* マゼンタ */
 }
 
 /* 回答例などの引用ブロック */
-blockquote {
+.lesson-content blockquote {
     background-color: #f5f5f5;
     border-left: 5px solid #ccc;
     padding: 15px;
@@ -84,14 +82,14 @@ blockquote {
 }
 
 /* ポイント解説 */
-.point-解説 {
+.lesson-content .point-解説 {
     background: #e3f2fd; /* 薄い青 */
     border: 1px solid #90caf9; /* 青 */
     padding: 15px;
     margin-top: 20px;
     border-radius: 5px;
 }
-.point-解説::before {
+.lesson-content .point-解説::before {
     content: "【ポイント解説】";
     font-weight: bold;
     display: block;
@@ -100,28 +98,29 @@ blockquote {
 }
 
 /* テーブルのスタイル */
-table {
+.lesson-content table {
     width: 100%;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
 }
-th, td {
+.lesson-content th, 
+.lesson-content td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
 }
-th {
+.lesson-content th {
     background-color: #3f51b5;
     color: white;
     font-weight: bold;
 }
-tbody tr:nth-child(even) {
+.lesson-content tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
 /* プロンプトコピー用のスタイル */
-.prompt-block {
+.lesson-content .prompt-block {
     position: relative;
     background-color: #263238;
     color: #eceff1;
@@ -130,63 +129,61 @@ tbody tr:nth-child(even) {
     font-family: 'Courier New', Courier, monospace;
     padding: 50px 20px 20px 20px; 
 }
-.prompt-block pre {
+.lesson-content .prompt-block pre {
     margin: 0;
     padding: 0;
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-.copy-button {
+.lesson-content .copy-button {
     position: absolute;
     top: 15px;
     right: 15px;
     background-color: #455a64;
     color: white;
     border: none;
-    padding: 4px;
+    padding: 4px 8px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.2s;
 }
 
-.copy-button:hover {
+.lesson-content .copy-button:hover {
     background-color: #607d8b;
 }
-.section-divider {
+
+/* 章と章を区切る水平線 */
+.lesson-content .section-divider {
     border: 0;
     height: 1px;
     background: #ddd;
     margin: 60px auto;
 }
+
 /* ==========================================================================
    モバイル対応（レスポンシブデザイン）
    ========================================================================== */
 @media screen and (max-width: 768px) {
-
-    body {
-        padding: 10px;
-    }
-    .container {
+    .lesson-content {
         padding: 20px 15px;
+        margin: 20px 0;
     }
-    h1 {
+    .lesson-content h1 {
         font-size: 1.8em;
-        padding-bottom: 10px;
     }
-    h2 {
+    .lesson-content h2 {
         font-size: 1.5em;
         margin-top: 50px;
     }
-    h3 {
+    .lesson-content h3 {
         font-size: 1.3em;
-        padding-left: 10px;
     }
-    table {
+    .lesson-content table {
         font-size: 0.8em;
     }
-    .prompt-block {
+    .lesson-content .prompt-block {
         font-size: 0.9em;
     }
 }
