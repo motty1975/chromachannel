@@ -1,189 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
 /* --- 講座テキスト専用スタイル --- */
-
-/* 講座テキストの本文エリア全体を囲むコンテナ */
 .lesson-content {
-    font-family: 'Noto Sans JP', sans-serif; /* このページ専用のフォントを適用 */
+    font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.8;
     color: #333;
     background-color: #fff;
     padding: 30px 40px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    margin: 40px 0; /* ページ上下の余白 */
+    margin: 40px 0;
 }
-
-/* 見出しのスタイル */
-.lesson-content h1, 
-.lesson-content h2, 
-.lesson-content h3 {
+.lesson-content h1, .lesson-content h2, .lesson-content h3 {
     font-weight: 700;
-    color: #1a237e; /* 濃い藍色 */
-    border-bottom: 2px solid #c5cae9; /* 薄い藍色 */
+    color: #1a237e;
+    border-bottom: 2px solid #c5cae9;
     padding-bottom: 10px;
     margin-top: 40px;
     margin-bottom: 20px;
 }
-.lesson-content h1 {
-    font-size: 2em;
-    text-align: center;
-    border-bottom: 3px solid #3f51b5; /* 中間の藍色 */
-}
-.lesson-content h2 {
-    font-size: 1.8em;
-    margin-top: 60px;
-}
-.lesson-content h3 {
-    font-size: 1.5em;
-    border-bottom-style: dotted;
-}
-.lesson-content blockquote h4 {
-    font-size: 1.1em;
-    color: #303f9f;
-    border-bottom: 1px dotted #7986cb;
-    padding-bottom: 5px;
-    margin-top: 1.5em;
-}
-/* 段落 */
-.lesson-content p {
-    margin-bottom: 1.2em;
-}
-
-/* 箇条書き */
-.lesson-content ol, 
-.lesson-content ul {
-    padding-left: 20px;
-    list-style-type: disc;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-}
-.lesson-content ol {
-    list-style-type: decimal;
-}
-
-.lesson-content li {
-    margin-bottom: 0.8em;
-}
-
-/* 強調 */
-.lesson-content strong, 
-.lesson-content b {
-    color: #d81b60; /* マゼンタ */
-}
-
-/* 回答例などの引用ブロック */
-.lesson-content blockquote {
-    background-color: #f5f5f5;
-    border-left: 5px solid #ccc;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
-}
-
-/* ポイント解説 */
-.lesson-content .point-解説 {
-    background: #e3f2fd; /* 薄い青 */
-    border: 1px solid #90caf9; /* 青 */
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-.lesson-content .point-解説::before {
-    content: "【ポイント解説】";
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-    color: #1565c0; /* 濃い青 */
-}
-
-/* テーブルのスタイル */
-.lesson-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-}
-.lesson-content th, 
-.lesson-content td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-.lesson-content th {
-    background-color: #3f51b5;
-    color: white;
-    font-weight: bold;
-}
-.lesson-content tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* プロンプトコピー用のスタイル */
-.lesson-content .prompt-block {
-    position: relative;
-    background-color: #263238;
-    color: #eceff1;
-    border-radius: 8px;
-    margin: 20px 0;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 50px 20px 20px 20px; 
-}
-.lesson-content .prompt-block pre {
-    margin: 0;
-    padding: 0;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-.lesson-content .copy-button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: #455a64;
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.2s;
-}
-
-.lesson-content .copy-button:hover {
-    background-color: #607d8b;
-}
-
-/* 章と章を区切る水平線 */
-.lesson-content .section-divider {
-    border: 0;
-    height: 1px;
-    background: #ddd;
-    margin: 60px auto;
-}
-
-/* ==========================================================================
-   モバイル対応（レスポンシブデザイン）
-   ========================================================================== */
+.lesson-content h1 { font-size: 2em; text-align: center; border-bottom-width: 3px; border-color: #3f51b5; }
+.lesson-content h2 { font-size: 1.8em; margin-top: 60px; }
+.lesson-content h3 { font-size: 1.5em; border-bottom-style: dotted; }
+.lesson-content blockquote h4 { font-size: 1.1em; color: #303f9f; border-bottom: 1px dotted #7986cb; padding-bottom: 5px; margin-top: 1.5em; }
+.lesson-content p { margin-bottom: 1.2em; }
+.lesson-content ol, .lesson-content ul { padding-left: 20px; margin: 1.5em 0; }
+.lesson-content ol { list-style-type: decimal; }
+.lesson-content li { margin-bottom: 0.8em; }
+.lesson-content strong, .lesson-content b { color: #d81b60; }
+.lesson-content blockquote { background-color: #f5f5f5; border-left: 5px solid #ccc; padding: 15px; margin: 20px 0; border-radius: 5px; }
+.lesson-content .point-解説 { background: #e3f2fd; border: 1px solid #90caf9; padding: 15px; margin-top: 20px; border-radius: 5px; }
+.lesson-content .point-解説::before { content: "【ポイント解説】"; font-weight: bold; display: block; margin-bottom: 10px; color: #1565c0; }
+.lesson-content table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9em; }
+.lesson-content th, .lesson-content td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+.lesson-content th { background-color: #3f51b5; color: white; font-weight: bold; }
+.lesson-content tbody tr:nth-child(even) { background-color: #f2f2f2; }
+.lesson-content .prompt-block { position: relative; background-color: #263238; color: #eceff1; border-radius: 8px; margin: 20px 0; font-family: 'Courier New', Courier, monospace; padding: 50px 20px 20px 20px; }
+.lesson-content .prompt-block pre { margin: 0; padding: 0; white-space: pre-wrap; word-wrap: break-word; }
+.lesson-content .copy-button { position: absolute; top: 15px; right: 15px; background-color: #455a64; color: white; border: none; padding: 4px 8px; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.2s; }
+.lesson-content .copy-button:hover { background-color: #607d8b; }
+.lesson-content .section-divider { border: 0; height: 1px; background: #ddd; margin: 60px auto; }
+.feedback-section h3 { border-bottom-color: #e0e0e0; }
 @media screen and (max-width: 768px) {
-    .lesson-content {
-        padding: 20px 15px;
-        margin: 20px 0;
-    }
-    .lesson-content h1 {
-        font-size: 1.8em;
-    }
-    .lesson-content h2 {
-        font-size: 1.5em;
-        margin-top: 50px;
-    }
-    .lesson-content h3 {
-        font-size: 1.3em;
-    }
-    .lesson-content table {
-        font-size: 0.8em;
-    }
-    .lesson-content .prompt-block {
-        font-size: 0.9em;
-    }
+    .lesson-content { padding: 20px 15px; margin: 20px 0; }
+    .lesson-content h1 { font-size: 1.8em; }
+    .lesson-content h2 { font-size: 1.5em; margin-top: 50px; }
+    .lesson-content h3 { font-size: 1.3em; }
+    .lesson-content table, .lesson-content .prompt-block { font-size: 0.8em; }
 }

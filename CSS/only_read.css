@@ -261,3 +261,14 @@
     border-top: 1px solid #e2e8f0; 
     text-align: center; 
 }
+/* --- コメント欄のスタイル --- */
+.comment-section {
+    max-width: 800px;
+    margin: 60px auto 0;
+}
+.comment-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-color-start);
+    padding-bottom: 10px;
+}
