@@ -66,53 +66,52 @@
 
     <main class="article-main">
         <div class="article-container">
+            <header class="article-header">
+                <h1>【プロンプト集のタイトルをここに入力】</h1>
+                <p>このページでは、様々な用途で使えるプロンプトをまとめています。コピーボタンを押すと、簡単にプロンプトをコピーして利用できます。</p>
+            </header>
             
-            <!-- ▼▼▼ ここから教材の本文を入力 ▼▼▼ -->
-            <div class="textbook-content">
-                <h1>【対話AI編】「ChatGPT & Gemini & cloude入門」講座</h1>
-
-                <h2>第1章: ようこそ! あなたの日常が劇的に変わるAI新時代へ</h2>
-                
-                <h3>1-1. AIはもう、あなたのすぐそばにいる</h3>
-                <p>はじめまして! このテキストをご覧いただき、ありがとうございます。これから、あなたの毎日をちょっと豊かに、そして劇的に変えるかもしれない 「AI」 という素敵なパートナーについて、ご案内させていただきますね。</p>
-                <p>さて、「AI(エーアイ)」と聞くと、あなたはどんなことを思い浮かべますか? 「なんだか難しそう･･･」</p>
-                
-                <!-- (中略) PDFの内容をこの形式で続けて入力します -->
-
-                <h3>1-2. ChatGPTの登場で「何が」変わったのか?</h3>
-                <p>さて、前のセクションで、AIが「ちょっと気が利く、賢いアシスタント」として、すでに私たちの日常に溶け込んでいることをお話ししましたね。天気予報を教えてくれたり、外国語を翻訳してくれたり･･･。</p>
-
-                <!-- ▼▼▼ プロンプトカードの挿入例 ▼▼▼ -->
-                <p>魔法の言葉①: 冷蔵庫の残り物で、感動の一皿を！<br>【このプロンプトをコピーしよう！】</p>
+            <div class="prompt-list">
+                <!-- ▼▼▼ プロンプトカード（ここを複製してプロンプトを追加） ▼▼▼ -->
                 <section class="prompt-card">
+                    <h2>プロンプトのタイトル１</h2>
+                    <p class="prompt-description">このプロンプトの簡単な説明をここに書きます。</p>
                     <div class="prompt-box">
                         <button class="copy-btn"><i class="far fa-copy"></i> コピー</button>
-                        <pre class="prompt-text">#お願い
-冷蔵庫の中にある以下の食材を使って、今晩作れる夕食のレシピを3つ提案してください。
-
-#食材
-・豚バラ肉: 200g
-・白菜: 4分の1
-・卵: 2個
-・玉ねぎ: 半分
-
-#条件
-・調理時間は20分以内
-・小学生の子どもが喜ぶような、少し甘めの味付けでお願いします。
-・できれば火を使う調理器具はフライパンだけで済ませたいです。</pre>
+                        <pre class="prompt-text">ここにコピーさせたい
+プロンプトの
+本文を入力します。</pre>
                     </div>
                 </section>
-                <!-- ▲▲▲ プロンプトカードここまで ▲▲▲ -->
+                <!-- ▲▲▲ プロンプトカードはここまで ▲▲▲ -->
+                
+                <!-- ▼▼▼ プロンプトカード（ここを複製してプロンプトを追加） ▼▼▼ -->
+                <section class="prompt-card">
+                    <h2>プロンプトのタイトル２</h2>
+                    <p class="prompt-description">こちらは２つ目のプロンプトです。AIへの指示などを書きます。</p>
+                    <div class="prompt-box">
+                        <button class="copy-btn"><i class="far fa-copy"></i> コピー</button>
+                        <pre class="prompt-text">#命令書
+あなたはプロの〇〇です。
 
+#制約条件
+・〇〇に従って出力してください。
+・〇〇については触れないでください。
+
+#入力文
+{ここにテキストを入力}
+
+#出力文</pre>
+                    </div>
+                </section>
+                <!-- ▲▲▲ プロンプトカードはここまで ▲▲▲ -->
             </div>
-            <!-- ▲▲▲ 本文はここまで ▲▲▲ -->
             
             <footer class="article-footer">
                 <div class="back-to-blog-links">
-                    <a href="../learn.html" class="back-link">← 学習コンテンツ一覧に戻る</a>
+                    <a href="../prompt.html" class="back-link">← プロンプト一覧に戻る</a>
                 </div>
             </footer>
-
         </div>
         <!-- ★★★ ここからDisqusの実装を追加 ★★★ -->
         <section class="comment-section">
@@ -134,7 +133,6 @@
         </section>
         <!-- ★★★ ここまで ★★★ -->
     </main>
-
 
     <!-- ===== サイト共通フッター ===== -->
     <footer id="site-footer">
@@ -160,5 +158,16 @@
     </footer>
     
     <script src="../JavaScript/script.js"></script>
+    <script>
+        // コピーボタンの機能（この部分は変更不要です）
+        document.getElementById('copy-btn').addEventListener('click', function() {
+            const code = document.getElementById('prompt-code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                this.innerHTML = '<i class="fas fa-check"></i> コピー完了!';
+                this.classList.add('copied');
+                setTimeout(() => { this.innerHTML = '<i class="far fa-copy"></i> コピー'; this.classList.remove('copied'); }, 2000);
+            });
+        });
+    </script>
 </body>
 </html>

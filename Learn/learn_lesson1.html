@@ -966,39 +966,31 @@
                 
                 <p>この本が、あなたとAIとの素晴らしい出会いの、小さなきっかけとなったなら、これ以上の喜びはありません。<br>最後まで、お付き合いいただき、本当にありがとうございました。</p>
                 
-                                <!-- ★★★ ここからDisqusの実装 ★★★ -->
-                <hr class="section-divider">
-                <section class="feedback-section">
-                    <h3>ご意見・ご感想</h3>
-                    <div id="disqus_thread"></div>
-                    <script>
-                        /**
-                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                        
-                        var disqus_config = function () {
-                            // ★★★ SEOと連携する設定を追加 ★★★
-                            this.page.url = 'https://chromachannel.online/Learn/learn_lesson1.html';
-                            this.page.identifier = 'learn_lesson1_chatgpt_intro'; 
-                        };
-                        
-                        (function() { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://chroma-ch.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                        })();
-                    </script>
-                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                </section>
-                <!-- ★★★ ここまで ★★★ -->
+
 
             </div>
         </div>
+        <section class="comment-section">
+            <h2>ご意見・ご感想</h2>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://chromachannel.online/Blog/Customize-Ehon-Prompt.html';
+                    this.page.identifier = 'blog_customize-ehon-prompt';
+                };
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://chroma-ch.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
     </main>
 
     <!-- ===== サイト共通フッター ===== -->
-    <footer>
+    <footer id="site-footer">
         <div class="container">
             <div class="footer-social-links">
                 <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>

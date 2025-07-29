@@ -293,3 +293,274 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+/* ===== プロンプトページ専用スタイル (ダークテーマ版) ===== */
+.prompt-page .article-header {
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+.prompt-page .article-header p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.prompt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* カード全体をダークな背景に */
+.prompt-card {
+    background-color: #2d3748; /* ダークブルーグレー */
+    color: #e2e8f0;            /* 明るいグレーのテキスト */
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    position: relative;
+}
+
+/* カード内の見出し (h2) のスタイル */
+.prompt-card h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4a5568; /* 区切り線 */
+}
+
+/* カード内の説明文のスタイル */
+.prompt-card .prompt-description {
+    font-size: 0.95rem;
+    color: #a0aec0; /* 少し暗めのグレー */
+    margin-bottom: 25px;
+}
+
+/* プロンプト本文のボックスは背景色をなくし、単なるコンテナに */
+.prompt-box {
+    position: static; /* 配置をリセット */
+    background-color: transparent;
+    padding: 0;
+}
+
+/* プロンプト本文テキスト */
+.prompt-text {
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 0;
+    padding: 0;
+    color: inherit; /* 親要素(.prompt-card)の色を継承 */
+}
+
+/* コピーボタン */
+.copy-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #4a5568; /* やや明るいグレー */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.copy-btn:hover {
+    background-color: #718096; /* ホバー時にもう少し明るく */
+}
+
+/* コピー完了時のスタイル */
+.copy-btn.copied {
+    background-color: #48bb78;
+    color: white;
+}
+/* ===== 教材ページ専用スタイル (textbook-page) ===== */
+.textbook-page .article-container {
+    max-width: 840px; /* 本文の最大幅を少し広げます */
+    padding: 50px 60px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+.textbook-page .textbook-content {
+    /* このコンテナ自体には特別なスタイルは不要 */
+}
+
+/* メインタイトル (h1) */
+.textbook-page h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 70px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--primary-color-start);
+}
+
+/* 章タイトル (h2) */
+.textbook-page h2 {
+    font-size: 1.8rem;
+    margin-top: 80px; /* 章の間の余白を大きく */
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 節タイトル (h3) */
+.textbook-page h3 {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 5px solid var(--primary-color-start);
+}
+
+/* 本文 (p) */
+.textbook-page p {
+    font-size: 1.05rem; /* 少しだけ文字を大きく */
+    line-height: 2.2;   /* 行間を広くとって読みやすく */
+    margin-bottom: 1.5em; /* 段落間の余白 */
+}
+
+/* 教材ページ内のプロンプトカードの上下余白を調整 */
+.textbook-page .prompt-card {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+/* ===== テーブルのスタイル ===== */
+.article-content table {
+    width: 100%;
+    margin: 30px 0;
+    border-collapse: collapse;
+    border: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.article-content th,
+.article-content td {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.article-content thead th {
+    background-color: #f5f7fa; /* ヘッダーの背景色 */
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.article-content tbody tr:nth-child(even) {
+    background-color: #fdfdfd; /* 偶数行の背景色 */
+}
+
+.article-content tbody tr:hover {
+    background-color: #f0f4ff; /* カーソルを乗せた時の背景色 */
+}
+
+.article-content td code {
+    background-color: #eef2f7;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 0.9em;
+}
+/* ===== 教材ページ専用スタイル (textbook-page) ===== */
+.textbook-page .prompt-card {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* ★★★【追加】ここから ★★★ */
+/* ===== 記事内のテーブルスタイル ===== */
+.article-content table {
+    width: 100%;
+    margin: 30px 0;
+    border-collapse: collapse;
+    border: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.article-content th,
+.article-content td {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: top;
+}
+.article-content thead th {
+    background-color: #f5f7fa;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.article-content tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+.article-content tbody tr:hover {
+    background-color: #f0f4ff;
+}
+.article-content td code {
+    background-color: #eef2f7;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 0.9em;
+}
+
+/* ===== 記事内のコードブロック（preタグ）スタイル ===== */
+.article-content pre {
+    background-color: #f5f7fa;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+/* (これまでのCSS...省略) */
+
+/* ===== 記事内のコードブロック（preタグ）スタイル ===== */
+.article-content pre {
+    background-color: #f5f7fa;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* ★★★【追加】ここから ★★★ */
+/* ===== 記事内のCTAボタン ===== */
+.article-content .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, var(--primary-color-start), var(--primary-color-end));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.article-content .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+/* ★★★【追加】ここまで ★★★ */

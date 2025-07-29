@@ -43,6 +43,7 @@
     <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="../../CSS/style.css">
+    <link rel="stylesheet" href="../../CSS/only_read.css">
     <link rel="stylesheet" href="css/only_app.css"> <!-- ★アプリ専用CSSを適用！ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -181,10 +182,29 @@
                 <p style="font-size: 11px; color: #e5e7eb;">www.globaltalk24.com</p>
             </section>
         </div>
+        <!-- ★★★ ここからDisqusの実装を追加 ★★★ -->
+        <section class="comment-section">
+            <h2>ご意見・ご感想</h2>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://chromachannel.online/Blog/release-chatgpt-course.html';
+                    this.page.identifier = 'blog_release_chatgpt_course';
+                };
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://chroma-ch.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
+        <!-- ★★★ ここまで ★★★ -->
     </main>
 
     <!-- ===== サイト共通フッター ===== -->
-    <footer>
+    <footer id="site-footer">
         <div class="container">
             <div class="footer-social-links">
                 <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
