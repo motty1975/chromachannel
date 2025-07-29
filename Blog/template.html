@@ -97,9 +97,7 @@
             
             <footer class="article-footer">
                 <div class="back-to-blog-links">
-                    <button onclick="location.href='../blog.html'" class="portfolio-action-btn">
-                        <i class="fas fa-arrow-left"></i> ブログ一覧に戻る
-                    </button>
+                    <a href="../blog.html" class="back-link">← ブログ一覧に戻る</a>
                 </div>
             </footer>
             <!-- ★★★ ここからDisqusの実装を追加 ★★★ -->
@@ -125,8 +123,9 @@
         </article>
     </main>
 
+
     <!-- ===== サイト共通フッター ===== -->
-    <footer>
+    <footer id="site-footer">  <!-- ← このように id="site-footer" を追加します -->
         <div class="container">
             <div class="footer-social-links">
                 <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>

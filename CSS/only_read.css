@@ -206,7 +206,7 @@
 
 /* ===== 記事ページ専用スタイル ===== */
 .article-page { 
-    background-color: #f8f9fa; /* ページの背景色 */
+    background-color: #f8f9fa;
     padding-top: 70px; 
 }
 .article-main { 
@@ -256,12 +256,12 @@
     margin-bottom: 30px; 
 }
 .article-footer { 
-    margin-top: 60px; 
-    padding-top: 30px; 
-    border-top: 1px solid #e2e8f0; 
-    text-align: center; 
+    margin-top: 60px;
+    padding-top: 30px;
+    background-color: #fff;
+    border: none;
+    text-align: left;
 }
-/* --- コメント欄のスタイル --- */
 .comment-section {
     max-width: 800px;
     margin: 60px auto 0;
@@ -271,4 +271,25 @@
     margin-bottom: 30px;
     border-bottom: 2px solid var(--primary-color-start);
     padding-bottom: 10px;
+}
+
+/* ===== 記事ページ「戻る」ボタンのスタイル (style.cssから移動) ===== */
+.article-container .back-link {
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none;
+    color: var(--primary-color-start);
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: #fff;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.article-container .back-link:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
