@@ -238,8 +238,27 @@
     line-height: 2.2; 
     margin-bottom: 30px; 
 }
-/* ★★★【追加】ここから ★★★ */
-/* ===== 記事内のテーブルスタイル ===== */
+
+/* ===== ▼▼▼ 記事内コンテンツのスタイル ▼▼▼ ===== */
+.article-content .article-image {
+    width: 100%;
+    max-width: 100%; /* これがはみ出しを防ぎます */
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: block; /* 余計な下余白を防ぐため */
+}
+
+.article-content .caption {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    display: block;
+}
+
 .article-content table {
     width: 100%;
     margin: 30px 0;
@@ -274,7 +293,6 @@
     font-size: 0.9em;
 }
 
-/* ===== 記事内のコードブロック（preタグ）スタイル ===== */
 .article-content pre {
     background-color: #f5f7fa;
     border: 1px solid #e0e0e0;
@@ -339,10 +357,8 @@
     flex-direction: column;
     gap: 40px;
 }
-
-/* ★★★ ここから修正 ★★★ */
 .prompt-card {
-    background-color: #2d3748; /* 背景色やパディングをこちらに集約 */
+    background-color: #2d3748;
     color: #e2e8f0;
     border: none;
     border-radius: 12px;
@@ -352,7 +368,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px; /* 本文との余白を少し調整 */
+    margin-bottom: 20px;
 }
 .prompt-title {
     margin: 0;
@@ -361,7 +377,6 @@
     font-family: 'Menlo', 'Consolas', monospace;
 }
 .prompt-box {
-    /* こちらはスタイルを持たず、構造的な役割に専念 */
     margin: 0;
     padding: 0;
 }
@@ -392,8 +407,6 @@
     gap: 8px;
     flex-shrink: 0;
 }
-/* ★★★ ここまで ★★★ */
-
 .copy-btn:hover {
     background-color: #718096;
 }
@@ -402,11 +415,7 @@
     color: white;
 }
 
-/* only_read.css にこのコードを追記 */
-
 /* ===== プロンプト詳細ページの追加セクション ===== */
-
-/* --- 各セクション共通の見出し --- */
 .prompt-section-heading {
     font-size: 1.6rem;
     font-weight: 700;
@@ -416,8 +425,6 @@
     border-left: 6px solid var(--primary-color-start);
     color: var(--text-dark);
 }
-
-/* --- 評価テーブル --- */
 .prompt-evaluation-table {
     width: 100%;
     border-collapse: collapse;
@@ -449,8 +456,6 @@
 .star-rating .empty {
     color: #ced4da;
 }
-
-/* --- おすすめリスト --- */
 .recommendation-box {
     background-color: #e3f2fd;
     border: 1px solid #bbdefb;
@@ -483,8 +488,6 @@
     color: #43a047; /* 緑色 */
     font-size: 1.1rem;
 }
-
-/* --- コメント --- */
 .prompt-comment p {
     font-size: 1rem;
     line-height: 2.0;
