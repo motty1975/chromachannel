@@ -13,25 +13,43 @@ https://chromachannel.online/Portfolio/Demo/lesson_demo.html
 レスポンシブデザイン: PC、タブレット、スマートフォンなど、あらゆるデバイスで最適な表示がされるように設計しています。
 インタラクティブなUI: スクロールに応じたフェードインアニメーションや、モバイル用のハンバーガーメニューを実装し、快適なユーザー体験を提供します。
 高機能ポートフォリオ: カテゴリ別のフィルター機能や、AIイラストの詳細（プロンプトなど）を確認できるモーダルウィンドウ機能を搭載しています。
-高度なSEO対策: 各ページに最適化されたmetaタグ、canonicalタグ、OGPタグを設定。さらに、構造化データ（JSON-LD）やsitemap.xmlも活用し、検索エンジンからの評価を高める工夫をしています。
-💻 使用技術
-![alt text](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-
-![alt text](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-![alt text](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-![alt text](https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)
-ライブラリ: ress.min.css
+高度なSEO対策: 各ページに最適化されたmetaタグ、canonicalタグ、OGPタグを設定。さらに、構造化データ（JSON-LD）やsitemap.xmlも活用し、検索エンジンからの評価を高める工夫をしています。<br>
+💻 使用技術<br>
+![alt text](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)<br>
+<br>
+![alt text](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)<br>
+<br>
+![alt text](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)<br>
+<br>
+![alt text](https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)<br>
+ライブラリ: ress.min.css<br>
 
 / (ルートフォルダ)<br>
 ├── index.html<br>
 ├── portfolio.html<br>
-├── prompt.html<br>
+│   └── portfolio/
+│        │<br>
+│        ├── Fuwamoco/         # NPO法人 Fuwamoco PROJECT サイト<br>
+│        ├── Game/             # AIと友達になろう！体験アプリ<br>
+│        ├── Ai-Baby-App/      # AIの赤ちゃん育成アプリ<br>
+│        ├── Demo/             # インタラクティブ学習デモ<br>
+│        ├── Adaptive_System/  # 適応型タスク管理システム<br>
+│        ├── Task-Tool/        # 利用者向けタスクツール<br>
+│        ├── Timer/            # 多機能オンライン時計<br>
+│        ├── Kakeibo/          # かわいい家計簿<br>
+│        ├── chirashi/         # AIチラシデザイン<br>
+│        └── Real-time-preview.html # リアルタイムプレビューツール<br>
 ├── learn.html<br>
-    └── ChatGPT入門講座テキスト<br>
-├── blog.html<br>
-├── novels.html<br>
+│   └── 「ChatGPT & Gemini & Claude入門」講座<br>
+├── blog.html
+│   └── Blog/
+│        ├── A-magic-wand-called-AI.html<br>
+│        ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html<br>
+│        ├── How-to-Prompt.html<br>
+│        ├── How-to-Customize-Prompt.html<br>
+│        └── release-chatgpt-course.html<br>
+├──  prompt.html
+│        └── prompt/ Prompt/<br>
 ├── privacy.html<br>
 ├── sitemap.xml<br>
 ├── README.md<br>
@@ -46,27 +64,11 @@ https://chromachannel.online/Portfolio/Demo/lesson_demo.html
 │<br>
 ├── Img/                  # サイト共通の画像<br>
 │<br>
-├── Blog/                 # ブログ記事HTML<br>
-│   ├── A-magic-wand-called-AI.html<br>
-│   ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html<br>
-│   ├── How-to-Prompt.html<br>
-│   └── How-to-Customize-Prompt.html<br>
 │<br>
 ├── Novels/               # 小説テキストファイル<br>
 │<br>
 └── Portfolio/            # ポートフォリオ作品集<br>
-    │<br>
-    ├── Fuwamoco/         # NPO法人 Fuwamoco PROJECT サイト<br>
-    ├── Game/             # AIと友達になろう！体験アプリ<br>
-    ├── Ai-Baby-App/      # AIの赤ちゃん育成アプリ<br>
-    ├── Demo/             # インタラクティブ学習デモ<br>
-    ├── Adaptive_System/  # 適応型タスク管理システム<br>
-    ├── Task-Tool/        # 利用者向けタスクツール<br>
-    ├── Timer/            # 多機能オンライン時計<br>
-    ├── Kakeibo/          # かわいい家計簿<br>
-    ├── chirashi/         # AIチラシデザイン<br>
-    │<br>
-    └── Real-time-preview.html # リアルタイムプレビューツール<br>
+
 
 ## 👤 制作者
 

@@ -3,53 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== ▼▼▼ 【ここから下を記事ごとに書き換える】 ▼▼▼ ===== -->
     
-    <!-- ===== ▼▼▼ SEO設定 ▼▼▼ ===== -->
-    <title>ImageFX用 高品質プロンプト生成AI カスタム指示書 | Chromachannelサイト</title>
-    <meta name="description" content="ImageFXで高品質な画像を生成するための、Gemini用カスタム指示書（プロンプト）。簡単な日本語から、情景が浮かぶような美しい英文プロンプトを自動生成します。">
-    <link rel="canonical" href="https://chromachannel.online/Prompt/prompt-imagefx.html" />
-    <meta property="og:title" content="ImageFX用 高品質プロンプト生成AI カスタム指示書">
-    <meta property="og:description" content="Geminiに貼り付けて使う、ImageFXで高品質な画像を生成するためのテンプレートです。">
+    <title>ImageFXプロンプト指示書 - 福祉×AIクリエイターの実践テクニック | Chromachannel</title>
+    <meta name="description" content="福祉×AIクリエイターが実践するImageFX用プロンプト指示書。対話型AIに読み込ませるだけで、簡単な日本語から高品質な英文プロンプトを生成する「ビジュアルストーリーテラー」に変身させます。">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="ImageFXプロンプト指示書 - AIを専属テラーに変身 | Chromachannel">
+    <meta property="og:description" content="福祉×AIクリエイターが実践するImageFX用プロンプト指示書。簡単な日本語から、高品質な英文プロンプトを生成します。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://chromachannel.online/Prompt/prompt-imagefx.html">
-    <meta property="og:image" content="https://chromachannel.online/Img/ogp-prompt-imagefx.png"> <!-- ★要画像差し替え -->
-    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta property="og:image" content="https://chromachannel.online/Img/Prompt/imagefx_main.webp">
+    <!-- og:image ImageFX Prompt: An illustration of a friendly robot artist holding a paintbrush. In front of the robot is a glowing text box where a prompt is being written, and from the text box, a beautiful, detailed landscape is emerging. The style is a clean, modern flat illustration, symbolizing the creation of images from text. -->
+    <meta property="og:site_name" content="Chromachannel">
     <meta name="twitter:card" content="summary_large_image">
     
-    <!-- 共通CSS -->
-    <link rel="icon" href="../Img/favicon.png" type="image/png">
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://chromachannel.online/Prompt/prompt-imagefx.html" },
+      "headline": "ImageFX用 高品質プロンプト生成AI カスタム指示書",
+      "description": "福祉×AIクリエイター 山本倫久が実践するImageFX用プロンプト指示書。対話型AIに読み込ませるだけで、簡単な日本語から高品質な英文プロンプトを生成する「ビジュアルストーリーテラー」に変身させます。",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
+      "publisher": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
+      "datePublished": "2025-07-30",
+      "dateModified": "2025-07-30"
+    }
+    </script>
+    
+    <link rel="canonical" href="https://chromachannel.online/Prompt/prompt-imagefx.html" />
+    
+    <!-- ===== ▲▲▲ ここまで ▲▲▲ ===== -->
+     
+    <link rel="icon" href="../Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/only_read.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- このページ専用のスタイル -->
-    <style>
-        body { background-color: #f4f7f9; }
-        .article-main { padding: 120px 20px 60px; } /* ヘッダーの高さ分padding-topを調整 */
-        .article-container { max-width: 860px; margin: 0 auto; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08); }
-        .article-container h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 20px; line-height: 1.4; color: #1a202c; border: none; padding: 0; }
-        .article-container h2 { font-size: 1.8em; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
-        .article-container h3 { font-size: 1.3em; font-weight: 600; margin-top: 30px; margin-bottom: 15px; border-left: 4px solid var(--primary-color-start); padding-left: 12px; }
-        .article-container p, .article-container .intro-p { font-size: 1.1em; color: #4a5568; line-height: 1.8; }
-        .code-block-wrapper { position: relative; margin-top: 20px; }
-        .code-block-wrapper pre { background-color: #2d3748; color: #e2e8f0; padding: 25px; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; font-size: 0.95em; line-height: 1.7; border: 1px solid #4a5568; }
-        .code-block-wrapper pre code { font-family: 'Menlo', 'Courier New', Courier, monospace; }
-        .code-block-wrapper button#copy-btn { position: absolute; top: 12px; right: 12px; background-color: #4a5568; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: background-color 0.2s; z-index: 10; }
-        .code-block-wrapper button#copy-btn:hover { background-color: #2d3748; }
-        .code-block-wrapper button#copy-btn.copied { background-color: #38a169; }
-        .article-container .back-link { display: inline-block; margin-top: 40px; text-decoration: none; color: var(--primary-color-start); font-weight: bold; font-size: 1.1em; }
-        .evaluation-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .evaluation-table th, .evaluation-table td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
-        .evaluation-table th { background-color: #f7fafc; font-weight: 600; }
-        .evaluation-table td:first-child { font-weight: 500; }
-        .evaluation-table .star { color: #f6ad55; }
-        .recommend-box { background-color: #ebf8ff; border: 1px solid #90cdf4; border-radius: 8px; padding: 20px; margin-top: 15px; }
-        .recommend-box ul { list-style-type: '✅'; padding-left: 20px; }
-    </style>
 </head>
-<body class="article-page">
-    <header>
+
+<body class="prompt-page">
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
         <nav class="container">
             <a href="../index.html" class="logo"><img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
             <ul class="nav-links">
@@ -59,6 +59,7 @@
                 <li><a href="../learn.html">Learn</a></li>
                 <li><a href="../blog.html">Blog</a></li>
                 <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../novels.html">Novels</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
             <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
@@ -66,32 +67,32 @@
     </header>
 
     <main class="article-main">
-        <article class="article-container">
+        <div class="article-container">
             <header class="article-header">
                 <h1>ImageFX用 高品質プロンプト生成AI カスタム指示書</h1>
-                <p class="intro-p">
-                    この指示書を対話型AI（Geminiなど）に最初に読み込ませることで、AIをあなたの専属「ビジュアルストーリーテラー」に変身させることができます。<br>
-                    簡単な日本語のイメージを伝えるだけで、ImageFXに最適な、情景が目に浮かぶような美しい英文プロンプトを生成してくれます。
-                </p>
+                <p>この指示書を対話型AI(Geminiなど)に最初に読み込ませることで、AIをあなたの専属「ビジュアルストーリーテラー」に変身させることができます。簡単な日本語のイメージを伝えるだけで、ImageFXに最適な、情景が目に浮かぶような美しい英文プロンプトを生成してくれます。</p>
             </header>
-
-            <div class="code-block-wrapper">
-                <button id="copy-btn"><i class="far fa-copy"></i> コピー</button>
-                <pre><code id="prompt-code"># 指示書
-
-あなたは、ユーザーが伝える漠然としたイメージを、ImageFXで高品質な画像を生成するための、詩的で美しい英文プロンプトに変換する「ビジュアルストーリーテラー」です。
+            
+            <div class="prompt-list">
+                <section class="prompt-card">
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <h3 class="prompt-title"># 指示書</h3>
+                            <button class="copy-btn"><i class="far fa-copy"></i> コピー</button>
+                        </div>
+                        <pre class="prompt-text">あなたは、ユーザーが伝える漠然としたイメージを、ImageFXで高品質な画像を生成するための、詩的で美しい英文プロンプトに変換する「ビジュアルストーリーテラー」です。
 
 # あなたのタスク
 ユーザーから日本語で伝えられたイメージ（主題、雰囲気、場所など）を基に、以下の2つの要素を提案してください。
 
-1.  **ImageFX用プロンプト (Prompt for ImageFX):**
-    - **形式:** 必ず "A cinematic photo of..." や "An epic fantasy painting of..." のように、**自然な英語の文章**で始めてください。
-    - **内容:** ユーザーのイメージを拡張し、情景、光、感情、ディテールが目に浮かぶような、物語性のある文章を作成してください。
-    - **品質:** `ultra-detailed`, `cinematic lighting`, `hyperrealistic` といった、品質を向上させる形容詞を適切に含めてください。
+1. ImageFX用プロンプト(Prompt for ImageFX):
+    - 形式:必ず "A cinematic photo of..." や "An epic fantasy painting of..." のように、自然な英語の文章で始めてください。
+    - 内容:ユーザーのイメージを拡張し、情景、光、感情、ディテールが目に浮かぶような、物語性のある文章を作成してください。
+    - 品質:`ultra-detailed`, `cinematic lighting`, `hyperrealistic`といった、品質を向上させる形容詞を適切に含めてください。
 
-2.  **おすすめのスタイル (Recommended Style):**
+2. おすすめのスタイル (Recommended Style):
     - 作成したプロンプトの雰囲気に最も合う、ImageFXの「スタイルチップ」の候補を3〜5個提案してください。
-    - **提案例:** `Cinematic`, `35mm film`, `Hyper-detailed`, `Ethereal`, `Watercolor`
+    - 提案例:`Cinematic`, `35mm film`, `Hyper-detailed`, `Ethereal`, `Watercolor`
 
 # 対話のルール
 - ユーザーがイメージを伝えたら、上記2つの要素を明確に区切って提示してください。
@@ -99,13 +100,40 @@
 
 ---
 以上の指示を理解しましたか？
-理解したら、「準備ができました。どのような画像のイメージをお持ちですか？」と返信してください。</code></pre>
+理解したら、「準備ができました。どのような画像のイメージをお持ちですか？」と返信してください。</pre>
+                    </div>
+                </section>
             </div>
-                <a href="../prompt.html" class="back-link">← プロンプト集に戻る</a>
-        </article>
+            
+            <footer class="article-footer">
+                <div class="back-to-blog-links">
+                    <a href="../prompt.html" class="back-link">← プロンプト一覧に戻る</a>
+                </div>
+            </footer>
+        </div>
+        <!-- ★★★ Disqusコメント欄 ★★★ -->
+        <section class="comment-section">
+            <h2>ご意見・ご感想</h2>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    // ↓↓↓ このページの正しいURLに修正 ↓↓↓
+                    this.page.url = 'https://chromachannel.online/Prompt/prompt-imagefx.html';
+                    // ↓↓↓ このページ固有のユニークなIDに修正 ↓↓↓
+                    this.page.identifier = 'prompt_imagefx'; 
+                };
+                (function() { 
+                var d = document, s = d.createElement('script');
+                s.src = 'https://chroma-ch.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
     </main>
 
-<!-- ===== サイト共通フッター ===== -->
+    <!-- ===== サイト共通フッター ===== -->
     <footer id="site-footer">
         <div class="container">
             <div class="footer-social-links">
@@ -114,31 +142,16 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
-            
             <div class="footer-links">
-                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
+                <a href="../privacy.html">プライバシーポリシー & 免責事項</a>
             </div>
-
-            <!-- ★★★ クレジット表記を更新 ★★★ -->
             <div class="footer-credit">
-                <p>当サイトおよび関連コンテンツの制作には、以下の素材を使用しています。</p>
-                <p>音声: VOICEVOX (ずんだもん, 四国めたん, 春日部つむぎ, 中国うさぎ, 冥鳴ひまり) / 立ち絵: 坂本アヒル様坂本アヒル様, とらっかぁ様</p>
+                <p>音声: VOICEVOX (ずんだもん, 四国めたん, 春日部つむぎ, 中国うさぎ, 冥鳴ひまり) / 立ち絵: 坂本アヒル様, とらっかぁ様</p>
             </div>
-            
             <p class="copyright">© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
     
     <script src="../JavaScript/script.js"></script>
-    <script>
-        document.getElementById('copy-btn').addEventListener('click', function() {
-            const code = document.getElementById('prompt-code').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                this.innerHTML = '<i class="fas fa-check"></i> コピー完了!';
-                this.classList.add('copied');
-                setTimeout(() => { this.innerHTML = '<i class="far fa-copy"></i> コピー'; this.classList.remove('copied'); }, 2000);
-            });
-        });
-    </script>
 </body>
 </html>

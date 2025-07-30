@@ -3,57 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== ▼▼▼ 【ここから下を記事ごとに書き換える】 ▼▼▼ ===== -->
     
-    <!-- ===== ▼▼▼ SEO設定 ▼▼▼ ===== -->
-    <title>Stable Diffusion 高品質プロンプト生成用 カスタム指示書 | Chromachannelサイト</title>
-    <meta name="description" content="Stable Diffusionで高品質な画像を生成するための、Gemini用カスタム指示書（プロンプト）を公開。これをコピーして、あなただけのAIイラスト用プロンプトを簡単に作成できます。">
-    <link rel="canonical" href="https://chromachannel.online/Prompt/prompt-stable-diffusion.html" />
-    <meta property="og:title" content="Stable Diffusion 高品質プロンプト生成用 カスタム指示書">
-    <meta property="og:description" content="Geminiに貼り付けて使う、高品質なAIイラスト用プロンプトを生成するためのテンプレートです。">
+    <title>Stable Diffusionプロンプト指示書 - 福祉×AIクリエイターの実践テクニック | Chromachannel</title>
+    <meta name="description" content="福祉×AIクリエイターが実践するStable Diffusion用プロンプト指示書。対話型AIに読み込ませるだけで、簡単な日本語から高品質なイラスト生成プロンプトを作成できます。">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="Stable Diffusionプロンプト指示書 - AIをプロンプトエンジニアに | Chromachannel">
+    <meta property="og:description" content="福祉×AIクリエイターが実践するStable Diffusion用プロンプト指示書。簡単な日本語から、高品質なイラスト生成プロンプトを作成できます。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://chromachannel.online/Prompt/prompt-stable-diffusion.html">
-    <meta property="og:image" content="https://chromachannel.online/img/ogp-prompt.png">
-    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta property="og:image" content="https://chromachannel.online/Img/Prompt/stable-diffusion_main.webp">
+    <!-- og:image ImageFX Prompt: An illustration of a friendly robot engineer fine-tuning a complex series of glowing control knobs and sliders. A beautiful, highly detailed anime-style image is being generated on a screen in front of the robot. The style is a clean, modern flat illustration, symbolizing the precise control over AI image generation. -->
+    <meta property="og:site_name" content="Chromachannel">
     <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "Stable Diffusionの高品質プロンプトを生成するためのカスタム指示書（テンプレート）",
-      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" }
+      "@type": "Article",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://chromachannel.online/Prompt/prompt-stable-diffusion.html" },
+      "headline": "Stable Diffusion 高品質プロンプト生成用 カスタム指示書",
+      "description": "福祉×AIクリエイター 山本倫久が実践するStable Diffusion用プロンプト指示書。対話型AIに「プロのプロンプトエンジニア」として振る舞ってもらうことで、簡単な日本語から高品質なプロンプトを生成できます。",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
+      "publisher": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
+      "datePublished": "2025-07-30",
+      "dateModified": "2025-07-30"
     }
     </script>
     
-    <!-- ===== ▼▼▼ パスを修正 ▼▼▼ ===== -->
-    <link rel="icon" href="../Img/favicon.png" type="image/png">
+    <link rel="canonical" href="https://chromachannel.online/Prompt/prompt-stable-diffusion.html" />
+    
+    <!-- ===== ▲▲▲ ここまで ▲▲▲ ===== -->
+     
+    <link rel="icon" href="../Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/only_read.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- このページ専用のスタイル -->
-    <style>
-        body { background-color: #f4f7f9; }
-        .article-main { padding: 120px 20px 60px; }
-        .article-container { max-width: 860px; margin: 0 auto; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08); }
-        .article-container h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 20px; line-height: 1.4; color: #1a202c; border: none; padding: 0; }
-        .article-container p { font-size: 1.1em; color: #4a5568; line-height: 1.8; }
-        .code-block-wrapper { position: relative; margin-top: 20px; }
-        .code-block-wrapper pre { background-color: #2d3748; color: #e2e8f0; padding: 25px; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; font-size: 0.95em; line-height: 1.7; border: 1px solid #4a5568; }
-        .code-block-wrapper pre code { font-family: 'Menlo', 'Courier New', Courier, monospace; }
-        .code-block-wrapper button#copy-btn { position: absolute; top: 12px; right: 12px; background-color: #4a5568; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: background-color 0.2s; z-index: 10; }
-        .code-block-wrapper button#copy-btn:hover { background-color: #2d3748; }
-        .code-block-wrapper button#copy-btn.copied { background-color: #38a169; }
-        .article-container .back-link { display: inline-block; margin-top: 40px; text-decoration: none; color: var(--primary-color-start); font-weight: bold; font-size: 1.1em; }
-    </style>
 </head>
-<body>
 
-    <!-- ===== ▼▼▼ サイト共通ヘッダーに差し替え ▼▼▼ ===== -->
-    <header>
+<body class="prompt-page">
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
         <nav class="container">
-            <a href="../index.html" class="logo">
-                <img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
-            </a>
+            <a href="../index.html" class="logo"><img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
             <ul class="nav-links">
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../index.html#skills">Skills</a></li>
@@ -61,51 +59,77 @@
                 <li><a href="../learn.html">Learn</a></li>
                 <li><a href="../blog.html">Blog</a></li>
                 <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../novels.html">Novels</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-nav-toggle" aria-label="メニューを開く">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
         </nav>
     </header>
 
     <main class="article-main">
-        <article class="article-container">
-            <h1>Stable Diffusion 高品質プロンプト生成用 カスタム指示書</h1>
-            <p>
-                このページは、Stable Diffusionで使うプロンプトそのものではなく、対話型AI（Geminiなど）に「プロのプロンプトエンジニア」として振る舞ってもらうための**指示書（テンプレート）**です。<br>
-                以下のテキストをコピーしてAIに貼り付けることで、簡単な日本語から高品質なプロンプトを生成させることができます。
-            </p>
-
-            <div class="code-block-wrapper">
-                <button id="copy-btn"><i class="far fa-copy"></i> コピー</button>
-                <pre><code id="prompt-code"># 指示書
-
-あなたは、AI画像生成のプロンプトを専門とする「プロンプトエンジニア」です。
+        <div class="article-container">
+            <!-- ★★★ ここを修正 ★★★ -->
+            <header class="article-header">
+                <h1>Stable Diffusion 高品質プロンプト生成用 カスタム指示書</h1>
+                <p>このページは、Stable Diffusionで使うプロンプトそのものではなく、対話型AI(Geminiなど)に「プロのプロンプトエンジニア」として振る舞ってもらうための指示書(テンプレート)です。以下のテキストをコピーしてAIに貼り付けてから、簡単な日本語でイメージを伝えることで、高品質なプロンプトを生成させることができます。</p>
+            </header>
+            
+            <div class="prompt-list">
+                <section class="prompt-card">
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <h3 class="prompt-title"># 指示書</h3>
+                            <button class="copy-btn"><i class="far fa-copy"></i> コピー</button>
+                        </div>
+                        <pre class="prompt-text">あなたは、AI画像生成のプロンプトを専門とする「プロンプトエンジニア」です。
 これから私が日本語で伝える簡単なイメージを、高品質なStable Diffusion用のプロンプトに変換してください。
 
 # 変換ルール
 - プロンプトはすべて英語の単語またはフレーズで構成し、カンマ（,）で区切ってください。
-- **ポジティブプロンプト**と**ネガティブプロンプト**の2つのセクションに分けてください。
+- ポジティブプロンプトとネガティブプロンプトの2つのセクションに分けてください。
 - ポジティブプロンプトには、以下の要素を必ず含めてください。
-    1.  **品質向上のおまじない:** (best quality, masterpiece, ultra-detailed, 8k, absurdres) などを最初に必ず入れる。
-    2.  **主題:** 私が指定したメインの被写体やキャラクター。
-    3.  **構図とポーズ:** (full body, cowboy shot, from above, dynamic pose)など。
-    4.  **背景:** (in a fantasy forest, cyberpunk city street, at sunset)など。
-    5.  **画風とスタイル:** (anime style, watercolor painting, photorealistic, by Makoto Shinkai)など。
-    6.  **照明と雰囲気:** (dramatic lighting, cinematic, soft light, moody)など。
+    1. 品質向上のおまじない:(best quality, masterpiece, ultra-detailed, 8k, absurdres)などを最初に必ず入れる。
+    2. 主題:私が指定したメインの被写体やキャラクター。
+    3. 構図とポーズ:(full body, cowboy shot, from above, dynamic pose) など。
+    4. 背景:(in a fantasy forest, cyberpunk city street, at sunset) など。
+    5. 画風とスタイル:(anime style, watercolor painting, photorealistic, by Makoto Shinkai) など。
+    6. 照明と雰囲気:(dramatic lighting, cinematic, soft light, moody) など。
 - ネガティブプロンプトには、一般的に品質を低下させる要素を網羅的に含めてください。
-    - 例: (worst quality, low qualityなど)</code></pre>
+    - 例: (worst quality, low qualityなど)</pre>
+                    </div>
+                </section>
             </div>
-
-            <!-- ▼▼▼ 戻るリンクを修正 ▼▼▼ -->
-                <a href="../prompt.html" class="back-link">← プロンプト集に戻る</a>
-        </article>
+            
+            <footer class="article-footer">
+                <div class="back-to-blog-links">
+                    <a href="../prompt.html" class="back-link">← プロンプト一覧に戻る</a>
+                </div>
+            </footer>
+        </div>
+        <!-- ★★★ Disqusコメント欄 ★★★ -->
+        <section class="comment-section">
+            <h2>ご意見・ご感想</h2>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    // ↓↓↓ このページの正しいURLに修正 ↓↓↓
+                    this.page.url = 'https://chromachannel.online/Prompt/prompt-stable-diffusion.html';
+                    // ↓↓↓ このページ固有のユニークなIDに修正 ↓↓↓
+                    this.page.identifier = 'prompt_stable-diffusion'; 
+                };
+                (function() { 
+                var d = document, s = d.createElement('script');
+                s.src = 'https://chroma-ch.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
     </main>
 
     <!-- ===== サイト共通フッター ===== -->
-    <footer>
+    <footer id="site-footer">
         <div class="container">
             <div class="footer-social-links">
                 <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
@@ -113,40 +137,16 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
-            
             <div class="footer-links">
-                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
+                <a href="../privacy.html">プライバシーポリシー & 免責事項</a>
             </div>
-
-            <!-- ★★★ クレジット表記を更新 ★★★ -->
             <div class="footer-credit">
-                <p>当サイトおよび関連コンテンツの制作には、以下の素材を使用しています。</p>
-                <p>音声: VOICEVOX (ずんだもん, 四国めたん, 春日部つむぎ, 中国うさぎ, 冥鳴ひまり) / 立ち絵: 坂本アヒル様坂本アヒル様, とらっかぁ様</p>
+                <p>音声: VOICEVOX (ずんだもん, 四国めたん, 春日部つむぎ, 中国うさぎ, 冥鳴ひまり) / 立ち絵: 坂本アヒル様, とらっかぁ様</p>
             </div>
-            
             <p class="copyright">© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
     
-    <!-- ▼▼▼ スクリプトのパスを修正 ▼▼▼ -->
     <script src="../JavaScript/script.js"></script>
-    <!-- コピーボタン用のJavaScript -->
-    <script>
-        document.getElementById('copy-btn').addEventListener('click', function() {
-            const code = document.getElementById('prompt-code').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                this.innerHTML = '<i class="fas fa-check"></i> コピー完了!';
-                this.classList.add('copied');
-                setTimeout(() => {
-                    this.innerHTML = '<i class="far fa-copy"></i> コピー';
-                    this.classList.remove('copied');
-                }, 2000);
-            }).catch(err => {
-                console.error('コピーに失敗しました', err);
-                alert('コピーに失敗しました。');
-            });
-        });
-    </script>
-
 </body>
 </html>

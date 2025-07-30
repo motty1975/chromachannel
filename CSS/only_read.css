@@ -8,7 +8,6 @@
     color: white;
     margin-bottom: 24px;
 }
-
 .page-header h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     margin: 0 0 10px 0;
@@ -20,7 +19,6 @@
     -webkit-text-fill-color: initial;
     background-clip: initial;
 }
-
 .page-header p {
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     opacity: 0.9;
@@ -71,12 +69,6 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     align-items: stretch;
-}
-.portfolio-item, .course-item {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.portfolio-item.hide {
-    display: none;
 }
 .portfolio-card, .course-card {
     background: var(--bg-white);
@@ -164,45 +156,36 @@
     font-size: 0.8rem;
     font-weight: 500;
 }
-/* サムネイルギャラリー & モーダル */
-.thumbnail-gallery-wrapper { max-height: 0; overflow: hidden; transition: all 0.5s ease; padding: 0 25px; background: #f9f9f9; border-top: 1px solid #eee;}
-.thumbnail-gallery-wrapper.open { max-height: 500px; padding: 20px 25px; margin-top: 20px;}
-.thumbnail-gallery { display: flex; gap: 10px; overflow-x: auto;}
-.thumbnail-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: all 0.2s ease;}
-.thumbnail-img:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(0,0,0,0.2);}
-.modal { display: none; position: fixed; z-index: 8000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); align-items: center; justify-content: center;}
-.modal.show { display: flex; }
-.modal-content { width: 90%; max-width: 1200px; height: 90vh; max-height: 800px; display: flex; position: relative;}
-.close-btn { position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; background: white; color: #333; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 10;}
-.modal-body { display: flex; gap: 25px; width: 100%; height: 100%; padding: 0;}
-.modal-image-container { flex: 1 1 55%; display: flex; align-items: center; justify-content: center;}
-#modal-image { max-width: 100%; max-height: 100%; object-fit: contain;}
-.modal-info-container { flex: 1 1 45%; display: flex; flex-direction: column; overflow-y: auto; padding: 30px; background: #fff; border-radius: 0 10px 10px 0;}
-#modal-title { margin: 0 0 10px 0; font-size: 1.8rem; font-weight: 600;}
-#modal-description { line-height: 1.7; margin: 0 0 20px 0;}
-.modal-divider { border: none; height: 1px; background: #ddd; margin: 15px 0;}
-.prompt-box { background: #f5f7fa; padding: 15px; border-radius: 8px; margin: 10px 0; font-family: monospace; font-size: 0.9rem; line-height: 1.6; word-break: break-all;}
-.modal-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; transition: background 0.2s;}
-.modal-nav:hover { background: white; }
-#modal-prev { left: -70px; }
-#modal-next { right: -70px; }
-
-/* ===== 学習ページ専用スタイル ===== */
-.step-container { margin-bottom: 80px; }
-.step-title { font-size: 1.8rem; font-weight: 700; padding-bottom: 15px; border-bottom: 3px solid var(--primary-color-start); margin-bottom: 40px; display: inline-block; }
-.course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-@media (max-width: 768px) { .course-grid { grid-template-columns: 1fr; } }
-.course-subtitle { font-weight: 600; font-style: italic; }
-.learn-modal { display: none; position: fixed; z-index: 9000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
-.learn-modal.show { display: flex; }
-.learn-modal-content { background-color: #fff; margin: auto; padding: 30px 40px; border-radius: 12px; width: 90%; max-width: 600px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-.learn-modal-close-btn { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; border: none; background: none; cursor: pointer; }
-.learn-modal-close-btn:hover, .learn-modal-close-btn:focus { color: black; }
-.learn-modal-content h2 { margin-top: 0; font-size: 1.8rem; }
-.learn-modal-content p { font-size: 1.1rem; color: var(--text-light); background: var(--bg-light); padding: 15px; border-radius: 8px; }
-.learn-modal-content h3 { margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-.learn-modal-content ul { list-style-type: '📖'; padding-left: 20px; }
-.learn-modal-content li { margin-bottom: 10px; padding-left: 10px; line-height: 1.6; }
+.thumbnail-gallery-wrapper { 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: all 0.5s ease; 
+    padding: 0 25px; 
+    background: #f9f9f9; 
+    border-top: 1px solid #eee;
+}
+.thumbnail-gallery-wrapper.open { 
+    max-height: 500px; 
+    padding: 20px 25px; 
+    margin-top: 20px;
+}
+.thumbnail-gallery { 
+    display: flex; 
+    gap: 10px; 
+    overflow-x: auto;
+}
+.thumbnail-img { 
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.2s ease;
+}
+.thumbnail-img:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
 /* ===== 記事ページ専用スタイル ===== */
 .article-page { 
@@ -255,230 +238,6 @@
     line-height: 2.2; 
     margin-bottom: 30px; 
 }
-.article-footer { 
-    margin-top: 60px;
-    padding-top: 30px;
-    background-color: #fff;
-    border: none;
-    text-align: left;
-}
-.comment-section {
-    max-width: 800px;
-    margin: 60px auto 0;
-}
-.comment-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    border-bottom: 2px solid var(--primary-color-start);
-    padding-bottom: 10px;
-}
-
-/* ===== 記事ページ「戻る」ボタンのスタイル (style.cssから移動) ===== */
-.article-container .back-link {
-    display: inline-block;
-    margin-top: 40px;
-    text-decoration: none;
-    color: var(--primary-color-start);
-    font-weight: bold;
-    font-size: 1.1em;
-    background-color: #fff;
-    padding: 12px 28px;
-    border-radius: 50px;
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s ease;
-}
-
-.article-container .back-link:hover {
-    background-color: #f5f5f5;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-/* ===== プロンプトページ専用スタイル (ダークテーマ版) ===== */
-.prompt-page .article-header {
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 20px;
-    margin-bottom: 40px;
-}
-.prompt-page .article-header p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text-light);
-}
-
-.prompt-list {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-/* カード全体をダークな背景に */
-.prompt-card {
-    background-color: #2d3748; /* ダークブルーグレー */
-    color: #e2e8f0;            /* 明るいグレーのテキスト */
-    border: none;
-    border-radius: 12px;
-    padding: 30px;
-    position: relative;
-}
-
-/* カード内の見出し (h2) のスタイル */
-.prompt-card h2 {
-    font-size: 1.5rem;
-    color: #fff;
-    margin: 0 0 10px 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #4a5568; /* 区切り線 */
-}
-
-/* カード内の説明文のスタイル */
-.prompt-card .prompt-description {
-    font-size: 0.95rem;
-    color: #a0aec0; /* 少し暗めのグレー */
-    margin-bottom: 25px;
-}
-
-/* プロンプト本文のボックスは背景色をなくし、単なるコンテナに */
-.prompt-box {
-    position: static; /* 配置をリセット */
-    background-color: transparent;
-    padding: 0;
-}
-
-/* プロンプト本文テキスト */
-.prompt-text {
-    font-family: 'Menlo', 'Consolas', monospace;
-    font-size: 0.9rem;
-    line-height: 1.7;
-    white-space: pre-wrap;
-    word-break: break-all;
-    margin: 0;
-    padding: 0;
-    color: inherit; /* 親要素(.prompt-card)の色を継承 */
-}
-
-/* コピーボタン */
-.copy-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #4a5568; /* やや明るいグレー */
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.copy-btn:hover {
-    background-color: #718096; /* ホバー時にもう少し明るく */
-}
-
-/* コピー完了時のスタイル */
-.copy-btn.copied {
-    background-color: #48bb78;
-    color: white;
-}
-/* ===== 教材ページ専用スタイル (textbook-page) ===== */
-.textbook-page .article-container {
-    max-width: 840px; /* 本文の最大幅を少し広げます */
-    padding: 50px 60px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-}
-
-.textbook-page .textbook-content {
-    /* このコンテナ自体には特別なスタイルは不要 */
-}
-
-/* メインタイトル (h1) */
-.textbook-page h1 {
-    font-size: 2.4rem;
-    text-align: center;
-    margin-bottom: 70px;
-    padding-bottom: 25px;
-    border-bottom: 2px solid var(--primary-color-start);
-}
-
-/* 章タイトル (h2) */
-.textbook-page h2 {
-    font-size: 1.8rem;
-    margin-top: 80px; /* 章の間の余白を大きく */
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* 節タイトル (h3) */
-.textbook-page h3 {
-    font-size: 1.5rem;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    padding-left: 15px;
-    border-left: 5px solid var(--primary-color-start);
-}
-
-/* 本文 (p) */
-.textbook-page p {
-    font-size: 1.05rem; /* 少しだけ文字を大きく */
-    line-height: 2.2;   /* 行間を広くとって読みやすく */
-    margin-bottom: 1.5em; /* 段落間の余白 */
-}
-
-/* 教材ページ内のプロンプトカードの上下余白を調整 */
-.textbook-page .prompt-card {
-    margin-top: 30px;
-    margin-bottom: 50px;
-}
-/* ===== テーブルのスタイル ===== */
-.article-content table {
-    width: 100%;
-    margin: 30px 0;
-    border-collapse: collapse;
-    border: 1px solid #e0e0e0;
-    font-size: 0.95rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.article-content th,
-.article-content td {
-    border: 1px solid #e0e0e0;
-    padding: 12px 15px;
-    text-align: left;
-    vertical-align: top;
-}
-
-.article-content thead th {
-    background-color: #f5f7fa; /* ヘッダーの背景色 */
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.article-content tbody tr:nth-child(even) {
-    background-color: #fdfdfd; /* 偶数行の背景色 */
-}
-
-.article-content tbody tr:hover {
-    background-color: #f0f4ff; /* カーソルを乗せた時の背景色 */
-}
-
-.article-content td code {
-    background-color: #eef2f7;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-family: 'Consolas', 'Menlo', monospace;
-    font-size: 0.9em;
-}
-/* ===== 教材ページ専用スタイル (textbook-page) ===== */
-.textbook-page .prompt-card {
-    margin-top: 30px;
-    margin-bottom: 50px;
-}
-
 /* ★★★【追加】ここから ★★★ */
 /* ===== 記事内のテーブルスタイル ===== */
 .article-content table {
@@ -528,39 +287,206 @@
     line-height: 1.6;
     margin: 20px 0;
 }
-/* (これまでのCSS...省略) */
-
-/* ===== 記事内のコードブロック（preタグ）スタイル ===== */
-.article-content pre {
-    background-color: #f5f7fa;
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    border-radius: 8px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-family: 'Consolas', 'Menlo', monospace;
-    font-size: 0.9em;
-    line-height: 1.6;
-    margin: 20px 0;
+.article-footer { 
+    margin-top: 60px;
+    padding-top: 30px;
+    background-color: #fff;
+    border: none;
+    text-align: left;
 }
-
-/* ★★★【追加】ここから ★★★ */
-/* ===== 記事内のCTAボタン ===== */
-.article-content .cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 40px;
-    background: linear-gradient(45deg, var(--primary-color-start), var(--primary-color-end));
-    color: white;
+.comment-section {
+    max-width: 800px;
+    margin: 60px auto 0;
+}
+.comment-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-color-start);
+    padding-bottom: 10px;
+}
+.article-container .back-link {
+    display: inline-block;
+    margin-top: 40px;
     text-decoration: none;
+    color: var(--primary-color-start);
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: #fff;
+    padding: 12px 28px;
     border-radius: 50px;
-    font-weight: 600;
+    border: 1px solid #e0e0e0;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-.article-content .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+.article-container .back-link:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-/* ★★★【追加】ここまで ★★★ */
+
+/* ===== プロンプトページ専用スタイル (ダークテーマ版) ===== */
+.prompt-page .article-header {
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+.prompt-page .article-header p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+.prompt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ★★★ ここから修正 ★★★ */
+.prompt-card {
+    background-color: #2d3748; /* 背景色やパディングをこちらに集約 */
+    color: #e2e8f0;
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+}
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* 本文との余白を少し調整 */
+}
+.prompt-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #cbd5e0;
+    font-family: 'Menlo', 'Consolas', monospace;
+}
+.prompt-box {
+    /* こちらはスタイルを持たず、構造的な役割に専念 */
+    margin: 0;
+    padding: 0;
+}
+.prompt-text {
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+}
+.copy-btn {
+    background-color: #4a5568;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+/* ★★★ ここまで ★★★ */
+
+.copy-btn:hover {
+    background-color: #718096;
+}
+.copy-btn.copied {
+    background-color: #48bb78;
+    color: white;
+}
+
+/* only_read.css にこのコードを追記 */
+
+/* ===== プロンプト詳細ページの追加セクション ===== */
+
+/* --- 各セクション共通の見出し --- */
+.prompt-section-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 6px solid var(--primary-color-start);
+    color: var(--text-dark);
+}
+
+/* --- 評価テーブル --- */
+.prompt-evaluation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    border: 1px solid #e9ecef;
+}
+.prompt-evaluation-table th,
+.prompt-evaluation-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+.prompt-evaluation-table th {
+    width: 35%;
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+.prompt-evaluation-table td {
+    width: 65%;
+}
+.star-rating {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+.star-rating .filled {
+    color: #ffc107;
+}
+.star-rating .empty {
+    color: #ced4da;
+}
+
+/* --- おすすめリスト --- */
+.recommendation-box {
+    background-color: #e3f2fd;
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+}
+.recommendation-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.recommendation-box li {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 30px;
+    position: relative;
+    color: #1e88e5;
+}
+.recommendation-box li + li {
+    margin-top: 15px;
+}
+.recommendation-box li::before {
+    content: '\f058'; /* Font Awesome のチェックマーク（solid） */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #43a047; /* 緑色 */
+    font-size: 1.1rem;
+}
+
+/* --- コメント --- */
+.prompt-comment p {
+    font-size: 1rem;
+    line-height: 2.0;
+    color: var(--text-light);
+}

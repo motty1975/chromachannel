@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- ===== ▼▼▼ SEO設定 START ▼▼▼ ===== -->
-    <title>Chromachannelサイト | 福祉 × AIクリエイター 山本倫久</title>
-    <meta name="description" content="Chromachannelは、福祉 × AIクリエイター 山本倫久の公式サイトです。AI技術を活用したイラスト・動画制作から、福祉現場のITコンサルティングまで、活動内容やスキル、お問い合わせ先を掲載しています。">
+<!-- ===== ▼▼▼ SEO設定 START ▼▼▼ ===== -->
+    <title>Chromachannel | 福祉×AIクリエイター 山本倫久 公式サイト</title>
+    <meta name="description" content="福祉×AIクリエイター 山本倫久の公式サイト。AI技術で福祉の現場に新しい「できる」と「楽しい」を届けます。AIイラスト・動画制作、教材開発、Webアプリ制作などの実績やスキル、運営ブログ、お問い合わせ先を掲載。">
     
     <!-- OGPタグ (SNSシェア用) -->
-    <meta property="og:title" content="Chromachannelサイト | 福祉 × AIクリエイター 山本倫久">
+    <meta property="og:title" content="Chromachannel | 福祉×AIクリエイター 山本倫久 公式サイト">
     <meta property="og:description" content="AI技術で福祉の現場に新しい「できる」と「楽しい」を届けます。制作実績やスキル、お問い合わせはこちらから。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chromachannel.online/">
     <meta property="og:image" content="https://chromachannel.online/Img/ogp_image.webp">
-    <meta property="og:site_name" content="Chromachannelサイト">
+    <!-- og:image ImageFX Prompt: A clean, modern, and inspiring hero image for a personal portfolio website. The main text "Chroma Channel" is elegantly displayed. In the background, abstract, soft-glowing shapes represent the fusion of "Welfare (Care)" and "AI (Technology)". The color palette is a friendly and professional blend of blues, whites, and a warm accent color, conveying a sense of trust and innovation. -->
+    <meta property="og:site_name" content="Chromachannel">
     <meta name="twitter:card" content="summary_large_image">
     
     <!-- 基本タグ -->
@@ -21,38 +22,33 @@
     <link rel="canonical" href="https://chromachannel.online/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- 構造化データ (JSON-LD) -->
-    <!-- ★★★ Personスキーマ（個人の情報） ★★★ -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "山本 倫久",
-            "url": "https://chromachannel.online/",
-            "image": "https://chromachannel.online/Img/profile.webp",
-            "jobTitle": "福祉 × AIクリエイター",
-            "description": "福祉の現場にAIという最先端のテクノロジーを駆使して、新しい「できる」と「楽しい」を届けることをミッションとしています。企画、シナリオ、音楽、イラスト、動画編集まで、コンテンツ制作の全工程をワンストップで手掛けます。",
-            "sameAs": [
-                "https://www.youtube.com/@chroma0224",
-                "https://www.youtube.com/@chroma1975",
-                "https://github.com/motty1975/chromachannel",
-                "https://x.com/Chroma0224"
-            ],
-            "knowsAbout": ["AIイラスト制作", "動画制作", "音楽制作", "教材コンテンツ設計", "Webアプリケーション開発", "福祉ITコンサルティング", "プロンプトエンジニアリング"]
-        }
-    </script>
-    <!-- ★★★ WebSiteスキーマ（サイト全体の情報）を追加 ★★★ -->
+    <!-- 構造化データ (JSON-LD) - PersonとWebSiteを統合 -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Chromachannelサイト",
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Chromachannel",
+      "url": "https://chromachannel.online/",
+      "author": {
+        "@type": "Person",
+        "name": "山本 倫久",
         "url": "https://chromachannel.online/",
-        "author": {
-          "@type": "Person",
-          "name": "山本 倫久"
-        },
-        "description": "福祉とAIを繋ぐクリエイター、山本倫久の公式サイト。AIを活用した制作実績や、実践的なナレッジ（プロンプト集など）を紹介しています。"
+        "image": "https://chromachannel.online/Img/profile.webp",
+        "jobTitle": "福祉 × AIクリエイター",
+        "description": "福祉の現場にAIという最先端のテクノロジーを駆使して、新しい「できる」と「楽しい」を届けることをミッションとしています。企画、シナリオ、音楽、イラスト、動画編集まで、コンテンツ制作の全工程をワンストップで手掛けます。",
+        "sameAs": [
+            "https://www.youtube.com/@chroma0224",
+            "https://www.youtube.com/@chroma1975",
+            "https://github.com/motty1975/chromachannel",
+            "https://x.com/Chroma0224"
+        ],
+        "knowsAbout": ["AIイラスト制作", "動画制作", "音楽制作", "教材コンテンツ設計", "Webアプリケーション開発", "福祉ITコンサルティング", "プロンプトエンジニアリング"]
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "山本 倫久"
+      },
+      "description": "福祉とAIを繋ぐクリエイター、山本倫久の公式サイト。AIを活用した制作実績や、実践的なナレッジ（プロンプト集など）を紹介しています。"
     }
     </script>
     <!-- ===== ▲▲▲ SEO設定 END ▲▲▲ ===== -->

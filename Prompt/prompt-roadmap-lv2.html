@@ -3,66 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== ▼▼▼ 【ここから下を記事ごとに書き換える】 ▼▼▼ ===== -->
     
-    <!-- ===== ▼▼▼ SEO設定 ▼▼▼ ===== -->
-    <title>ロードマップ作成プロンプト Lv.2 (バランス型) | Chromachannelサイト</title>
-    <meta name="description" content="手軽さと精度のバランスが良い、戦略コンサルタント風のAIと対話するロードマップ作成プロンプト。基本的な必須項目を含み、カスタマイズも容易です。">
-    <link rel="canonical" href="https://chromachannel.online/Prompt/prompt-roadmap-lv2.html" />
-    <meta property="og:title" content="ロードマップ作成プロンプト Lv.2 (バランス型)">
-    <meta property="og:description" content="手軽さと精度のバランスが良い、戦略コンサルタント風のAIと対話するロードマップ作成プロンプト。">
+    <title>ロードマップ作成プロンプト Lv.2 (バランス型) | Chromachannel</title>
+    <meta name="description" content="福祉×AIクリエイターが提供する、バランス型のロードマップ作成プロンプト。AIに質問項目をあらかじめ指定することで、手軽さと精度を両立した学習計画やキャリアプランを作成できます。">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="ロードマップ作成プロンプト Lv.2 (バランス型) | Chromachannel">
+    <meta property="og:description" content="福祉×AIクリエイter提供。AIに質問項目をあらかじめ指定することで、手軽さと精度を両立したロードマップを作成できます。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://chromachannel.online/Prompt/prompt-roadmap-lv2.html">
-    <meta property="og:image" content="https://chromachannel.online/img/ogp-prompt-roadmap.png">
-    <meta property="og:site_name" content="Chromachannelサイト">
+    <meta property="og:image" content="https://chromachannel.online/Img/Prompt/roadmap_lv2.webp">
+    <!-- og:image ImageFX Prompt: An illustration of a friendly robot strategist pointing to a detailed, balanced roadmap on a large screen. The path has clear milestones and checkpoints. The style is a clean, professional flat illustration, symbolizing a well-structured and achievable plan. -->
+    <meta property="og:site_name" content="Chromachannel">
     <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "【バランス型】AIとの対話で進めるロードマップ作成プロンプト Lv.2",
-      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" }
+      "@type": "Article",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://chromachannel.online/Prompt/prompt-roadmap-lv2.html" },
+      "headline": "ロードマップ作成プロンプト Lv.2 (バランス型)",
+      "description": "福祉×AIクリエイター 山本倫久が提供する、バランス型のロードマップ作成プロンプト。レベル1よりも少し具体的に、AIに質問してほしい項目をあらかじめ指定することで、より精度の高いロードマップが期待できます。",
+      "author": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
+      "publisher": { "@type": "Person", "name": "山本 倫久", "url": "https://chromachannel.online/" },
+      "datePublished": "2025-07-30",
+      "dateModified": "2025-07-30"
     }
     </script>
     
-    <!-- ===== ▼▼▼ パスを修正 ▼▼▼ ===== -->
-    <link rel="icon" href="../Img/favicon.png" type="image/png">
+    <link rel="canonical" href="https://chromachannel.online/Prompt/prompt-roadmap-lv2.html" />
+    
+    <!-- ===== ▲▲▲ ここまで ▲▲▲ ===== -->
+     
+    <link rel="icon" href="../Img/favicon.webp" type="image/webp">
+    
+    <!-- CSS / ライブラリ -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/only_read.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- このページ専用のスタイル -->
-    <style>
-        body { background-color: #f4f7f9; }
-        .article-main { padding: 120px 20px 60px; }
-        .article-container { max-width: 860px; margin: 0 auto; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 30, 80, 0.08); }
-        .article-container h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 20px; line-height: 1.4; color: #1a202c; border: none; padding: 0; }
-        .article-container h2 { font-size: 1.8em; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
-        .article-container h3 { font-size: 1.3em; font-weight: 600; margin-top: 30px; margin-bottom: 15px; border-left: 4px solid var(--primary-color-start); padding-left: 12px; }
-        .article-container p, .article-container .intro-p { font-size: 1.1em; color: #4a5568; line-height: 1.8; }
-        .code-block-wrapper { position: relative; margin-top: 20px; }
-        .code-block-wrapper pre { background-color: #2d3748; color: #e2e8f0; padding: 25px; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; font-size: 0.95em; line-height: 1.7; border: 1px solid #4a5568; }
-        .code-block-wrapper pre code { font-family: 'Menlo', 'Courier New', Courier, monospace; }
-        .code-block-wrapper button#copy-btn { position: absolute; top: 12px; right: 12px; background-color: #4a5568; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: background-color 0.2s; z-index: 10; }
-        .code-block-wrapper button#copy-btn:hover { background-color: #2d3748; }
-        .code-block-wrapper button#copy-btn.copied { background-color: #38a169; }
-        .article-container .back-link { display: inline-block; margin-top: 40px; text-decoration: none; color: var(--primary-color-start); font-weight: bold; font-size: 1.1em; }
-        .evaluation-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .evaluation-table th, .evaluation-table td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
-        .evaluation-table th { background-color: #f7fafc; font-weight: 600; }
-        .evaluation-table td:first-child { font-weight: 500; }
-        .evaluation-table .star { color: #f6ad55; }
-        .recommend-box { background-color: #ebf8ff; border: 1px solid #90cdf4; border-radius: 8px; padding: 20px; margin-top: 15px; }
-        .recommend-box ul { list-style-type: '✅'; padding-left: 20px; }
-    </style>
 </head>
-<body>
 
-    <!-- ===== ▼▼▼ サイト共通ヘッダーに差し替え ▼▼▼ ===== -->
-    <header>
+<body class="prompt-page">
+    <!-- ===== サイト共通ヘッダー ===== -->
+    <header class="site-header">
         <nav class="container">
-            <a href="../index.html" class="logo">
-                <img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ">
-            </a>
+            <a href="../index.html" class="logo"><img src="../Img/chroma_logo.webp" alt="Chroma Channel ロゴ"></a>
             <ul class="nav-links">
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../index.html#skills">Skills</a></li>
@@ -70,75 +59,107 @@
                 <li><a href="../learn.html">Learn</a></li>
                 <li><a href="../blog.html">Blog</a></li>
                 <li><a href="../portfolio.html">Portfolio</a></li>
+                <li><a href="../novels.html">Novels</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-nav-toggle" aria-label="メニューを開く">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="mobile-nav-toggle" aria-label="メニューを開く"><i class="fas fa-bars"></i><i class="fas fa-times"></i></button>
         </nav>
     </header>
 
     <main class="article-main">
-        <article class="article-container">
-            <h1>ロードマップ作成プロンプト Lv.2 (バランス型)</h1>
-            <p class="intro-p">
-                レベル1よりも少し具体的に、AIに質問してほしい項目をあらかじめ指定するプロンプトです。<br>
-                これにより、より精度の高いロードマップが期待できます。
-            </p>
-
-            <div class="code-block-wrapper">
-                <button id="copy-btn"><i class="far fa-copy"></i> コピー</button>
-                <pre><code id="prompt-code"># 指示
-あなたは優秀な戦略コンサルタントです。
+        <div class="article-container">
+            <header class="article-header">
+                <h1>ロードマップ作成プロンプト Lv.2 (バランス型)</h1>
+                <p>レベル1よりも少し具体的に、AIに質問してほしい項目をあらかじめ指定するプロンプトです。これにより、より精度の高いロードマップが期待できます。</p>
+            </header>
+            
+            <div class="prompt-list">
+                <section class="prompt-card">
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <h3 class="prompt-title"># 指示</h3>
+                            <button class="copy-btn"><i class="far fa-copy"></i> コピー</button>
+                        </div>
+                        <pre class="prompt-text">あなたは優秀な戦略コンサルタントです。
 これから、私と対話形式でロードマップを作成してください。
 以下のルールに従って、対話を進めてください。
 
 ## 対話のルール
-1.  まず、どのようなロードマップを作成したいか、私にテーマを尋ねてください。
-    （例：新規事業のプロダクトロードマップ、資格取得のための学習ロードマップ、3年後のキャリアアップのためのロードマップなど）
-2.  テーマが決まったら、以下の項目について、一つずつ順番に私に質問してください。一度に複数の質問をしないでください。
-    *   **最終目標 (Goal):** このロードマップで達成したい、最も重要な目標は何ですか？
-    *   **期間 (Timeline):** いつまでに目標を達成したいですか？具体的な日付や期間を教えてください。
-    *   **現状分析 (As-Is):** 目標に対して、現在のあなたの状況や立ち位置を教えてください。
-    *   **マイルストーン (Milestones):** 最終目標に至るまでの中間目標を、期間を区切って（例：3ヶ月後、半年後、1年後など）いくつか設定してください。
-    *   **具体的なアクション (Actions):** 各マイルストーンを達成するために、具体的にどのような行動が必要ですか？
-    *   **成功の指標 (Success Metrics):** 何をもってこのロードマップの成功と判断しますか？（例：売上、資格取得、昇進など）
-3.  私がすべての質問に答えたら、収集した情報を要約して提示し、内容に間違いがないか確認を求めてください。
-4.  私が内容を承認したら、それらの情報に基づいて、最終的なロードマップを表形式で作成してください。</code></pre>
+1. まず、どのようなロードマップを作成したいか、私にテーマを尋ねてください。
+（例：新規事業のプロダクトロードマップ、資格取得のための学習ロードマップ、3年後のキャリアアップのためのロードマップなど）
+2. テーマが決まったら、以下の項目について、一つずつ順番に私に質問してください。一度に複数の質問をしないでください。
+    * 最終目標 (Goal):このロードマップで達成したい、最も重要な目標は何ですか？
+    * 期間 (Timeline):いつまでに目標を達成したいですか？具体的な日付や期間を教えてください。
+    * 現状分析 (As-Is):目標に対して、現在のあなたの状況や立ち位置を教えてください。
+    * マイルストーン (Milestones):最終目標に至るまでの中間目標を、期間を区切って（例：3ヶ月後、半年後、1年後など）いくつか設定してください。
+    * 具体的なアクション (Actions):各マイルストーンを達成するために、具体的にどのような行動が必要ですか？
+    * 成功の指標 (Success Metrics):何をもってこのロードマップの成功と判断しますか？（例：売上、資格取得、昇進など）
+3. 私がすべての質問に答えたら、収集した情報を要約して提示し、内容に間違いがないか確認を求めてください。
+4. 私が内容を承認したら、それらの情報に基づいて、最終的なロードマップを表形式で作成してください。</pre>
+                    </div>
+                </section>
             </div>
             
-            <h2>プロンプトの評価と特徴</h2>
-            <table class="evaluation-table">
-                <tbody>
-                    <tr><th>手軽さ</th><td><span class="star">★★★★☆</span></td></tr>
-                    <tr><th>精度</th><td><span class="star">★★★★☆</span></td></tr>
-                    <tr><th>網羅性</th><td><span class="star">★★★☆☆</span></td></tr>
-                    <tr><th>汎用性</th><td><span class="star">★★★★☆</span></td></tr>
-                    <tr><th>カスタマイズ性</th><td><span class="star">★★★★☆</span></td></tr>
-                    <tr><th>【総合評価】</th><td><span class="star">★★★★☆</span></td></tr>
-                </tbody>
-            </table>
+            <!-- ★★★ ここから追加セクション ★★★ -->
+            <section class="prompt-details">
+                <h2 class="prompt-section-heading">プロンプトの評価と特徴</h2>
+                <table class="prompt-evaluation-table">
+                    <tbody>
+                        <tr><th>手軽さ</th><td><span class="star-rating"><span class="filled">★★★</span><span class="empty">☆☆</span></span></td></tr>
+                        <tr><th>精度</th><td><span class="star-rating"><span class="filled">★★★★</span><span class="empty">☆</span></span></td></tr>
+                        <tr><th>網羅性</th><td><span class="star-rating"><span class="filled">★★★★</span><span class="empty">☆</span></span></td></tr>
+                        <tr><th>汎用性</th><td><span class="star-rating"><span class="filled">★★★★</span><span class="empty">☆</span></span></td></tr>
+                        <tr><th>カスタマイズ性</th><td><span class="star-rating"><span class="filled">★★★★★</span><span class="empty"></span></span></td></tr>
+                        <tr><th>【総合評価】</th><td><span class="star-rating"><span class="filled">★★★★</span><span class="empty">☆</span></span></td></tr>
+                    </tbody>
+                </table>
 
-            <h3>こんな人におすすめ</h3>
-            <div class="recommend-box">
-                <ul>
-                    <li>手軽さも欲しいが、ある程度しっかりしたロードマップを作りたい方</li>
-                    <li>ロードマップに含めるべき基本的な項目が知りたい方</li>
-                    <li>自分なりに項目を追加・修正して使いたい方</li>
-                </ul>
-            </div>
-            
-            <h3>コメント</h3>
-            <p>手軽さと精度のバランスが最も良いプロンプトです。ロードマップの骨子となる重要な項目が予め定義されているため、大きく外すことなく、質の高いアウトプットが期待できます。「リスク」や「予算」など、必要に応じて項目を追加するカスタマイズもしやすく、多くの人にとって標準的な使い方としておすすめです。</p>
+                <h2 class="prompt-section-heading">こんな人におすすめ</h2>
+                <div class="recommendation-box">
+                    <ul>
+                        <li>手軽さも欲しいが、ある程度しっかりしたロードマップを作りたい方</li>
+                        <li>ロードマップに含めるべき基本的な項目が知りたい方</li>
+                        <li>自分なりに項目を追加・修正して使いたい方</li>
+                    </ul>
+                </div>
 
-            <!-- ▼▼▼ 戻るリンクを修正 ▼▼▼ -->
-                <a href="../prompt.html" class="back-link">← プロンプト集に戻る</a>
-        </article>
+                <h2 class="prompt-section-heading">コメント</h2>
+                <div class="prompt-comment">
+                    <p>手軽さと精度のバランスが最も良いプロンプトです。ロードマップの骨子となる重要な項目が予め定義されているため、大きく外すことなく、質の高いアウトプットが期待できます。「リスク」や「予算」など、必要に応じて項目を追加するカスタマイズもしやすく、多くの人にとって標準的な使い方としておすすめです。</p>
+                </div>
+            </section>
+            <!-- ★★★ ここまで ★★★ -->
+
+            <footer class="article-footer">
+                <div class="back-to-blog-links">
+                    <a href="../prompt.html" class="back-link">← プロンプト一覧に戻る</a>
+                </div>
+            </footer>
+        </div>
+        <!-- ★★★ Disqusコメント欄 ★★★ -->
+        <section class="comment-section">
+            <h2>ご意見・ご感想</h2>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    // ↓↓↓ このページの正しいURLに修正 ↓↓↓
+                    this.page.url = 'https://chromachannel.online/Prompt/prompt-roadmap-lv2.html';
+                    // ↓↓↓ このページ固有のユニークなIDに修正 ↓↓↓
+                    this.page.identifier = 'prompt_roadmap-lv2'; 
+                };
+                (function() { 
+                var d = document, s = d.createElement('script');
+                s.src = 'https://chroma-ch.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
     </main>
 
     <!-- ===== サイト共通フッター ===== -->
-    <footer>
+    <footer id="site-footer">
         <div class="container">
             <div class="footer-social-links">
                 <a href="https://www.youtube.com/@chroma0224" target="_blank" rel="noopener noreferrer" title="ChromaのPC学習部屋"><i class="fab fa-youtube"></i> ChromaのPC学習部屋</a>
@@ -146,40 +167,16 @@
                 <a href="https://github.com/motty1975/chromachannel" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 <a href="https://x.com/Chroma0224" target="_blank" rel="noopener noreferrer" title="X (旧Twitter)"><i class="fab fa-twitter"></i> X (旧Twitter)</a>
             </div>
-            
             <div class="footer-links">
-                <a href="privacy.html">プライバシーポリシー & 免責事項</a>
+                <a href="../privacy.html">プライバシーポリシー & 免責事項</a>
             </div>
-
-            <!-- ★★★ クレジット表記を更新 ★★★ -->
             <div class="footer-credit">
-                <p>当サイトおよび関連コンテンツの制作には、以下の素材を使用しています。</p>
-                <p>音声: VOICEVOX (ずんだもん, 四国めたん, 春日部つむぎ, 中国うさぎ, 冥鳴ひまり) / 立ち絵: 坂本アヒル様坂本アヒル様, とらっかぁ様</p>
+                <p>音声: VOICEVOX (ずんだもん, 四国めたん, 春日部つむぎ, 中国うさぎ, 冥鳴ひまり) / 立ち絵: 坂本アヒル様, とらっかぁ様</p>
             </div>
-            
             <p class="copyright">© 2025 chromachannel. All rights reserved.</p>
         </div>
     </footer>
     
-    <!-- ▼▼▼ スクリプトのパスを修正 ▼▼▼ -->
     <script src="../JavaScript/script.js"></script>
-    <!-- コピーボタン用のJavaScript -->
-    <script>
-        document.getElementById('copy-btn').addEventListener('click', function() {
-            const code = document.getElementById('prompt-code').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                this.innerHTML = '<i class="fas fa-check"></i> コピー完了!';
-                this.classList.add('copied');
-                setTimeout(() => {
-                    this.innerHTML = '<i class="far fa-copy"></i> コピー';
-                    this.classList.remove('copied');
-                }, 2000);
-            }).catch(err => {
-                console.error('コピーに失敗しました', err);
-                alert('コピーに失敗しました。');
-            });
-        });
-    </script>
-
 </body>
 </html>

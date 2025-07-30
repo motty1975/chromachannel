@@ -1,9 +1,10 @@
-// DOMが完全に読み込まれてから、全ての処理を開始する
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- サイト共通の機能 ---
 
-    // モバイル用ハンバーガーメニューを初期化
+    /**
+     * モバイル用ハンバーガーメニューのクリックイベントを初期化します。
+     */
     const initMobileMenu = () => {
         const toggleButton = document.querySelector('.mobile-nav-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -15,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // スクロールに応じたフェードインアニメーションを初期化
+    /**
+     * ページスクロールに応じたフェードインアニメーションを初期化します。
+     */
     const initScrollAnimation = () => {
         const fadeInElements = document.querySelectorAll('.fade-in');
         if (fadeInElements.length === 0) return;
@@ -32,7 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
         fadeInElements.forEach(el => observer.observe(el));
     };
 
-    // ヘッダーのスクロール効果を初期化
+    /**
+     * ヘッダーがスクロールされた際に影をつける効果を初期化します。
+     */
     const initHeaderScrollEffect = () => {
         const header = document.querySelector('.site-header');
         if (!header) return;
@@ -45,57 +50,116 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-
-    // --- 「読む」ページ共通の機能 ---
-
-    // ポートフォリオのカテゴリフィルターを初期化
-    const initPortfolioFilter = () => {
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        if (categoryButtons.length === 0 || portfolioItems.length === 0) return;
-
-        categoryButtons.forEach(button => {
+    
+    /**
+     * AIイラストカードの「ギャラリーを見る」ボタンの機能を初期化します。
+     */
+    const initGalleryToggle = () => {
+        const toggleButtons = document.querySelectorAll('.gallery-toggle-btn');
+        toggleButtons.forEach(button => {
             button.addEventListener('click', () => {
-                const category = button.dataset.category;
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                portfolioItems.forEach(item => {
-                    const itemCategories = item.dataset.category ? item.dataset.category.split(' ') : [];
-                    const shouldShow = (category === 'all' || itemCategories.includes(category));
-                    if(shouldShow) {
-                        item.style.display = '';
+                const portfolioCard = button.closest('.portfolio-card');
+                const galleryWrapper = portfolioCard.querySelector('.thumbnail-gallery-wrapper');
+                
+                if (galleryWrapper) {
+                    galleryWrapper.classList.toggle('open');
+                    // ボタンのテキストとアイコンを変更
+                    if (galleryWrapper.classList.contains('open')) {
+                        button.innerHTML = '<i class="fas fa-times-circle"></i> ギャラリーを閉じる';
                     } else {
-                        item.style.display = 'none';
+                        button.innerHTML = '<i class="fas fa-images"></i> ギャラリーを見る';
+                    }
+                }
+            });
+        });
+    };
+
+    /**
+     * ポートフォリオページのカテゴリフィルター機能を初期化します。
+     */
+    const initPortfolioFilter = () => {
+        const container = document.querySelector('.portfolio-categories');
+        if (!container) return; // このページにフィルターがなければ何もしない
+
+        const buttons = container.querySelectorAll('.category-btn');
+        const items = document.querySelectorAll('.portfolio-item');
+        const animationDuration = 300;
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 既にアクティブなボタンは処理しない
+                if(button.classList.contains('active')) return;
+
+                container.querySelector('.active').classList.remove('active');
+                button.classList.add('active');
+                const category = button.dataset.category;
+
+                items.forEach(item => {
+                    const itemCategories = item.dataset.category ? item.dataset.category.split(' ') : [];
+                    const shouldShow = category === 'all' || itemCategories.includes(category);
+
+                    if (!shouldShow && !item.classList.contains('is-hidden')) {
+                        item.classList.add('is-hiding');
+                        setTimeout(() => item.classList.add('is-hidden'), animationDuration);
+                    } else if (shouldShow && item.classList.contains('is-hidden')) {
+                        item.classList.remove('is-hidden');
+                        setTimeout(() => item.classList.remove('is-hiding'), 10);
                     }
                 });
             });
         });
     };
-    
-    // サムネイルギャラリーの開閉機能を初期化
-    const initThumbnailToggle = () => {
-        document.querySelectorAll('.gallery-toggle-btn').forEach(button => {
-            const portfolioItem = button.closest('.portfolio-card');
-            if (!portfolioItem) return;
-            const thumbnailWrapper = portfolioItem.querySelector('.thumbnail-gallery-wrapper');
-            if (thumbnailWrapper) {
-                button.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    thumbnailWrapper.classList.toggle('open');
-                    button.innerHTML = thumbnailWrapper.classList.contains('open') 
-                        ? '<i class="fas fa-times"></i> ギャラリーを閉じる' 
-                        : '<i class="fas fa-images"></i> ギャラリーを見る';
-                });
-            }
+
+    /**
+     * プロンプトページのコピーボタン機能を初期化します。
+     */
+    const initPromptCopy = () => {
+        const promptList = document.querySelector('.prompt-list');
+        if (!promptList) return;
+
+        promptList.addEventListener('click', (e) => {
+            const copyButton = e.target.closest('.copy-btn');
+            if (!copyButton || copyButton.classList.contains('copied')) return;
+
+            // ボタンが所属するカードの一番外側の要素を探す
+            const promptBox = copyButton.closest('.prompt-box');
+            if (!promptBox) return;
+
+            // 見出しと本文の要素を探す
+            const titleElement = promptBox.querySelector('.prompt-title');
+            const textElement = promptBox.querySelector('.prompt-text');
+
+            if (!textElement) return;
+
+            // 見出しのテキスト（存在すれば）と本文のテキストを結合
+            const titleText = titleElement ? titleElement.innerText + '\n\n' : '';
+            const bodyText = textElement.innerText;
+            const textToCopy = titleText + bodyText;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = copyButton.innerHTML;
+                copyButton.classList.add('copied');
+                copyButton.innerHTML = '<i class="fas fa-check"></i> コピー完了';
+                setTimeout(() => {
+                    copyButton.classList.remove('copied');
+                    copyButton.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('クリップボードへのコピーに失敗しました: ', err);
+                alert('コピーに失敗しました。');
+            });
         });
     };
     
-    // ポートフォリオ用モーダルウィンドウ機能を初期化
+    /**
+     * ポートフォリオページの作品詳細モーダル機能を初期化します。
+     */
     const initPortfolioModal = () => {
-        const modal = document.getElementById('modal');
+        const modal = document.getElementById('portfolio-modal');
         if (!modal) return;
         
-        const closeBtn = modal.querySelector('.close-btn');
+        // モーダル内の要素を取得
+        const closeBtn = document.getElementById('modal-close-btn');
         const modalImage = document.getElementById('modal-image');
         const modalTitle = document.getElementById('modal-title');
         const modalDescription = document.getElementById('modal-description');
@@ -106,50 +170,62 @@ document.addEventListener('DOMContentLoaded', () => {
         const prevBtn = document.getElementById('modal-prev');
         const nextBtn = document.getElementById('modal-next');
 
-        let currentGallery = [];
+        let currentGalleryItems = [];
         let currentIndex = -1;
 
-        const openModal = (imgElement) => {
-            if (!imgElement) return;
-            const galleryWrapper = imgElement.closest('.thumbnail-gallery');
-            if (!galleryWrapper) return;
-            currentGallery = Array.from(galleryWrapper.querySelectorAll('.thumbnail-img'));
-            currentIndex = currentGallery.indexOf(imgElement);
-            updateModalContent(imgElement);
+        // サムネイル画像のデータに基づいてモーダルの内容を更新する
+        const updateModalContent = (item) => {
+            if (!item) return;
+            modalImage.src = item.dataset.largeSrc || '';
+            modalTitle.textContent = item.dataset.title || '無題';
+            modalDescription.textContent = item.dataset.description || '説明がありません。';
+            modalCheckpoint.textContent = item.dataset.checkpoint || '情報なし';
+            modalPositive.textContent = item.dataset.positive || '情報なし';
+            modalNegative.textContent = item.dataset.negative || '情報なし';
+            modalSettings.textContent = item.dataset.settings || '情報なし';
+        };
+        
+        // モーダルを開く
+        const openModal = (clickedItem) => {
+            // 現在表示されている（is-hiddenクラスを持たない）ポートフォリオ項目内のサムネイル画像のみをギャラリーの対象とする
+            currentGalleryItems = Array.from(document.querySelectorAll('.portfolio-item:not(.is-hidden) .thumbnail-img'));
+            currentIndex = currentGalleryItems.indexOf(clickedItem);
+            
+            if (currentIndex === -1) return; // 対象が見つからなければ何もしない
+
+            updateModalContent(clickedItem);
             modal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // 背景のスクロールを禁止
         };
 
-        const closeModal = () => modal.classList.remove('show');
-        
-        const updateModalContent = (imgElement) => {
-            modalImage.src = imgElement.dataset.largeSrc || '';
-            modalTitle.textContent = imgElement.dataset.title || '';
-            modalDescription.textContent = imgElement.dataset.description || '';
-            modalCheckpoint.textContent = imgElement.dataset.checkpoint || '';
-            modalPositive.textContent = imgElement.dataset.positive || '';
-            modalNegative.textContent = imgElement.dataset.negative || '';
-            modalSettings.textContent = imgElement.dataset.settings || '';
+        // モーダルを閉じる
+        const closeModal = () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = ''; // スクロール禁止を解除
         };
         
+        // ギャラリー内を移動する
         const navigateGallery = (direction) => {
-            if(currentGallery.length === 0) return;
-            currentIndex += direction;
-            if (currentIndex < 0) currentIndex = currentGallery.length - 1;
-            if (currentIndex >= currentGallery.length) currentIndex = 0;
-            updateModalContent(currentGallery[currentIndex]);
+            if (currentGalleryItems.length <= 1) return;
+            currentIndex = (currentIndex + direction + currentGalleryItems.length) % currentGalleryItems.length;
+            updateModalContent(currentGalleryItems[currentIndex]);
         };
         
-        document.body.addEventListener('click', (e) => {
-            if (e.target.matches('.thumbnail-img')) {
-                openModal(e.target);
+        // イベントリスナーを設定
+        // .portfolio-grid内のクリックを監視し、サムネイル画像がクリックされたらモーダルを開く（イベント委任）
+        document.querySelector('.portfolio-grid').addEventListener('click', (e) => {
+            const thumbnail = e.target.closest('.thumbnail-img');
+            if (thumbnail) {
+                openModal(thumbnail);
             }
         });
         
         closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        modal.addEventListener('click', (e) => (e.target === modal) && closeModal()); // 背景クリックで閉じる
         prevBtn.addEventListener('click', () => navigateGallery(-1));
         nextBtn.addEventListener('click', () => navigateGallery(1));
 
+        // キーボード操作
         document.addEventListener('keydown', (e) => {
             if (!modal.classList.contains('show')) return;
             if (e.key === 'Escape') closeModal();
@@ -158,104 +234,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // 学習ページ用Coming Soonモーダルを初期化
-    const initLearnModal = () => {
-        const modal = document.getElementById('learn-modal');
-        if (!modal) return;
 
-        const openButtons = document.querySelectorAll('.open-learn-modal-btn');
-        const closeBtn = modal.querySelector('.learn-modal-close-btn');
-        const modalTitle = document.getElementById('learn-modal-title');
-        const modalChapters = document.getElementById('learn-modal-chapters');
-
-        const openModal = (button) => {
-            const title = button.dataset.title;
-            const chapters = button.dataset.chapters.split('|');
-
-            modalTitle.textContent = title;
-            modalChapters.innerHTML = '';
-            chapters.forEach(chapter => {
-                const li = document.createElement('li');
-                li.textContent = chapter;
-                modalChapters.appendChild(li);
-            });
-
-            modal.classList.add('show');
-        };
-
-        const closeModal = () => {
-            modal.classList.remove('show');
-        };
-
-        openButtons.forEach(button => {
-            button.addEventListener('click', () => openModal(button));
-        });
-
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-    };
-
-    // --- 全ての機能を初期化して実行 ---
+    // --- サイト全体の機能を初期化して実行 ---
     initMobileMenu();
     initScrollAnimation();
     initHeaderScrollEffect();
+    initGalleryToggle(); // ★新規追加
     initPortfolioFilter();
-    initThumbnailToggle();
-    initPortfolioModal();
-    initLearnModal();
-    // --- プロンプト用コピー機能を初期化 ---
-    const initPromptCopy = () => {
-        // .prompt-list がページ内に存在しない場合は、何もしない
-        const promptList = document.querySelector('.prompt-list');
-        if (!promptList) return;
-
-        // .prompt-list 内でクリックイベントが発生したら処理を実行
-        promptList.addEventListener('click', (e) => {
-            // クリックされた要素が .copy-btn か、その子要素かを確認
-            const copyButton = e.target.closest('.copy-btn');
-            
-            // copyButton が見つからない場合は処理を中断
-            if (!copyButton) return;
-
-            // ボタンの状態が「コピー完了」の時は、何もしない
-            if (copyButton.classList.contains('copied')) return;
-
-            // ボタンに一番近い .prompt-box を探し、その中の .prompt-text を見つける
-            const promptBox = copyButton.closest('.prompt-box');
-            const textToCopy = promptBox.querySelector('.prompt-text').innerText;
-
-            // クリップボードにテキストを書き込む（モダンな方法）
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                // --- コピー成功時の処理 ---
-                const originalText = copyButton.innerHTML; // 元のボタンの内容を保存
-                copyButton.classList.add('copied'); // 'copied' クラスを追加して色を変更
-                copyButton.innerHTML = '<i class="fas fa-check"></i> コピー完了';
-
-                // 2秒後に元の状態に戻す
-                setTimeout(() => {
-                    copyButton.classList.remove('copied');
-                    copyButton.innerHTML = originalText;
-                }, 2000);
-
-            }).catch(err => {
-                // --- コピー失敗時の処理 ---
-                console.error('クリップボードへのコピーに失敗しました: ', err);
-                alert('コピーに失敗しました。');
-            });
-        });
-    };
-
-    // --- 全ての機能を初期化して実行 ---
-    initMobileMenu();
-    initScrollAnimation();
-    initHeaderScrollEffect();
-    initPortfolioFilter();
-    initThumbnailToggle();
-    initPortfolioModal();
-    initLearnModal();
-    initPromptCopy(); // ← ここに新しい関数の呼び出しを追加
+    initPromptCopy();
+    initPortfolioModal(); // ★更新
 });
