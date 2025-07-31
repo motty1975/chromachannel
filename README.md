@@ -62,6 +62,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │   └── ... (他多数)
 │
 ├── Prompt/                         # プロンプト指示書
+│   ├── prompt-kondate.html # ★ 追加
 │   ├── prompt-picture-book-writing.html
 │   ├── prompt-novel-writing.html
 │   ├── prompt-suno-ai.html
