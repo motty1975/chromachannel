@@ -7,11 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('send-btn');
     
     // ▼▼▼ ここに、Google AI Studioで取得したAPIキーを貼り付けてください ▼▼▼
-    const API_KEY = process.env.GEMINI_API_KEY;
+
     // ▲▲▲ APIキーの貼り付けここまで ▲▲▲
 
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
-
+    const API_URL = `/.netlify/functions/gemini`;
     let conversationHistory = [];
         // ▼▼▼ ここから追加 ▼▼▼
         let currentChatId = null; // 現在のチャットIDを管理
