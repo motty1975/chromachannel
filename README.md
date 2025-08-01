@@ -16,13 +16,12 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ## ✨ 主な機能と特徴
 
 - **マルチページ構成:** サイトの目的別にページを分割 (`index`, `portfolio`, `learn`, `blog`, `prompt`) し、ユーザーが必要な情報にアクセスしやすい構造。
-- **モジュール化CSS:** `style.css` (共通), `topview.css` (トップページ), `only_read.css` (下層ページ) にファイルを分割し、高いメンテナンス性と拡張性を実現。
+- **モジュール化CSS:** `style.css` (共通), `topview.css` (トップページ), `only_read.css` (記事等), `counselor-style.css` (チャット) にファイルを分割し、高いメンテナンス性と拡張性を実現。
 - **レスポンシブデザイン:** PC、タブレット、スマートフォンなど、あらゆるデバイスで最適な表示を実現。
 - **インタラクティブUI:** スクロールに応じたフェードインアニメーションや、モバイル用のハンバーガーメニューを実装。
 - **高機能な一覧ページ:** ポートフォリオとプロンプト集には、カテゴリ別の絞り込み（フィルター）機能をJavaScriptで実装。
+- **新機能: AI博士の研究室:** Gemini APIと連携した、プライバシー配慮型（クライアントサイド完結）の対話AIチャットボットを実装。会話履歴の自動保存・復元機能も搭載。
 - **高度なSEO対策:** 各ページに最適化された`meta`タグ, `canonical`タグ, `OGP`タグを設定。さらに、構造化データ（JSON-LD）や`sitemap.xml`も活用し、検索エンジンからの評価を最大化。
-- **トップページでのコンテンツ集約:** 「最新ブログ」「注目実績」「注目プロンプト」セクションを設け、サイト全体の回遊性を向上。
-- **AIとの共同制作:** デザイン、コーディング、文章生成、SEO戦略など、サイト制作の多岐にわたる工程でAIを『共同制作者』として活用。
 
 ## 💻 使用技術
 
@@ -30,6 +29,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Font Awesome](https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)
+![Google Gemini API](https://img.shields.io/badge/Gemini%20API-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
 - **ライブラリ:** ress.min.css
 
@@ -48,25 +48,33 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ├── README.md                       # このファイル
 │
 ├── Blog/                           # ブログ記事
+│   ├── announcing-ai-hakase.html
 │   ├── making-this-site-with-ai.html
-│   ├── report-making-picture-book-with-ai.html
 │   └── ... (他記事)
 │
 ├── Learn/                          # 学習コンテンツ
 │   └── learn_lesson1.html
 │
 ├── Portfolio/                      # 制作実績
-│   ├── Fuwamoco/                   # NPO法人サイト
-│   ├── Game/                       # AI体験ゲーム
 │   └── ... (他実績)
 │
-├── Prompt/                         # プロンプト指示書
+├── Prompt/                         # プロンプト指示書 & AI博士
+│   ├── hakase.html
+│   ├── prompt-hakase.html
 │   ├── prompt-consultant.html
 │   ├── prompt-suno-ai-v2.html
 │   └── ... (他プロンプト)
 │
 ├── CSS/
+│   ├── style.css
+│   ├── topview.css
+│   ├── only_read.css
+│   └── counselor-style.css
+│
 ├── JavaScript/
+│   ├── script.js
+│   └── hakase-script.js
+│
 ├── Img/
 ├── Audio/
 └── Novels/
