@@ -49,33 +49,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 関数の定義 ---
 
-    /**
-     * メッセージをチャットログに追加する
-     * @param {string} sender - 'ai' または 'user'
-     * @param {string} message - 表示するメッセージ
-     */
     function addMessageToLog(sender, message) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', `${sender}-message`);
-
         const icon = document.createElement('div');
         icon.classList.add('icon');
         icon.innerHTML = sender === 'ai' ? '<i class="fas fa-robot"></i>' : '<i class="fas fa-user"></i>';
-
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
         bubble.textContent = message;
         bubble.innerHTML = bubble.innerHTML.replace(/\n/g, '<br>');
-
         messageElement.appendChild(icon);
         messageElement.appendChild(bubble);
         chatLog.appendChild(messageElement);
         chatLog.scrollTop = chatLog.scrollHeight;
     }
 
-    /**
-     * 新しいチャットを開始する
-     */
     function startNewChat() {
         conversationHistory = [];
         chatLog.innerHTML = '';
@@ -84,10 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHistoryList();
     }
 
-    /**
-     * 指定されたIDのチャット履歴をUIに読み込む
-     * @param {string} chatId - 読み込むチャットのID
-     */
     function loadChatHistory(chatId) {
         const savedHistory = localStorage.getItem(HISTORY_KEY_PREFIX + chatId);
         if (savedHistory) {
@@ -104,9 +89,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    // ★★★【新規追加】ここから ★★★
     /**
-     * 現在の会話履歴をローカルストレージに保存する
+     * 指定されたIDのチャット履歴を削除する
+     * @param {string} chatId - 削除するチャットのID
      */
+    function deleteChatHistory(chatId) {
+        if (confirm('この対話履歴を本当に削除しますか？この操作は元に戻せません。')) {
+            localStorage.removeItem(HISTORY_KEY_PREFIX + chatId);
+            
+            if (currentChatId === chatId) {
+                startNewChat();
+            } else {
+                updateHistoryList();
+            }
+        }
+    }
+    // ★★★【新規追加】ここまで ★★★
+
     function saveCurrentChat() {
         if (currentChatId && conversationHistory.length > 2) { 
             localStorage.setItem(HISTORY_KEY_PREFIX + currentChatId, JSON.stringify(conversationHistory));
@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHistoryList();
     }
 
+    // ★★★【修正】ここから ★★★
     /**
      * 左側の履歴パネルのリストを更新する
      */
@@ -125,33 +126,51 @@ document.addEventListener('DOMContentLoaded', () => {
         keys.forEach(key => {
             const chatId = key.replace(HISTORY_KEY_PREFIX, '');
             const savedHistory = JSON.parse(localStorage.getItem(key));
-            if (!savedHistory || savedHistory.length === 0) return;
+            if (!savedHistory || savedHistory.length < 3) {
+                localStorage.removeItem(key); // 不完全なデータを削除
+                return;
+            };
 
             const userTurn = savedHistory.find(turn => turn.role === 'user' && turn.parts[0].text.indexOf('あなたの役割定義に従って') === -1);
-            const title = userTurn ? userTurn.parts[0].text.substring(0, 25) + (userTurn.parts[0].text.length > 25 ? '…' : '') : '新しい対話';
+            const title = userTurn ? userTurn.parts[0].text.substring(0, 20) + (userTurn.parts[0].text.length > 20 ? '…' : '') : '新しい対話';
             
             const listItem = document.createElement('li');
             listItem.classList.add('history-item');
             if (chatId === currentChatId) {
                 listItem.classList.add('active');
             }
-            listItem.textContent = title;
             listItem.dataset.chatId = chatId;
+            
+            const titleSpan = document.createElement('span');
+            titleSpan.textContent = title;
+            titleSpan.style.flexGrow = '1';
+            titleSpan.style.overflow = 'hidden';
+            titleSpan.style.textOverflow = 'ellipsis';
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('delete-btn');
+            deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+            deleteBtn.title = 'この対話を削除';
+            
+            deleteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                deleteChatHistory(chatId);
+            });
+
+            listItem.appendChild(titleSpan);
+            listItem.appendChild(deleteBtn);
+            
             listItem.addEventListener('click', () => loadChatHistory(chatId));
+
             historyList.appendChild(listItem);
         });
     }
+    // ★★★【修正】ここまで ★★★
 
-    /**
-     * ページを離れる前に現在のチャットを保存する
-     */
     window.addEventListener('beforeunload', () => {
         saveCurrentChat();
     });
 
-    /**
-     * ユーザーのメッセージをAIに送信し、応答を処理する
-     */
     async function sendMessageToAI() {
         const userMessage = userInput.value.trim();
         if (!userMessage) return;
@@ -174,21 +193,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             });
 
-            if (!response.ok) {
-                // response.status をエラーメッセージに含める
-                throw new Error(`${response.status}`);
-            }
+            if (!response.ok) throw new Error(`${response.status}`);
             
             const data = await response.json();
             
             let aiMessage = "申し訳ありません。予期せぬエラーで、お返事を考えることができませんでした。";
             if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0) {
                 aiMessage = data.candidates[0].content.parts[0].text;
-            } else {
-                console.warn('API応答が期待される形式でないか、ブロックされました:', data);
-                if (data.promptFeedback && data.promptFeedback.blockReason) {
-                    aiMessage = `申し訳ありません。安全上の理由により、お答えすることができません。(理由: ${data.promptFeedback.blockReason})`;
-                }
+            } else if (data.promptFeedback && data.promptFeedback.blockReason) {
+                aiMessage = `申し訳ありません。安全上の理由により、お答えすることができません。(理由: ${data.promptFeedback.blockReason})`;
             }
 
             addMessageToLog('ai', aiMessage);
@@ -196,13 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
             saveCurrentChat();
         } catch (error) {
             console.error('エラー:', error);
-            // ▼▼▼ この部分を修正 ▼▼▼
             if (error.message.includes('429')) {
                 addMessageToLog('ai', 'AI博士へのリクエストが少し早すぎるようです。大変申し訳ありませんが、もう少しゆっくり話しかけていただけますか？1分ほど待ってから、再度お試しください。');
             } else {
                 addMessageToLog('ai', '申し訳ありません、通信エラーが発生しました。少し時間をおいてから、もう一度お試しください。');
             }
-            // ▲▲▲ ここまで修正 ▲▲▲
         } finally {
             userInput.disabled = false;
             sendBtn.disabled = false;
@@ -210,9 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * 新しいチャットの開始時に、最初の挨拶をAIにリクエストする
-     */
     async function startConversation() {
         userInput.disabled = true;
         sendBtn.disabled = true;
@@ -230,10 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             });
 
-            if (!response.ok) {
-                // response.status をエラーメッセージに含める
-                throw new Error(`${response.status}`);
-            }
+            if (!response.ok) throw new Error(`${response.status}`);
             
             const data = await response.json();
 
@@ -247,13 +252,11 @@ document.addEventListener('DOMContentLoaded', () => {
             saveCurrentChat();
         } catch (error) {
             console.error('エラー:', error);
-            // ▼▼▼ この部分を修正 ▼▼▼
             if (error.message.includes('429')) {
                 addMessageToLog('ai', '現在、AI博士へのアクセスが集中しているようです。大変申し訳ありませんが、1分ほど時間をおいてから、ページを再読み込みしてください。');
             } else {
                 addMessageToLog('ai', 'AI博士を起動できませんでした。ページを再読み込みするか、管理者にお問い合わせください。');
             }
-            // ▲▲▲ ここまで修正 ▲▲▲
         } finally {
             userInput.disabled = false;
             sendBtn.disabled = false;
@@ -263,17 +266,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- イベントリスナーの設定 ---
     sendBtn.addEventListener('click', sendMessageToAI);
-
     userInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             sendMessageToAI();
         }
     });
-    
     newChatBtn.addEventListener('click', startNewChat);
 
     // --- 初期化処理 ---
     updateHistoryList();
-    startNewChat();
+    if (Object.keys(localStorage).filter(key => key.startsWith(HISTORY_KEY_PREFIX)).length > 0) {
+        const latestChatId = Object.keys(localStorage).filter(key => key.startsWith(HISTORY_KEY_PREFIX)).sort().pop().replace(HISTORY_KEY_PREFIX, '');
+        loadChatHistory(latestChatId);
+    } else {
+        startNewChat();
+    }
 });

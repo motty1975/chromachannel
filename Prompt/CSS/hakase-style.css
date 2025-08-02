@@ -1,29 +1,26 @@
-/* ===== AI傾聴カウンセラー専用スタイル ===== */
+/* ===== AI博士の研究室専用スタイル ===== */
 
 :root {
-    /* (変数の定義は変更なし) */
     --counselor-bg: #f8f9fa;
-    --panel-bg: rgba(255, 255, 255, 0.9); /* パネルの背景を半透明に */
-    --window-bg: rgba(240, 244, 248, 0.95); /* ウィンドウ背景も少し透明に */
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --window-bg: rgba(240, 244, 248, 0.95);
     --ai-bubble-bg: #eef2ff;
     --user-bubble-bg: #ffffff;
-    --border-color: rgba(226, 232, 240, 0.7); /* 境界線も少し透明に */
+    --border-color: rgba(226, 232, 240, 0.7);
     --text-dark: #333;
     --text-light: #666;
     --primary-color: #6a11cb;
+    --primary-color-start: #6a11cb; /* グラデーション用に定義 */
+    --primary-color-end: #2575fc;   /* グラデーション用に定義 */
 }
 
-/* ▼▼▼ ここから変更 ▼▼▼ */
 .counselor-main {
-    padding-top: 70px; /* ヘッダーの高さ分 */
+    padding-top: 70px;
     height: 100vh;
     display: flex;
-    /* サイトのメイン背景色を適用 */
     background: linear-gradient(135deg, var(--primary-color-start) 0%, var(--primary-color-end) 100%);
-    overflow: hidden; /* スクロールバーを隠す */
+    overflow: hidden;
 }
-/* ▲▲▲ ここまで変更 ▲▲▲ */
-
 
 .counselor-container {
     display: flex;
@@ -42,7 +39,6 @@
     width: 280px;
     background-color: var(--panel-bg);
     border-radius: 12px;
-    /* ▼▼▼ ガラス風エフェクトを追加 ▼▼▼ */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -59,7 +55,7 @@
     flex-shrink: 0;
 }
 .history-header h2 {
-    color: var(--text-dark); /* 文字色を濃くして可読性を確保 */
+    color: var(--text-dark);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
@@ -83,7 +79,7 @@
     margin: 0;
     overflow-y: auto;
     flex-grow: 1;
-    color: var(--text-dark); /* 文字色を濃くして可読性を確保 */
+    color: var(--text-dark);
 }
 
 /* --- 右側：チャットウィンドウ --- */
@@ -93,7 +89,6 @@
     flex-grow: 1;
     background-color: var(--panel-bg);
     border-radius: 12px;
-    /* ▼▼▼ ガラス風エフェクトを追加 ▼▼▼ */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -108,7 +103,7 @@
     flex-shrink: 0;
 }
 .chat-header h1 {
-    color: var(--text-dark); /* 文字色を濃くして可読性を確保 */
+    color: var(--text-dark);
     font-size: 1.2rem;
     font-weight: 600;
     margin: 0;
@@ -128,7 +123,7 @@
     border-top: 1px solid var(--border-color);
     gap: 10px;
     flex-shrink: 0;
-    background-color: var(--panel-bg); /* 入力欄の背景をパネルと合わせる */
+    background-color: var(--panel-bg);
 }
 
 #user-input {
@@ -140,7 +135,7 @@
     resize: none;
     max-height: 150px;
     font-family: inherit;
-    background-color: #fff; /* 入力欄自体は白で見やすく */
+    background-color: #fff;
 }
 #user-input:focus {
     outline: none;
@@ -177,7 +172,7 @@
         height: 200px;
     }
 }
-/* ===== ▼▼▼ チャットログの吹き出しデザイン ▼▼▼ ===== */
+/* ===== チャットログの吹き出しデザイン ===== */
 
 .message {
     display: flex;
@@ -186,7 +181,6 @@
     max-width: 90%;
     margin-bottom: 20px;
 }
-
 .message .icon {
     width: 40px;
     height: 40px;
@@ -199,15 +193,12 @@
     flex-shrink: 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
 .message .bubble {
     padding: 12px 18px;
     border-radius: 18px;
     line-height: 1.6;
     word-break: break-word;
 }
-
-/* AIの発言（左寄せ） */
 .ai-message {
     justify-content: flex-start;
 }
@@ -216,18 +207,17 @@
     border-top-left-radius: 4px;
     color: var(--text-dark);
 }
-
-/* ユーザーの発言（右寄せ） */
 .user-message {
-    margin-left: auto; /* 右寄せにする */
-    flex-direction: row-reverse; /* アイコンを右側に */
+    margin-left: auto;
+    flex-direction: row-reverse;
 }
 .user-message .bubble {
     background-color: var(--user-bubble-bg);
     border-top-right-radius: 4px;
     color: var(--text-dark);
 }
-/* ===== ▼▼▼ 履歴パネルのアイテムスタイル ▼▼▼ ===== */
+
+/* ===== ▼▼▼ ここから修正・追加 ▼▼▼ ===== */
 .history-item {
     padding: 12px 15px;
     cursor: pointer;
@@ -237,6 +227,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     transition: background-color 0.2s;
+    /* Flexboxでタイトルとボタンを両端に配置 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /* タイトルとボタンの間の余白 */
 }
 .history-item:hover {
     background-color: #f0f4f8;
@@ -246,3 +241,20 @@
     font-weight: 600;
     color: var(--primary-color);
 }
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 0.9rem;
+    padding: 5px;
+    line-height: 1;
+    border-radius: 50%;
+    transition: color 0.2s, background-color 0.2s;
+    flex-shrink: 0; /* ボタンが縮まないように */
+}
+.delete-btn:hover {
+    color: #dc3545; /* 赤色 */
+    background-color: #fbebee;
+}
+/* ===== ▲▲▲ 修正・追加ここまで ▲▲▲ ===== */
