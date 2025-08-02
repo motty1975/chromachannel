@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
-        // HTMLタグを許容しないように、textContentでテキストを設定してからinnerHTMLで改行を反映
         bubble.textContent = message;
         bubble.innerHTML = bubble.innerHTML.replace(/\n/g, '<br>');
 
@@ -96,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
             currentChatId = chatId;
             chatLog.innerHTML = '';
             conversationHistory.forEach(turn => {
-                // 初期化用の見えないユーザープロンプトは表示しない
                 if (turn.role !== 'user' || turn.parts[0].text.indexOf('あなたの役割定義に従って') === -1) {
                    addMessageToLog(turn.role === 'model' ? 'ai' : 'user', turn.parts[0].text);
                 }
@@ -110,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * 現在の会話履歴をローカルストレージに保存する
      */
     function saveCurrentChat() {
-        // 会話が2ターン以上（＝ユーザーが何かを話した）の場合のみ保存
         if (currentChatId && conversationHistory.length > 2) { 
             localStorage.setItem(HISTORY_KEY_PREFIX + currentChatId, JSON.stringify(conversationHistory));
         }
@@ -123,14 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateHistoryList() {
         historyList.innerHTML = '';
         const keys = Object.keys(localStorage).filter(key => key.startsWith(HISTORY_KEY_PREFIX));
-        keys.sort((a, b) => b.localeCompare(a)); // 新しい順にソート
+        keys.sort((a, b) => b.localeCompare(a));
 
         keys.forEach(key => {
             const chatId = key.replace(HISTORY_KEY_PREFIX, '');
             const savedHistory = JSON.parse(localStorage.getItem(key));
             if (!savedHistory || savedHistory.length === 0) return;
 
-            // 最初の実質的なユーザーの発言（初期化プロンプト以外）をタイトルにする
             const userTurn = savedHistory.find(turn => turn.role === 'user' && turn.parts[0].text.indexOf('あなたの役割定義に従って') === -1);
             const title = userTurn ? userTurn.parts[0].text.substring(0, 25) + (userTurn.parts[0].text.length > 25 ? '…' : '') : '新しい対話';
             
@@ -162,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         addMessageToLog('user', userMessage);
         conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
-        saveCurrentChat(); // ユーザーのメッセージをすぐに保存して履歴タイトルを更新
+        saveCurrentChat();
 
         userInput.value = '';
         userInput.disabled = true;
@@ -179,12 +175,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!response.ok) {
-                throw new Error(`APIリクエストエラー: ${response.status}`);
+                // response.status をエラーメッセージに含める
+                throw new Error(`${response.status}`);
             }
             
             const data = await response.json();
             
-            // --- ★★★ エラーハンドリング強化 ★★★ ---
             let aiMessage = "申し訳ありません。予期せぬエラーで、お返事を考えることができませんでした。";
             if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0) {
                 aiMessage = data.candidates[0].content.parts[0].text;
@@ -194,14 +190,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     aiMessage = `申し訳ありません。安全上の理由により、お答えすることができません。(理由: ${data.promptFeedback.blockReason})`;
                 }
             }
-            // --- ★★★ ここまで ★★★ ---
 
             addMessageToLog('ai', aiMessage);
             conversationHistory.push({ role: 'model', parts: [{ text: aiMessage }] });
-            saveCurrentChat(); // AIの応答後も保存
+            saveCurrentChat();
         } catch (error) {
             console.error('エラー:', error);
-            addMessageToLog('ai', '申し訳ありません、通信エラーが発生しました。少し時間をおいてから、もう一度お試しください。');
+            // ▼▼▼ この部分を修正 ▼▼▼
+            if (error.message.includes('429')) {
+                addMessageToLog('ai', 'AI博士へのリクエストが少し早すぎるようです。大変申し訳ありませんが、もう少しゆっくり話しかけていただけますか？1分ほど待ってから、再度お試しください。');
+            } else {
+                addMessageToLog('ai', '申し訳ありません、通信エラーが発生しました。少し時間をおいてから、もう一度お試しください。');
+            }
+            // ▲▲▲ ここまで修正 ▲▲▲
         } finally {
             userInput.disabled = false;
             sendBtn.disabled = false;
@@ -216,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
         userInput.disabled = true;
         sendBtn.disabled = true;
 
-        // 最初の挨拶を取得するためのプロンプト（ユーザーには見えない）
         const initialUserMessage = "こんにちは。あなたの役割定義に従って、最初の挨拶から対話を開始してください。";
         conversationHistory.push({ role: 'user', parts: [{ text: initialUserMessage }] });
 
@@ -231,28 +231,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!response.ok) {
-                throw new Error(`APIリクエストエラー: ${response.status}`);
+                // response.status をエラーメッセージに含める
+                throw new Error(`${response.status}`);
             }
             
             const data = await response.json();
 
-            // --- ★★★ エラーハンドリング強化 ★★★ ---
             let aiMessage = "AI博士を起動できませんでした。ページを再読み込みしてください。";
             if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0) {
                 aiMessage = data.candidates[0].content.parts[0].text;
             }
-            // --- ★★★ ここまで ★★★ ---
             
             addMessageToLog('ai', aiMessage);
             conversationHistory.push({ role: 'model', parts: [{ text: aiMessage }] });
-            saveCurrentChat(); // 最初の挨拶も保存対象とする
+            saveCurrentChat();
         } catch (error) {
             console.error('エラー:', error);
             // ▼▼▼ この部分を修正 ▼▼▼
             if (error.message.includes('429')) {
-                addMessageToLog('ai', 'AI博士へのリクエストが少し早すぎるようです。大変申し訳ありませんが、もう少しゆっくり話しかけていただけますか？1分ほど待ってから、再度お試しください。');
+                addMessageToLog('ai', '現在、AI博士へのアクセスが集中しているようです。大変申し訳ありませんが、1分ほど時間をおいてから、ページを再読み込みしてください。');
             } else {
-                addMessageToLog('ai', '申し訳ありません、通信エラーが発生しました。少し時間をおいてから、もう一度お試しください。');
+                addMessageToLog('ai', 'AI博士を起動できませんでした。ページを再読み込みするか、管理者にお問い合わせください。');
             }
             // ▲▲▲ ここまで修正 ▲▲▲
         } finally {
@@ -278,4 +277,3 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHistoryList();
     startNewChat();
 });
-
