@@ -36,39 +36,37 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ## 📂 サイト構造
 
 ```
-## 📂 サイト構造
-
-```/ (ルート)
-├── index.html
-├── portfolio.html
-├── learn.html
-├── blog.html
-├── prompt.html
-├── novels.html
-├── privacy.html
-├── sitemap.xml
-├── README.md
+/ (ルート)
+├── index.html                      # トップページ
+├── portfolio.html                  # ポートフォリオ一覧
+├── learn.html                      # 学習コンテンツ一覧
+├── blog.html                       # ブログ一覧
+├── prompt.html                     # プロンプト集一覧
+├── novels.html                     # ★ 小説一覧ページ
+├── privacy.html                    # プライバシーポリシー
+├── sitemap.xml                     # サイトマップ
+├── README.md                       # このファイル
 │
-├── Blog/
-│   ├── announcing-ai-hakase.html
-│   └── ... (他記事)
+├── Blog/                           # ブログ記事
+│   └── ...
 │
-├── Learn/
+├── Learn/                          # 学習コンテンツ
 │   └── learn_lesson1.html
 │
-├── Novels/
+├── Novels/                         # ★ 小説コンテンツ
+│   ├── hoshizora-no-melody.html
 │   ├── isekai-no-ou.html
-│   ├── unmei-no-ito.html
-│   ├── kietamuranohimitsu.html
 │   ├── seishun-no-1page.html
-│   └── yoru-no-koe.html
+│   ├── unmei-no-akaiito.html
+│   ├── unmei-no-ito.html
+│   ├── yoru-no-koe.html
+│   └── kietamuranohimitsu.html
 │
-├── Portfolio/
-│   └── ... (他実績)
+├── Portfolio/                      # 制作実績
+│   └── ...
 │
-├── Prompt/
-│   ├── hakase.html
-│   └── ... (他プロンプト)
+├── Prompt/                         # プロンプト指示書 & AI博士
+│   └── ...
 │
 ├── CSS/
 ├── JavaScript/
