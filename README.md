@@ -5,8 +5,6 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 
 ▶ **公式サイトをプレビューする:** [https://chromachannel.online/](https://chromachannel.online/)
 
-![Site Preview](./Img/ogp_top.webp)
-
 ## 📖 コンセプト
 
 このサイトは、私、山本倫久の「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届ける」というミッションを体現するものです。私の持つ多様なスキルセット、具体的な作品群（ポートフォリオ）、そして実践的なノウハウ（ブログやプロンプト集など）を、訪問者が直感的に理解できるよう、構造的に設計されています。
@@ -37,36 +35,41 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 
 ```
 / (ルート)
-├── index.html                      # トップページ
-├── portfolio.html                  # ポートフォリオ一覧
-├── learn.html                      # 学習コンテンツ一覧
-├── blog.html                       # ブログ一覧
-├── prompt.html                     # プロンプト集一覧
-├── novels.html                     # 小説一覧
-├── privacy.html                    # プライバシーポリシー
-├── sitemap.xml                     # サイトマップ
-├── README.md                       # このファイル
+├── index.html # トップページ
+├── portfolio.html # ポートフォリオ一覧
+├── learn.html # 学習コンテンツ一覧
+├── blog.html # ブログ一覧
+├── prompt.html # プロンプト集一覧
+├── novels.html # 小説一覧
+├── privacy.html # プライバシーポリシー
+├── sitemap.xml # サイトマップ
+├── README.md # このファイル
 │
-├── Blog/                           # ブログ記事
-│   ├── report-making-travel-plan-with-ai.html
-│   ├── announcing-ai-hakase.html
-│   └── ... (他記事)
+├── Blog/ # ブログ記事
+│ ├── report-making-travel-plan-with-ai.html
+│ ├── announcing-ai-hakase.html
+│ └── ... (他記事)
 │
-├── Learn/                          # 学習コンテンツ
-│   └── learn_lesson1.html
+├── Learn/ # 学習コンテンツ
+│ └── learn_lesson1.html
 │
-├── Novels/                         # 小説コンテンツ
-│   ├── hoshizora-no-melody.html
-│   └── ... (他小説)
+├── Novels/ # 小説コンテンツ
+│ ├── hoshizora-no-melody.html
+│ ├── isekai-no-ou.html
+│ ├── seishun-no-1page.html
+│ ├── unmei-no-akaiito.html
+│ ├── unmei-no-ito.html
+│ ├── yoru-no-koe.html
+│ └── kietamuranohimitsu.html
 │
-├── Portfolio/                      # 制作実績
-│   └── ... (他実績)
+├── Portfolio/ # 制作実績
+│ └── ... (他実績)
 │
-├── Prompt/                         # プロンプト指示書 & AI博士
-│   ├── hakase.html
-│   ├── prompt-hakase.html
-│   ├── prompt-travel-planner.html
-│   └── ... (他プロンプト)
+├── Prompt/ # プロンプト指示書 & AI博士
+│ ├── hakase.html
+│ ├── prompt-hakase.html
+│ ├── prompt-travel-planner.html
+│ └── ... (他プロンプト)
 │
 ├── CSS/
 ├── JavaScript/

@@ -131,79 +131,90 @@ document.addEventListener('DOMContentLoaded', () => {
             updateModalContent(currentGalleryItems[currentIndex]);
         };
         
-        document.querySelector('.portfolio-grid').addEventListener('click', (e) => {
-            const thumbnail = e.target.closest('.thumbnail-img');
-            if (thumbnail) openModal(thumbnail);
-        });
+        const grid = document.querySelector('.portfolio-grid');
+        if(grid){
+            grid.addEventListener('click', (e) => {
+                const thumbnail = e.target.closest('.thumbnail-img');
+                if (thumbnail) openModal(thumbnail);
+            });
+        }
         
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => (e.target === modal) && closeModal());
-        prevBtn.addEventListener('click', () => navigateGallery(-1));
-        nextBtn.addEventListener('click', () => navigateGallery(1));
+        if(closeBtn) closeBtn.addEventListener('click', closeModal);
+        if(modal) modal.addEventListener('click', (e) => (e.target === modal) && closeModal());
+        if(prevBtn) prevBtn.addEventListener('click', () => navigateGallery(-1));
+        if(nextBtn) nextBtn.addEventListener('click', () => navigateGallery(1));
+        
         document.addEventListener('keydown', (e) => {
-            if (!modal.classList.contains('show')) return;
+            if (!modal || !modal.classList.contains('show')) return;
             if (e.key === 'Escape') closeModal();
             if (e.key === 'ArrowLeft') navigateGallery(-1);
             if (e.key === 'ArrowRight') navigateGallery(1);
         });
     };
 
-    /* ===== ▼▼▼【ここから修正】フィルター機能の統合 ▼▼▼ ===== */
+    const initLearnModal = () => {
+        const modal = document.getElementById('learn-modal');
+        if (!modal) return;
+        const openButtons = document.querySelectorAll('.open-learn-modal-btn');
+        const closeButton = document.querySelector('.learn-modal-close-btn');
+        const modalTitle = document.getElementById('learn-modal-title');
+        const modalChapters = document.getElementById('learn-modal-chapters');
+
+        openButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const title = button.dataset.title || '講座';
+                const chapters = button.dataset.chapters ? button.dataset.chapters.split('|') : [];
+                
+                modalTitle.textContent = title;
+                modalChapters.innerHTML = '';
+                chapters.forEach(chapter => {
+                    const li = document.createElement('li');
+                    li.textContent = chapter;
+                    modalChapters.appendChild(li);
+                });
+
+                modal.style.display = 'flex';
+            });
+        });
+
+        const closeModal = () => {
+            modal.style.display = 'none';
+        };
+
+        closeButton.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    };
+
     const initFilter = () => {
-        const filterContainers = document.querySelectorAll('.portfolio-categories');
-        if (filterContainers.length === 0) return;
+        const filterContainer = document.querySelector('.portfolio-categories');
+        if (!filterContainer) return;
 
+        const filterButtons = filterContainer.querySelectorAll('.category-btn');
         const items = document.querySelectorAll('.portfolio-item');
-        const allButtons = document.querySelectorAll('.portfolio-categories .category-btn');
-        let activeCategories = {}; // フィルターの状態をグループごとに管理
 
-        allButtons.forEach(button => {
+        filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const category = button.dataset.category;
-                const parentContainer = button.parentElement;
 
-                // どのフィルターグループに属するかを特定（簡易的な方法）
-                const isPurposeFilter = parentContainer.isSameNode(filterContainers[0]);
-                const group = isPurposeFilter ? 'group1' : 'group2';
-
-                // カテゴリの状態を更新
-                activeCategories[group] = category;
-                
-                // 同じグループ内のボタンのアクティブ状態を更新
-                parentContainer.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
-                // 別のグループの "all" ボタンが押された場合を考慮
-                if (category === 'all') {
-                   filterContainers.forEach(container => {
-                       container.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-                       const allBtn = container.querySelector('.category-btn[data-category="all"]');
-                       if(allBtn) allBtn.classList.add('active');
-                   });
-                   activeCategories = {}; // 全てのフィルターをリセット
-                }
-                
-                // アイテムの表示を更新
                 items.forEach(item => {
                     const itemCategories = item.dataset.category ? item.dataset.category.split(' ') : [];
-                    let shouldShow = true;
-
-                    // 各グループのフィルター条件をチェック
-                    for (const key in activeCategories) {
-                        if (activeCategories[key] && activeCategories[key] !== 'all' && !itemCategories.includes(activeCategories[key])) {
-                            shouldShow = false;
-                            break;
-                        }
+                    
+                    if (category === 'all' || itemCategories.includes(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
                     }
-
-                    // 表示/非表示の切り替え（アニメーションなしのシンプルな方法）
-                    item.style.display = shouldShow ? 'block' : 'none';
                 });
             });
         });
     };
-    /* ===== ▲▲▲【修正ここまで】▲▲▲ ===== */
-
 
     // --- サイト全体の機能を初期化して実行 ---
     initMobileMenu();
@@ -212,5 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initGalleryToggle();
     initPromptCopy();
     initPortfolioModal();
-    initFilter(); // ★ 統合したフィルター関数を呼び出す
+    initLearnModal();
+    initFilter();
 });
