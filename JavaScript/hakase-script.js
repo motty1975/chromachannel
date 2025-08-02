@@ -248,7 +248,13 @@ document.addEventListener('DOMContentLoaded', () => {
             saveCurrentChat(); // 最初の挨拶も保存対象とする
         } catch (error) {
             console.error('エラー:', error);
-            addMessageToLog('ai', 'AI博士を起動できませんでした。ページを再読み込みするか、管理者にお問い合わせください。');
+            // ▼▼▼ この部分を修正 ▼▼▼
+            if (error.message.includes('429')) {
+                addMessageToLog('ai', 'AI博士へのリクエストが少し早すぎるようです。大変申し訳ありませんが、もう少しゆっくり話しかけていただけますか？1分ほど待ってから、再度お試しください。');
+            } else {
+                addMessageToLog('ai', '申し訳ありません、通信エラーが発生しました。少し時間をおいてから、もう一度お試しください。');
+            }
+            // ▲▲▲ ここまで修正 ▲▲▲
         } finally {
             userInput.disabled = false;
             sendBtn.disabled = false;
