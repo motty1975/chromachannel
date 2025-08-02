@@ -36,48 +36,44 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ## 📂 サイト構造
 
 ```
-/ (ルート)
-├── index.html                      # トップページ
-├── portfolio.html                  # ポートフォリオ一覧
-├── learn.html                      # 学習コンテンツ一覧
-├── blog.html                       # ブログ一覧
-├── prompt.html                     # プロンプト集一覧
-├── novels.html                     # 小説一覧
-├── privacy.html                    # プライバシーポリシー
-├── sitemap.xml                     # サイトマップ
-├── README.md                       # このファイル
+## 📂 サイト構造
+
+```/ (ルート)
+├── index.html
+├── portfolio.html
+├── learn.html
+├── blog.html
+├── prompt.html
+├── novels.html
+├── privacy.html
+├── sitemap.xml
+├── README.md
 │
-├── Blog/                           # ブログ記事
+├── Blog/
 │   ├── announcing-ai-hakase.html
-│   ├── making-this-site-with-ai.html
 │   └── ... (他記事)
 │
-├── Learn/                          # 学習コンテンツ
+├── Learn/
 │   └── learn_lesson1.html
 │
-├── Portfolio/                      # 制作実績
+├── Novels/
+│   ├── isekai-no-ou.html
+│   ├── unmei-no-ito.html
+│   ├── kietamuranohimitsu.html
+│   ├── seishun-no-1page.html
+│   └── yoru-no-koe.html
+│
+├── Portfolio/
 │   └── ... (他実績)
 │
-├── Prompt/                         # プロンプト指示書 & AI博士
+├── Prompt/
 │   ├── hakase.html
-│   ├── prompt-hakase.html
-│   ├── prompt-consultant.html
-│   ├── prompt-suno-ai-v2.html
 │   └── ... (他プロンプト)
 │
 ├── CSS/
-│   ├── style.css
-│   ├── topview.css
-│   ├── only_read.css
-│   └── counselor-style.css
-│
 ├── JavaScript/
-│   ├── script.js
-│   └── hakase-script.js
-│
 ├── Img/
-├── Audio/
-└── Novels/
+└── Audio/
 ```
 
 ## 👤 制作者
