@@ -15,7 +15,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 
 ## ✨ 主な機能と特徴
 
-- **マルチページ構成:** サイトの目的別にページを分割 (`index`, `portfolio`, `learn`, `blog`, `prompt`) し、ユーザーが必要な情報にアクセスしやすい構造。
+- **マルチページ構成:** サイトの目的別にページを分割 (`index`, `portfolio`, `learn`, `blog`, `prompt`, `novels`) し、ユーザーが必要な情報にアクセスしやすい構造。
 - **モジュール化CSS:** `style.css` (共通), `topview.css` (トップページ), `only_read.css` (記事等), `counselor-style.css` (チャット) にファイルを分割し、高いメンテナンス性と拡張性を実現。
 - **レスポンシブデザイン:** PC、タブレット、スマートフォンなど、あらゆるデバイスで最適な表示を実現。
 - **インタラクティブUI:** スクロールに応じたフェードインアニメーションや、モバイル用のハンバーガーメニューを実装。
@@ -42,31 +42,31 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ├── learn.html                      # 学習コンテンツ一覧
 ├── blog.html                       # ブログ一覧
 ├── prompt.html                     # プロンプト集一覧
-├── novels.html                     # ★ 小説一覧ページ
+├── novels.html                     # 小説一覧
 ├── privacy.html                    # プライバシーポリシー
 ├── sitemap.xml                     # サイトマップ
 ├── README.md                       # このファイル
 │
 ├── Blog/                           # ブログ記事
-│   └── ...
+│   ├── report-making-travel-plan-with-ai.html
+│   ├── announcing-ai-hakase.html
+│   └── ... (他記事)
 │
 ├── Learn/                          # 学習コンテンツ
 │   └── learn_lesson1.html
 │
-├── Novels/                         # ★ 小説コンテンツ
+├── Novels/                         # 小説コンテンツ
 │   ├── hoshizora-no-melody.html
-│   ├── isekai-no-ou.html
-│   ├── seishun-no-1page.html
-│   ├── unmei-no-akaiito.html
-│   ├── unmei-no-ito.html
-│   ├── yoru-no-koe.html
-│   └── kietamuranohimitsu.html
+│   └── ... (他小説)
 │
 ├── Portfolio/                      # 制作実績
-│   └── ...
+│   └── ... (他実績)
 │
 ├── Prompt/                         # プロンプト指示書 & AI博士
-│   └── ...
+│   ├── hakase.html
+│   ├── prompt-hakase.html
+│   ├── prompt-travel-planner.html
+│   └── ... (他プロンプト)
 │
 ├── CSS/
 ├── JavaScript/
