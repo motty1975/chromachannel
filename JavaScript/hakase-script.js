@@ -5,17 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatLog = document.getElementById('chat-log');
     const userInput = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
-    
-    // ▼▼▼ ここに、Google AI Studioで取得したAPIキーを貼り付けてください ▼▼▼
+    const newChatBtn = document.getElementById('new-chat-btn');
+    const historyList = document.getElementById('history-list');
 
-    // ▲▲▲ APIキーの貼り付けここまで ▲▲▲
-
+    // APIのエンドポイント
     const API_URL = `/.netlify/functions/gemini`;
+
+    // 会話履歴を管理する変数
     let conversationHistory = [];
-        // ▼▼▼ ここから追加 ▼▼▼
-        let currentChatId = null; // 現在のチャットIDを管理
-        const HISTORY_KEY_PREFIX = 'ai_hakase_chat_history_'; // ローカルストレージのキーの接頭辞
-    // ▲▲▲ ここまで追加 ▲▲▲
+    let currentChatId = null;
+    const HISTORY_KEY_PREFIX = 'ai_hakase_chat_history_';
 
     // --- AI博士プロンプトの定義 ---
     const systemPrompt = `あなたは、ユーザーのあらゆる質問や悩みに、優しく、そして賢明に耳を傾ける「AI博士」です。あなたの口調は、常に丁寧で、共感にあふれたやわらかい女性のものです。
@@ -50,35 +49,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 関数の定義 ---
 
+    /**
+     * メッセージをチャットログに追加する
+     * @param {string} sender - 'ai' または 'user'
+     * @param {string} message - 表示するメッセージ
+     */
     function addMessageToLog(sender, message) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', `${sender}-message`);
+
         const icon = document.createElement('div');
         icon.classList.add('icon');
         icon.innerHTML = sender === 'ai' ? '<i class="fas fa-robot"></i>' : '<i class="fas fa-user"></i>';
+
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
-        bubble.innerHTML = message.replace(/\n/g, '<br>');
+        // HTMLタグを許容しないように、textContentでテキストを設定してからinnerHTMLで改行を反映
+        bubble.textContent = message;
+        bubble.innerHTML = bubble.innerHTML.replace(/\n/g, '<br>');
+
         messageElement.appendChild(icon);
         messageElement.appendChild(bubble);
         chatLog.appendChild(messageElement);
         chatLog.scrollTop = chatLog.scrollHeight;
     }
-        // ▼▼▼ ここから5つの関数を丸ごと追加 ▼▼▼
 
     /**
-     * 新しいチャットを開始する関数
+     * 新しいチャットを開始する
      */
     function startNewChat() {
         conversationHistory = [];
         chatLog.innerHTML = '';
-        currentChatId = Date.now().toString(); // 現在時刻をIDとして新しいチャットを開始
+        currentChatId = Date.now().toString();
         startConversation();
         updateHistoryList();
     }
 
     /**
-     * 指定されたIDのチャット履歴を読み込む関数
+     * 指定されたIDのチャット履歴をUIに読み込む
      * @param {string} chatId - 読み込むチャットのID
      */
     function loadChatHistory(chatId) {
@@ -88,29 +96,31 @@ document.addEventListener('DOMContentLoaded', () => {
             currentChatId = chatId;
             chatLog.innerHTML = '';
             conversationHistory.forEach(turn => {
-                if (turn.role === 'user' || turn.role === 'model') {
+                // 初期化用の見えないユーザープロンプトは表示しない
+                if (turn.role !== 'user' || turn.parts[0].text.indexOf('あなたの役割定義に従って') === -1) {
                    addMessageToLog(turn.role === 'model' ? 'ai' : 'user', turn.parts[0].text);
                 }
             });
+            updateHistoryList();
+            chatLog.scrollTop = chatLog.scrollHeight;
         }
-        updateHistoryList();
     }
     
     /**
-     * 現在の会話履歴をローカルストレージに保存する関数
+     * 現在の会話履歴をローカルストレージに保存する
      */
     function saveCurrentChat() {
-        if (currentChatId && conversationHistory.length > 0) {
+        // 会話が2ターン以上（＝ユーザーが何かを話した）の場合のみ保存
+        if (currentChatId && conversationHistory.length > 2) { 
             localStorage.setItem(HISTORY_KEY_PREFIX + currentChatId, JSON.stringify(conversationHistory));
         }
         updateHistoryList();
     }
 
     /**
-     * 左側の履歴パネルを更新する関数
+     * 左側の履歴パネルのリストを更新する
      */
     function updateHistoryList() {
-        const historyList = document.getElementById('history-list');
         historyList.innerHTML = '';
         const keys = Object.keys(localStorage).filter(key => key.startsWith(HISTORY_KEY_PREFIX));
         keys.sort((a, b) => b.localeCompare(a)); // 新しい順にソート
@@ -118,8 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
         keys.forEach(key => {
             const chatId = key.replace(HISTORY_KEY_PREFIX, '');
             const savedHistory = JSON.parse(localStorage.getItem(key));
-            // 最初のユーザーの発言をタイトルとして使用（なければデフォルト）
-            const title = savedHistory[0]?.parts[0]?.text.substring(0, 20) || '新しい対話';
+            if (!savedHistory || savedHistory.length === 0) return;
+
+            // 最初の実質的なユーザーの発言（初期化プロンプト以外）をタイトルにする
+            const userTurn = savedHistory.find(turn => turn.role === 'user' && turn.parts[0].text.indexOf('あなたの役割定義に従って') === -1);
+            const title = userTurn ? userTurn.parts[0].text.substring(0, 25) + (userTurn.parts[0].text.length > 25 ? '…' : '') : '新しい対話';
             
             const listItem = document.createElement('li');
             listItem.classList.add('history-item');
@@ -134,25 +147,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * ページを離れる前に保存を確認する関数
+     * ページを離れる前に現在のチャットを保存する
      */
-    window.addEventListener('beforeunload', (event) => {
-        if (conversationHistory.length > 2) { // 最初の挨拶以上の会話がある場合
-             saveCurrentChat();
-        }
+    window.addEventListener('beforeunload', () => {
+        saveCurrentChat();
     });
 
-    // ▲▲▲ ここまで5つの関数を丸ごと追加 ▲▲▲
-
+    /**
+     * ユーザーのメッセージをAIに送信し、応答を処理する
+     */
     async function sendMessageToAI() {
         const userMessage = userInput.value.trim();
         if (!userMessage) return;
+
         addMessageToLog('user', userMessage);
+        conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
+        saveCurrentChat(); // ユーザーのメッセージをすぐに保存して履歴タイトルを更新
+
         userInput.value = '';
         userInput.disabled = true;
         sendBtn.disabled = true;
-
-        conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
 
         try {
             const response = await fetch(API_URL, {
@@ -163,14 +177,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     systemInstruction: { parts: [{ text: systemPrompt }] }
                 })
             });
-            if (!response.ok) throw new Error(`API Error: ${response.status}`);
+
+            if (!response.ok) {
+                throw new Error(`APIリクエストエラー: ${response.status}`);
+            }
+            
             const data = await response.json();
-            const aiMessage = data.candidates[0].content.parts[0].text;
+            
+            // --- ★★★ エラーハンドリング強化 ★★★ ---
+            let aiMessage = "申し訳ありません。予期せぬエラーで、お返事を考えることができませんでした。";
+            if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0) {
+                aiMessage = data.candidates[0].content.parts[0].text;
+            } else {
+                console.warn('API応答が期待される形式でないか、ブロックされました:', data);
+                if (data.promptFeedback && data.promptFeedback.blockReason) {
+                    aiMessage = `申し訳ありません。安全上の理由により、お答えすることができません。(理由: ${data.promptFeedback.blockReason})`;
+                }
+            }
+            // --- ★★★ ここまで ★★★ ---
+
             addMessageToLog('ai', aiMessage);
             conversationHistory.push({ role: 'model', parts: [{ text: aiMessage }] });
+            saveCurrentChat(); // AIの応答後も保存
         } catch (error) {
             console.error('エラー:', error);
-            addMessageToLog('ai', '申し訳ありません、エラーが発生しました。少し時間をおいてから、もう一度お試しください。');
+            addMessageToLog('ai', '申し訳ありません、通信エラーが発生しました。少し時間をおいてから、もう一度お試しください。');
         } finally {
             userInput.disabled = false;
             sendBtn.disabled = false;
@@ -178,12 +209,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    /**
+     * 新しいチャットの開始時に、最初の挨拶をAIにリクエストする
+     */
     async function startConversation() {
         userInput.disabled = true;
         sendBtn.disabled = true;
+
+        // 最初の挨拶を取得するためのプロンプト（ユーザーには見えない）
         const initialUserMessage = "こんにちは。あなたの役割定義に従って、最初の挨拶から対話を開始してください。";
         conversationHistory.push({ role: 'user', parts: [{ text: initialUserMessage }] });
-        // (API通信部分はsendMessageToAIとほぼ同じなので省略)
+
         try {
             const response = await fetch(API_URL, {
                 method: 'POST',
@@ -193,14 +229,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     systemInstruction: { parts: [{ text: systemPrompt }] }
                 })
             });
-            if (!response.ok) throw new Error(`API Error: ${response.status}`);
+
+            if (!response.ok) {
+                throw new Error(`APIリクエストエラー: ${response.status}`);
+            }
+            
             const data = await response.json();
-            const aiMessage = data.candidates[0].content.parts[0].text;
+
+            // --- ★★★ エラーハンドリング強化 ★★★ ---
+            let aiMessage = "AI博士を起動できませんでした。ページを再読み込みしてください。";
+            if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0) {
+                aiMessage = data.candidates[0].content.parts[0].text;
+            }
+            // --- ★★★ ここまで ★★★ ---
+            
             addMessageToLog('ai', aiMessage);
             conversationHistory.push({ role: 'model', parts: [{ text: aiMessage }] });
+            saveCurrentChat(); // 最初の挨拶も保存対象とする
         } catch (error) {
             console.error('エラー:', error);
-            addMessageToLog('ai', 'AI博士を起動できませんでした。ページを再読み込みしてください。');
+            addMessageToLog('ai', 'AI博士を起動できませんでした。ページを再読み込みするか、管理者にお問い合わせください。');
         } finally {
             userInput.disabled = false;
             sendBtn.disabled = false;
@@ -208,21 +256,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    // --- イベントリスナーの設定 ---
     sendBtn.addEventListener('click', sendMessageToAI);
+
     userInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             sendMessageToAI();
         }
     });
-    // ▼▼▼ ここから追加 ▼▼▼
-    const newChatBtn = document.getElementById('new-chat-btn');
+    
     newChatBtn.addEventListener('click', startNewChat);
-    // ▲▲▲ ここまで追加 ▲▲▲
 
-    // --- 初期化 ---
-    // ▼▼▼ ここを書き換え ▼▼▼
-    updateHistoryList(); // ページ読み込み時に履歴リストを更新
-    startNewChat();      // ページを開いたら新しいチャットを開始
-    // ▲▲▲ 書き換えここまで ▲▲▲
+    // --- 初期化処理 ---
+    updateHistoryList();
+    startNewChat();
 });
+
