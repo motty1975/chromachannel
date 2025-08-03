@@ -37,66 +37,87 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 
 ```
 / (ルート)
-├── index.html # トップページ
-├── portfolio.html # ポートフォリオ一覧
-├── learn.html # 学習コンテンツ一覧
-├── blog.html # ブログ一覧
-├── prompt.html # プロンプト集一覧
-├── novels.html # 小説一覧
-├── privacy.html # プライバシーポリシー
-├── sitemap.xml # サイトマップ
-├── README.md # このファイル
+├── index.html
+├── portfolio.html
+├── learn.html
+├── blog.html
+├── prompt.html
+├── novels.html
+├── privacy.html
+├── sitemap.xml
+├── README.md
 │
-├── Blog/ # ブログ記事
+├── Blog/
 │ ├── A-magic-wand-called-AI.html
+│ ├── announcing-ai-hakase.html
 │ ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html
-│ ├── How-to-Prompt.html
 │ ├── How-to-Customize-Prompt.html
-│ ├── release-chatgpt-course.html
+│ ├── How-to-Prompt.html
 │ ├── making-this-site-with-ai.html
+│ ├── release-chatgpt-course.html
 │ ├── report-making-picture-book-with-ai.html
-│ ├── report-making-travel-plan-with-ai.html
-│ └── announcing-ai-hakase.html
+│ └── report-making-travel-plan-with-ai.html
 │
-├── Learn/ # 学習コンテンツ
+├── Learn/
 │ └── learn_lesson1.html
 │
-├── Novels/ # 小説コンテンツ
+├── Novels/
+│ ├── hoshizora-no-melody.html
 │ ├── isekai-no-ou.html
-│ ├── unmei-no-ito.html
-│ ├── kietamuranohimitsu.html
+│ ├── kieta-mura.html
 │ ├── seishun-no-1page.html
+│ ├── unmei-no-akaiito.html
+│ ├── unmei-no-ito.html
 │ └── yoru-no-koe.html
 │
-├── Portfolio/ # 制作実績
+├── Portfolio/
+│ ├── Adaptive_System/adaptive_system.html
+│ ├── Ai-Slide-App/ai-slide-app.html
+│ ├── Components/components.html
+│ ├── Demo/demo.html
 │ ├── Fuwamoco/
-│ │ ├── index.html
+│ │ ├── fuwamoco.html (旧index.html)
+│ │ ├── 3-match-puzzle.html
 │ │ ├── cafe.html
-│ │ └── ... (関連ファイル)
-│ ├── Game/
-│ │ └── index.html
-│ └── ... (他実績)
+│ │ ├── company-info.html
+│ │ ├── company.html
+│ │ ├── contact.html
+│ │ ├── privacy-policy.html
+│ │ ├── questionnaire.html
+│ │ └── rabbit.html
+│ ├── Game/pict.html
+│ ├── Household_Account_Book/household-account-book.html
+│ ├── Real-time-preview/real-time-preview.html
+│ ├── Task-Tool/task-tool.html
+│ ├── Timer/timer.html
+│ └── chirashi/chirashi.html
 │
-├── Prompt/ # プロンプト指示書 & AI博士
+├── Prompt/
 │ ├── hakase.html
-│ ├── prompt-consultant.html
-│ ├── prompt-hakase.html
-│ ├── prompt-decline-coach.html
 │ ├── prompt-business-email.html
-│ └── ... (他プロンプト)
+│ ├── prompt-consultant.html
+│ ├── prompt-decline-coach.html
+│ ├── prompt-hakase.html
+│ ├── prompt-imagefx.html
+│ ├── prompt-kondate.html
+│ ├── prompt-novel-writing.html
+│ ├── prompt-picture-book-writing.html
+│ ├── prompt-reminder-coach.html
+│ ├── prompt-roadmap-lv1.html
+│ ├── prompt-roadmap-lv2.html
+│ ├── prompt-roadmap-lv3.html
+│ ├── prompt-science-teacher.html
+│ ├── prompt-stable-diffusion.html
+│ ├── prompt-suno-ai.html
+│ ├── prompt-suno-ai-v2.html
+│ ├── prompt-travel-planner.html
+│ ├── prompt-vegetable-hero.html
+│ └── prompt-youtube-shorts.html
 │
 ├── CSS/
-│ ├── style.css
-│ ├── topview.css
-│ ├── only_read.css
-│ └── hakase-style.css
-│
 ├── JavaScript/
-│ ├── script.js
-│ └── hakase-script.js
-│
-├── Img/ # 画像アセット
-└── Audio/ # 音声アセット
+├── Img/
+└── Audio/
 ```
 
 ## 👤 制作者
