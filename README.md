@@ -48,6 +48,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ├── README.md
 │
 ├── Blog/
+│ ├── ai-tool-diagnostic-chart.html # <-- NEW
 │ ├── A-magic-wand-called-AI.html
 │ ├── announcing-ai-hakase.html
 │ ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html
