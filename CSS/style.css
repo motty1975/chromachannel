@@ -294,7 +294,18 @@ body {
     line-height: 1.6;
     margin: 0;
     color: var(--text-dark);
+    /* ▼▼▼ ここから追加 ▼▼▼ */
+    text-decoration: none; /* 通常時の下線を消す */
+    transition: color 0.3s ease; /* なめらかな色の変化 */
+    /* ▲▲▲ ここまで追加 ▲▲▲ */
 }
+
+/* ▼▼▼ ここから新規追加 ▼▼▼ */
+.post-card-link:hover .post-card-content h3 {
+    color: var(--primary-color-start); /* ホバー時に色を変更 */
+    text-decoration: underline; /* ホバー時に下線を表示 */
+}
+/* ▲▲▲ 新規追加ここまで ▲▲▲ */
 
 .view-more-button-wrapper {
     text-align: center;
