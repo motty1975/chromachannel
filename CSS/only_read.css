@@ -362,7 +362,7 @@
     color: #e2e8f0;
     border: none;
     border-radius: 12px;
-    padding: 30px;
+    padding: 0 30px 20px;
 }
 .prompt-header {
     display: flex;
@@ -554,4 +554,31 @@
     letter-spacing: 0.08em;
     margin: 1.5em 0 1.5em 1em; /* 会話文全体をインデント */
     text-indent: 0; /* 会話文自体の字下げは不要 */
+}
+/* ===== プロンプトカードヘッダーのレイアウト調整 ===== */
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 上揃えに変更 */
+    gap: 15px; /* 要素間の余白 */
+}
+
+.prompt-header-text {
+    flex-grow: 1; /* テキスト部分が可能な限り幅を取るように */
+}
+
+.prompt-header .prompt-title {
+    margin-bottom: 8px; /* タイトルと説明文の間の余白 */
+}
+
+.prompt-header .prompt-description {
+    font-size: 0.9rem;
+    color: #cbd5e0; /* 説明文の文字色を少し薄く */
+    margin: 0;
+    line-height: 1.5;
+}
+
+.prompt-header .copy-btn {
+    flex-shrink: 0; /* ボタンが縮まないように */
+    margin-top: 20px; /* ボタンの位置を微調整 */
 }

@@ -21,7 +21,7 @@
 }
 .lesson-content h1 { font-size: 2em; text-align: center; border-bottom-width: 3px; border-color: #3f51b5; }
 .lesson-content h2 { font-size: 1.8em; margin-top: 60px; }
-.lesson-content h3 { font-size: 1.5em; border-bottom-style: dotted; }
+.lesson-content h3 { font-size: 1.5em; border-bottom-style: dotted; margin-top: 20px}
 .lesson-content blockquote h4 { font-size: 1.1em; color: #303f9f; border-bottom: 1px dotted #7986cb; padding-bottom: 5px; margin-top: 1.5em; }
 .lesson-content p { margin-bottom: 1.2em; }
 .lesson-content ol, .lesson-content ul { padding-left: 20px; margin: 1.5em 0; }
@@ -29,13 +29,20 @@
 .lesson-content li { margin-bottom: 0.8em; }
 .lesson-content strong, .lesson-content b { color: #d81b60; }
 .lesson-content blockquote { background-color: #f5f5f5; border-left: 5px solid #ccc; padding: 15px; margin: 20px 0; border-radius: 5px; }
-.lesson-content .point-解説 { background: #e3f2fd; border: 1px solid #90caf9; padding: 15px; margin-top: 20px; border-radius: 5px; }
+.lesson-content .point-解説 { background: #e3f2fd; border: 1px solid #90caf9; padding: 15px; margin: 20px 0; border-radius: 5px; }
 .lesson-content .point-解説::before { content: "【ポイント解説】"; font-weight: bold; display: block; margin-bottom: 10px; color: #1565c0; }
 .lesson-content table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9em; }
 .lesson-content th, .lesson-content td { border: 1px solid #ddd; padding: 12px; text-align: left; }
 .lesson-content th { background-color: #3f51b5; color: white; font-weight: bold; }
 .lesson-content tbody tr:nth-child(even) { background-color: #f2f2f2; }
-.lesson-content .prompt-block { position: relative; background-color: #263238; color: #eceff1; border-radius: 8px; margin: 20px 0; font-family: 'Courier New', Courier, monospace; padding: 50px 20px 20px 20px; }
+.lesson-content .prompt-block { 
+    position: relative; 
+    background-color: #263238; 
+    color: #eceff1; 
+    border-radius: 8px; 
+    font-family: 'Courier New', Courier, monospace; 
+    padding: 50px 20px 20px 20px; 
+}
 .lesson-content .prompt-block pre { margin: 0; padding: 0; white-space: pre-wrap; word-wrap: break-word; }
 .lesson-content .copy-button { position: absolute; top: 15px; right: 15px; background-color: #455a64; color: white; border: none; padding: 4px 8px; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.2s; }
 .lesson-content .copy-button:hover { background-color: #607d8b; }

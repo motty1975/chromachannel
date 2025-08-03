@@ -5,6 +5,8 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 
 ▶ **公式サイトをプレビューする:** [https://chromachannel.online/](https://chromachannel.online/)
 
+![Site Preview](./Img/ogp_top.webp)
+
 ## 📖 コンセプト
 
 このサイトは、私、山本倫久の「AIという最先端のテクノロジーを駆使して、福祉の現場に新しい『できる』と『楽しい』を届ける」というミッションを体現するものです。私の持つ多様なスキルセット、具体的な作品群（ポートフォリオ）、そして実践的なノウハウ（ブログやプロンプト集など）を、訪問者が直感的に理解できるよう、構造的に設計されています。
@@ -14,11 +16,11 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ## ✨ 主な機能と特徴
 
 - **マルチページ構成:** サイトの目的別にページを分割 (`index`, `portfolio`, `learn`, `blog`, `prompt`, `novels`) し、ユーザーが必要な情報にアクセスしやすい構造。
-- **モジュール化CSS:** `style.css` (共通), `topview.css` (トップページ), `only_read.css` (記事等), `counselor-style.css` (チャット) にファイルを分割し、高いメンテナンス性と拡張性を実現。
+- **モジュール化CSS:** `style.css` (共通), `topview.css` (トップページ), `only_read.css` (記事等), `hakase-style.css` (チャット) にファイルを分割し、高いメンテナンス性と拡張性を実現。
 - **レスポンシブデザイン:** PC、タブレット、スマートフォンなど、あらゆるデバイスで最適な表示を実現。
 - **インタラクティブUI:** スクロールに応じたフェードインアニメーションや、モバイル用のハンバーガーメニューを実装。
 - **高機能な一覧ページ:** ポートフォリオとプロンプト集には、カテゴリ別の絞り込み（フィルター）機能をJavaScriptで実装。
-- **新機能: AI博士の研究室:** Gemini APIと連携した、プライバシー配慮型（クライアントサイド完結）の対話AIチャットボットを実装。会話履歴の自動保存・復元機能も搭載。
+- **新機能: AI博士の研究室:** Gemini APIと連携した、プライバシー配慮型の対話AIチャットボットを実装。会話履歴の自動保存・復元・削除機能も搭載。
 - **高度なSEO対策:** 各ページに最適化された`meta`タグ, `canonical`タグ, `OGP`タグを設定。さらに、構造化データ（JSON-LD）や`sitemap.xml`も活用し、検索エンジンからの評価を最大化。
 
 ## 💻 使用技術
@@ -46,35 +48,55 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ├── README.md # このファイル
 │
 ├── Blog/ # ブログ記事
+│ ├── A-magic-wand-called-AI.html
+│ ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html
+│ ├── How-to-Prompt.html
+│ ├── How-to-Customize-Prompt.html
+│ ├── release-chatgpt-course.html
+│ ├── making-this-site-with-ai.html
+│ ├── report-making-picture-book-with-ai.html
 │ ├── report-making-travel-plan-with-ai.html
-│ ├── announcing-ai-hakase.html
-│ └── ... (他記事)
+│ └── announcing-ai-hakase.html
 │
 ├── Learn/ # 学習コンテンツ
 │ └── learn_lesson1.html
 │
 ├── Novels/ # 小説コンテンツ
-│ ├── hoshizora-no-melody.html
 │ ├── isekai-no-ou.html
-│ ├── seishun-no-1page.html
-│ ├── unmei-no-akaiito.html
 │ ├── unmei-no-ito.html
-│ ├── yoru-no-koe.html
-│ └── kietamuranohimitsu.html
+│ ├── kietamuranohimitsu.html
+│ ├── seishun-no-1page.html
+│ └── yoru-no-koe.html
 │
 ├── Portfolio/ # 制作実績
+│ ├── Fuwamoco/
+│ │ ├── index.html
+│ │ ├── cafe.html
+│ │ └── ... (関連ファイル)
+│ ├── Game/
+│ │ └── index.html
 │ └── ... (他実績)
 │
 ├── Prompt/ # プロンプト指示書 & AI博士
 │ ├── hakase.html
+│ ├── prompt-consultant.html
 │ ├── prompt-hakase.html
-│ ├── prompt-travel-planner.html
+│ ├── prompt-decline-coach.html
+│ ├── prompt-business-email.html
 │ └── ... (他プロンプト)
 │
 ├── CSS/
+│ ├── style.css
+│ ├── topview.css
+│ ├── only_read.css
+│ └── hakase-style.css
+│
 ├── JavaScript/
-├── Img/
-└── Audio/
+│ ├── script.js
+│ └── hakase-script.js
+│
+├── Img/ # 画像アセット
+└── Audio/ # 音声アセット
 ```
 
 ## 👤 制作者

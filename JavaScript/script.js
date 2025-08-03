@@ -56,32 +56,40 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const initPromptCopy = () => {
-        const promptList = document.querySelector('.prompt-list');
-        if (!promptList) return;
-        promptList.addEventListener('click', (e) => {
-            const copyButton = e.target.closest('.copy-btn');
-            if (!copyButton || copyButton.classList.contains('copied')) return;
-            const promptBox = copyButton.closest('.prompt-box');
-            if (!promptBox) return;
-            const titleElement = promptBox.querySelector('.prompt-title');
-            const textElement = promptBox.querySelector('.prompt-text');
-            if (!textElement) return;
-            const titleText = titleElement ? titleElement.innerText + '\n\n' : '';
-            const bodyText = textElement.innerText;
-            const textToCopy = titleText + bodyText;
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                const originalText = copyButton.innerHTML;
-                copyButton.classList.add('copied');
-                copyButton.innerHTML = '<i class="fas fa-check"></i> コピー完了';
-                setTimeout(() => {
-                    copyButton.classList.remove('copied');
-                    copyButton.innerHTML = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('クリップボードへのコピーに失敗しました: ', err);
-                alert('コピーに失敗しました。');
+        // ▼▼▼ ここから修正 ▼▼▼
+        const promptLists = document.querySelectorAll('.prompt-list');
+        if (promptLists.length === 0) return;
+
+        promptLists.forEach(promptList => {
+            promptList.addEventListener('click', (e) => {
+                const copyButton = e.target.closest('.copy-btn');
+                if (!copyButton || copyButton.classList.contains('copied')) return;
+                
+                const promptBox = copyButton.closest('.prompt-box');
+                if (!promptBox) return;
+
+                const textElement = promptBox.querySelector('.prompt-text');
+                if (!textElement) return;
+                
+                // pre > code の場合も考慮
+                const codeElement = textElement.querySelector('code');
+                const textToCopy = codeElement ? codeElement.innerText : textElement.innerText;
+                
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const originalText = copyButton.innerHTML;
+                    copyButton.classList.add('copied');
+                    copyButton.innerHTML = '<i class="fas fa-check"></i> コピー完了';
+                    setTimeout(() => {
+                        copyButton.classList.remove('copied');
+                        copyButton.innerHTML = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('クリップボードへのコピーに失敗しました: ', err);
+                    alert('コピーに失敗しました。');
+                });
             });
         });
+        // ▲▲▲ ここまで修正 ▲▲▲
     };
     
     const initPortfolioModal = () => {
