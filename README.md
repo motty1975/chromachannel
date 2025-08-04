@@ -46,9 +46,17 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ├── privacy.html
 ├── sitemap.xml
 ├── README.md
+├── learning-summary.html
+├── business-summary.html
+├── creative-summary.html
+├── entertainment-summary.html
+├── apps-summary.html
+├── lifehack-summary.html
+└── rabbit-summary.html
 │
 ├── Blog/
-│ ├── ai-tool-diagnostic-chart.html # <-- NEW
+│ ├── goal-setting-for-ai-learning.html
+│ ├── ai-tool-diagnostic-chart.html
 │ ├── A-magic-wand-called-AI.html
 │ ├── announcing-ai-hakase.html
 │ ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html
@@ -77,7 +85,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ ├── Components/components.html
 │ ├── Demo/demo.html
 │ ├── Fuwamoco/
-│ │ ├── fuwamoco.html (旧index.html)
+│ │ ├── fuwamoco.html
 │ │ ├── 3-match-puzzle.html
 │ │ ├── cafe.html
 │ │ ├── company-info.html
