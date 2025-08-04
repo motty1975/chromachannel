@@ -347,3 +347,65 @@ body {
     order: 3;
     margin-top: 15px;
 }
+.step-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 60px 30px; /* カード間の余白を調整 */
+    margin-top: 80px;
+}
+
+.step-card {
+    background-color: var(--bg-white);
+    border-radius: 15px;
+    padding: 50px 30px 30px; /* 上部の余白を多めに確保 */
+    text-align: center;
+    position: relative; /* step-numberの位置の基準 */
+    box-shadow: 0 15px 35px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow-dark);
+}
+
+.step-number {
+    position: absolute;
+    top: -25px; /* カードの上部に飛び出すように配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--primary-color-start), var(--primary-color-end));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.step-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 15px 0;
+}
+
+.step-card p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.step-link {
+    display: inline-block;
+    color: var(--primary-color-start);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.step-link:hover {
+    transform: translateX(3px);
+    text-decoration: underline;
+}
