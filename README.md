@@ -36,7 +36,6 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ## 📂 サイト構造
 
 ```
-/ (ルート)
 ├── index.html
 ├── portfolio.html
 ├── learn.html
@@ -55,73 +54,74 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 └── rabbit-summary.html
 │
 ├── Blog/
-│ ├── goal-setting-for-ai-learning.html
-│ ├── ai-tool-diagnostic-chart.html
-│ ├── A-magic-wand-called-AI.html
-│ ├── announcing-ai-hakase.html
-│ ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html
-│ ├── How-to-Customize-Prompt.html
-│ ├── How-to-Prompt.html
-│ ├── making-this-site-with-ai.html
-│ ├── release-chatgpt-course.html
-│ ├── report-making-picture-book-with-ai.html
-│ └── report-making-travel-plan-with-ai.html
+│   ├── goal-setting-for-ai-learning.html
+│   ├── ai-tool-diagnostic-chart.html
+│   ├── A-magic-wand-called-AI.html
+│   ├── announcing-ai-hakase.html
+│   ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html
+│   ├── How-to-Customize-Prompt.html
+│   ├── How-to-Prompt.html
+│   ├── making-this-site-with-ai.html
+│   ├── release-chatgpt-course.html
+│   ├── report-making-picture-book-with-ai.html
+│   └── report-making-travel-plan-with-ai.html
 │
 ├── Learn/
-│ └── learn_lesson1.html
+│   └── learn_lesson1.html
 │
 ├── Novels/
-│ ├── hoshizora-no-melody.html
-│ ├── isekai-no-ou.html
-│ ├── kieta-mura.html
-│ ├── seishun-no-1page.html
-│ ├── unmei-no-akaiito.html
-│ ├── unmei-no-ito.html
-│ └── yoru-no-koe.html
+│   ├── hoshizora-no-melody.html
+│   ├── isekai-no-ou.html
+│   ├── kieta-mura.html
+│   ├── seishun-no-1page.html
+│   ├── unmei-no-akaiito.html
+│   ├── unmei-no-ito.html
+│   └── yoru-no-koe.html
 │
 ├── Portfolio/
-│ ├── Adaptive_System/adaptive_system.html
-│ ├── Ai-Slide-App/ai-slide-app.html
-│ ├── Components/components.html
-│ ├── Demo/demo.html
-│ ├── Fuwamoco/
-│ │ ├── fuwamoco.html
-│ │ ├── 3-match-puzzle.html
-│ │ ├── cafe.html
-│ │ ├── company-info.html
-│ │ ├── company.html
-│ │ ├── contact.html
-│ │ ├── privacy-policy.html
-│ │ ├── questionnaire.html
-│ │ └── rabbit.html
-│ ├── Game/pict.html
-│ ├── Household_Account_Book/household-account-book.html
-│ ├── Real-time-preview/real-time-preview.html
-│ ├── Task-Tool/task-tool.html
-│ ├── Timer/timer.html
-│ └── chirashi/chirashi.html
+│   ├── Adaptive_System/adaptive_system.html
+│   ├── Ai-Slide-App/ai-slide-app.html
+│   ├── Components/components.html
+│   ├── Demo/demo.html
+│   ├── Fuwamoco/
+│   │   ├── fuwamoco.html
+│   │   ├── 3-match-puzzle.html
+│   │   ├── cafe.html
+│   │   ├── company-info.html
+│   │   ├── company.html
+│   │   ├── contact.html
+│   │   ├── privacy-policy.html
+│   │   ├── questionnaire.html
+│   │   └── rabbit.html
+│   ├── Game/pict.html
+│   ├── Household_Account_Book/household-account-book.html
+│   ├── Real-time-preview/real-time-preview.html
+│   ├── Task-Tool/task-tool.html
+│   ├── Timer/timer.html
+│   └── chirashi/chirashi.html
 │
 ├── Prompt/
-│ ├── hakase.html
-│ ├── prompt-business-email.html
-│ ├── prompt-consultant.html
-│ ├── prompt-decline-coach.html
-│ ├── prompt-hakase.html
-│ ├── prompt-imagefx.html
-│ ├── prompt-kondate.html
-│ ├── prompt-novel-writing.html
-│ ├── prompt-picture-book-writing.html
-│ ├── prompt-reminder-coach.html
-│ ├── prompt-roadmap-lv1.html
-│ ├── prompt-roadmap-lv2.html
-│ ├── prompt-roadmap-lv3.html
-│ ├── prompt-science-teacher.html
-│ ├── prompt-stable-diffusion.html
-│ ├── prompt-suno-ai.html
-│ ├── prompt-suno-ai-v2.html
-│ ├── prompt-travel-planner.html
-│ ├── prompt-vegetable-hero.html
-│ └── prompt-youtube-shorts.html
+│   ├── hakase.html
+│   ├── prompt-personality-test.html
+│   ├── prompt-business-email.html
+│   ├── prompt-consultant.html
+│   ├── prompt-decline-coach.html
+│   ├── prompt-hakase.html
+│   ├── prompt-imagefx.html
+│   ├── prompt-kondate.html
+│   ├── prompt-novel-writing.html
+│   ├── prompt-picture-book-writing.html
+│   ├── prompt-reminder-coach.html
+│   ├── prompt-roadmap-lv1.html
+│   ├── prompt-roadmap-lv2.html
+│   ├── prompt-roadmap-lv3.html
+│   ├── prompt-science-teacher.html
+│   ├── prompt-stable-diffusion.html
+│   ├── prompt-suno-ai.html
+│   ├── prompt-suno-ai-v2.html
+│   ├── prompt-travel-planner.html
+│   ├── prompt-vegetable-hero.html
+│   └── prompt-youtube-shorts.html
 │
 ├── CSS/
 ├── JavaScript/
