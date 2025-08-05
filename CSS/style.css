@@ -350,18 +350,23 @@ body {
 .step-guide-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 60px 30px; /* カード間の余白を調整 */
+    gap: 60px 30px;
     margin-top: 80px;
 }
 
 .step-card {
     background-color: var(--bg-white);
     border-radius: 15px;
-    padding: 50px 30px 30px; /* 上部の余白を多めに確保 */
+    padding: 50px 30px 30px;
     text-align: center;
-    position: relative; /* step-numberの位置の基準 */
+    position: relative;
     box-shadow: 0 15px 35px var(--shadow-light);
     transition: all 0.3s ease;
+    /* ▼▼▼ ここから3行追加 ▼▼▼ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* ▲▲▲ 追加ここまで ▲▲▲ */
 }
 
 .step-card:hover {
@@ -395,6 +400,8 @@ body {
     color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 25px;
+    /* ▼▼▼ この1行を追加 ▼▼▼ */
+    flex-grow: 1; /* ← p要素が可変の余白を吸収するようにする */
 }
 
 .step-link {
@@ -403,6 +410,8 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: transform 0.3s ease;
+    /* ▼▼▼ この1行を追加 ▼▼▼ */
+    flex-shrink: 0; /* ← リンクボタンが縮まないようにする */
 }
 
 .step-link:hover {

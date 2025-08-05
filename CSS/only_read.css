@@ -564,3 +564,63 @@
     margin: 1.5em 0 1.5em 1em;
     text-indent: 0;
 }
+/* ===== まとめページ用 目次スタイル ===== */
+.table-of-contents {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin: 40px 0;
+}
+
+.table-of-contents h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+    color: var(--text-dark);
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.table-of-contents li {
+    font-size: 1.05rem;
+}
+
+.table-of-contents li + li {
+    margin-top: 15px;
+}
+
+.table-of-contents a {
+    text-decoration: none;
+    color: var(--primary-color-start);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+}
+
+.table-of-contents a::before {
+    content: '\f105'; /* Font Awesome 矢印アイコン */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    transition: transform 0.3s ease;
+}
+
+.table-of-contents a:hover {
+    color: var(--primary-color-end);
+    text-decoration: underline;
+}
+
+.table-of-contents a:hover::before {
+    transform: translateX(4px);
+}
