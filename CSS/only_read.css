@@ -419,8 +419,9 @@
 .prompt-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 15px;
+    /* ▼▼▼ この1行を追記 ▼▼▼ */
+    align-items: center; /* ← これで垂直方向の中央揃えが実現します */
+    margin-bottom: 20px;
 }
 .prompt-header-text {
     flex-grow: 1;
