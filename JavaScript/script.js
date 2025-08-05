@@ -197,31 +197,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const initFilter = () => {
-        const filterContainer = document.querySelector('.portfolio-categories');
-        if (!filterContainer) return;
+const initFilter = () => {
+        const categoryFilters = document.getElementById('category-filters');
+        const levelFilters = document.getElementById('level-filters');
+        // フィルターが存在しないページでは何もしない
+        if (!categoryFilters && !levelFilters) return;
 
-        const filterButtons = filterContainer.querySelectorAll('.category-btn');
         const items = document.querySelectorAll('.portfolio-item');
+        let currentCategory = 'all';
+        let currentLevel = 'all';
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const category = button.dataset.category;
+        const applyFilters = () => {
+            items.forEach(item => {
+                const itemCategories = item.dataset.category ? item.dataset.category.split(' ') : [];
+                const itemLevel = item.dataset.level || 'all';
 
-                filterButtons.forEach(btn => btn.classList.remove('active'));
+                const categoryMatch = currentCategory === 'all' || itemCategories.includes(currentCategory);
+                const levelMatch = currentLevel === 'all' || itemLevel === currentLevel;
+
+                if (categoryMatch && levelMatch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        };
+
+        if (categoryFilters) {
+            categoryFilters.addEventListener('click', (e) => {
+                const button = e.target.closest('.category-btn');
+                if (!button) return;
+
+                currentCategory = button.dataset.category;
+                categoryFilters.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // レベルフィルターをリセット
+                if(levelFilters){
+                    levelFilters.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                    levelFilters.querySelector('[data-level="all"]').classList.add('active');
+                    currentLevel = 'all';
+                }
+                
+                applyFilters();
+            });
+        }
+
+        if (levelFilters) {
+            levelFilters.addEventListener('click', (e) => {
+                const button = e.target.closest('.category-btn');
+                if (!button) return;
+
+                currentLevel = button.dataset.level;
+                levelFilters.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
-                items.forEach(item => {
-                    const itemCategories = item.dataset.category ? item.dataset.category.split(' ') : [];
-                    
-                    if (category === 'all' || itemCategories.includes(category)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
+                // カテゴリフィルターをリセット
+                if(categoryFilters){
+                    categoryFilters.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                    categoryFilters.querySelector('[data-category="all"]').classList.add('active');
+                    currentCategory = 'all';
+                }
+
+                applyFilters();
             });
-        });
+        }
     };
 
     // --- サイト全体の機能を初期化して実行 ---
