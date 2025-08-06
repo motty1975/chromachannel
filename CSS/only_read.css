@@ -369,8 +369,9 @@
 .prompt-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* ← 垂直中央揃え（PC用） */
     margin-bottom: 20px;
+    gap: 15px; /* ← 要素間の隙間を追加 */
 }
 .prompt-title {
     margin: 0;
@@ -624,4 +625,18 @@
 
 .table-of-contents a:hover::before {
     transform: translateX(4px);
+}
+@media (max-width: 480px) {
+    .prompt-header {
+        flex-direction: column; /* 要素を縦積みに変更 */
+        align-items: flex-start; /* 左揃えに変更 */
+    }
+    .prompt-card {
+        padding: 0 20px 20px; /* スマホ用に左右のパディングを少し詰める */
+    }
+    .copy-btn {
+        margin-top: 15px; /* タイトルとの間に余白を設ける */
+        width: 100%; /* ボタンの幅をカードいっぱいに広げる */
+        justify-content: center; /* ボタン内のテキストとアイコンを中央揃えに */
+    }
 }
