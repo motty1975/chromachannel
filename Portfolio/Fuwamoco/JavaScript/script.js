@@ -1,56 +1,130 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // ヘッダーのスクロール表示/非表示機能
-    let lastScrollTop = 0;
+document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
+    const pcGnavi = document.getElementById('pc-gnavi');
+    const headerHamburger = document.getElementById('header-hamburger');
     const floatingHamburger = document.getElementById('floating-hamburger');
+    const hamburgerNav = document.getElementById('hamburger-nav');
+    // const closeHamburgerBtn = document.getElementById('close-hamburger'); // ← この行を削除
+    const body = document.body;
 
-    window.addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > 200) {
-            header.classList.add('hidden');
-            if (floatingHamburger) floatingHamburger.classList.add('visible');
-        } else {
+    let lastScrollY = 0;
+    let ticking = false;
+    const scrollThreshold = 100;
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+
+        if (window.innerWidth > 1024) { // PC版
+            if (currentScrollY <= scrollThreshold) {
+                header.classList.remove('hidden');
+                pcGnavi.style.display = 'block';
+                floatingHamburger.classList.remove('visible');
+                headerHamburger.style.display = 'none'; // PCではヘッダーのハンバーガーは常に非表示
+            } else {
+                header.classList.add('hidden');
+                pcGnavi.style.display = 'none';
+                if (!hamburgerNav.classList.contains('active')) {
+                    floatingHamburger.classList.add('visible');
+                }
+                headerHamburger.style.display = 'none'; // PCではヘッダーのハンバーガーは常に非表示
+            }
+        } else { // モバイル版
             header.classList.remove('hidden');
-            if (floatingHamburger) floatingHamburger.classList.remove('visible');
+            floatingHamburger.classList.remove('visible');
+            pcGnavi.style.display = 'none';
+            // ハンバーガーメニューが開いている/閉じている状態にかかわらず、常にheaderHamburgerを表示
+            headerHamburger.style.display = 'flex';
         }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(handleScroll);
+            ticking = true;
+        }
     });
 
-    // ハンバーガーメニュー機能 (フローティングも含む)
-    const hamburgerNav = document.getElementById('hamburger-nav');
-    const headerHamburger = document.getElementById('header-hamburger');
+    handleScroll(); // 初期状態を設定
 
-    const openNav = () => {
-        hamburgerNav.classList.add('active');
-        document.body.classList.add('no-scroll');
-    };
-
-    const closeNav = () => {
+    window.addEventListener('resize', function() {
+        header.classList.remove('hidden');
+        floatingHamburger.classList.remove('visible');
         hamburgerNav.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-    };
+        // headerHamburger.classList.remove('active'); // activeクラスもリセット - これは不要になるかもしれません
+        // floatingHamburger.classList.remove('active'); // activeクラスもリセット - これは不要になるかもしれません
+        body.classList.remove('no-scroll');
 
-    if (headerHamburger) headerHamburger.addEventListener('click', openNav);
-    if (floatingHamburger) floatingHamburger.addEventListener('click', openNav);
+        if (window.innerWidth > 1024) {
+            floatingHamburger.classList.remove('visible');
+            headerHamburger.style.display = 'none'; // PC時は常に非表示
+        } else {
+            headerHamburger.style.display = 'flex'; // モバイル時は常に表示
+        }
 
-    const closeBtn = document.createElement('div');
-    closeBtn.classList.add('close-btn');
-    closeBtn.innerHTML = '<button class="close-button">×</button>';
-    if (hamburgerNav) {
-        hamburgerNav.prepend(closeBtn);
-        closeBtn.querySelector('.close-button').addEventListener('click', closeNav);
+        handleScroll();
+    });
+
+    // --- ハンバーガーメニューを開く/閉じる関数 (統合) ---
+    function toggleHamburgerMenu() {
+        if (hamburgerNav.classList.contains('active')) {
+            // メニューが開いている場合、閉じる
+            hamburgerNav.classList.remove('active');
+            body.classList.remove('no-scroll');
+
+            // 閉じた後、アイコンの表示をスクロール状態に合わせて更新
+            if (window.innerWidth > 1024) {
+                if (window.scrollY > scrollThreshold) {
+                    floatingHamburger.classList.add('visible');
+                }
+            } else {
+                headerHamburger.style.display = 'flex'; // モバイル版のヘッダーアイコンを表示
+            }
+        } else {
+            // メニューが閉じている場合、開く
+            hamburgerNav.classList.add('active');
+            body.classList.add('no-scroll');
+
+            // 開いた際、PCではフローティングを非表示に、モバイルではヘッダーハンバーガーを非表示に（今回の変更でこれは不要）
+            // 今回はハンバーガーアイコンは常に表示されるため、ここで非表示にする処理は削除します。
+            // 実際は、ハンバーガーアイコンが閉じるアイコンに切り替わるUIが一般的ですが、
+            // 「ハンバーガーアイコンは残し、閉じる役割も兼ねる」という要件なので、アイコンの見た目の変化は行いません。
+        }
     }
-    
-    // アコーディオンメニュー機能
-    document.querySelectorAll('.accordion-menu').forEach(menu => {
-        menu.addEventListener('click', () => {
-            const content = document.getElementById(menu.dataset.accordion);
-            if (content) {
-                menu.classList.toggle('active');
-                if (content.style.display === "block") {
-                    content.style.display = "none";
+
+    // ハンバーガーアイコンをクリックすると、メニューの開閉をトグルする
+    headerHamburger.addEventListener('click', toggleHamburgerMenu);
+    floatingHamburger.addEventListener('click', toggleHamburgerMenu);
+
+    // closeHamburgerBtn.addEventListener('click', function() { // ← このイベントリスナーを削除
+    //     closeHamburgerMenu();
+    // });
+
+    const accordionMenus = document.querySelectorAll('.accordion-menu');
+
+    accordionMenus.forEach(menu => {
+        menu.addEventListener('click', function() {
+            const contentId = this.dataset.accordion;
+            const accordionContent = document.getElementById(contentId);
+
+            if (accordionContent) {
+                accordionMenus.forEach(otherMenu => {
+                    if (otherMenu !== this && otherMenu.classList.contains('active')) {
+                        otherMenu.classList.remove('active');
+                        const otherContent = document.getElementById(otherMenu.dataset.accordion);
+                        if (otherContent) {
+                            otherContent.style.display = 'none';
+                        }
+                    }
+                });
+
+                this.classList.toggle('active');
+                if (accordionContent.style.display === 'block') {
+                    accordionContent.style.display = 'none';
                 } else {
-                    content.style.display = "block";
+                    accordionContent.style.display = 'block';
                 }
             }
         });

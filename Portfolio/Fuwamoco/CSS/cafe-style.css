@@ -357,7 +357,10 @@ main {
     cursor: pointer;
     display: inline-block;
 }
-
+#namba h2 {
+    color: #e74c3c;
+    margin: 20px 0 10px 20px;
+}
 /* 難波店ボタン - より鮮明な赤に */
 .namba {
     background-color: #e74c3c;
@@ -365,6 +368,10 @@ main {
 .namba:hover {
     background-color: #c0392b;
     transform: translateY(-2px);
+}
+#umeda h2 {
+    color: #3498db;
+    margin: 20px 0 10px 20px;
 }
 /* 梅田店ボタン - より鮮明な青に */
 .umeda {

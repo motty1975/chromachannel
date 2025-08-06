@@ -1,16 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // ヘッダーとハンバーガーメニュー関連のDOM要素
     const header = document.getElementById('header');
     const pcGnavi = document.getElementById('pc-gnavi');
     const headerHamburger = document.getElementById('header-hamburger');
     const floatingHamburger = document.getElementById('floating-hamburger');
     const hamburgerNav = document.getElementById('hamburger-nav');
-    // const closeHamburgerBtn = document.getElementById('close-hamburger'); // ← この行を削除
     const body = document.body;
 
     let lastScrollY = 0;
     let ticking = false;
     const scrollThreshold = 100;
 
+    // スクロールイベントハンドラ
     function handleScroll() {
         const currentScrollY = window.scrollY;
 
@@ -53,8 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         header.classList.remove('hidden');
         floatingHamburger.classList.remove('visible');
         hamburgerNav.classList.remove('active');
-        // headerHamburger.classList.remove('active'); // activeクラスもリセット - これは不要になるかもしれません
-        // floatingHamburger.classList.remove('active'); // activeクラスもリセット - これは不要になるかもしれません
         body.classList.remove('no-scroll');
 
         if (window.innerWidth > 1024) {
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         handleScroll();
     });
 
-    // --- ハンバーガーメニューを開く/閉じる関数 (統合) ---
+    // ハンバーガーメニューを開く/閉じる関数 (統合)
     function toggleHamburgerMenu() {
         if (hamburgerNav.classList.contains('active')) {
             // メニューが開いている場合、閉じる
@@ -86,11 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // メニューが閉じている場合、開く
             hamburgerNav.classList.add('active');
             body.classList.add('no-scroll');
-
-            // 開いた際、PCではフローティングを非表示に、モバイルではヘッダーハンバーガーを非表示に（今回の変更でこれは不要）
-            // 今回はハンバーガーアイコンは常に表示されるため、ここで非表示にする処理は削除します。
-            // 実際は、ハンバーガーアイコンが閉じるアイコンに切り替わるUIが一般的ですが、
-            // 「ハンバーガーアイコンは残し、閉じる役割も兼ねる」という要件なので、アイコンの見た目の変化は行いません。
         }
     }
 
@@ -98,10 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     headerHamburger.addEventListener('click', toggleHamburgerMenu);
     floatingHamburger.addEventListener('click', toggleHamburgerMenu);
 
-    // closeHamburgerBtn.addEventListener('click', function() { // ← このイベントリスナーを削除
-    //     closeHamburgerMenu();
-    // });
-
+    // アコーディオンメニューのロジック
     const accordionMenus = document.querySelectorAll('.accordion-menu');
 
     accordionMenus.forEach(menu => {
@@ -130,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
     // ================================================================
     // 3マッチパズルゲームのロジック
     // ================================================================
@@ -157,15 +147,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let timeLeft = 60;
     let timer = null;
     let selectedCell = null;
-    let gameActive = false; // ゲームがアクティブ状態かどうかのフラグ
+    let gameActive = false;
     let currentCombo = 0; // 現在のコンボ数
     let highScore = 0; // 最高スコア
     let highCombo = 0; // 最高コンボ
 
     // DOM要素
     const boardElement = document.getElementById('board');
-    // HTMLのIDに合わせて修正
-    const scoreElement = document.getElementById('current-score'); // HTMLのID 'current-score' に修正
+    const scoreElement = document.getElementById('current-score'); // HTMLでid="current-score"を追加
     const timeElement = document.getElementById('time');
     const startButton = document.getElementById('start-btn');
     const stopButton = document.getElementById('stop-btn');
@@ -209,14 +198,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         timeLeft = 60;
         timeElement.textContent = timeLeft;
-        timeDisplayElement.style.display = 'none'; // 初期状態ではタイマー表示を非表示にする
+        timeDisplayElement.style.display = 'none'; // タイマー表示を非表示にする
 
         gameOverElement.style.display = 'none';
 
         currentLevel = 1;
         levelElement.textContent = `👑 Level: ${currentLevel}`;
 
-        setupBoardForLevel(currentLevel); // 初期ボードを生成
+        setupBoardForLevel(currentLevel);
     }
 
     // ゲームボードの作成とレベルに応じた絵文字の設定
@@ -225,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
         boardElement.innerHTML = ''; // ボードをクリア
 
         const currentLevelSetting = levelSettings.find(setting => setting.level === level) || levelSettings[0];
-        // 現在のレベル設定で利用可能な絵文字の種類を決定
         const availableRabbitTypes = rabbitTypes.slice(0, Math.min(currentLevelSetting.rabbitTypeCount, maxRabbitTypes));
 
         for (let row = 0; row < boardSize; row++) {
@@ -233,9 +221,8 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let col = 0; col < boardSize; col++) {
                 let rabbitType;
                 do {
-                    // ランダムな絵文字を選択
                     rabbitType = availableRabbitTypes[Math.floor(Math.random() * availableRabbitTypes.length)];
-                } while (isInitialMatch(row, col, rabbitType, gameBoard)); // 初期配置でマッチングが発生しないかチェック
+                } while (isInitialMatch(row, col, rabbitType, gameBoard)); // isInitialMatchも引数追加
 
                 gameBoard[row][col] = rabbitType;
 
@@ -251,7 +238,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 初期配置でマッチングが発生しないかチェック
-    // 新しい絵文字がすでに2つ並んでいる場所に配置されるのを防ぐ
     function isInitialMatch(row, col, type, board) {
         if (col >= 2 && board[row][col - 1] === type && board[row][col - 2] === type) {
             return true;
@@ -264,26 +250,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ゲーム開始
     function startGame() {
-        if (gameActive) return; // すでにゲーム中の場合は何もしない
+        if (gameActive) return;
         gameActive = true;
         timeDisplayElement.style.display = 'block'; // タイマー表示
-
-        // ゲームオーバー表示を非表示にする
         gameOverElement.style.display = 'none';
+        
+        // initGameはゲーム開始時にも呼ばれるように変更
+        // startGameが呼ばれる前にinitGameが呼ばれているので、ここでは呼ばない
+        // initGame(); // initGameはDOMContentLoadedで呼ばれるので重複を避ける
 
-        // ゲーム開始時にinitGameを呼ぶ代わりに、ここで値をリセットするようにする
-        // initGame() はDOMContentLoadedで一度呼ばれるので、ゲーム開始時は状態をリセットする
-        score = 0;
-        scoreElement.textContent = score;
-        currentCombo = 0;
-        comboCountElement.style.display = 'none';
-        timeLeft = 60; // 時間をリセット
-        timeElement.textContent = timeLeft;
-        currentLevel = 1;
-        levelElement.textContent = `👑 Level: ${currentLevel}`;
-        setupBoardForLevel(currentLevel); // 新しいボードを生成
-
-        if (timer) clearInterval(timer); // 既存のタイマーがあればクリア
+        if (timer) clearInterval(timer);
         timer = setInterval(() => {
             timeLeft--;
             timeElement.textContent = timeLeft;
@@ -295,37 +271,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ゲーム中断
     function stopGame() {
-        if (!gameActive) return; // ゲーム中でない場合は何もしない
+        if (!gameActive) return;
         gameActive = false;
-        if (timer) clearInterval(timer); // タイマーを停止
+        if (timer) clearInterval(timer);
+        // 必要に応じてゲーム中断メッセージなどを表示
         console.log("ゲーム中断");
     }
 
     // ゲームリセット
     function resetGame() {
-        endGame(); // 現在のゲームを終了（タイマー停止、ゲームオーバー表示など）
-        initGame(); // 新しいゲームを初期化（スコア、時間、レベル、ボードをリセット）
-        stopBGM(); // BGMも停止する
+        endGame(); // 現在のゲームを終了
+        initGame(); // 新しいゲームを初期化
     }
 
     // ゲーム終了
     function endGame() {
         gameActive = false;
         if (timer) clearInterval(timer);
-        gameOverElement.style.display = 'flex'; // ゲームオーバー画面を表示
-        finalScoreElement.textContent = score; // 最終スコアを表示
+        gameOverElement.style.display = 'flex';
+        finalScoreElement.textContent = score;
 
-        // 最高スコアの更新
         if (score > highScore) {
             highScore = score;
             localStorage.setItem('matchPuzzleHighScore', highScore);
             highScoreElement.textContent = highScore;
-        }
-        // 最高コンボの更新 (ゲーム終了時にも最新のcurrentComboを比較する)
-        if (currentCombo > highCombo) { // ゲーム終了時の最後のコンボがハイスコアを超える可能性がある
-            highCombo = currentCombo;
-            localStorage.setItem('matchPuzzleHighCombo', highCombo);
-            highComboElement.textContent = highCombo;
         }
         stopBGM(); // BGMを停止する
     }
@@ -342,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const temp = gameBoard[r1][c1];
         gameBoard[r1][c1] = gameBoard[r2][c2];
         gameBoard[r2][c2] = temp;
-        renderBoard(); // 盤面を再描画
+        renderBoard();
     }
 
     // 盤面を描画
@@ -359,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // マッチを探す
     function findMatches() {
         const matches = [];
-        // 行方向のマッチ
+        // 行方向
         for (let row = 0; row < boardSize; row++) {
             for (let col = 0; col < boardSize - 2; col++) {
                 const type = gameBoard[row][col];
@@ -370,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        // 列方向のマッチ
+        // 列方向
         for (let col = 0; col < boardSize; col++) {
             for (let row = 0; row < boardSize - 2; row++) {
                 const type = gameBoard[row][col];
@@ -381,12 +350,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        // 重複を削除してユニークなマッチの配列を返す
+        // 重複を削除
         const uniqueMatches = Array.from(new Set(matches.map(m => `${m.row}-${m.col}`)))
-                                 .map(s => {
-                                     const [row, col] = s.split('-').map(Number);
-                                     return { row, col };
-                                 });
+                                .map(s => {
+                                    const [row, col] = s.split('-').map(Number);
+                                    return { row, col };
+                                });
         return uniqueMatches;
     }
 
@@ -396,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gameBoard[row][col] = null; // セルを空にする
             const cellElement = boardElement.querySelector(`[data-row="${row}"][data-col="${col}"]`);
             cellElement.textContent = '';
-            cellElement.style.backgroundColor = '#d3d3d3'; // 消えたセルをグレーにする (CSSでアニメーションを適用すると良い)
+            cellElement.style.backgroundColor = '#d3d3d3'; // 消えたセルをグレーにする
         });
     }
 
@@ -407,7 +376,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         for (let col = 0; col < boardSize; col++) {
             let emptyCount = 0;
-            // 下から上に空のセルを探し、上にある絵文字を落とす
             for (let row = boardSize - 1; row >= 0; row--) {
                 if (gameBoard[row][col] === null) {
                     emptyCount++;
@@ -415,20 +383,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     gameBoard[row + emptyCount][col] = gameBoard[row][col];
                     gameBoard[row][col] = null;
 
-                    // DOM要素のtextContentを即座に入れ替える（アニメーションはCSSで）
+                    // DOM要素を移動するアニメーションなどをここに追加可能
                     const oldCell = boardElement.querySelector(`[data-row="${row}"][data-col="${col}"]`);
                     const newCell = boardElement.querySelector(`[data-row="${row + emptyCount}"][data-col="${col}"]`);
 
+                    // 即座にtextContentを入れ替える
                     newCell.textContent = oldCell.textContent;
                     oldCell.textContent = '';
                     oldCell.style.backgroundColor = ''; // 背景色をリセット
                 }
             }
-            // 空いた上部のセルに新しい絵文字を補充
             for (let i = 0; i < emptyCount; i++) {
                 const rabbitType = availableRabbitTypes[Math.floor(Math.random() * availableRabbitTypes.length)];
                 gameBoard[i][col] = rabbitType;
 
+                // 新しい絵文字をDOMに表示
                 const cell = boardElement.querySelector(`[data-row="${i}"][data-col="${col}"]`);
                 cell.textContent = rabbitType;
                 cell.style.backgroundColor = ''; // 背景色をリセット
@@ -439,19 +408,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // セルのクリック処理
     async function cellClick(row, col) {
-        if (!gameActive) return; // ゲームがアクティブでない場合は何もしない
+        if (!gameActive) return;
 
         const clickedCellElement = boardElement.querySelector(`[data-row="${row}"][data-col="${col}"]`);
 
         if (!selectedCell) {
-            // 最初のセル選択
             selectedCell = { row, col };
-            clickedCellElement.classList.add('selected'); // 選択状態のスタイルを適用
+            clickedCellElement.classList.add('selected');
             return;
         }
 
         if (selectedCell.row === row && selectedCell.col === col) {
-            // 同じセルを再度クリックした場合、選択解除
             clickedCellElement.classList.remove('selected');
             selectedCell = null;
             return;
@@ -461,73 +428,67 @@ document.addEventListener('DOMContentLoaded', function() {
         const prevSelectedRow = selectedCell.row;
         const prevSelectedCol = selectedCell.col;
 
-        // 隣接セルかどうかをチェック
         if (isAdjacent(prevSelectedRow, prevSelectedCol, row, col)) {
-            swapCells(prevSelectedRow, prevSelectedCol, row, col); // セルを入れ替える
+            swapCells(prevSelectedRow, prevSelectedCol, row, col);
 
-            // 選択状態を解除
             boardElement.querySelector(`[data-row="${prevSelectedRow}"][data-col="${prevSelectedCol}"]`).classList.remove('selected');
             selectedCell = null;
 
-            await new Promise(resolve => setTimeout(resolve, 300)); // アニメーション待ち (CSSアニメーションと同期させる)
+            await new Promise(resolve => setTimeout(resolve, 300)); // アニメーション待ち
 
             const initialMatches = findMatches();
             if (initialMatches.length === 0) {
                 // マッチがなければ元に戻す
                 swapCells(row, col, prevSelectedRow, prevSelectedCol);
                 console.log("No match, swapping back.");
-                currentCombo = 0; // マッチしなかったのでコンボをリセット
-                hideCombo();
                 return;
             }
 
             let comboCount = 0;
             let matchesFound;
             do {
-                matchesFound = findMatches(); // マッチを探す
+                matchesFound = findMatches();
                 if (matchesFound.length > 0) {
-                    comboCount++; // コンボ数をインクリメント
-                    currentCombo = comboCount; // 現在のコンボ数を更新
+                    comboCount++;
+                    currentCombo = comboCount;
 
-                    // 最高コンボの更新
                     if (currentCombo > highCombo) {
                         highCombo = currentCombo;
                         localStorage.setItem('matchPuzzleHighCombo', highCombo);
                         highComboElement.textContent = highCombo;
                     }
 
-                    showCombo(comboCount); // コンボ表示
-                    removeMatches(matchesFound); // マッチしたセルを消す
+                    showCombo(comboCount);
+                    removeMatches(matchesFound);
 
-                    const matchScore = matchesFound.length; // 消したセルの数
+                    const matchScore = matchesFound.length;
                     // コンボボーナスを適用
                     let bonusMultiplier = 1;
                     if (comboCount > 1) {
-                        bonusMultiplier = 1 + (comboCount - 1) * 0.2; // 2コンボ目で1.2倍、3コンボ目で1.4倍...
+                        bonusMultiplier = 1 + (comboCount - 1) * 0.2;
                     }
                     score += Math.round(matchScore * 10 * bonusMultiplier); // ボーナスをかけたスコアを加算
                     scoreElement.textContent = score;
 
-                    // スコア更新後にレベルアップチェック
+                    // スコア更新後にレベルアップチェックを追加
                     checkLevelUp();
 
                     await new Promise(resolve => setTimeout(resolve, 300)); // 消去アニメーション待ち
                     fillBoard(); // 新しい絵文字の落下と補充
                     await new Promise(resolve => setTimeout(resolve, 300)); // 落下アニメーション待ち
                 }
-            } while (matchesFound.length > 0); // マッチがなくなるまで繰り返す (連鎖)
+            } while (matchesFound.length > 0); // マッチがなくなるまで繰り返す
 
-            currentCombo = 0; // コンボが途切れたのでリセット
+            currentCombo = 0;
             hideCombo();
 
-            // 有効な手がなくなった場合のチェック
             if (!hasValidMoves()) {
                 alert('有効な手がありません。盤面を再生成します。');
                 reshuffleBoard();
             }
 
         } else {
-            // 隣接していないセルを選択した場合、選択セルを更新
+            // 新しいセルを選択する
             boardElement.querySelector(`[data-row="${prevSelectedRow}"][data-col="${prevSelectedCol}"]`).classList.remove('selected');
             selectedCell = { row, col };
             clickedCellElement.classList.add('selected');
@@ -535,38 +496,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 有効な手があるかチェック
-    // 盤面上のあらゆる可能な入れ替えを試行し、マッチが発生するかを確認
     function hasValidMoves() {
-        // 現在のボードの状態を一時的にコピー
-        const originalBoard = JSON.parse(JSON.stringify(gameBoard));
-
+        // 行方向
         for (let r = 0; r < boardSize; r++) {
             for (let c = 0; c < boardSize; c++) {
-                // 右隣のセルと交換を試す
+                // 右と交換
                 if (c + 1 < boardSize) {
-                    // 実際に交換
-                    [gameBoard[r][c], gameBoard[r][c + 1]] = [gameBoard[r][c + 1], gameBoard[r][c]];
+                    swapCells(r, c, r, c + 1);
                     if (findMatches().length > 0) {
-                        // マッチが見つかったら元に戻してtrueを返す
-                        gameBoard = JSON.parse(JSON.stringify(originalBoard)); // 元に戻す
+                        swapCells(r, c, r, c + 1); // 元に戻す
                         return true;
                     }
-                    gameBoard = JSON.parse(JSON.stringify(originalBoard)); // 元に戻す
+                    swapCells(r, c, r, c + 1); // 元に戻す
                 }
-                // 下隣のセルと交換を試す
+                // 下と交換
                 if (r + 1 < boardSize) {
-                    // 実際に交換
-                    [gameBoard[r][c], gameBoard[r + 1][c]] = [gameBoard[r + 1][c], gameBoard[r][c]];
+                    swapCells(r, c, r + 1, c);
                     if (findMatches().length > 0) {
-                        // マッチが見つかったら元に戻してtrueを返す
-                        gameBoard = JSON.parse(JSON.stringify(originalBoard)); // 元に戻す
+                        swapCells(r, c, r + 1, c); // 元に戻す
                         return true;
                     }
-                    gameBoard = JSON.parse(JSON.stringify(originalBoard)); // 元に戻す
+                    swapCells(r, c, r + 1, c); // 元に戻す
                 }
             }
         }
-        return false; // 有効な手が見つからなかった
+        return false;
     }
 
     // 盤面を再シャッフル
@@ -574,30 +528,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentLevelSetting = levelSettings.find(setting => setting.level === currentLevel) || levelSettings[0];
         const availableRabbitTypes = rabbitTypes.slice(0, Math.min(currentLevelSetting.rabbitTypeCount, maxRabbitTypes));
 
-        let attempts = 0;
-        const maxAttempts = 100; // 無限ループを防ぐための試行回数制限
+        for (let row = 0; row < boardSize; row++) {
+            for (let col = 0; col < boardSize; col++) {
+                let rabbitType;
+                do {
+                    rabbitType = availableRabbitTypes[Math.floor(Math.random() * availableRabbitTypes.length)];
+                } while (isInitialMatch(row, col, rabbitType, gameBoard));
 
-        do {
-            gameBoard = []; // ボードをリセット
-            for (let row = 0; row < boardSize; row++) {
-                gameBoard[row] = [];
-                for (let col = 0; col < boardSize; col++) {
-                    let rabbitType;
-                    do {
-                        rabbitType = availableRabbitTypes[Math.floor(Math.random() * availableRabbitTypes.length)];
-                    } while (isInitialMatch(row, col, rabbitType, gameBoard)); // 初期マッチを避ける
-
-                    gameBoard[row][col] = rabbitType;
-                }
+                gameBoard[row][col] = rabbitType;
             }
-            attempts++;
-            if (attempts > maxAttempts) {
-                console.error("有効な手を持つボードの生成に失敗しました。");
-                break; // 試行回数を超えたらループを抜ける
-            }
-        } while (!hasValidMoves()); // 有効な手が見つかるまで繰り返す
-
-        renderBoard(); // 新しいボードをレンダリング
+        }
+        renderBoard();
+        // 再シャッフル後も有効な手がない場合は再帰的に呼び出す
+        if (!hasValidMoves()) {
+            console.warn("再シャッフル後も有効な手がありませんでした。再度シャッフルします。");
+            reshuffleBoard();
+        }
     }
 
     // コンボ表示の関数
@@ -625,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // BGMコントロール
     function playBGM() {
         if (audioPlayer.src) { // 音源が設定されていれば再生
-            audioPlayer.play().catch(e => console.error("BGM再生エラー:", e)); // プロミスをキャッチ
+            audioPlayer.play();
             console.log("BGM再生");
         } else {
             alert("BGMファイルが選択されていません。");
@@ -650,8 +596,6 @@ document.addEventListener('DOMContentLoaded', function() {
             audioPlayer.src = URL.createObjectURL(file);
             audioPlayer.loop = true; // ループ再生
             console.log("BGMファイルが選択されました:", file.name);
-            // ファイル選択後すぐに再生を開始するかはゲームデザインによる
-            // playBGM(); // 例えば、ここで自動再生させる
         }
     });
 
@@ -674,13 +618,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 // レベルアップ後の盤面更新（絵文字の種類が増える場合など）
                 // fillBoard() が新しい種類の絵文字を自動的に補充するように調整済みなので、
                 // 新しい絵文字が自然に降ってくるのを待つだけでも良いです。
-                // 必要に応じて、ここで setupBoardForLevel(currentLevel); を呼び出して、完全に新しいボードを生成することも検討できます。
-                // しかし、現在の実装では、マッチが連鎖的に解消され、新しい絵文字が補充される過程で、
-                // 次のレベルで追加された種類の絵文字も登場するようになるため、即座のボードリセットは必須ではないでしょう。
+                // setupBoardForLevel(currentLevel); // もしレベルアップ時にボードを完全にリセットしたいならコメント解除
             } else {
                 // 全てのレベルをクリアした場合の処理
                 alert("おめでとうございます！全てのレベルをクリアしました！");
-                endGame(); // ゲームを終了
+                endGame(); // または特別なクリア画面に遷移
             }
         }
     }
