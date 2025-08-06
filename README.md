@@ -88,7 +88,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ ├── Components/components.html
 │ ├── Demo/demo.html
 │ ├── Fuwamoco/
-│ │ ├── fuwamoco.html
+│ │ ├── index.html
 │ │ ├── 3-match-puzzle.html
 │ │ ├── cafe.html
 │ │ ├── company-info.html
