@@ -56,11 +56,13 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 └── rabbit-summary.html
 │
 ├── Blog/
+│ ├── ai-meal-planning-report.html
 │ ├── ai-recreation-welfare.html
 │ ├── ai-tool-diagnostic-chart.html
 │ ├── A-magic-wand-called-AI.html
 │ ├── announcing-ai-hakase.html
 │ ├── goal-setting-for-ai-learning.html
+│ ├── hakase-development-story.html
 │ ├── How-to-Create-a-4-Step-Learning-Roadmap-with-AI.html
 │ ├── How-to-Customize-Prompt.html
 │ ├── How-to-Prompt.html
@@ -83,6 +85,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ └── yoru-no-koe.html
 │
 ├── Portfolio/
+│ ├── fuwamoco-detail.html
 │ ├── Adaptive_System/adaptive_system.html
 │ ├── Ai-Slide-App/ai-slide-app.html
 │ ├── Components/components.html

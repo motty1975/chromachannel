@@ -445,3 +445,9 @@ p.copyright + p.copyright {
         font-size: 0.8rem;
     }
 }
+.post-card-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-top: 10px;
+}
