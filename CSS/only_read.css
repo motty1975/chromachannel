@@ -640,3 +640,17 @@
         justify-content: center; /* ボタン内のテキストとアイコンを中央揃えに */
     }
 }
+/* ===== 詳細ページ内 ポートフォリオカード専用スタイル ===== */
+.portfolio-content.simple-card-content {
+color: #333;
+    padding: 20px;
+    text-align: center;
+    flex-grow: 0; /* ← 高さを内容に合わせる */
+}
+.portfolio-content.simple-card-content h3 {
+    font-size: 1.1rem;
+    margin: 5px 0 0 0; /* ← カテゴリとの間に少し余白を追加 */
+}
+.portfolio-content.simple-card-content .post-card-category {
+    margin-bottom: 0;
+}
