@@ -654,3 +654,29 @@ color: #333;
 .portfolio-content.simple-card-content .post-card-category {
     margin-bottom: 0;
 }
+/* ===== 講座ページ用ナビゲーション ===== */
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    padding: 15px 0;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+.lesson-nav .nav-link {
+    color: var(--primary-color-start);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+.lesson-nav .nav-link:hover {
+    background-color: #f0f4ff;
+    text-decoration: underline;
+}
+.lesson-nav .nav-link.disabled {
+    color: #a0aec0;
+    pointer-events: none;
+}

@@ -48,10 +48,65 @@
 .lesson-content .copy-button:hover { background-color: #607d8b; }
 .lesson-content .section-divider { border: 0; height: 1px; background: #ddd; margin: 60px auto; }
 .feedback-section h3 { border-bottom-color: #e0e0e0; }
+.next-lesson-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f7fa;
+    margin: 60px -40px -30px -40px; /* lesson-contentのpaddingを相殺 */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.next-lesson-section h2 {
+    color: #3f51b5;
+    border-color: #7986cb;
+}
+.next-lesson-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 40px;
+    background-color: #3f51b5;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+.next-lesson-btn:hover {
+    background-color: #303f9f;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+.next-lesson-btn i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+.next-lesson-btn:hover i {
+    transform: translateX(5px);
+}
+.lesson-content .prompt-list {
+    margin-bottom: 25px;
+}
+/* Stable Diffusionの例で最後のプロンプトの余白を調整 */
+.lesson-content .prompt-list:last-of-type {
+    margin-bottom: 0;
+}
 @media screen and (max-width: 768px) {
     .lesson-content { padding: 20px 15px; margin: 20px 0; }
     .lesson-content h1 { font-size: 1.8em; }
     .lesson-content h2 { font-size: 1.5em; margin-top: 50px; }
     .lesson-content h3 { font-size: 1.3em; }
     .lesson-content table, .lesson-content .prompt-block { font-size: 0.8em; }
+    .next-lesson-section {
+        margin: 40px -15px -20px -15px;
+        padding: 30px 15px;
+    }
+    .next-lesson-btn {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+    /* ===== ▲▲▲ ここまで追加 ▲▲▲ ===== */
 }

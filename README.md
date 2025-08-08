@@ -55,7 +55,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ├── lifehack-summary.html
 └── rabbit-summary.html
 │
-├── Blog/
+├── Blog/ (全15記事)
 │ ├── ai-meal-planning-report.html
 │ ├── ai-recreation-welfare.html
 │ ├── ai-tool-diagnostic-chart.html
@@ -72,10 +72,12 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ ├── report-making-picture-book-with-ai.html
 │ └── report-making-travel-plan-with-ai.html
 │
-├── Learn/
-│ └── learn_lesson1.html
+├── Learn/ (全3ページ)
+│ ├── learn_lesson1.html
+│ ├── learn_lesson2.html
+│ └── learn_lesson3.html
 │
-├── Novels/
+├── Novels/ (全7小説)
 │ ├── hoshizora-no-melody.html
 │ ├── isekai-no-ou.html
 │ ├── kieta-mura.html
@@ -84,7 +86,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ ├── unmei-no-ito.html
 │ └── yoru-no-koe.html
 │
-├── Portfolio/
+├── Portfolio/ (全21制作実績ページ)
 │ ├── fuwamoco-detail.html
 │ ├── Adaptive_System/adaptive_system.html
 │ ├── Ai-Slide-App/ai-slide-app.html
@@ -101,14 +103,14 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ │ ├── questionnaire.html
 │ │ └── rabbit.html
 │ ├── Game/pict.html
+│ ├── Hakase/hakase.html
 │ ├── Household_Account_Book/household-account-book.html
 │ ├── Real-time-preview/real-time-preview.html
 │ ├── Task-Tool/task-tool.html
 │ ├── Timer/timer.html
 │ └── chirashi/chirashi.html
 │
-├── Prompt/
-│ ├── hakase.html
+├── Prompt/ (全29プロンプトページ)
 │ ├── prompt-architect.html
 │ ├── prompt-article-editor.html
 │ ├── prompt-book-report-wizard.html
@@ -136,7 +138,8 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ ├── prompt-suno-ai.html
 │ ├── prompt-suno-ai-v2.html
 │ ├── prompt-travel-planner.html
-│ └── prompt-vegetable-hero.html
+│ ├── prompt-vegetable-hero.html
+│ └── prompt-youtube-shorts.html
 │
 ├── CSS/
 ├── JavaScript/
