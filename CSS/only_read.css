@@ -680,3 +680,45 @@ color: #333;
     color: #a0aec0;
     pointer-events: none;
 }
+/* ===== 講座一覧ページ専用スタイル ===== */
+.course-step-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 6px solid var(--primary-color-start);
+    color: var(--text-dark);
+}
+.course-step-title:first-of-type {
+    margin-top: 0;
+}
+
+/* PC用のグリッドレイアウト */
+.portfolio-grid.step-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.portfolio-grid.step-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.portfolio-grid.step-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* レイアウト調整用のプレースホルダー */
+.portfolio-item.placeholder-item {
+    display: none; /* 基本は非表示 */
+}
+
+/* スマートフォン用のレイアウト調整 */
+@media (max-width: 992px) {
+    .portfolio-grid.step-grid-3,
+    .portfolio-grid.step-grid-5 {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+@media (max-width: 768px) {
+    .portfolio-grid.step-grid-4 {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}

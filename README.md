@@ -55,7 +55,8 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 ├── lifehack-summary.html
 └── rabbit-summary.html
 │
-├── Blog/ (全15記事)
+├── Blog/ (全16記事)
+│ ├── announcing-full-ai-curriculum.html
 │ ├── ai-meal-planning-report.html
 │ ├── ai-recreation-welfare.html
 │ ├── ai-tool-diagnostic-chart.html
@@ -72,10 +73,18 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ ├── report-making-picture-book-with-ai.html
 │ └── report-making-travel-plan-with-ai.html
 │
-├── Learn/ (全3ページ)
+├── Learn/ (全11ページ)
 │ ├── learn_lesson1.html
 │ ├── learn_lesson2.html
-│ └── learn_lesson3.html
+│ ├── learn_lesson3.html
+│ ├── learn_lesson4.html
+│ ├── learn_lesson5.html
+│ ├── learn_lesson6.html
+│ ├── learn_lesson7.html
+│ ├── learn_lesson8.html
+│ ├── learn_lesson9.html
+│ ├── learn_lesson10.html
+│ └── learn_lesson11.html
 │
 ├── Novels/ (全7小説)
 │ ├── hoshizora-no-melody.html
@@ -138,8 +147,7 @@ AI技術で福祉の現場に新しい「できる」と「楽しい」を届け
 │ ├── prompt-suno-ai.html
 │ ├── prompt-suno-ai-v2.html
 │ ├── prompt-travel-planner.html
-│ ├── prompt-vegetable-hero.html
-│ └── prompt-youtube-shorts.html
+│ └── prompt-vegetable-hero.html
 │
 ├── CSS/
 ├── JavaScript/
